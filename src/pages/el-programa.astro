@@ -1,0 +1,240 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+---
+
+<BaseLayout
+  title="El Programa — Suelos Vivos"
+  description="Tres talleres presenciales más 12 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
+>
+  <Header />
+
+  <main>
+    <!-- Page header -->
+    <section class="pt-32 pb-16 bg-[#F0F2EE]">
+      <div class="container max-w-3xl">
+        <p class="page-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">El programa</p>
+        <h1 class="page-title font-display text-4xl md:text-6xl text-[#1E1A15] leading-[1.05] mb-6">
+          Tres talleres.<br />Doce meses.<br />Un suelo diferente.
+        </h1>
+        <p class="page-subtitle text-[#6B6355] text-xl leading-relaxed">
+          Suelos Vivos es un programa de formación anual diseñado para agricultores profesionales que quieren entender la biología de su suelo y aplicar técnicas de biofertilidad en su propia finca.
+        </p>
+      </div>
+    </section>
+
+    <!-- Formato -->
+    <section class="py-20 bg-[#FAFAF7]">
+      <div class="container max-w-5xl">
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          {[
+            {
+              num: '3',
+              label: 'Talleres presenciales',
+              desc: 'Fines de semana completos en Tormos (Alicante). Teoría + práctica en campo real con materiales incluidos.',
+            },
+            {
+              num: '12',
+              label: 'Meses de acompañamiento',
+              desc: 'Sesiones mensuales online entre talleres. Dudas resueltas, ajuste del plan y seguimiento personalizado.',
+            },
+            {
+              num: '20',
+              label: 'Plazas por edición',
+              desc: 'Grupos pequeños para garantizar atención personalizada y aprendizaje entre iguales. Sin lista de espera.',
+            },
+          ].map(item => (
+            <div class="format-card text-center p-8 bg-white border border-[#DDD8CE] rounded-lg">
+              <p class="font-display text-6xl text-[#8B1A1A] mb-2">{item.num}</p>
+              <p class="font-semibold text-[#1E1A15] mb-3">{item.label}</p>
+              <p class="text-sm text-[#6B6355] leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Taller 1 -->
+        <div class="workshop-block mb-16 grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <span class="font-display text-6xl text-[#DDD8CE]">01</span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#C4622D]">Septiembre 2026</p>
+                <h2 class="font-display text-2xl text-[#1E1A15]">El suelo vivo: diagnóstico y fundamentos</h2>
+              </div>
+            </div>
+            <p class="text-[#6B6355] leading-relaxed mb-6">
+              El primer taller establece las bases. Aprenderás a entender el suelo como un ecosistema vivo, a identificar sus indicadores de salud y a diagnosticar el estado de tu finca antes de intervenir.
+            </p>
+            <h3 class="font-semibold text-[#1E1A15] mb-3 text-sm uppercase tracking-wide">Contenidos</h3>
+            <ul class="space-y-2">
+              {[
+                'Biología del suelo: hongos, bacterias, fauna edáfica y su rol',
+                'Ciclos de nutrientes mediados por microorganismos',
+                'Cómo leer un análisis de suelo (y qué no dice)',
+                'Indicadores visuales y sensoriales de salud edáfica',
+                'Diagnóstico práctico en campo: tu suelo tiene historia',
+                'Introducción a los principios regenerativos aplicados',
+              ].map(item => (
+                <li class="flex gap-2.5 text-sm text-[#6B6355]">
+                  <svg class="w-4 h-4 text-[#6B8F71] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <img src="/images/taller-1.jpg" alt="Taller 1 — El suelo vivo" class="rounded-lg w-full aspect-[4/3] object-cover shadow-md" loading="lazy" />
+        </div>
+
+        <!-- Taller 2 -->
+        <div class="workshop-block mb-16 grid md:grid-cols-2 gap-12 items-start">
+          <img src="/images/taller-2.jpg" alt="Taller 2 — Biofertilidad en práctica" class="rounded-lg w-full aspect-[4/3] object-cover shadow-md order-2 md:order-1" loading="lazy" />
+          <div class="order-1 md:order-2">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="font-display text-6xl text-[#DDD8CE]">02</span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#C4622D]">Octubre 2026</p>
+                <h2 class="font-display text-2xl text-[#1E1A15]">Biofertilidad en práctica</h2>
+              </div>
+            </div>
+            <p class="text-[#6B6355] leading-relaxed mb-6">
+              El segundo taller es el más práctico. Elaboraremos juntos los principales bioinsumos: inoculantes, caldos y compost activado. Todo con materiales accesibles y reproducibles en tu finca.
+            </p>
+            <h3 class="font-semibold text-[#1E1A15] mb-3 text-sm uppercase tracking-wide">Contenidos</h3>
+            <ul class="space-y-2">
+              {[
+                'Inoculantes microbianos: elaboración y aplicación',
+                'Compostaje avanzado con activadores biológicos',
+                'Caldos minerales y bioestimulantes naturales',
+                'Biofertilización foliar y edáfica: cuándo y cómo',
+                'Técnicas de captura y multiplicación de microorganismos locales',
+                'Protocolos adaptados a diferentes cultivos y climas',
+              ].map(item => (
+                <li class="flex gap-2.5 text-sm text-[#6B6355]">
+                  <svg class="w-4 h-4 text-[#6B8F71] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Taller 3 -->
+        <div class="workshop-block mb-20 grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <span class="font-display text-6xl text-[#DDD8CE]">03</span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#C4622D]">Enero 2027</p>
+                <h2 class="font-display text-2xl text-[#1E1A15]">Autonomía y diseño del plan</h2>
+              </div>
+            </div>
+            <p class="text-[#6B6355] leading-relaxed mb-6">
+              El tercer taller cierra el ciclo. Diseñarás tu propio plan de biofertilidad para los próximos 3 años, evaluarás los resultados del primer año y trazarás la hoja de ruta hacia la autonomía técnica.
+            </p>
+            <h3 class="font-semibold text-[#1E1A15] mb-3 text-sm uppercase tracking-wide">Contenidos</h3>
+            <ul class="space-y-2">
+              {[
+                'Evaluación de resultados: cómo medir la mejora del suelo',
+                'Diseño de rotaciones y cubierta vegetal regenerativa',
+                'Plan de biofertilidad personalizado para tu finca',
+                'Manejo del agua y materia orgánica a largo plazo',
+                'Cálculo de costes e impacto económico real',
+                'Hoja de ruta: los próximos 3 años en tu finca',
+              ].map(item => (
+                <li class="flex gap-2.5 text-sm text-[#6B6355]">
+                  <svg class="w-4 h-4 text-[#6B8F71] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <img src="/images/taller-3.jpg" alt="Taller 3 — Plan y autonomía" class="rounded-lg w-full aspect-[4/3] object-cover shadow-md" loading="lazy" />
+        </div>
+
+        <!-- Entre talleres -->
+        <div class="between-section bg-[#F0F2EE] rounded-xl p-10 mb-20">
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-6">Entre taller y taller: acompañamiento mensual</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Sesiones online mensuales',
+                desc: 'Una hora cada mes para revisar avances, resolver dudas técnicas y ajustar el plan a lo que está pasando en tu finca.',
+              },
+              {
+                title: 'Grupo privado de participantes',
+                desc: 'Canal directo entre todos los participantes. Para compartir resultados, experiencias y apoyo mutuo entre agricultores.',
+              },
+              {
+                title: 'Biblioteca de recursos',
+                desc: 'Protocolos, fichas técnicas, vídeos y bibliografía seleccionada. Todo accesible durante y después del programa.',
+              },
+            ].map(item => (
+              <div>
+                <h3 class="font-semibold text-[#1E1A15] mb-2">{item.title}</h3>
+                <p class="text-sm text-[#6B6355] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center py-16 border-t border-[#DDD8CE]">
+          <h2 class="font-display text-3xl text-[#1E1A15] mb-4">¿Listo para transformar tu finca?</h2>
+          <p class="text-[#6B6355] mb-8">Inicio {siteConfig.program.startDate} · Solo {siteConfig.program.spots} plazas · {siteConfig.program.location}</p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-8 py-4 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 text-base"
+          >
+            Reservar plaza — {siteConfig.program.price}€
+          </a>
+          <p class="text-[#6B6355] text-sm mt-4">
+            O fraccionado en {siteConfig.program.months} pagos de {siteConfig.program.priceMonthly}€/mes
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
+
+    gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
+      .fromTo('.page-eyebrow', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
+      .fromTo('.page-title',   { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.4')
+      .fromTo('.page-subtitle',{ y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.5');
+
+    gsap.from('.format-card', {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.format-card', start: 'top 82%', once: true },
+    });
+
+    gsap.utils.toArray('.workshop-block').forEach((block) => {
+      gsap.from(block as Element, {
+        y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: block as Element, start: 'top 80%', once: true },
+      });
+    });
+
+    gsap.from('.between-section', {
+      y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.between-section', start: 'top 82%', once: true },
+    });
+  }
+</script>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+---
+
+<BaseLayout
+  title="Política de Privacidad — Suelos Vivos"
+  description="Política de privacidad y protección de datos de Suelos Vivos — Bosque Madre."
+  noindex={true}
+>
+  <Header />
+
+  <main class="pt-32 pb-24">
+    <div class="container max-w-3xl">
+      <h1 class="font-display text-4xl text-[#1E1A15] mb-4">Política de Privacidad</h1>
+      <p class="text-[#6B6355] mb-12">Última actualización: enero 2026</p>
+
+      <div class="prose-content space-y-8 text-[#6B6355] leading-relaxed">
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">1. Responsable del tratamiento</h2>
+          <ul class="space-y-2 list-disc list-inside">
+            <li><strong class="text-[#1E1A15]">Responsable:</strong> Bosque Madre</li>
+            <li><strong class="text-[#1E1A15]">Domicilio:</strong> {siteConfig.contact.address}</li>
+            <li><strong class="text-[#1E1A15]">Email:</strong> {siteConfig.contact.email}</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">2. Datos que recopilamos</h2>
+          <p>A través del formulario de contacto de este sitio web, podemos recopilar los siguientes datos personales:</p>
+          <ul class="mt-3 space-y-1 list-disc list-inside">
+            <li>Nombre y apellidos</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono (opcional)</li>
+            <li>Información sobre tu actividad agrícola (opcional)</li>
+            <li>Mensaje libre que nos envíes</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">3. Finalidad y base legal del tratamiento</h2>
+          <p>Tus datos se tratarán con las siguientes finalidades:</p>
+          <ul class="mt-3 space-y-2 list-disc list-inside">
+            <li><strong class="text-[#1E1A15]">Gestión de consultas:</strong> responder a las solicitudes de información sobre el programa. Base legal: interés legítimo y consentimiento del interesado.</li>
+            <li><strong class="text-[#1E1A15]">Gestión de inscripciones:</strong> tramitar la reserva de plaza y la relación contractual derivada. Base legal: ejecución de un contrato.</li>
+            <li><strong class="text-[#1E1A15]">Comunicaciones del programa:</strong> enviar información relevante sobre el programa para el que te has inscrito. Base legal: ejecución de un contrato.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">4. Conservación de datos</h2>
+          <p>Los datos se conservarán durante el tiempo necesario para gestionar tu solicitud y, en caso de inscripción, durante el período de vigencia de la relación contractual y los plazos legales aplicables.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">5. Tus derechos</h2>
+          <p>Tienes derecho a acceder, rectificar, suprimir, limitar el tratamiento, oponerte y a la portabilidad de tus datos personales. Para ejercer cualquiera de estos derechos, puedes escribirnos a <a href={`mailto:${siteConfig.contact.email}`} class="text-[#8B1A1A] underline hover:text-[#6B1212] transition-colors">{siteConfig.contact.email}</a>.</p>
+          <p class="mt-3">También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es) si consideras que el tratamiento de tus datos no se ajusta a la normativa vigente.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">6. Destinatarios y transferencias</h2>
+          <p>No se cederán datos a terceros salvo obligación legal. Los formularios de contacto de esta web utilizan el servicio Formspree (formspree.io), que actúa como encargado del tratamiento bajo sus propias condiciones de privacidad.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">7. Cookies</h2>
+          <p>Este sitio web puede utilizar cookies técnicas necesarias para su funcionamiento. No utilizamos cookies de seguimiento ni publicidad de terceros. Si en el futuro se implementaran, este apartado se actualizará con la información correspondiente.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

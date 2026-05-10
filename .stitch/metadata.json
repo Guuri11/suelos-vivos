@@ -1,0 +1,8 @@
+{
+  "project_id": "14100263605658381231",
+  "screens": {
+    "logo":   { "screen_id": "f92b02192cc546648ada9e89bd4f4ef2", "title": "Suelos Vivos Logo" },
+    "hero-bg":{ "screen_id": "e3840594a9e94fbbbc5b13e4673dfa96", "title": "Hero background - farmers on hay bales" },
+    "index":  { "screen_id": "8b7a7e0ba389428b8a8d7c0ecfc81eee", "title": "Landing Page Suelos Vivos", "width": 2560, "height": 7418 }
+  }
+}

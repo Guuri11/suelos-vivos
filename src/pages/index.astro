@@ -1,0 +1,507 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+---
+
+<BaseLayout
+  title="Suelos Vivos — Programa de Agricultura Regenerativa 2026"
+  description="Programa anual de formación en biofertilidad para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica. Solo 20 plazas."
+>
+  <Header />
+
+  <main>
+    <!-- HERO -->
+    <section class="hero relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/hero-bg.jpg"
+          alt="Agricultores en el campo al atardecer"
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-[#1E1A15]/65"></div>
+      </div>
+
+      <div class="hero-content relative z-10 container text-center text-[#FAFAF7] py-24 pt-40">
+        <p class="hero-eyebrow inline-block text-xs font-semibold tracking-[0.2em] uppercase text-[#C4622D] mb-6">
+          Programa 2026 · Solo 20 Plazas · Tormos, Alicante
+        </p>
+        <h1 class="hero-title font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] mb-6 max-w-4xl mx-auto">
+          Deja de comprar fertilidad.<br />Aprende a producirla.
+        </h1>
+        <p class="hero-subtitle text-lg md:text-xl text-[#FAFAF7]/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Formación intensiva en biofertilidad y agricultura regenerativa para productores profesionales que quieren reducir costes, recuperar el suelo y ganar autonomía técnica.
+        </p>
+        <div class="hero-actions flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-8 py-4 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 text-base"
+          >
+            Reservar plaza — {siteConfig.program.price}€
+          </a>
+          <a
+            href="/el-programa"
+            class="inline-flex items-center px-8 py-4 border border-[#FAFAF7]/40 text-[#FAFAF7] font-medium rounded-md hover:border-[#FAFAF7]/80 hover:bg-[#FAFAF7]/10 transition-colors duration-200 text-base"
+          >
+            Ver el programa completo
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto border-t border-[#FAFAF7]/20 pt-10">
+          <div>
+            <p class="text-3xl font-display text-[#C4622D]">3</p>
+            <p class="text-xs text-[#FAFAF7]/60 uppercase tracking-wider mt-1">Talleres presenciales</p>
+          </div>
+          <div>
+            <p class="text-3xl font-display text-[#C4622D]">12</p>
+            <p class="text-xs text-[#FAFAF7]/60 uppercase tracking-wider mt-1">Meses de acompañamiento</p>
+          </div>
+          <div>
+            <p class="text-3xl font-display text-[#C4622D]">20</p>
+            <p class="text-xs text-[#FAFAF7]/60 uppercase tracking-wider mt-1">Plazas disponibles</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#FAFAF7]/40 animate-bounce">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PROBLEMA: El círculo vicioso -->
+    <section class="py-24 bg-[#FAFAF7]">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <p class="problem-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">El diagnóstico</p>
+          <h2 class="problem-title font-display text-3xl md:text-5xl text-[#1E1A15] mb-6">
+            El círculo vicioso del agricultor moderno
+          </h2>
+          <p class="problem-subtitle text-[#6B6355] text-lg leading-relaxed">
+            Cuanto más fertilizas, más dependiente te vuelves. Los suelos pierden vida microbiana, las plantas se debilitan y tus costes siguen subiendo. Hay otra manera.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+          {[
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+              title: 'Costes que no paran de subir',
+              desc: 'Fertilizantes, fitosanitarios, laboreos… cada año más caro, con márgenes que se estrechan.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+              title: 'Suelos cada vez más inertes',
+              desc: 'La mecanización intensa y los herbicidas destruyen la fauna microbiana que hace fértil la tierra.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>`,
+              title: 'Dependencia de insumos externos',
+              desc: 'Cada campaña con proveedores, precios globales y cadenas de suministro que no controlas.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>`,
+              title: 'Incertidumbre ante el clima',
+              desc: 'Sequías, plagas resistentes, temporadas irregulares… sin resiliencia en el suelo, cada evento es una crisis.',
+            },
+          ].map(item => (
+            <div class="pain-card flex gap-4 p-6 bg-white border border-[#DDD8CE] rounded-lg">
+              <div class="shrink-0 w-10 h-10 rounded-md bg-[#F0F2EE] flex items-center justify-center text-[#8B1A1A]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} />
+              </div>
+              <div>
+                <h3 class="font-semibold text-[#1E1A15] mb-1">{item.title}</h3>
+                <p class="text-sm text-[#6B6355] leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <blockquote class="problem-quote max-w-3xl mx-auto text-center">
+          <p class="font-display text-2xl md:text-3xl text-[#8B1A1A] leading-snug mb-4">
+            "La fertilidad no se compra. Se cultiva, se entiende y se devuelve al suelo."
+          </p>
+          <cite class="text-sm text-[#6B6355] not-italic">Carles Casanova — Fundador de Bosque Madre</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- LOS TALLERES -->
+    <section class="py-24 bg-[#F0F2EE]">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <p class="workshops-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">El programa</p>
+          <h2 class="workshops-title font-display text-3xl md:text-5xl text-[#1E1A15] mb-6">
+            Tres talleres, doce meses de transformación
+          </h2>
+          <p class="workshops-subtitle text-[#6B6355] text-lg leading-relaxed">
+            Cada taller en Tormos (Alicante) se complementa con seguimiento mensual online. Aprendes, implementas y recibes apoyo mientras ves los resultados en tu propio campo.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              num: '01',
+              month: 'Septiembre 2026',
+              title: 'El suelo vivo',
+              desc: 'Biología del suelo, organismos clave, análisis de fertilidad y diagnóstico de tu finca. Aprenderás a leer la tierra antes de intervenir.',
+              tags: ['Microbiología', 'Análisis de suelo', 'Diagnóstico'],
+            },
+            {
+              num: '02',
+              month: 'Octubre 2026',
+              title: 'Biofertilidad en práctica',
+              desc: 'Elaboración de inoculantes microbianos, compostaje avanzado, caldos minerales y técnicas de activación biológica con materiales de tu entorno.',
+              tags: ['Inoculantes', 'Compostaje', 'Caldos minerales'],
+            },
+            {
+              num: '03',
+              month: 'Enero 2027',
+              title: 'Autonomía y diseño',
+              desc: 'Diseño de tu plan de biofertilidad anual, rotaciones regenerativas, evaluación de resultados y hoja de ruta para los próximos 3 años.',
+              tags: ['Plan anual', 'Rotaciones', 'Evaluación'],
+            },
+          ].map(w => (
+            <div class="workshop-card bg-white border border-[#DDD8CE] rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 cursor-pointer">
+              <div class="p-8">
+                <p class="font-display text-5xl text-[#DDD8CE] mb-4">{w.num}</p>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#C4622D] mb-2">{w.month}</p>
+                <h3 class="font-display text-xl text-[#1E1A15] mb-3">{w.title}</h3>
+                <p class="text-sm text-[#6B6355] leading-relaxed mb-6">{w.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                  {w.tags.map(tag => (
+                    <span class="text-xs px-2.5 py-1 bg-[#F0F2EE] text-[#6B6355] rounded-full border border-[#DDD8CE]">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-center text-sm text-[#6B6355] mt-8">
+          Más {siteConfig.program.months} meses de acompañamiento mensual online entre talleres · Acceso a grupo privado · Biblioteca de recursos
+        </p>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="py-24 bg-[#FAFAF7]">
+      <div class="container">
+        <div class="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+          <div>
+            <p class="audience-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">Para quién es</p>
+            <h2 class="audience-title font-display text-3xl md:text-4xl text-[#1E1A15] mb-8 leading-tight">
+              Para el agricultor que ya sabe que hay algo que no encaja
+            </h2>
+            <ul class="space-y-4">
+              {[
+                'Productor profesional con finca en activo (hortícola, frutal, olivar, viña, cereal…)',
+                'Hartos de depender de insumos y quieren reducir costes de forma real',
+                'Con ganas de aprender y aplicar — no solo escuchar teoría',
+                'Dispuestos a invertir tiempo y recursos durante el año del programa',
+                'Buscan apoyo técnico real, no un curso online más',
+              ].map(item => (
+                <li class="audience-item flex gap-3 text-[#1E1A15]">
+                  <svg class="w-5 h-5 text-[#6B8F71] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-[#6B6355]">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="relative">
+            <img
+              src="/images/taller-1.jpg"
+              alt="Taller práctico de biofertilidad"
+              class="rounded-lg w-full aspect-[4/3] object-cover shadow-lg"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-6 -left-6 bg-white border border-[#DDD8CE] rounded-lg p-4 shadow-md">
+              <p class="text-xs text-[#6B6355] mb-1">Reducción media de costes en</p>
+              <p class="font-display text-3xl text-[#8B1A1A]">30–50%</p>
+              <p class="text-xs text-[#6B6355]">tras el primer año de aplicación</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="py-16 bg-[#F0F2EE]">
+      <div class="container">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {['campo-1.jpg', 'campo-2.jpg', 'suelo.jpg', 'grupo.jpg'].map(img => (
+            <div class="gallery-item aspect-square rounded-lg overflow-hidden">
+              <img
+                src={`/images/${img}`}
+                alt="Suelos Vivos — programa en acción"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="py-24 bg-[#FAFAF7]">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <p class="benefits-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">Qué consigues</p>
+          <h2 class="benefits-title font-display text-3xl md:text-5xl text-[#1E1A15] mb-6">
+            Autonomía técnica real, no dependencia de expertos
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
+              title: 'Reducción de costes 30–50%',
+              desc: 'Menos fertilizantes sintéticos, menos fitosanitarios, menos laboreo. El suelo vivo trabaja para ti.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`,
+              title: 'Suelos más resilientes',
+              desc: 'Plantas más sanas, mayor resistencia a plagas y sequías, cosechas más estables año a año.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+              title: 'Formación que puedes aplicar',
+              desc: 'Teoría fundamentada + práctica en campo real. Cada técnica la ves, la haces y la adaptas a tu finca.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`,
+              title: 'Red de agricultores regenerativos',
+              desc: 'Grupo pequeño y seleccionado. Compañeros con los mismos desafíos, para apoyarse más allá del programa.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+              title: '15 años de experiencia real',
+              desc: 'Bosque Madre lleva más de 15 años practicando y enseñando agricultura regenerativa en el Mediterráneo.',
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>`,
+              title: 'Acompañamiento durante 12 meses',
+              desc: 'No te dejamos solo al salir del taller. Seguimiento mensual, respuesta a dudas y ajuste de tu plan.',
+            },
+          ].map(b => (
+            <div class="benefit-card flex flex-col gap-4">
+              <div class="w-10 h-10 rounded-md bg-[#F0F2EE] flex items-center justify-center text-[#8B1A1A]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={b.icon} />
+              </div>
+              <div>
+                <h3 class="font-semibold text-[#1E1A15] mb-2">{b.title}</h3>
+                <p class="text-sm text-[#6B6355] leading-relaxed">{b.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS (mini) -->
+    <section class="py-24 bg-[#F0F2EE]">
+      <div class="container">
+        <div class="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+          <div class="relative order-2 md:order-1">
+            <img
+              src="/images/taller-2.jpg"
+              alt="Carles Casanova — Fundador de Bosque Madre"
+              class="rounded-lg w-full aspect-[4/5] object-cover shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          <div class="order-1 md:order-2">
+            <p class="about-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">Quiénes somos</p>
+            <h2 class="about-title font-display text-3xl md:text-4xl text-[#1E1A15] mb-6 leading-tight">
+              Un proyecto nacido del campo, no del laboratorio
+            </h2>
+            <div class="space-y-4 text-[#6B6355] leading-relaxed about-text">
+              <p>
+                Suelos Vivos es el programa formativo de <strong class="text-[#1E1A15]">Bosque Madre</strong>, un proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo.
+              </p>
+              <p>
+                No enseñamos desde la academia. Enseñamos desde la práctica diaria: lo que funciona, lo que falla y lo que transforma de verdad una finca convencional en un sistema regenerativo autónomo.
+              </p>
+              <p>
+                Nuestro campo en Tormos (Alicante) es el aula. El laboratorio es el suelo vivo.
+              </p>
+            </div>
+            <a href="/quienes-somos" class="inline-flex items-center gap-2 mt-8 text-[#8B1A1A] font-semibold text-sm hover:gap-3 transition-all duration-200">
+              Conoce el equipo
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECIO / CTA FINAL -->
+    <section class="py-24 bg-[#1E1A15] text-[#FAFAF7]">
+      <div class="container">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="pricing-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#C4622D] mb-4">Inversión</p>
+          <h2 class="pricing-title font-display text-3xl md:text-5xl mb-6 leading-tight">
+            Programa completo 2026–2027
+          </h2>
+          <p class="pricing-subtitle text-[#FAFAF7]/70 text-lg mb-12 leading-relaxed">
+            Una inversión que se recupera en la primera campaña con la reducción de insumos.
+          </p>
+
+          <div class="pricing-card bg-[#FAFAF7]/5 border border-[#FAFAF7]/10 rounded-xl p-8 md:p-12 mb-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-10">
+              <div class="text-center">
+                <p class="text-[#FAFAF7]/50 text-sm mb-1">Pago único</p>
+                <p class="font-display text-5xl text-[#FAFAF7]">{siteConfig.program.price}<span class="text-2xl">€</span></p>
+              </div>
+              <div class="hidden md:block text-[#FAFAF7]/20 text-2xl">o</div>
+              <div class="text-center">
+                <p class="text-[#FAFAF7]/50 text-sm mb-1">Fraccionado</p>
+                <p class="font-display text-5xl text-[#FAFAF7]">{siteConfig.program.priceMonthly}<span class="text-2xl">€</span>
+                  <span class="text-xl text-[#FAFAF7]/50">/mes</span>
+                </p>
+                <p class="text-[#FAFAF7]/40 text-xs mt-1">{siteConfig.program.months} meses · Reserva con {siteConfig.program.deposit}€</p>
+              </div>
+            </div>
+
+            <ul class="grid md:grid-cols-2 gap-3 text-sm text-[#FAFAF7]/70 mb-10 text-left">
+              {[
+                '3 talleres presenciales (fin de semana completo)',
+                '12 meses de acompañamiento mensual online',
+                'Acceso a grupo privado de participantes',
+                'Biblioteca de recursos y protocolos',
+                'Análisis de suelo de tu finca incluido',
+                'Materiales e insumos para las prácticas',
+                'Visita a campo de Bosque Madre',
+                'Certificado de formación al terminar',
+              ].map(item => (
+                <li class="flex gap-2.5 items-start">
+                  <svg class="w-4 h-4 text-[#6B8F71] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="/contacto"
+              class="inline-flex items-center px-10 py-4 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 text-base"
+            >
+              Reservar plaza — Solo {siteConfig.program.spots} plazas
+            </a>
+            <p class="text-[#FAFAF7]/30 text-xs mt-4">Inicio {siteConfig.program.startDate} · {siteConfig.program.location}</p>
+          </div>
+
+          <p class="text-[#FAFAF7]/40 text-sm">
+            ¿Tienes dudas? Escríbenos a <a href={`mailto:${siteConfig.contact.email}`} class="text-[#FAFAF7]/70 hover:text-[#FAFAF7] underline transition-colors">{siteConfig.contact.email}</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Hero entrance
+    gsap.set(['.hero-eyebrow', '.hero-title', '.hero-subtitle', '.hero-actions', '.hero-stats'], { opacity: 0 });
+
+    gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
+      .fromTo('.hero-eyebrow',  { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
+      .fromTo('.hero-title',    { y: 48, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0 }, '-=0.4')
+      .fromTo('.hero-subtitle', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.6')
+      .fromTo('.hero-actions',  { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.55')
+      .fromTo('.hero-stats',    { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.45');
+
+    // Problem section
+    gsap.from('.problem-eyebrow, .problem-title, .problem-subtitle', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.problem-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.pain-card', {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.pain-card', start: 'top 82%', once: true },
+    });
+
+    gsap.from('.problem-quote', {
+      y: 32, opacity: 0, duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: '.problem-quote', start: 'top 85%', once: true },
+    });
+
+    // Workshops
+    gsap.from('.workshops-eyebrow, .workshops-title, .workshops-subtitle', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.workshops-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.workshop-card', {
+      y: 40, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.workshop-card', start: 'top 82%', once: true },
+    });
+
+    // Audience section
+    gsap.from('.audience-eyebrow, .audience-title', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.audience-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.audience-item', {
+      x: -24, opacity: 0, duration: 0.6, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: '.audience-item', start: 'top 82%', once: true },
+    });
+
+    // Gallery
+    gsap.from('.gallery-item', {
+      y: 32, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: '.gallery-item', start: 'top 85%', once: true },
+    });
+
+    // Benefits
+    gsap.from('.benefits-eyebrow, .benefits-title', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.benefits-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.benefit-card', {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.benefit-card', start: 'top 82%', once: true },
+    });
+
+    // About section
+    gsap.from('.about-eyebrow, .about-title, .about-text', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.about-eyebrow', start: 'top 85%', once: true },
+    });
+
+    // Pricing section
+    gsap.from('.pricing-eyebrow, .pricing-title, .pricing-subtitle', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.pricing-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.pricing-card', {
+      y: 48, opacity: 0, duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: '.pricing-card', start: 'top 82%', once: true },
+    });
+  }
+</script>

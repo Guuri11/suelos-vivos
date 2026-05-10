@@ -1,0 +1,229 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+---
+
+<BaseLayout
+  title="Reservar plaza — Suelos Vivos"
+  description="Reserva tu plaza en el programa Suelos Vivos 2026. Solo 20 plazas. Inicio septiembre 2026 en Tormos, Alicante."
+>
+  <Header />
+
+  <main>
+    <section class="pt-32 pb-24 bg-[#FAFAF7]">
+      <div class="container max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+
+          <!-- Info lateral -->
+          <div>
+            <p class="page-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">Reservar plaza</p>
+            <h1 class="page-title font-display text-4xl md:text-5xl text-[#1E1A15] leading-[1.05] mb-6">
+              El primer paso es el formulario.
+            </h1>
+            <p class="page-subtitle text-[#6B6355] text-lg leading-relaxed mb-10">
+              Rellena el formulario y nos ponemos en contacto contigo en menos de 48 horas para explicarte el proceso de inscripción y resolver tus dudas.
+            </p>
+
+            <div class="space-y-6 mb-10">
+              {[
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>`,
+                  title: 'Inicio',
+                  value: siteConfig.program.startDate,
+                },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+                  title: 'Lugar',
+                  value: siteConfig.program.location,
+                },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`,
+                  title: 'Plazas disponibles',
+                  value: `${siteConfig.program.spots} agricultores`,
+                },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+                  title: 'Inversión',
+                  value: `${siteConfig.program.price}€ o ${siteConfig.program.priceMonthly}€/mes × ${siteConfig.program.months}`,
+                },
+              ].map(item => (
+                <div class="flex gap-4 items-start">
+                  <div class="w-9 h-9 rounded-md bg-[#F0F2EE] flex items-center justify-center shrink-0 text-[#8B1A1A]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} />
+                  </div>
+                  <div>
+                    <p class="text-xs text-[#6B6355] uppercase tracking-wide">{item.title}</p>
+                    <p class="text-[#1E1A15] font-medium">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="pt-8 border-t border-[#DDD8CE]">
+              <p class="text-sm text-[#6B6355] mb-2">¿Prefieres escribirnos directamente?</p>
+              <a href={`mailto:${siteConfig.contact.email}`} class="text-[#8B1A1A] hover:text-[#6B1212] font-medium transition-colors">
+                {siteConfig.contact.email}
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="contact-form bg-white border border-[#DDD8CE] rounded-xl p-8 shadow-sm">
+            <h2 class="font-display text-2xl text-[#1E1A15] mb-6">Solicitar información</h2>
+
+            <form
+              action={siteConfig.contact.formspree}
+              method="POST"
+              id="contact-form"
+              class="space-y-5"
+            >
+              <div>
+                <label for="name" class="block text-sm font-medium text-[#1E1A15] mb-1.5">Nombre y apellidos *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-[#1E1A15] mb-1.5">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder="tu@email.com"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-medium text-[#1E1A15] mb-1.5">Teléfono</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder="+34 600 000 000"
+                />
+              </div>
+
+              <div>
+                <label for="finca" class="block text-sm font-medium text-[#1E1A15] mb-1.5">¿Qué tipo de finca tienes?</label>
+                <input
+                  type="text"
+                  id="finca"
+                  name="finca"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder="Ej: Olivar, 30 ha, Jaén"
+                />
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-[#1E1A15] mb-1.5">¿Qué esperas conseguir?</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm resize-none"
+                  placeholder="Cuéntanos brevemente tu situación actual y qué te ha llevado a interesarte por el programa..."
+                ></textarea>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  class="mt-1 w-4 h-4 accent-[#8B1A1A] cursor-pointer"
+                />
+                <label for="privacy" class="text-xs text-[#6B6355] cursor-pointer leading-relaxed">
+                  He leído y acepto la <a href="/politica-privacidad" class="underline hover:text-[#1E1A15] transition-colors">política de privacidad</a>. Mis datos se usarán únicamente para gestionar esta solicitud.
+                </label>
+              </div>
+
+              <!-- Honeypot -->
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full px-6 py-3.5 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm cursor-pointer"
+              >
+                Enviar solicitud
+              </button>
+
+              <p id="form-success" class="hidden text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md">
+                ¡Recibido! Te contactamos en menos de 48 horas.
+              </p>
+              <p id="form-error" class="hidden text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md">
+                Algo fue mal. Por favor, escríbenos directamente a {siteConfig.contact.email}
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
+    gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
+      .fromTo('.page-eyebrow', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
+      .fromTo('.page-title',   { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.4')
+      .fromTo('.page-subtitle',{ y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.5')
+      .fromTo('.contact-form', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.6');
+  }
+
+  // Form submission
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !form) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.reset();
+        successMsg?.classList.remove('hidden');
+        errorMsg?.classList.add('hidden');
+        submitBtn.textContent = 'Enviado';
+      } else {
+        throw new Error('Error en el servidor');
+      }
+    } catch {
+      errorMsg?.classList.remove('hidden');
+      successMsg?.classList.add('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar solicitud';
+    }
+  });
+</script>

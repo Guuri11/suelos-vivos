@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Cal Sans';
+  src: url('/fonts/CalSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poiret One';
+  src: url('/fonts/PoiretOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Colores */
+  --color-primary: #8B1A1A;
+  --color-primary-dark: #6B1212;
+  --color-primary-light: #A82525;
+  --color-secondary: #6B8F71;
+  --color-accent: #C4622D;
+  --color-bg: #FAFAF7;
+  --color-bg-alt: #F0F2EE;
+  --color-bg-dark: #1E1A15;
+  --color-text: #1E1A15;
+  --color-text-muted: #6B6355;
+  --color-text-inverse: #FAFAF7;
+  --color-border: #DDD8CE;
+
+  /* Tipografía */
+  --font-display: 'Cal Sans', system-ui, sans-serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-accent: 'Poiret One', system-ui, sans-serif;
+
+  /* Espaciado de secciones */
+  --spacing-section: 5rem;
+
+  /* Radios */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 12px 0 rgb(0 0 0 / 0.10);
+  --shadow-lg: 0 8px 24px 0 rgb(0 0 0 / 0.12);
+
+  /* Max width */
+  --max-width: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: 3rem;
+  }
+}
+
+/* Header scroll hide/show */
+.site-header {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.site-header--hidden {
+  transform: translateY(-100%);
+}
