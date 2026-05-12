@@ -3,13 +3,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
 ---
 
 <BaseLayout
-  title="Reservar plaza — Suelos Vivos"
-  description="Reserva tu plaza en el programa Suelos Vivos 2026. Solo 20 plazas. Inicio septiembre 2026 en Tormos, Alicante."
+  title={t(lang, 'contacto.seo.title')}
+  description={t(lang, 'contacto.seo.description')}
 >
-  <Header />
+  <Header lang={lang} />
 
   <main>
     <section class="pt-32 pb-24 bg-[#FAFAF7]">
@@ -176,7 +179,7 @@ import { siteConfig } from '@/config/site';
     </section>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>
 
 <script>

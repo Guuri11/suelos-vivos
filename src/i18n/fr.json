@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "elPrograma": "Le Programme",
+    "quienesSomos": "Qui sommes-nous",
+    "blog": "Blog",
+    "contacto": "Contact",
+    "reservarPlaza": "Réserver une place"
+  },
+  "footer": {
+    "tagline": "Programme annuel de formation en agriculture régénératrice pour les producteurs professionnels.",
+    "proyectoDe": "Un projet de",
+    "navegacion": "Navigation",
+    "contacto": "Contact",
+    "copyright": "Suelos Vivos · Bosque Madre. Tous droits réservés.",
+    "ubicacion": "Tormos, Alicante, Espagne",
+    "links": {
+      "elPrograma": "Le Programme",
+      "quienesSomos": "Qui sommes-nous",
+      "reservarPlaza": "Réserver une place",
+      "avisoLegal": "Mentions légales",
+      "politicaPrivacidad": "Politique de confidentialité"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Suelos Vivos — Programme d'Agriculture Régénératrice 2026",
+      "description": "Programme annuel de formation en biofertilité pour les agriculteurs professionnels. Réduisez vos coûts de 30 à 50 %, restaurez la fertilité de vos sols. Seulement 20 places."
+    }
+  },
+  "elPrograma": {
+    "seo": {
+      "title": "Le Programme — Suelos Vivos",
+      "description": "Trois ateliers en présentiel et 12 mois d'accompagnement en biofertilité et agriculture régénératrice. Programme 2026–2027 à Tormos, Alicante. Seulement 20 places."
+    }
+  },
+  "quienesSomos": {
+    "seo": {
+      "title": "Qui sommes-nous — Suelos Vivos",
+      "description": "Suelos Vivos est le programme de formation de Bosque Madre, un projet d'agriculture régénératrice avec plus de 15 ans d'expérience réelle en Méditerranée."
+    }
+  },
+  "contacto": {
+    "seo": {
+      "title": "Réserver une place — Suelos Vivos",
+      "description": "Réservez votre place dans le programme Suelos Vivos 2026. Seulement 20 places. Début en septembre 2026 à Tormos, Alicante."
+    }
+  },
+  "avisoLegal": {
+    "seo": {
+      "title": "Mentions légales — Suelos Vivos",
+      "description": "Mentions légales et informations juridiques de Suelos Vivos — Bosque Madre."
+    }
+  },
+  "politicaPrivacidad": {
+    "seo": {
+      "title": "Politique de confidentialité — Suelos Vivos",
+      "description": "Politique de confidentialité et protection des données de Suelos Vivos — Bosque Madre."
+    }
+  },
+  "blog": {
+    "seo": {
+      "title": "Blog — Suelos Vivos",
+      "description": "Articles sur l'agriculture régénératrice, la biofertilité et la santé des sols pour les producteurs professionnels."
+    },
+    "header": {
+      "eyebrow": "Apprendre",
+      "title": "Le sol qui donne la vie",
+      "subtitle": "Guides pratiques, études de cas et réflexions sur l'agriculture régénératrice et la biofertilité."
+    },
+    "readMore": "Lire l'article →",
+    "noArticles": "Bientôt disponible...",
+    "empty1": "Nous publierons les premiers articles très prochainement.",
+    "empty2": "En attendant, si vous avez des questions sur le programme, contactez-nous.",
+    "contactCta": "Nous contacter",
+    "topicsTitle": "Sujets que nous aborderons",
+    "topic1": "Comment fonctionne la biofertilité et pourquoi elle transforme votre sol en une saison",
+    "topic2": "Erreurs courantes avec la fertilisation conventionnelle et comment les corriger",
+    "topic3": "Compostage avancé : des déchets organiques à un amendement à haute valeur",
+    "topic4": "Études de cas : vraies fermes, vraies données de coût et de rendement",
+    "topic5": "Comment mesurer la santé du sol sans analyses coûteuses",
+    "detail": {
+      "back": "← Retour au blog",
+      "writtenBy": "Écrit par",
+      "authorName": "L'équipe de Bosque Madre",
+      "authorBio": "Plus de 15 ans d'expérience en agriculture régénératrice en Méditerranée. Nous formons des producteurs professionnels qui souhaitent réduire leurs coûts et restaurer la fertilité de leurs sols.",
+      "ctaTitle": "Vous voulez apprendre sur le terrain, pas seulement sur papier ?",
+      "ctaDesc": "Le programme Suelos Vivos combine des ateliers en présentiel avec 12 mois d'accompagnement réel.",
+      "ctaBtn": "Réserver une place"
+    }
+  }
+}

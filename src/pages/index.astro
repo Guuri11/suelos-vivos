@@ -3,13 +3,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
 ---
 
 <BaseLayout
-  title="Suelos Vivos — Programa de Agricultura Regenerativa 2026"
-  description="Programa anual de formación en biofertilidad para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica. Solo 20 plazas."
+  title={t(lang, 'home.seo.title')}
+  description={t(lang, 'home.seo.description')}
 >
-  <Header />
+  <Header lang={lang} />
 
   <main>
     <!-- HERO -->
@@ -412,7 +415,7 @@ import { siteConfig } from '@/config/site';
     </section>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>
 
 <script>

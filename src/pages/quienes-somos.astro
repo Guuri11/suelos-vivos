@@ -3,13 +3,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
 ---
 
 <BaseLayout
-  title="Quiénes Somos — Suelos Vivos"
-  description="Suelos Vivos es el programa formativo de Bosque Madre, proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo."
+  title={t(lang, 'quienesSomos.seo.title')}
+  description={t(lang, 'quienesSomos.seo.description')}
 >
-  <Header />
+  <Header lang={lang} />
 
   <main>
     <!-- Page header -->
@@ -150,7 +153,7 @@ import { siteConfig } from '@/config/site';
     </section>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>
 
 <script>

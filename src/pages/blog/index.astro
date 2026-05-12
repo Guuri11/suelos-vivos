@@ -1,0 +1,353 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { sanityClient, urlFor } from '@/lib/sanity';
+import { getLang, t, localePath } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
+const lp = (path: string) => localePath(lang, path);
+
+const posts = await sanityClient.fetch(
+  `*[_type == "blogPost"] | order(publishedAt desc) {
+    _id,
+    "title": coalesce(title[$lang], title.es),
+    "slug": slug.current,
+    publishedAt,
+    "excerpt": coalesce(excerpt[$lang], excerpt.es),
+    "coverImage": coverImage
+  }`,
+  { lang },
+);
+
+const dateLocale = lang === 'en' ? 'en-GB' : lang === 'fr' ? 'fr-FR' : 'es-ES';
+---
+
+<BaseLayout
+  title={t(lang, 'blog.seo.title')}
+  description={t(lang, 'blog.seo.description')}
+>
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">{t(lang, 'blog.header.eyebrow')}</span>
+      <h1>{t(lang, 'blog.header.title')}</h1>
+      <p>{t(lang, 'blog.header.subtitle')}</p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="blog-section">
+    <div class="container">
+      {posts.length === 0 ? (
+        <div class="empty-state">
+          <h2 class="empty-state__title">{t(lang, 'blog.noArticles')}</h2>
+          <p>{t(lang, 'blog.empty1')}</p>
+          <p>{t(lang, 'blog.empty2')}</p>
+          <a href={lp('/contacto')} class="btn-primary">
+            {t(lang, 'blog.contactCta')}
+          </a>
+          <div class="blog-topics">
+            <h2>{t(lang, 'blog.topicsTitle')}</h2>
+            <ul>
+              <li>{t(lang, 'blog.topic1')}</li>
+              <li>{t(lang, 'blog.topic2')}</li>
+              <li>{t(lang, 'blog.topic3')}</li>
+              <li>{t(lang, 'blog.topic4')}</li>
+              <li>{t(lang, 'blog.topic5')}</li>
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <div class="posts-grid">
+          {posts.map((post: any, i: number) => (
+            <a href={lp(`/blog/${post.slug}`)} class={`post-card${i === 0 ? ' post-card--featured' : ''}`}>
+              <div class="post-card__image">
+                {post.coverImage ? (
+                  <img
+                    src={urlFor(post.coverImage).width(i === 0 ? 1200 : 600).height(i === 0 ? 500 : 360).fit('crop').url()}
+                    alt={post.title}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    width={i === 0 ? 1200 : 600}
+                    height={i === 0 ? 500 : 360}
+                  />
+                ) : (
+                  <div class="post-card__no-image">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                  </div>
+                )}
+              </div>
+
+              <div class="post-card__body">
+                <time class="post-date" datetime={post.publishedAt}>
+                  {new Date(post.publishedAt).toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <h2 class="post-title">{post.title}</h2>
+                {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
+                <span class="post-cta">{t(lang, 'blog.readMore')}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 9rem 0 3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-text);
+    margin: 0 0 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .blog-section {
+    padding: 3rem 0 6rem;
+  }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .empty-state p {
+    color: var(--color-text-muted);
+  }
+
+  .empty-state__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin: 0 0 1rem;
+  }
+
+  .blog-topics {
+    margin-top: 3rem;
+    text-align: left;
+    max-width: 600px;
+  }
+
+  .blog-topics h2 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin: 0 0 1rem;
+  }
+
+  .blog-topics ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .blog-topics li {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .blog-topics li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  /* Posts grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .post-card--featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .post-card--featured .post-card__image {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .post-card--featured .post-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+  }
+
+  .post-card--featured .post-excerpt {
+    display: block;
+    font-size: 1rem;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .post-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .post-card__image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background-color: var(--color-border);
+  }
+
+  .post-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .post-card:hover .post-card__image img {
+    transform: scale(1.04);
+  }
+
+  .post-card__no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    min-height: 180px;
+  }
+
+  .post-card__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+  }
+
+  .post-date {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .post-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .post-excerpt {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .post-cta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: auto;
+    padding-top: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .post-card:hover .post-cta {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 900px) {
+    .posts-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .post-card--featured {
+      grid-column: 1 / -1;
+      grid-template-columns: 1fr;
+    }
+
+    .post-card--featured .post-card__image {
+      aspect-ratio: 16/9;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

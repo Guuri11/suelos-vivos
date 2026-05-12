@@ -1,12 +1,20 @@
 ---
 import { siteConfig } from '@/config/site';
+import { localePath, t, type Lang } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const lp = (path: string) => localePath(lang, path);
 ---
 
 <header class="site-header fixed top-0 left-0 right-0 z-50 bg-[#FAFAF7]/95 backdrop-blur-sm border-b border-[#DDD8CE]">
   <div class="container">
     <nav class="flex items-center justify-between h-16 md:h-18">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 shrink-0" aria-label="Suelos Vivos — inicio">
+      <a href={lp('/')} class="flex items-center gap-2 shrink-0" aria-label="Suelos Vivos — inicio">
         <img
           src={siteConfig.logo.src}
           alt={siteConfig.logo.alt}
@@ -19,18 +27,19 @@ import { siteConfig } from '@/config/site';
 
       <!-- Nav desktop -->
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-[#1E1A15]">
-        <li><a href="/el-programa" class="hover:text-[#8B1A1A] transition-colors duration-200">El Programa</a></li>
-        <li><a href="/quienes-somos" class="hover:text-[#8B1A1A] transition-colors duration-200">Quiénes Somos</a></li>
-        <li><a href="/contacto" class="hover:text-[#8B1A1A] transition-colors duration-200">Contacto</a></li>
+        <li><a href={lp('/el-programa')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.elPrograma')}</a></li>
+        <li><a href={lp('/quienes-somos')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.quienesSomos')}</a></li>
+        <li><a href={lp('/blog')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.blog')}</a></li>
+        <li><a href={lp('/contacto')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.contacto')}</a></li>
       </ul>
 
       <!-- CTA + hamburger -->
       <div class="flex items-center gap-3">
         <a
-          href="/contacto"
+          href={lp('/contacto')}
           class="hidden md:inline-flex items-center px-4 py-2 bg-[#8B1A1A] text-[#FAFAF7] text-sm font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 cursor-pointer"
         >
-          Reservar plaza
+          {t(lang, 'nav.reservarPlaza')}
         </a>
 
         <!-- Mobile hamburger -->
@@ -54,11 +63,12 @@ import { siteConfig } from '@/config/site';
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-[#DDD8CE] bg-[#FAFAF7]">
     <div class="container py-4 flex flex-col gap-4">
-      <a href="/el-programa" class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">El Programa</a>
-      <a href="/quienes-somos" class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">Quiénes Somos</a>
-      <a href="/contacto" class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">Contacto</a>
-      <a href="/contacto" class="inline-flex justify-center items-center px-4 py-2.5 bg-[#8B1A1A] text-[#FAFAF7] text-sm font-semibold rounded-md hover:bg-[#6B1212] transition-colors cursor-pointer">
-        Reservar plaza
+      <a href={lp('/el-programa')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.elPrograma')}</a>
+      <a href={lp('/quienes-somos')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.quienesSomos')}</a>
+      <a href={lp('/blog')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.blog')}</a>
+      <a href={lp('/contacto')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.contacto')}</a>
+      <a href={lp('/contacto')} class="inline-flex justify-center items-center px-4 py-2.5 bg-[#8B1A1A] text-[#FAFAF7] text-sm font-semibold rounded-md hover:bg-[#6B1212] transition-colors cursor-pointer">
+        {t(lang, 'nav.reservarPlaza')}
       </a>
     </div>
   </div>

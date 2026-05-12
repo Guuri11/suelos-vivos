@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 import { siteConfig } from '@/config/site';
+import { getLang, hreflangLinks, stripLangPrefix } from '@/i18n/utils';
 
 interface Props {
   title: string;
@@ -16,12 +17,16 @@ const {
   noindex = false,
 } = Astro.props;
 
+const lang = getLang(Astro.currentLocale);
+const basePath = stripLangPrefix(Astro.url.pathname);
+const alternates = hreflangLinks(siteConfig.url, basePath);
 const canonical = new URL(Astro.url.pathname, siteConfig.url).href;
 const ogImage = new URL(image, siteConfig.url).href;
+const ogLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_GB' : 'es_ES';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,13 +38,18 @@ const ogImage = new URL(image, siteConfig.url).href;
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
+    <!-- hreflang alternates -->
+    {alternates.map(({ lang: hLang, href }) => (
+      <link rel="alternate" hreflang={hLang} href={href} />
+    ))}
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content={ogLocale} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />

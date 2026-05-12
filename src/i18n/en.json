@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "elPrograma": "The Programme",
+    "quienesSomos": "About Us",
+    "blog": "Blog",
+    "contacto": "Contact",
+    "reservarPlaza": "Reserve your spot"
+  },
+  "footer": {
+    "tagline": "Annual training programme in regenerative agriculture for professional farmers.",
+    "proyectoDe": "A project by",
+    "navegacion": "Navigation",
+    "contacto": "Contact",
+    "copyright": "Suelos Vivos · Bosque Madre. All rights reserved.",
+    "ubicacion": "Tormos, Alicante, Spain",
+    "links": {
+      "elPrograma": "The Programme",
+      "quienesSomos": "About Us",
+      "reservarPlaza": "Reserve your spot",
+      "avisoLegal": "Legal Notice",
+      "politicaPrivacidad": "Privacy Policy"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Suelos Vivos — Regenerative Agriculture Programme 2026",
+      "description": "Annual biofertility training programme for professional farmers. Cut costs by 30–50%, restore soil fertility and gain technical autonomy. Only 20 places."
+    }
+  },
+  "elPrograma": {
+    "seo": {
+      "title": "The Programme — Suelos Vivos",
+      "description": "Three in-person workshops plus 12 months of biofertility and regenerative agriculture coaching. 2026–2027 programme in Tormos, Alicante. Only 20 places."
+    }
+  },
+  "quienesSomos": {
+    "seo": {
+      "title": "About Us — Suelos Vivos",
+      "description": "Suelos Vivos is the training programme of Bosque Madre, a regenerative agriculture project with over 15 years of real experience in the Mediterranean."
+    }
+  },
+  "contacto": {
+    "seo": {
+      "title": "Reserve your spot — Suelos Vivos",
+      "description": "Reserve your place in the Suelos Vivos 2026 programme. Only 20 places. Starting September 2026 in Tormos, Alicante."
+    }
+  },
+  "avisoLegal": {
+    "seo": {
+      "title": "Legal Notice — Suelos Vivos",
+      "description": "Legal notice and legal information for Suelos Vivos — Bosque Madre."
+    }
+  },
+  "politicaPrivacidad": {
+    "seo": {
+      "title": "Privacy Policy — Suelos Vivos",
+      "description": "Privacy policy and data protection information for Suelos Vivos — Bosque Madre."
+    }
+  },
+  "blog": {
+    "seo": {
+      "title": "Blog — Suelos Vivos",
+      "description": "Articles on regenerative agriculture, biofertility and soil health for professional growers."
+    },
+    "header": {
+      "eyebrow": "Learn",
+      "title": "The soil that gives life",
+      "subtitle": "Practical guides, case studies and insights on regenerative agriculture and biofertility."
+    },
+    "readMore": "Read article →",
+    "noArticles": "Coming soon...",
+    "empty1": "We'll be publishing the first articles shortly.",
+    "empty2": "In the meantime, if you have questions about the programme, get in touch.",
+    "contactCta": "Contact us",
+    "topicsTitle": "Topics we'll cover",
+    "topic1": "How biofertility works and why it transforms your soil in one season",
+    "topic2": "Common mistakes with conventional fertilisation and how to fix them",
+    "topic3": "Advanced composting: from organic waste to high-value amendment",
+    "topic4": "Case studies: real farms, real data on cost and yield",
+    "topic5": "How to measure soil health without expensive lab tests",
+    "detail": {
+      "back": "← Back to blog",
+      "writtenBy": "Written by",
+      "authorName": "The Bosque Madre team",
+      "authorBio": "Over 15 years of experience in regenerative agriculture in the Mediterranean. We train professional growers who want to cut costs and restore soil fertility.",
+      "ctaTitle": "Want to learn in the field, not just on paper?",
+      "ctaDesc": "The Suelos Vivos programme combines in-person workshops with 12 months of real coaching.",
+      "ctaBtn": "Reserve your spot"
+    }
+  }
+}

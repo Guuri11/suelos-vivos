@@ -3,13 +3,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
 ---
 
 <BaseLayout
-  title="El Programa — Suelos Vivos"
-  description="Tres talleres presenciales más 12 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
+  title={t(lang, 'elPrograma.seo.title')}
+  description={t(lang, 'elPrograma.seo.description')}
 >
-  <Header />
+  <Header lang={lang} />
 
   <main>
     <!-- Page header -->
@@ -203,7 +206,7 @@ import { siteConfig } from '@/config/site';
     </section>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>
 
 <script>

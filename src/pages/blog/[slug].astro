@@ -1,0 +1,401 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { sanityClient, urlFor } from '@/lib/sanity';
+import { toHTML } from '@portabletext/to-html';
+import { getLang, t, localePath } from '@/i18n/utils';
+
+const { slug } = Astro.params;
+const lang = getLang(Astro.currentLocale);
+
+const post = await sanityClient.fetch(
+  `*[_type == "blogPost" && slug.current == $slug][0] {
+    "title": coalesce(title[$lang], title.es),
+    publishedAt,
+    "excerpt": coalesce(excerpt[$lang], excerpt.es),
+    "seoTitle": coalesce(seoTitle[$lang], seoTitle.es),
+    "seoDescription": coalesce(seoDescription[$lang], seoDescription.es),
+    coverImage,
+    "body": coalesce(body[$lang], body.es)
+  }`,
+  { slug, lang },
+);
+
+if (!post) {
+  return Astro.redirect('/blog', 302);
+}
+
+const lp = (path: string) => localePath(lang, path);
+const dateLocale = lang === 'en' ? 'en-GB' : lang === 'fr' ? 'fr-FR' : 'es-ES';
+
+const pageTitle = post.seoTitle || post.title;
+const pageDescription = post.seoDescription || post.excerpt || '';
+const ogImage = post.coverImage ? urlFor(post.coverImage).width(1200).height(630).fit('crop').url() : undefined;
+
+const bodyHtml = post.body ? toHTML(post.body, {
+  components: {
+    types: {
+      image: ({ value }: any) => {
+        const src = urlFor(value).width(900).url();
+        const alt = value.alt || '';
+        const caption = value.caption || '';
+        return `<figure class="article-image">
+          <img src="${src}" alt="${alt}" loading="lazy" />
+          ${caption ? `<figcaption>${caption}</figcaption>` : ''}
+        </figure>`;
+      },
+    },
+  },
+}) : '';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={ogImage}
+>
+  <article class="article">
+    <!-- Article header -->
+    <header class="article-header">
+      <div class="container container--narrow">
+        <a href={lp('/blog')} class="back-link">{t(lang, 'blog.detail.back')}</a>
+
+        <time class="article-date" datetime={post.publishedAt}>
+          {new Date(post.publishedAt).toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <h1 class="article-title">{post.title}</h1>
+        {post.excerpt && <p class="article-excerpt">{post.excerpt}</p>}
+      </div>
+    </header>
+
+    <!-- Cover image -->
+    {post.coverImage && (
+      <div class="article-cover">
+        <div class="container">
+          <img
+            src={urlFor(post.coverImage).width(1200).height(500).fit('crop').url()}
+            alt={post.title}
+            width="1200"
+            height="500"
+            loading="eager"
+          />
+        </div>
+      </div>
+    )}
+
+    <!-- Body -->
+    <div class="article-body">
+      <div class="container container--narrow">
+        <div class="prose" set:html={bodyHtml} />
+      </div>
+    </div>
+
+    <!-- Author bio -->
+    <div class="author-section">
+      <div class="container container--narrow">
+        <div class="author-card">
+          <div class="author-avatar" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="author-info">
+            <p class="author-label">{t(lang, 'blog.detail.writtenBy')}</p>
+            <p class="author-name">{t(lang, 'blog.detail.authorName')}</p>
+            <p class="author-bio">{t(lang, 'blog.detail.authorBio')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer CTA -->
+    <footer class="article-footer">
+      <div class="container container--narrow">
+        <div class="cta-box">
+          <span class="green-line"></span>
+          <h2>{t(lang, 'blog.detail.ctaTitle')}</h2>
+          <p>{t(lang, 'blog.detail.ctaDesc')}</p>
+          <a href={lp('/contacto')} class="btn-primary">
+            {t(lang, 'blog.detail.ctaBtn')}
+          </a>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    padding-bottom: 5rem;
+  }
+
+  .article-header {
+    padding: 9rem 0 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .container--narrow {
+    max-width: 720px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-primary);
+  }
+
+  .article-date {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .article-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--color-text);
+    margin: 0 0 1rem;
+    line-height: 1.15;
+  }
+
+  .article-excerpt {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .article-cover {
+    padding: 2.5rem 0;
+  }
+
+  .article-cover img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
+  }
+
+  .article-body {
+    padding: 2.5rem 0;
+  }
+
+  /* Prose */
+  .prose {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .prose :global(p) {
+    margin: 0 0 1.5em;
+    color: var(--color-text-muted);
+  }
+
+  .prose :global(h2) {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--color-text);
+    margin: 2.5em 0 0.75em;
+    line-height: 1.2;
+  }
+
+  .prose :global(h3) {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin: 2em 0 0.5em;
+  }
+
+  .prose :global(h4) {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 1.5em 0 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin: 0 0 1.5em 1.5rem;
+    color: var(--color-text-muted);
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.4em;
+  }
+
+  .prose :global(strong) {
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .prose :global(em) {
+    font-style: italic;
+  }
+
+  .prose :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose :global(a:hover) {
+    color: var(--color-primary-dark);
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 1.5rem;
+    margin: 2em 0;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .prose :global(.article-image) {
+    margin: 2em 0;
+  }
+
+  .prose :global(.article-image img) {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .prose :global(.article-image figcaption) {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Author */
+  .author-section {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .author-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.75rem;
+  }
+
+  .author-avatar {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .author-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+
+  .author-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .author-bio {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin: 0.25rem 0 0;
+  }
+
+  /* Article footer CTA */
+  .article-footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: 2rem;
+  }
+
+  .cta-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .green-line {
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+  }
+
+  .cta-box h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .cta-box p {
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-text-inverse);
+    background-color: var(--color-primary);
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+  }
+</style>

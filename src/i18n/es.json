@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "elPrograma": "El Programa",
+    "quienesSomos": "Quiénes Somos",
+    "blog": "Blog",
+    "contacto": "Contacto",
+    "reservarPlaza": "Reservar plaza"
+  },
+  "footer": {
+    "tagline": "Programa anual de formación en agricultura regenerativa para productores profesionales.",
+    "proyectoDe": "Un proyecto de",
+    "navegacion": "Navegación",
+    "contacto": "Contacto",
+    "copyright": "Suelos Vivos · Bosque Madre. Todos los derechos reservados.",
+    "ubicacion": "Tormos, Alicante, España",
+    "links": {
+      "elPrograma": "El Programa",
+      "quienesSomos": "Quiénes Somos",
+      "reservarPlaza": "Reservar plaza",
+      "avisoLegal": "Aviso Legal",
+      "politicaPrivacidad": "Política de Privacidad"
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Suelos Vivos — Programa de Agricultura Regenerativa 2026",
+      "description": "Programa anual de formación en biofertilidad para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica. Solo 20 plazas."
+    }
+  },
+  "elPrograma": {
+    "seo": {
+      "title": "El Programa — Suelos Vivos",
+      "description": "Tres talleres presenciales más 12 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
+    }
+  },
+  "quienesSomos": {
+    "seo": {
+      "title": "Quiénes Somos — Suelos Vivos",
+      "description": "Suelos Vivos es el programa formativo de Bosque Madre, proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo."
+    }
+  },
+  "contacto": {
+    "seo": {
+      "title": "Reservar plaza — Suelos Vivos",
+      "description": "Reserva tu plaza en el programa Suelos Vivos 2026. Solo 20 plazas. Inicio septiembre 2026 en Tormos, Alicante."
+    }
+  },
+  "avisoLegal": {
+    "seo": {
+      "title": "Aviso Legal — Suelos Vivos",
+      "description": "Aviso legal e información legal de Suelos Vivos — Bosque Madre."
+    }
+  },
+  "politicaPrivacidad": {
+    "seo": {
+      "title": "Política de Privacidad — Suelos Vivos",
+      "description": "Política de privacidad y protección de datos de Suelos Vivos — Bosque Madre."
+    }
+  },
+  "blog": {
+    "seo": {
+      "title": "Blog — Suelos Vivos",
+      "description": "Artículos sobre agricultura regenerativa, biofertilidad y salud del suelo para productores profesionales."
+    },
+    "header": {
+      "eyebrow": "Aprende",
+      "title": "El suelo que da vida",
+      "subtitle": "Guías prácticas, estudios de caso y reflexiones sobre agricultura regenerativa y biofertilidad."
+    },
+    "readMore": "Leer artículo →",
+    "noArticles": "Próximamente...",
+    "empty1": "Pronto publicaremos los primeros artículos.",
+    "empty2": "Mientras tanto, si tienes preguntas sobre el programa, escríbenos.",
+    "contactCta": "Contactar",
+    "topicsTitle": "Temas que trataremos",
+    "topic1": "Cómo funciona la biofertilidad y por qué cambia tu suelo en una temporada",
+    "topic2": "Errores comunes con el abonado convencional y cómo corregirlos",
+    "topic3": "Compostaje avanzado: de residuo orgánico a enmienda de alto valor",
+    "topic4": "Estudios de caso: fincas reales, datos reales de coste y rendimiento",
+    "topic5": "Cómo medir la salud del suelo sin laboratorio caro",
+    "detail": {
+      "back": "← Volver al blog",
+      "writtenBy": "Escrito por",
+      "authorName": "El equipo de Bosque Madre",
+      "authorBio": "Más de 15 años de experiencia en agricultura regenerativa en el Mediterráneo. Formamos a productores profesionales que quieren reducir costes y recuperar la fertilidad de su suelo.",
+      "ctaTitle": "¿Quieres aprender en el campo, no solo en papel?",
+      "ctaDesc": "El programa Suelos Vivos combina talleres presenciales con 12 meses de acompañamiento real.",
+      "ctaBtn": "Reservar plaza"
+    }
+  }
+}

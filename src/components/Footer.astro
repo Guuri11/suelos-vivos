@@ -1,5 +1,13 @@
 ---
 import { siteConfig } from '@/config/site';
+import { localePath, t, type Lang } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const lp = (path: string) => localePath(lang, path);
 ---
 
 <footer class="bg-[#1E1A15] text-[#FAFAF7]">
@@ -9,28 +17,28 @@ import { siteConfig } from '@/config/site';
       <div>
         <img src={siteConfig.logo.src} alt={siteConfig.logo.alt} class="h-10 w-auto brightness-0 invert mb-4" />
         <p class="text-sm text-[#FAFAF7]/60 leading-relaxed max-w-xs">
-          Programa anual de formación en agricultura regenerativa para productores profesionales.
+          {t(lang, 'footer.tagline')}
         </p>
         <p class="text-xs text-[#FAFAF7]/40 mt-4">
-          Un proyecto de <a href={siteConfig.bosqueMadre.url} class="underline hover:text-[#FAFAF7]/70 transition-colors" target="_blank" rel="noopener">{siteConfig.bosqueMadre.name}</a>
+          {t(lang, 'footer.proyectoDe')} <a href={siteConfig.bosqueMadre.url} class="underline hover:text-[#FAFAF7]/70 transition-colors" target="_blank" rel="noopener">{siteConfig.bosqueMadre.name}</a>
         </p>
       </div>
 
       <!-- Links -->
       <div>
-        <h3 class="text-xs font-semibold uppercase tracking-widest text-[#FAFAF7]/40 mb-4">Navegación</h3>
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-[#FAFAF7]/40 mb-4">{t(lang, 'footer.navegacion')}</h3>
         <ul class="flex flex-col gap-2 text-sm text-[#FAFAF7]/70">
-          <li><a href="/el-programa" class="hover:text-[#FAFAF7] transition-colors">El Programa</a></li>
-          <li><a href="/quienes-somos" class="hover:text-[#FAFAF7] transition-colors">Quiénes Somos</a></li>
-          <li><a href="/contacto" class="hover:text-[#FAFAF7] transition-colors">Reservar plaza</a></li>
-          <li><a href="/aviso-legal" class="hover:text-[#FAFAF7] transition-colors">Aviso Legal</a></li>
-          <li><a href="/politica-privacidad" class="hover:text-[#FAFAF7] transition-colors">Política de Privacidad</a></li>
+          <li><a href={lp('/el-programa')} class="hover:text-[#FAFAF7] transition-colors">{t(lang, 'footer.links.elPrograma')}</a></li>
+          <li><a href={lp('/quienes-somos')} class="hover:text-[#FAFAF7] transition-colors">{t(lang, 'footer.links.quienesSomos')}</a></li>
+          <li><a href={lp('/contacto')} class="hover:text-[#FAFAF7] transition-colors">{t(lang, 'footer.links.reservarPlaza')}</a></li>
+          <li><a href={lp('/aviso-legal')} class="hover:text-[#FAFAF7] transition-colors">{t(lang, 'footer.links.avisoLegal')}</a></li>
+          <li><a href={lp('/politica-privacidad')} class="hover:text-[#FAFAF7] transition-colors">{t(lang, 'footer.links.politicaPrivacidad')}</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h3 class="text-xs font-semibold uppercase tracking-widest text-[#FAFAF7]/40 mb-4">Contacto</h3>
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-[#FAFAF7]/40 mb-4">{t(lang, 'footer.contacto')}</h3>
         <div class="flex flex-col gap-2 text-sm text-[#FAFAF7]/70">
           <a href={`mailto:${siteConfig.contact.email}`} class="hover:text-[#FAFAF7] transition-colors">{siteConfig.contact.email}</a>
           <p>{siteConfig.contact.address}</p>
@@ -51,8 +59,8 @@ import { siteConfig } from '@/config/site';
     </div>
 
     <div class="border-t border-[#FAFAF7]/10 mt-12 pt-8 flex flex-col md:flex-row justify-between gap-4 text-xs text-[#FAFAF7]/40">
-      <p>© {new Date().getFullYear()} Suelos Vivos · Bosque Madre. Todos los derechos reservados.</p>
-      <p>Tormos, Alicante, España</p>
+      <p>© {new Date().getFullYear()} {t(lang, 'footer.copyright')}</p>
+      <p>{t(lang, 'footer.ubicacion')}</p>
     </div>
   </div>
 </footer>

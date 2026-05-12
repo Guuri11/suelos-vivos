@@ -3,14 +3,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
 ---
 
 <BaseLayout
-  title="Política de Privacidad — Suelos Vivos"
-  description="Política de privacidad y protección de datos de Suelos Vivos — Bosque Madre."
+  title={t(lang, 'politicaPrivacidad.seo.title')}
+  description={t(lang, 'politicaPrivacidad.seo.description')}
   noindex={true}
 >
-  <Header />
+  <Header lang={lang} />
 
   <main class="pt-32 pb-24">
     <div class="container max-w-3xl">
@@ -75,5 +78,5 @@ import { siteConfig } from '@/config/site';
     </div>
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>
