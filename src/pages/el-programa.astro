@@ -38,8 +38,11 @@ type MentoringItem = { title: string; desc: string };
             class="w-full aspect-video object-cover"
             poster="/videos/programa-presentacion-poster.jpg"
             controls
-            preload="none"
+            autoplay
+            muted
+            loop
             playsinline
+            preload="metadata"
           >
             <source src="/videos/programa-presentacion.mp4" type="video/mp4" />
           </video>
