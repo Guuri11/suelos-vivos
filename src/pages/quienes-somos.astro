@@ -18,12 +18,10 @@ const lang = getLang(Astro.currentLocale);
     <!-- Page header -->
     <section class="pt-32 pb-16 bg-[#F0F2EE]">
       <div class="container max-w-3xl">
-        <p class="page-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">Quiénes somos</p>
-        <h1 class="page-title font-display text-4xl md:text-6xl text-[#1E1A15] leading-[1.05] mb-6">
-          Nacimos del campo.<br />No del despacho.
-        </h1>
+        <p class="page-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">{t(lang, 'quienesSomos.hero.eyebrow')}</p>
+        <h1 class="page-title font-display text-4xl md:text-6xl text-[#1E1A15] leading-[1.05] mb-6" set:html={t(lang, 'quienesSomos.hero.title')} />
         <p class="page-subtitle text-[#6B6355] text-xl leading-relaxed">
-          Bosque Madre es un proyecto de agricultura regenerativa con más de 15 años de práctica real en el Mediterráneo. Suelos Vivos es nuestra manera de transmitir lo que hemos aprendido.
+          {t(lang, 'quienesSomos.hero.subtitle')}
         </p>
       </div>
     </section>
@@ -34,21 +32,12 @@ const lang = getLang(Astro.currentLocale);
         <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
           <div>
             <h2 class="story-title font-display text-3xl md:text-4xl text-[#1E1A15] mb-8 leading-tight">
-              Más de 15 años transformando suelos en el Mediterráneo
+              {t(lang, 'quienesSomos.story.title')}
             </h2>
             <div class="space-y-5 text-[#6B6355] leading-relaxed story-text">
-              <p>
-                <strong class="text-[#1E1A15]">Bosque Madre</strong> nació de una pregunta simple: ¿es posible producir alimentos de calidad, reducir costes y mejorar el suelo al mismo tiempo?
-              </p>
-              <p>
-                La respuesta, después de años de experimentación en nuestra finca de Tormos (Alicante), es sí. Pero requiere cambiar la manera de entender el suelo: no como un soporte inerte al que añadir nutrientes, sino como un ecosistema vivo que, cuando funciona bien, fertiliza, protege y sostiene el cultivo.
-              </p>
-              <p>
-                Llevamos más de 15 años practicando, documentando y enseñando estas técnicas. Lo que empezó como una búsqueda personal se convirtió en un referente del movimiento regenerativo en España y el sur de Europa.
-              </p>
-              <p>
-                Suelos Vivos es el destilado de todo ese aprendizaje: un programa diseñado para que agricultores profesionales puedan hacer el mismo camino con acompañamiento real.
-              </p>
+              {(t(lang, 'quienesSomos.story.paragraphs') as string[]).map(p => (
+                <p set:html={p} />
+              ))}
             </div>
           </div>
           <div class="relative">
@@ -63,22 +52,9 @@ const lang = getLang(Astro.currentLocale);
 
         <!-- Valores -->
         <div class="values-section mb-24">
-          <h2 class="font-display text-3xl text-[#1E1A15] mb-12 text-center">Lo que nos guía</h2>
+          <h2 class="font-display text-3xl text-[#1E1A15] mb-12 text-center">{t(lang, 'quienesSomos.values.title')}</h2>
           <div class="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Práctica sobre teoría',
-                desc: 'Todo lo que enseñamos lo hemos hecho con nuestras manos. No damos conferencias sobre lo que está en los libros; compartimos lo que funciona en el campo.',
-              },
-              {
-                title: 'Autonomía como meta',
-                desc: 'El objetivo no es que dependas de nosotros. Es que termines el programa con las herramientas, el conocimiento y la confianza para seguir solo.',
-              },
-              {
-                title: 'El suelo como maestro',
-                desc: 'Observar, escuchar y leer el suelo antes de intervenir. La naturaleza lleva millones de años resolviendo problemas; nuestra labor es entenderla.',
-              },
-            ].map(v => (
+            {(t(lang, 'quienesSomos.values.items') as {title: string; desc: string}[]).map(v => (
               <div class="value-card p-8 bg-[#F0F2EE] rounded-lg border border-[#DDD8CE]">
                 <h3 class="font-semibold text-[#1E1A15] mb-3">{v.title}</h3>
                 <p class="text-sm text-[#6B6355] leading-relaxed">{v.desc}</p>
@@ -96,32 +72,32 @@ const lang = getLang(Astro.currentLocale);
             <img src="/images/suelo.jpg" alt="Suelo con vida" class="rounded-lg w-full aspect-square object-cover mt-6" loading="lazy" />
           </div>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">El lugar</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">{t(lang, 'quienesSomos.location.eyebrow')}</p>
             <h2 class="font-display text-3xl text-[#1E1A15] mb-6 leading-tight">
-              Tormos, Alicante. El aula es el campo.
+              {t(lang, 'quienesSomos.location.title')}
             </h2>
             <p class="text-[#6B6355] leading-relaxed mb-4">
-              La finca de Bosque Madre en Tormos, en el interior de Alicante, es donde se desarrollan los talleres presenciales. Un entorno mediterráneo real: clima seco, suelos calcáreos y cultivos como el olivo, el algarrobo, los cítricos y la huerta.
+              {t(lang, 'quienesSomos.location.desc1')}
             </p>
             <p class="text-[#6B6355] leading-relaxed mb-6">
-              No es un espacio experimental creado para el programa. Es una explotación agrícola en activo, donde cada técnica se aplica con consecuencias reales. Eso hace que el aprendizaje sea diferente.
+              {t(lang, 'quienesSomos.location.desc2')}
             </p>
             <div class="flex items-center gap-2 text-[#6B6355] text-sm">
               <svg class="w-4 h-4 text-[#8B1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
-              Tormos, Alicante, España
+              {t(lang, 'quienesSomos.location.place')}
             </div>
           </div>
         </div>
 
         <!-- Bosque Madre link -->
         <div class="bg-[#1E1A15] text-[#FAFAF7] rounded-xl p-10 text-center">
-          <p class="text-xs font-semibold uppercase tracking-wider text-[#C4622D] mb-3">Un proyecto de</p>
-          <h2 class="font-display text-3xl mb-4">Bosque Madre</h2>
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#C4622D] mb-3">{t(lang, 'quienesSomos.bosqueMadre.eyebrow')}</p>
+          <h2 class="font-display text-3xl mb-4">{t(lang, 'quienesSomos.bosqueMadre.title')}</h2>
           <p class="text-[#FAFAF7]/70 max-w-lg mx-auto mb-8 leading-relaxed">
-            Más de 15 años de agricultura regenerativa, formación y divulgación en el Mediterráneo. Conoce el proyecto madre que da vida a Suelos Vivos.
+            {t(lang, 'quienesSomos.bosqueMadre.desc')}
           </p>
           <a
             href={siteConfig.bosqueMadre.url}
@@ -129,7 +105,7 @@ const lang = getLang(Astro.currentLocale);
             rel="noopener"
             class="inline-flex items-center gap-2 px-6 py-3 border border-[#FAFAF7]/30 text-[#FAFAF7] rounded-md hover:border-[#FAFAF7]/60 hover:bg-[#FAFAF7]/10 transition-colors duration-200 text-sm font-medium"
           >
-            Visitar Bosque Madre
+            {t(lang, 'quienesSomos.bosqueMadre.linkText')}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
             </svg>
@@ -141,13 +117,13 @@ const lang = getLang(Astro.currentLocale);
     <!-- CTA -->
     <section class="py-16 bg-[#F0F2EE] border-t border-[#DDD8CE]">
       <div class="container text-center">
-        <h2 class="font-display text-3xl text-[#1E1A15] mb-4">¿Te identificas con lo que hacemos?</h2>
-        <p class="text-[#6B6355] mb-8">El programa empieza en {siteConfig.program.startDate}. Plazas limitadas a {siteConfig.program.spots} agricultores.</p>
+        <h2 class="font-display text-3xl text-[#1E1A15] mb-4">{t(lang, 'quienesSomos.cta.title')}</h2>
+        <p class="text-[#6B6355] mb-8">{t(lang, 'quienesSomos.cta.startPrefix')} {siteConfig.program.startDate}. {t(lang, 'quienesSomos.cta.spotsPrefix')} {siteConfig.program.spots} {t(lang, 'quienesSomos.cta.spotsPostfix')}</p>
         <a
           href="/contacto"
           class="inline-flex items-center px-8 py-4 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 text-base"
         >
-          Reservar plaza
+          {t(lang, 'quienesSomos.cta.btn')}
         </a>
       </div>
     </section>

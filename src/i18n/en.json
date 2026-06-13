@@ -1,6 +1,7 @@
 {
   "nav": {
     "elPrograma": "The Programme",
+    "servicios": "Services",
     "quienesSomos": "About Us",
     "blog": "Blog",
     "contacto": "Contact",
@@ -25,24 +26,440 @@
     "seo": {
       "title": "Suelos Vivos — Regenerative Agriculture Programme 2026",
       "description": "Annual biofertility training programme for professional farmers. Cut costs by 30–50%, restore soil fertility and gain technical autonomy. Only 20 places."
+    },
+    "hero": {
+      "eyebrow": "Agriculture with a future",
+      "title": "We regenerate the life of the soil, the true engine of agriculture.",
+      "subtitle": "Suelos Vivos is a project dedicated to spreading, raising awareness of, and promoting profitable farming practices that are autonomous and in harmony with nature.",
+      "ctaPrograma": "Training programme",
+      "ctaAsesoria": "Professional advisory",
+      "imgAlt": "Farmers in the field at dusk",
+      "stats": [
+        { "value": "3", "label": "In-person workshops" },
+        { "value": "10", "label": "Months of coaching" },
+        { "value": "20", "label": "Available spots" }
+      ]
+    },
+    "problem": {
+      "eyebrow": "The diagnosis",
+      "title": "The vicious cycle of the modern farmer",
+      "subtitle": "The more you fertilise synthetically, the more dependent you become. Soils lose their microbial life, plants weaken and your costs keep rising. There's another way.",
+      "items": [
+        { "title": "Costs that keep rising", "desc": "Fertilisers, pesticides, tillage… more expensive every year, with shrinking margins." },
+        { "title": "Increasingly inert soils", "desc": "Intensive mechanisation and herbicides destroy the microbial fauna that makes the land fertile." },
+        { "title": "Dependence on external inputs", "desc": "Every season relying on suppliers, global prices and supply chains you don't control." },
+        { "title": "Uncertainty in the face of climate", "desc": "Droughts, resistant pests, irregular seasons… without soil resilience, every event becomes a crisis." }
+      ],
+      "quote": "Fertility cannot be bought. It must be cultivated, understood and returned to the soil.",
+      "quoteAuthor": "Carles Pons — Founder of Bosque Madre"
+    },
+    "ecosystem": {
+      "eyebrow": "Our mission",
+      "title": "More than education: an ecosystem of change.",
+      "intro": "Suelos Vivos is born to be the meeting point of the agroecological transition through three pillars:",
+      "items": [
+        {
+          "title": "Trust and cooperation hub",
+          "desc": "An active community of farmers and projects sharing real-world experiences on the ground."
+        },
+        {
+          "title": "Continuous learning platform",
+          "desc": "In-person courses, future online academy (Q1 2027) and publication of technical materials and books."
+        },
+        {
+          "title": "Pipeline projects",
+          "desc": "Community biofactories, cooperation networks and alliances with rural territories in agroecological transition."
+        }
+      ]
+    },
+    "workshops": {
+      "eyebrow": "TRAINING PROGRAMME FIBE26",
+      "title": "Stop buying fertility. Learn to produce it.",
+      "subtitle": "Suelos Vivos delivers immersive training in biofertility and regenerative agriculture for professional producers who want to reduce costs, restore soil and gain technical autonomy.",
+      "items": [
+        {
+          "label": "IN-PERSON HOURS",
+          "value": "+50",
+          "title": "Immersive training",
+          "desc": "Step onto the ground, touch the raw materials and let smell and taste guide your learning. Being physically present lets you pick up nuances that digital cannot reach, transforming theory into an unforgettable sensory memory."
+        },
+        {
+          "label": "DAYS OF SUPPORT",
+          "value": "+300",
+          "title": "Accompaniment period",
+          "desc": "Access digital tracking tools for over 300 days to measure your progress in real time and ensure you stay on track after each workshop."
+        },
+        {
+          "label": "AVAILABLE SPOTS",
+          "value": "20",
+          "title": "Personalised training",
+          "desc": "Individual attention — enjoy mentoring tailored to your specific case and learn from the experiences of the rest of the group."
+        }
+      ],
+      "companionPre": "Plus ",
+      "companionPost": " months of monthly online coaching between workshops · Access to private group · Resource library"
+    },
+    "audience": {
+      "eyebrow": "Who it's for",
+      "title": "For the farmer who already knows something doesn't add up",
+      "items": [
+        "Professional producer with an active farm (horticultural, fruit, olive, vineyard, cereal…)",
+        "Fed up with input dependency and wanting to cut costs for real",
+        "Eager to learn and apply — not just listen to theory",
+        "Willing to invest time and resources throughout the programme year",
+        "Looking for real technical support, not just another online course"
+      ],
+      "imgAlt": "Hands-on biofertility workshop",
+      "statsLabel1": "Average cost reduction of",
+      "statsValue": "30–50%",
+      "statsLabel2": "after the first year of application"
+    },
+    "gallery": {
+      "imgAlt": "Suelos Vivos — programme in action"
+    },
+    "benefits": {
+      "eyebrow": "What you gain",
+      "title": "Begin a realistic transition towards a more natural and sustainable fertility",
+      "items": [
+        { "title": "Improve your technical autonomy", "desc": "Acquire the knowledge and tools to reduce your dependence on synthetic solutions." },
+        { "title": "Enjoy professional support", "desc": "Hire the services that complement your training only when you really need them." },
+        { "title": "Achieve more resilient soils", "desc": "Get more stable harvests, healthier plants, and greater long-term resistance to pests and droughts." },
+        { "title": "Reduce economic costs", "desc": "The living soil works for you using fewer fertilisers, lowering phytosanitary spending and moderating investment in tillage." }
+      ]
+    },
+    "about": {
+      "eyebrow": "Who we are",
+      "title": "A project born in the field, not the laboratory",
+      "p1": "Suelos Vivos is the training programme of <strong class=\"text-[#1E1A15]\">Bosque Madre</strong>, a regenerative agriculture project with over 15 years of real experience in the Mediterranean.",
+      "p2": "We don't teach from academia. We teach from daily practice: what works, what fails and what truly transforms a conventional farm into an autonomous regenerative system.",
+      "p3": "Our farm in Tormos (Alicante) is the classroom. The laboratory is the living soil.",
+      "link": "Meet the team",
+      "imgAlt": "Carles Casanova — Founder of Bosque Madre"
+    },
+    "services": {
+      "eyebrow": "PROFESSIONAL ADVISORY SERVICE",
+      "title": "Add technical biofertility support, only when you need it!",
+      "subtitle": "Suelos Vivos provides advisory and technical diagnostic services on soil health, design of transformation and regenerative soil management plans, as well as the development of biofertility formulas and techniques.",
+      "subtitle2": "Professional service aimed at farmers, cooperatives, agricultural companies and rural land managers interested in achieving a more alive, autonomous and resilient fertility for their soils.",
+      "items": [
+        { "title": "Regeneration protocol", "desc": "Personalised diagnosis and roadmap to recover the microbial life and fertility of your farm." },
+        { "title": "Input reduction plan", "desc": "Progressive strategy to reduce fertilisers and pesticides without compromising production." },
+        { "title": "Integral farm design", "desc": "Complete agroecological planning: rotations, cover crops, water management and diversification." },
+        { "title": "Biological waste management", "desc": "Transform stubble, slurry and plant residues into high-value biological resources for your soil." },
+        { "title": "Biofactory installation", "desc": "Design and installation of bioinput self-production systems (inoculants, compost, broths) on your farm." }
+      ],
+      "cta": "Professional advisory"
+    },
+    "pricing": {
+      "eyebrow": "Investment",
+      "title": "Full programme 2026–2027",
+      "subtitle": "An investment that pays for itself in the first season through input cost savings.",
+      "payOnce": "Single payment",
+      "payMonthly": "Instalment plan",
+      "or": "or",
+      "perMonth": "/month",
+      "monthsLabel": "months",
+      "reservaWith": "Reserve with",
+      "includes": [
+        "3 in-person workshops (full weekend)",
+        "10 months of monthly online coaching",
+        "Access to participants' private group",
+        "Resource and protocol library",
+        "Soil analysis of your farm included",
+        "Materials and inputs for the practical sessions",
+        "Visit to Bosque Madre's farm",
+        "Training certificate upon completion"
+      ],
+      "ctaPre": "Reserve your spot — Only ",
+      "ctaPost": " spots",
+      "startPrefix": "Start",
+      "doubts": "Have questions? Write to us at"
     }
   },
   "elPrograma": {
     "seo": {
       "title": "The Programme — Suelos Vivos",
-      "description": "Three in-person workshops plus 12 months of biofertility and regenerative agriculture coaching. 2026–2027 programme in Tormos, Alicante. Only 20 places."
+      "description": "Three in-person workshops plus 10 months of biofertility and regenerative agriculture coaching. 2026–2027 programme in Tormos, Alicante. Only 20 places."
+    },
+    "hero": {
+      "eyebrow": "The programme",
+      "title": "Three workshops.<br />Ten months.<br />A different soil.",
+      "subtitle": "Suelos Vivos is an annual training programme designed for professional farmers who want to understand the biology of their soil and apply biofertility techniques on their own farm."
+    },
+    "overview": {
+      "items": [
+        { "value": "3", "label": "In-person workshops", "desc": "Full weekends in Tormos (Alicante). Theory + real field practice with materials included." },
+        { "value": "12", "label": "Months of coaching", "desc": "Monthly online sessions between workshops. Questions answered, plan adjusted, personalised follow-up." },
+        { "value": "20", "label": "Places per edition", "desc": "Small groups to ensure personalised attention and peer learning. No waiting list." }
+      ]
+    },
+    "workshops": {
+      "topicsLabel": "Topics",
+      "items": [
+        {
+          "number": "01",
+          "date": "September 2026",
+          "title": "Living soil: diagnosis and foundations",
+          "desc": "The first workshop lays the groundwork. You will learn to understand the soil as a living ecosystem, identify its health indicators and diagnose the state of your farm before intervening.",
+          "imgAlt": "Workshop 1 — Living soil",
+          "topics": [
+            "Soil biology: fungi, bacteria, soil fauna and their roles",
+            "Nutrient cycles mediated by microorganisms",
+            "How to read a soil analysis (and what it doesn't tell you)",
+            "Visual and sensory indicators of soil health",
+            "Practical field diagnosis: your soil has a history",
+            "Introduction to applied regenerative principles"
+          ]
+        },
+        {
+          "number": "02",
+          "date": "October 2026",
+          "title": "Biofertility in practice",
+          "desc": "The second workshop is the most hands-on. Together we will produce the main bioinputs: inoculants, broths and activated compost. All using accessible materials reproducible on your farm.",
+          "imgAlt": "Workshop 2 — Biofertility in practice",
+          "topics": [
+            "Microbial inoculants: production and application",
+            "Advanced composting with biological activators",
+            "Mineral broths and natural biostimulants",
+            "Foliar and soil biofertilisation: when and how",
+            "Techniques for capturing and multiplying local microorganisms",
+            "Protocols adapted to different crops and climates"
+          ]
+        },
+        {
+          "number": "03",
+          "date": "January 2027",
+          "title": "Autonomy and plan design",
+          "desc": "The third workshop closes the cycle. You will design your own biofertility plan for the next 3 years, evaluate the first year's results and map the route to technical autonomy.",
+          "imgAlt": "Workshop 3 — Plan and autonomy",
+          "topics": [
+            "Evaluating results: how to measure soil improvement",
+            "Designing rotations and regenerative cover crops",
+            "Personalised biofertility plan for your farm",
+            "Long-term water and organic matter management",
+            "Cost calculation and real economic impact",
+            "Roadmap: the next 3 years on your farm"
+          ]
+        }
+      ]
+    },
+    "mentoring": {
+      "title": "Between workshops: monthly coaching",
+      "items": [
+        { "title": "Monthly online sessions", "desc": "One hour each month to review progress, resolve technical questions and adjust the plan to what is happening on your farm." },
+        { "title": "Private participant group", "desc": "A direct channel between all participants. To share results, experiences and mutual support among farmers." },
+        { "title": "Resource library", "desc": "Protocols, technical sheets, videos and selected bibliography. Fully accessible during and after the programme." }
+      ]
+    },
+    "cta": {
+      "title": "Ready to transform your farm?",
+      "startPrefix": "Starting",
+      "spotsPrefix": "· Only",
+      "spotsPostfix": "places ·",
+      "btn": "Reserve your spot —",
+      "btnSuffix": "€",
+      "fractionedPrefix": "Or split into",
+      "fractionedMid": "payments of",
+      "fractionedSuffix": "€/month"
     }
   },
   "quienesSomos": {
     "seo": {
       "title": "About Us — Suelos Vivos",
       "description": "Suelos Vivos is the training programme of Bosque Madre, a regenerative agriculture project with over 15 years of real experience in the Mediterranean."
+    },
+    "hero": {
+      "eyebrow": "About us",
+      "title": "Born from the field.<br />Not the office.",
+      "subtitle": "Bosque Madre is a regenerative agriculture project with over 15 years of real practice in the Mediterranean. Suelos Vivos is our way of sharing what we have learned."
+    },
+    "story": {
+      "title": "Over 15 years transforming soils in the Mediterranean",
+      "paragraphs": [
+        "<strong>Bosque Madre</strong> was born from a simple question: is it possible to produce quality food, reduce costs and improve the soil at the same time?",
+        "The answer, after years of experimentation on our farm in Tormos (Alicante), is yes. But it requires changing the way we understand soil: not as an inert support to which nutrients are added, but as a living ecosystem that, when it works well, fertilises, protects and sustains the crop.",
+        "We have been practising, documenting and teaching these techniques for over 15 years. What started as a personal search became a reference point for the regenerative movement in Spain and southern Europe.",
+        "Suelos Vivos is the distillation of all that learning: a programme designed so that professional farmers can follow the same path with real support."
+      ]
+    },
+    "values": {
+      "title": "What guides us",
+      "items": [
+        {
+          "title": "Practice over theory",
+          "desc": "Everything we teach we have done with our own hands. We don't lecture about what's in books; we share what works in the field."
+        },
+        {
+          "title": "Autonomy as the goal",
+          "desc": "The goal is not for you to depend on us. It's for you to finish the programme with the tools, knowledge and confidence to continue on your own."
+        },
+        {
+          "title": "The soil as teacher",
+          "desc": "Observe, listen and read the soil before intervening. Nature has been solving problems for millions of years; our job is to understand it."
+        }
+      ]
+    },
+    "location": {
+      "eyebrow": "The place",
+      "title": "Tormos, Alicante. The classroom is the field.",
+      "desc1": "The Bosque Madre farm in Tormos, in the interior of Alicante, is where the in-person workshops take place. A real Mediterranean environment: dry climate, calcareous soils and crops such as olive, carob, citrus and market garden.",
+      "desc2": "This is not an experimental space created for the programme. It is an active agricultural holding where every technique is applied with real consequences. That makes the learning different.",
+      "place": "Tormos, Alicante, Spain"
+    },
+    "bosqueMadre": {
+      "eyebrow": "A project by",
+      "title": "Bosque Madre",
+      "desc": "Over 15 years of regenerative agriculture, training and outreach in the Mediterranean. Discover the parent project that brings Suelos Vivos to life.",
+      "linkText": "Visit Bosque Madre"
+    },
+    "cta": {
+      "title": "Do you identify with what we do?",
+      "startPrefix": "The programme starts",
+      "spotsPrefix": "Limited to",
+      "spotsPostfix": "farmers.",
+      "btn": "Reserve your place"
     }
   },
   "contacto": {
     "seo": {
       "title": "Reserve your spot — Suelos Vivos",
       "description": "Reserve your place in the Suelos Vivos 2026 programme. Only 20 places. Starting September 2026 in Tormos, Alicante."
+    },
+    "hero": {
+      "eyebrow": "Reserve your spot",
+      "title": "The first step is the form.",
+      "subtitle": "Fill in the form and we'll get in touch within 48 hours to explain the enrolment process and answer your questions."
+    },
+    "info": {
+      "inicioLabel": "Start date",
+      "lugarLabel": "Location",
+      "plazasLabel": "Available spots",
+      "plazasSuffix": "farmers",
+      "inversionLabel": "Investment",
+      "inversionSep": "or",
+      "inversionMesSuffix": "/month ×",
+      "directContact": "Prefer to write to us directly?"
+    },
+    "form": {
+      "title": "Request information",
+      "nombreLabel": "Full name *",
+      "nombrePlaceholder": "Your full name",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "you@email.com",
+      "telefonoLabel": "Phone",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "fincaLabel": "What type of farm do you have?",
+      "fincaPlaceholder": "E.g.: Olive grove, 30 ha, Jaén",
+      "mensajeLabel": "What do you hope to achieve?",
+      "mensajePlaceholder": "Tell us briefly about your current situation and what brought you to consider the programme...",
+      "privacidadPrefix": "I have read and accept the",
+      "privacidadLink": "privacy policy",
+      "privacidadSuffix": ". My data will only be used to handle this request.",
+      "submit": "Send request",
+      "sending": "Sending...",
+      "sent": "Sent",
+      "successMsg": "Received! We'll contact you within 48 hours.",
+      "errorPrefix": "Something went wrong. Please write to us directly at"
+    }
+  },
+  "servicios": {
+    "seo": {
+      "title": "Professional Advisory — Suelos Vivos",
+      "description": "Personalised regenerative agriculture consulting: regeneration protocols, input reduction plans, farm design, biological waste management and biofactory installation."
+    },
+    "hero": {
+      "eyebrow": "Professional advisory",
+      "title": "Do you have a project and want us to support you?",
+      "subtitle": "Suelos Vivos advises and helps. From designing a regeneration protocol or an input reduction plan, to integral farm design, biological waste management or biofactory installation for self-production of inputs. We are here to help."
+    },
+    "services": {
+      "items": [
+        {
+          "title": "Soil regeneration protocol",
+          "desc": "Detailed diagnosis of the biological, physical and chemical state of your farm, followed by a personalised roadmap to progressively and sustainably restore microbial life and fertility.",
+          "tags": ["Soil diagnosis", "Microbiology", "Roadmap"]
+        },
+        {
+          "title": "Input reduction plan",
+          "desc": "Analysis of your current cost structure and design of a progressive strategy to reduce synthetic fertilisers, pesticides and tillage without compromising crop yields.",
+          "tags": ["Cost analysis", "Gradual transition", "Technical autonomy"]
+        },
+        {
+          "title": "Integral farm design",
+          "desc": "Full agroecological planning of your operation: crop rotations, cover crops, water management, hedgerows and ecological corridors, and production diversification.",
+          "tags": ["Agroecology", "Rotations", "Diversification"]
+        },
+        {
+          "title": "Biological waste management",
+          "desc": "Design of protocols to transform organic waste from your farm — stubble, slurry, pruning residues, plant matter — into high-value biological amendments that return fertility to the soil.",
+          "tags": ["Composting", "Bio-amendments", "Circular economy"]
+        },
+        {
+          "title": "Biofactory installation",
+          "desc": "On-site design and installation of self-production systems for bioinputs: microbial inoculants, activated compost and mineral broths so your farm generates its own biological fertilisers.",
+          "tags": ["Inoculants", "Self-production", "Bioinputs"]
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Our process",
+      "title": "How we work with you",
+      "subtitle": "Every advisory engagement starts by listening to you and understanding your farm before proposing anything.",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Initial consultation",
+          "desc": "A conversation to understand your situation, goals and the type of project you have in mind. No commitment."
+        },
+        {
+          "step": "2",
+          "title": "Farm visit & diagnosis",
+          "desc": "A visit to your farm to assess the state of the soil, crops and infrastructure. The diagnosis is the foundation of everything."
+        },
+        {
+          "step": "3",
+          "title": "Personalised protocol",
+          "desc": "A concrete proposal: roadmap, action schedule and support throughout implementation."
+        }
+      ]
+    },
+    "form": {
+      "eyebrow": "Tell us about your project",
+      "title": "The first step is telling us how we can help.",
+      "subtitle": "Fill in the form with your project details and we will get in touch within 48 hours to explore how we can work together.",
+      "locationLabel": "Where we are",
+      "emailLabel": "Email",
+      "quote": "Every farm is a unique system. Before proposing anything, we need to understand yours.",
+      "quoteAuthor": "Suelos Vivos Team",
+      "formTitle": "Request advisory",
+      "nombreLabel": "Name *",
+      "nombrePlaceholder": "Your name",
+      "telefonoLabel": "Phone",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "emailFormLabel": "Email *",
+      "emailPlaceholder": "you@email.com",
+      "servicioLabel": "Service of interest",
+      "servicioPlaceholder": "— Select a service —",
+      "servicioOptions": [
+        "Soil regeneration protocol",
+        "Input reduction plan",
+        "Integral farm design",
+        "Biological waste management",
+        "Biofactory installation",
+        "Not sure yet, I need guidance"
+      ],
+      "fincaLabel": "Type of farm and main crop",
+      "fincaPlaceholder": "E.g.: Olive grove, 50 ha, southern Spain",
+      "proyectoLabel": "Tell us about your project",
+      "proyectoPlaceholder": "What is your current situation? What do you want to achieve? Do you have a specific challenge in mind?",
+      "privacidadPrefix": "I have read and accept the",
+      "privacidadLink": "privacy policy",
+      "privacidadSuffix": ". My data will only be used to handle this request.",
+      "submit": "Send request",
+      "sending": "Sending...",
+      "sent": "Sent",
+      "successMsg": "Received! We will contact you within 48 hours.",
+      "errorPrefix": "Something went wrong. Please write to us directly at"
     }
   },
   "avisoLegal": {
@@ -84,7 +501,7 @@
       "authorName": "The Bosque Madre team",
       "authorBio": "Over 15 years of experience in regenerative agriculture in the Mediterranean. We train professional growers who want to cut costs and restore soil fertility.",
       "ctaTitle": "Want to learn in the field, not just on paper?",
-      "ctaDesc": "The Suelos Vivos programme combines in-person workshops with 12 months of real coaching.",
+      "ctaDesc": "The Suelos Vivos programme combines in-person workshops with 10 months of real coaching.",
       "ctaBtn": "Reserve your spot"
     }
   }

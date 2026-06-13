@@ -1,0 +1,357 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
+
+const serviceIcons = [
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>`,
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>`,
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`,
+  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
+];
+
+const serviceNums = ['01', '02', '03', '04', '05'];
+const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-finca', 'residuos-biologicos', 'biofabrica', 'no-se'];
+---
+
+<BaseLayout
+  title={t(lang, 'servicios.seo.title')}
+  description={t(lang, 'servicios.seo.description')}
+>
+  <Header lang={lang} />
+
+  <main>
+    <!-- Page header -->
+    <section class="pt-32 pb-16 bg-[#F0F2EE]">
+      <div class="container max-w-3xl">
+        <p class="page-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">{t(lang, 'servicios.hero.eyebrow')}</p>
+        <h1 class="page-title font-display text-4xl md:text-6xl text-[#1E1A15] leading-[1.05] mb-6">
+          {t(lang, 'servicios.hero.title')}
+        </h1>
+        <p class="page-subtitle text-[#6B6355] text-xl leading-relaxed">
+          {t(lang, 'servicios.hero.subtitle')}
+        </p>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-20 bg-[#FAFAF7]">
+      <div class="container max-w-5xl">
+        <div class="space-y-6">
+          {(t(lang, 'servicios.services.items') as {title: string; desc: string; tags: string[]}[]).map((s, i) => (
+            <div class="servicio-item grid md:grid-cols-[auto_1fr] gap-8 items-start p-8 bg-white border border-[#DDD8CE] rounded-xl hover:shadow-md hover:border-[#C4622D]/30 transition-all duration-300">
+              <div class="flex flex-col items-center gap-3">
+                <span class="font-display text-4xl text-[#DDD8CE] leading-none">{serviceNums[i]}</span>
+                <div class="w-12 h-12 rounded-lg bg-[#F0F2EE] flex items-center justify-center text-[#C4622D]">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={serviceIcons[i]} />
+                </div>
+              </div>
+              <div>
+                <h2 class="font-display text-xl md:text-2xl text-[#1E1A15] mb-3">{s.title}</h2>
+                <p class="text-[#6B6355] leading-relaxed mb-5">{s.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                  {s.tags.map(tag => (
+                    <span class="text-xs px-2.5 py-1 bg-[#F0F2EE] text-[#6B6355] rounded-full border border-[#DDD8CE]">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo trabajamos -->
+    <section class="py-20 bg-[#F0F2EE]">
+      <div class="container max-w-4xl">
+        <div class="text-center mb-14">
+          <p class="process-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">{t(lang, 'servicios.process.eyebrow')}</p>
+          <h2 class="process-title font-display text-3xl md:text-4xl text-[#1E1A15] mb-4">{t(lang, 'servicios.process.title')}</h2>
+          <p class="process-subtitle text-[#6B6355] text-lg leading-relaxed">
+            {t(lang, 'servicios.process.subtitle')}
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {(t(lang, 'servicios.process.steps') as {step: string; title: string; desc: string}[]).map(p => (
+            <div class="process-card bg-white border border-[#DDD8CE] rounded-xl p-7">
+              <div class="w-10 h-10 rounded-full bg-[#8B1A1A] flex items-center justify-center mb-5">
+                <span class="text-[#FAFAF7] font-semibold text-sm">{p.step}</span>
+              </div>
+              <h3 class="font-display text-lg text-[#1E1A15] mb-3">{p.title}</h3>
+              <p class="text-sm text-[#6B6355] leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de asesoría -->
+    <section class="py-24 bg-[#FAFAF7]">
+      <div class="container max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+
+          <!-- Info lateral -->
+          <div>
+            <p class="form-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">{t(lang, 'servicios.form.eyebrow')}</p>
+            <h2 class="form-title font-display text-3xl md:text-4xl text-[#1E1A15] leading-[1.05] mb-6">
+              {t(lang, 'servicios.form.title')}
+            </h2>
+            <p class="form-subtitle text-[#6B6355] leading-relaxed mb-10">
+              {t(lang, 'servicios.form.subtitle')}
+            </p>
+
+            <div class="space-y-5 mb-10">
+              {[
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+                  title: t(lang, 'servicios.form.locationLabel'),
+                  value: siteConfig.program.location,
+                },
+                {
+                  icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`,
+                  title: t(lang, 'servicios.form.emailLabel'),
+                  value: siteConfig.contact.email,
+                },
+              ].map(item => (
+                <div class="flex gap-4 items-start">
+                  <div class="w-9 h-9 rounded-md bg-[#F0F2EE] flex items-center justify-center shrink-0 text-[#8B1A1A]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} />
+                  </div>
+                  <div>
+                    <p class="text-xs text-[#6B6355] uppercase tracking-wide">{item.title}</p>
+                    <p class="text-[#1E1A15] font-medium">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <blockquote class="border-l-2 border-[#C4622D] pl-5">
+              <p class="text-[#6B6355] italic leading-relaxed text-sm">
+                "{t(lang, 'servicios.form.quote')}"
+              </p>
+              <cite class="text-xs text-[#6B6355]/70 not-italic mt-2 block">{t(lang, 'servicios.form.quoteAuthor')}</cite>
+            </blockquote>
+          </div>
+
+          <!-- Formulario -->
+          <div class="advisory-form bg-white border border-[#DDD8CE] rounded-xl p-8 shadow-sm">
+            <h3 class="font-display text-2xl text-[#1E1A15] mb-6">{t(lang, 'servicios.form.formTitle')}</h3>
+
+            <form
+              action="/api/contact"
+              method="POST"
+              id="advisory-form"
+              class="space-y-5"
+            >
+              <input type="hidden" name="tipo" value="asesoria" />
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.nombreLabel')}</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                    placeholder={t(lang, 'servicios.form.nombrePlaceholder')}
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.telefonoLabel')}</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                    placeholder={t(lang, 'servicios.form.telefonoPlaceholder')}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.emailFormLabel')}</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder={t(lang, 'servicios.form.emailPlaceholder')}
+                />
+              </div>
+
+              <div>
+                <label for="servicio" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.servicioLabel')}</label>
+                <select
+                  id="servicio"
+                  name="servicio"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm cursor-pointer"
+                >
+                  <option value="">{t(lang, 'servicios.form.servicioPlaceholder')}</option>
+                  {(t(lang, 'servicios.form.servicioOptions') as string[]).map((opt, i) => (
+                    <option value={servicioValues[i]}>{opt}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label for="finca" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.fincaLabel')}</label>
+                <input
+                  type="text"
+                  id="finca"
+                  name="finca"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder={t(lang, 'servicios.form.fincaPlaceholder')}
+                />
+              </div>
+
+              <div>
+                <label for="proyecto" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.proyectoLabel')}</label>
+                <textarea
+                  id="proyecto"
+                  name="proyecto"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm resize-none"
+                  placeholder={t(lang, 'servicios.form.proyectoPlaceholder')}
+                ></textarea>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  class="mt-1 w-4 h-4 accent-[#8B1A1A] cursor-pointer"
+                />
+                <label for="privacy" class="text-xs text-[#6B6355] cursor-pointer leading-relaxed">
+                  {t(lang, 'servicios.form.privacidadPrefix')} <a href="/politica-privacidad" class="underline hover:text-[#1E1A15] transition-colors">{t(lang, 'servicios.form.privacidadLink')}</a>{t(lang, 'servicios.form.privacidadSuffix')}
+                </label>
+              </div>
+
+              <!-- Honeypot -->
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+              <button
+                type="submit"
+                id="advisory-submit"
+                data-label-submit={t(lang, 'servicios.form.submit')}
+                data-label-sending={t(lang, 'servicios.form.sending')}
+                data-label-sent={t(lang, 'servicios.form.sent')}
+                class="w-full px-6 py-3.5 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm cursor-pointer"
+              >
+                {t(lang, 'servicios.form.submit')}
+              </button>
+
+              <p id="advisory-success" class="hidden text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md">
+                {t(lang, 'servicios.form.successMsg')}
+              </p>
+              <p id="advisory-error" class="hidden text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md">
+                {t(lang, 'servicios.form.errorPrefix')} {siteConfig.contact.email}
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Page header entrance
+    gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
+    gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
+      .fromTo('.page-eyebrow',  { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
+      .fromTo('.page-title',    { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.4')
+      .fromTo('.page-subtitle', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.5');
+
+    // Services items
+    gsap.fromTo('.servicio-item',
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+        scrollTrigger: { trigger: '.servicio-item', start: 'top 85%', once: true },
+      }
+    );
+
+    // Process section
+    gsap.from('.process-eyebrow, .process-title, .process-subtitle', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.process-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.process-card', {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.process-card', start: 'top 82%', once: true },
+    });
+
+    // Form section
+    gsap.from('.form-eyebrow, .form-title, .form-subtitle', {
+      y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.form-eyebrow', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.advisory-form', {
+      y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.advisory-form', start: 'top 82%', once: true },
+    });
+  }
+
+  // Form submission
+  const form = document.getElementById('advisory-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('advisory-submit') as HTMLButtonElement | null;
+  const successMsg = document.getElementById('advisory-success');
+  const errorMsg = document.getElementById('advisory-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !form) return;
+
+    const labelSending = submitBtn.dataset.labelSending ?? '...';
+    const labelSent = submitBtn.dataset.labelSent ?? '✓';
+    const labelSubmit = submitBtn.dataset.labelSubmit ?? submitBtn.textContent ?? '';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = labelSending;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.reset();
+        successMsg?.classList.remove('hidden');
+        errorMsg?.classList.add('hidden');
+        submitBtn.textContent = labelSent;
+      } else {
+        throw new Error('Error en el servidor');
+      }
+    } catch {
+      errorMsg?.classList.remove('hidden');
+      successMsg?.classList.add('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = labelSubmit;
+    }
+  });
+</script>

@@ -1,6 +1,7 @@
 {
   "nav": {
     "elPrograma": "El Programa",
+    "servicios": "Servicios",
     "quienesSomos": "Quiénes Somos",
     "blog": "Blog",
     "contacto": "Contacto",
@@ -25,24 +26,440 @@
     "seo": {
       "title": "Suelos Vivos — Programa de Agricultura Regenerativa 2026",
       "description": "Programa anual de formación en biofertilidad para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica. Solo 20 plazas."
+    },
+    "hero": {
+      "eyebrow": "Agricultura con futuro",
+      "title": "Regeneramos la vida del suelo, el verdadero motor de la agricultura.",
+      "subtitle": "Suelos vivos es un proyecto destinado a difundir, sensibilizar y promover prácticas agrícolas rentables, autónomas y en sintonía con la naturaleza.",
+      "ctaPrograma": "Programa formativo",
+      "ctaAsesoria": "Asesoría profesional",
+      "imgAlt": "Agricultores en el campo al atardecer",
+      "stats": [
+        { "value": "3", "label": "Talleres presenciales" },
+        { "value": "10", "label": "Meses de acompañamiento" },
+        { "value": "20", "label": "Plazas disponibles" }
+      ]
+    },
+    "problem": {
+      "eyebrow": "El diagnóstico",
+      "title": "El círculo vicioso del agricultor moderno",
+      "subtitle": "Cuanto más fertilizas de forma sintética, más dependiente te vuelves. Los suelos pierden vida microbiana, las plantas se debilitan y tus costes siguen subiendo. Hay otra manera.",
+      "items": [
+        { "title": "Costes que no paran de subir", "desc": "Fertilizantes, fitosanitarios, laboreos… cada año más caro, con márgenes que se estrechan." },
+        { "title": "Suelos cada vez más inertes", "desc": "La mecanización intensa y los herbicidas destruyen la fauna microbiana que hace fértil la tierra." },
+        { "title": "Dependencia de insumos externos", "desc": "Cada campaña con proveedores, precios globales y cadenas de suministro que no controlas." },
+        { "title": "Incertidumbre ante el clima", "desc": "Sequías, plagas resistentes, temporadas irregulares… sin resiliencia en el suelo, cada evento es una crisis." }
+      ],
+      "quote": "La fertilidad no se compra. Se cultiva, se entiende y se devuelve al suelo.",
+      "quoteAuthor": "Carles Pons — Fundador de Bosque Madre"
+    },
+    "ecosystem": {
+      "eyebrow": "Nuestra misión",
+      "title": "Más que formación: un ecosistema de cambio.",
+      "intro": "Suelos Vivos nace para ser el punto de encuentro de la transición agroecológica a través de tres ejes:",
+      "items": [
+        {
+          "title": "Nodo de confianza y cooperación",
+          "desc": "Una comunidad activa de agricultores y proyectos que comparten experiencias reales sobre el terreno."
+        },
+        {
+          "title": "Plataforma de aprendizaje continuo",
+          "desc": "Cursos presenciales, futura academia online (Q1 2027) y edición de materiales técnicos y libros."
+        },
+        {
+          "title": "Proyectos en cartera",
+          "desc": "Biofábricas comunitarias, redes de cooperación y alianzas con territorios rurales en proceso de transición agroecológica."
+        }
+      ]
+    },
+    "workshops": {
+      "eyebrow": "PROGRAMA FORMATIVO FIBE26",
+      "title": "Deja de comprar fertilidad. Aprende a producirla.",
+      "subtitle": "Suelos Vivos imparte formación inmersiva en biofertilidad y agricultura regenerativa para productores profesionales que quieren reducir costes, recuperar el suelo y ganar autonomía técnica.",
+      "items": [
+        {
+          "label": "HORAS PRESENCIALES",
+          "value": "+50",
+          "title": "Formación inmersiva",
+          "desc": "Pisa el terreno, toca la materia prima y deja que el olfato y el gusto guíen tu aprendizaje. Estar físicamente te permite captar matices que lo digital no alcanza, transformando la teoría en una memoria sensorial imborrable."
+        },
+        {
+          "label": "DÍAS DE SERVICIO",
+          "value": "+300",
+          "title": "Periodo de acompañamiento",
+          "desc": "Cuenta con herramientas digitales de seguimiento durante más de 300 días para medir tu progreso en tiempo real y garantizar que no pierdas el rumbo tras cada taller."
+        },
+        {
+          "label": "PLAZAS DISPONIBLES",
+          "value": "20",
+          "title": "Formación personalizada",
+          "desc": "Atención individualizada, disfruta de una mentoría adaptada a tu caso específico y aprende de los casos del resto de alumnos."
+        }
+      ],
+      "companionPre": "Más ",
+      "companionPost": " meses de acompañamiento mensual online entre talleres · Acceso a grupo privado · Biblioteca de recursos"
+    },
+    "audience": {
+      "eyebrow": "Para quién es",
+      "title": "Para el agricultor que ya sabe que hay algo que no encaja",
+      "items": [
+        "Productor profesional con finca en activo (hortícola, frutal, olivar, viña, cereal…)",
+        "Hartos de depender de insumos y quieren reducir costes de forma real",
+        "Con ganas de aprender y aplicar — no solo escuchar teoría",
+        "Dispuestos a invertir tiempo y recursos durante el año del programa",
+        "Buscan apoyo técnico real, no un curso online más"
+      ],
+      "imgAlt": "Taller práctico de biofertilidad",
+      "statsLabel1": "Reducción media de costes en",
+      "statsValue": "30–50%",
+      "statsLabel2": "tras el primer año de aplicación"
+    },
+    "gallery": {
+      "imgAlt": "Suelos Vivos — programa en acción"
+    },
+    "benefits": {
+      "eyebrow": "Qué consigues",
+      "title": "Iniciar una transición realista hacia una fertilidad más natural y sostenible",
+      "items": [
+        { "title": "Mejora tu autonomía técnica", "desc": "Adquiere el conocimiento y las herramientas para reducir tu dependencia de soluciones sintéticas." },
+        { "title": "Disfruta de acompañamiento profesional", "desc": "Contrata los servicios que completan tu formación sólo cuando realmente los necesites." },
+        { "title": "Consigue suelos más resilientes", "desc": "Obtén cosechas más estables, plantas más sanas, y mayor resistencia a largo plazo a plagas o sequías." },
+        { "title": "Reduce los costes económicos", "desc": "El suelo vivo trabaja para ti utilizando menos fertilizantes, disminuyendo el gasto fitosanitario y moderando la inversión en laboreo." }
+      ]
+    },
+    "about": {
+      "eyebrow": "Quiénes somos",
+      "title": "Un proyecto nacido del campo, no del laboratorio",
+      "p1": "Suelos Vivos es el programa formativo de <strong class=\"text-[#1E1A15]\">Bosque Madre</strong>, un proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo.",
+      "p2": "No enseñamos desde la academia. Enseñamos desde la práctica diaria: lo que funciona, lo que falla y lo que transforma de verdad una finca convencional en un sistema regenerativo autónomo.",
+      "p3": "Nuestro campo en Tormos (Alicante) es el aula. El laboratorio es el suelo vivo.",
+      "link": "Conoce el equipo",
+      "imgAlt": "Carles Casanova — Fundador de Bosque Madre"
+    },
+    "services": {
+      "eyebrow": "SERVICIO DE ASESORÍA PROFESIONAL",
+      "title": "Suma soporte técnico en biofertilidad, sólo cuando lo necesites!",
+      "subtitle": "Suelos Vivos proporciona servicios de asesoría y diagnóstico técnico del estado del suelo, diseño de planes de transformación y manejo regenerativo del suelo, además del desarrollo de fórmulas y técnicas de biofertilidad.",
+      "subtitle2": "Servicio profesional dirigido a agricultores, cooperativas, empresas agrícolas y gestores de territorios rurales interesados en obtener una fertilidad más viva, autónoma y resiliente para sus suelos.",
+      "items": [
+        { "title": "Protocolo de regeneración", "desc": "Diagnóstico y hoja de ruta personalizada para recuperar la vida microbiana y la fertilidad de tu finca." },
+        { "title": "Plan de reducción de insumos", "desc": "Estrategia progresiva para reducir fertilizantes y fitosanitarios sin comprometer la producción." },
+        { "title": "Diseño integral de fincas", "desc": "Planificación agroecológica completa: rotaciones, cubiertas vegetales, gestión del agua y diversificación." },
+        { "title": "Gestión de residuos biológicos", "desc": "Transforma rastrojos, purines y restos vegetales en recursos biológicos de alto valor para tu suelo." },
+        { "title": "Instalación de biofábricas", "desc": "Diseño e instalación de sistemas de autoproducción de bioinsumos (inoculantes, compost, caldos) en tu finca." }
+      ],
+      "cta": "Asesoría profesional"
+    },
+    "pricing": {
+      "eyebrow": "Inversión",
+      "title": "Programa completo 2026–2027",
+      "subtitle": "Una inversión que se recupera en la primera campaña con la reducción de insumos.",
+      "payOnce": "Pago único",
+      "payMonthly": "Fraccionado",
+      "or": "o",
+      "perMonth": "/mes",
+      "monthsLabel": "meses",
+      "reservaWith": "Reserva con",
+      "includes": [
+        "3 talleres presenciales (fin de semana completo)",
+        "10 meses de acompañamiento mensual online",
+        "Acceso a grupo privado de participantes",
+        "Biblioteca de recursos y protocolos",
+        "Análisis de suelo de tu finca incluido",
+        "Materiales e insumos para las prácticas",
+        "Visita a campo de Bosque Madre",
+        "Certificado de formación al terminar"
+      ],
+      "ctaPre": "Reservar plaza — Solo ",
+      "ctaPost": " plazas",
+      "startPrefix": "Inicio",
+      "doubts": "¿Tienes dudas? Escríbenos a"
     }
   },
   "elPrograma": {
     "seo": {
       "title": "El Programa — Suelos Vivos",
-      "description": "Tres talleres presenciales más 12 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
+      "description": "Tres talleres presenciales más 10 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
+    },
+    "hero": {
+      "eyebrow": "El programa",
+      "title": "Tres talleres.<br />Diez meses.<br />Un suelo diferente.",
+      "subtitle": "Suelos Vivos es un programa de formación anual diseñado para agricultores profesionales que quieren entender la biología de su suelo y aplicar técnicas de biofertilidad en su propia finca."
+    },
+    "overview": {
+      "items": [
+        { "value": "3", "label": "Talleres presenciales", "desc": "Fines de semana completos en Tormos (Alicante). Teoría + práctica en campo real con materiales incluidos." },
+        { "value": "12", "label": "Meses de acompañamiento", "desc": "Sesiones mensuales online entre talleres. Dudas resueltas, ajuste del plan y seguimiento personalizado." },
+        { "value": "20", "label": "Plazas por edición", "desc": "Grupos pequeños para garantizar atención personalizada y aprendizaje entre iguales. Sin lista de espera." }
+      ]
+    },
+    "workshops": {
+      "topicsLabel": "Contenidos",
+      "items": [
+        {
+          "number": "01",
+          "date": "Septiembre 2026",
+          "title": "El suelo vivo: diagnóstico y fundamentos",
+          "desc": "El primer taller establece las bases. Aprenderás a entender el suelo como un ecosistema vivo, a identificar sus indicadores de salud y a diagnosticar el estado de tu finca antes de intervenir.",
+          "imgAlt": "Taller 1 — El suelo vivo",
+          "topics": [
+            "Biología del suelo: hongos, bacterias, fauna edáfica y su rol",
+            "Ciclos de nutrientes mediados por microorganismos",
+            "Cómo leer un análisis de suelo (y qué no dice)",
+            "Indicadores visuales y sensoriales de salud edáfica",
+            "Diagnóstico práctico en campo: tu suelo tiene historia",
+            "Introducción a los principios regenerativos aplicados"
+          ]
+        },
+        {
+          "number": "02",
+          "date": "Octubre 2026",
+          "title": "Biofertilidad en práctica",
+          "desc": "El segundo taller es el más práctico. Elaboraremos juntos los principales bioinsumos: inoculantes, caldos y compost activado. Todo con materiales accesibles y reproducibles en tu finca.",
+          "imgAlt": "Taller 2 — Biofertilidad en práctica",
+          "topics": [
+            "Inoculantes microbianos: elaboración y aplicación",
+            "Compostaje avanzado con activadores biológicos",
+            "Caldos minerales y bioestimulantes naturales",
+            "Biofertilización foliar y edáfica: cuándo y cómo",
+            "Técnicas de captura y multiplicación de microorganismos locales",
+            "Protocolos adaptados a diferentes cultivos y climas"
+          ]
+        },
+        {
+          "number": "03",
+          "date": "Enero 2027",
+          "title": "Autonomía y diseño del plan",
+          "desc": "El tercer taller cierra el ciclo. Diseñarás tu propio plan de biofertilidad para los próximos 3 años, evaluarás los resultados del primer año y trazarás la hoja de ruta hacia la autonomía técnica.",
+          "imgAlt": "Taller 3 — Plan y autonomía",
+          "topics": [
+            "Evaluación de resultados: cómo medir la mejora del suelo",
+            "Diseño de rotaciones y cubierta vegetal regenerativa",
+            "Plan de biofertilidad personalizado para tu finca",
+            "Manejo del agua y materia orgánica a largo plazo",
+            "Cálculo de costes e impacto económico real",
+            "Hoja de ruta: los próximos 3 años en tu finca"
+          ]
+        }
+      ]
+    },
+    "mentoring": {
+      "title": "Entre taller y taller: acompañamiento mensual",
+      "items": [
+        { "title": "Sesiones online mensuales", "desc": "Una hora cada mes para revisar avances, resolver dudas técnicas y ajustar el plan a lo que está pasando en tu finca." },
+        { "title": "Grupo privado de participantes", "desc": "Canal directo entre todos los participantes. Para compartir resultados, experiencias y apoyo mutuo entre agricultores." },
+        { "title": "Biblioteca de recursos", "desc": "Protocolos, fichas técnicas, vídeos y bibliografía seleccionada. Todo accesible durante y después del programa." }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para transformar tu finca?",
+      "startPrefix": "Inicio",
+      "spotsPrefix": "· Solo",
+      "spotsPostfix": "plazas ·",
+      "btn": "Reservar plaza —",
+      "btnSuffix": "€",
+      "fractionedPrefix": "O fraccionado en",
+      "fractionedMid": "pagos de",
+      "fractionedSuffix": "€/mes"
     }
   },
   "quienesSomos": {
     "seo": {
       "title": "Quiénes Somos — Suelos Vivos",
       "description": "Suelos Vivos es el programa formativo de Bosque Madre, proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo."
+    },
+    "hero": {
+      "eyebrow": "Quiénes somos",
+      "title": "Nacimos del campo.<br />No del despacho.",
+      "subtitle": "Bosque Madre es un proyecto de agricultura regenerativa con más de 15 años de práctica real en el Mediterráneo. Suelos Vivos es nuestra manera de transmitir lo que hemos aprendido."
+    },
+    "story": {
+      "title": "Más de 15 años transformando suelos en el Mediterráneo",
+      "paragraphs": [
+        "<strong>Bosque Madre</strong> nació de una pregunta simple: ¿es posible producir alimentos de calidad, reducir costes y mejorar el suelo al mismo tiempo?",
+        "La respuesta, después de años de experimentación en nuestra finca de Tormos (Alicante), es sí. Pero requiere cambiar la manera de entender el suelo: no como un soporte inerte al que añadir nutrientes, sino como un ecosistema vivo que, cuando funciona bien, fertiliza, protege y sostiene el cultivo.",
+        "Llevamos más de 15 años practicando, documentando y enseñando estas técnicas. Lo que empezó como una búsqueda personal se convirtió en un referente del movimiento regenerativo en España y el sur de Europa.",
+        "Suelos Vivos es el destilado de todo ese aprendizaje: un programa diseñado para que agricultores profesionales puedan hacer el mismo camino con acompañamiento real."
+      ]
+    },
+    "values": {
+      "title": "Lo que nos guía",
+      "items": [
+        {
+          "title": "Práctica sobre teoría",
+          "desc": "Todo lo que enseñamos lo hemos hecho con nuestras manos. No damos conferencias sobre lo que está en los libros; compartimos lo que funciona en el campo."
+        },
+        {
+          "title": "Autonomía como meta",
+          "desc": "El objetivo no es que dependas de nosotros. Es que termines el programa con las herramientas, el conocimiento y la confianza para seguir solo."
+        },
+        {
+          "title": "El suelo como maestro",
+          "desc": "Observar, escuchar y leer el suelo antes de intervenir. La naturaleza lleva millones de años resolviendo problemas; nuestra labor es entenderla."
+        }
+      ]
+    },
+    "location": {
+      "eyebrow": "El lugar",
+      "title": "Tormos, Alicante. El aula es el campo.",
+      "desc1": "La finca de Bosque Madre en Tormos, en el interior de Alicante, es donde se desarrollan los talleres presenciales. Un entorno mediterráneo real: clima seco, suelos calcáreos y cultivos como el olivo, el algarrobo, los cítricos y la huerta.",
+      "desc2": "No es un espacio experimental creado para el programa. Es una explotación agrícola en activo, donde cada técnica se aplica con consecuencias reales. Eso hace que el aprendizaje sea diferente.",
+      "place": "Tormos, Alicante, España"
+    },
+    "bosqueMadre": {
+      "eyebrow": "Un proyecto de",
+      "title": "Bosque Madre",
+      "desc": "Más de 15 años de agricultura regenerativa, formación y divulgación en el Mediterráneo. Conoce el proyecto madre que da vida a Suelos Vivos.",
+      "linkText": "Visitar Bosque Madre"
+    },
+    "cta": {
+      "title": "¿Te identificas con lo que hacemos?",
+      "startPrefix": "El programa empieza en",
+      "spotsPrefix": "Plazas limitadas a",
+      "spotsPostfix": "agricultores.",
+      "btn": "Reservar plaza"
     }
   },
   "contacto": {
     "seo": {
       "title": "Reservar plaza — Suelos Vivos",
       "description": "Reserva tu plaza en el programa Suelos Vivos 2026. Solo 20 plazas. Inicio septiembre 2026 en Tormos, Alicante."
+    },
+    "hero": {
+      "eyebrow": "Reservar plaza",
+      "title": "El primer paso es el formulario.",
+      "subtitle": "Rellena el formulario y nos ponemos en contacto contigo en menos de 48 horas para explicarte el proceso de inscripción y resolver tus dudas."
+    },
+    "info": {
+      "inicioLabel": "Inicio",
+      "lugarLabel": "Lugar",
+      "plazasLabel": "Plazas disponibles",
+      "plazasSuffix": "agricultores",
+      "inversionLabel": "Inversión",
+      "inversionSep": "o",
+      "inversionMesSuffix": "/mes ×",
+      "directContact": "¿Prefieres escribirnos directamente?"
+    },
+    "form": {
+      "title": "Solicitar información",
+      "nombreLabel": "Nombre y apellidos *",
+      "nombrePlaceholder": "Tu nombre completo",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "tu@email.com",
+      "telefonoLabel": "Teléfono",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "fincaLabel": "¿Qué tipo de finca tienes?",
+      "fincaPlaceholder": "Ej: Olivar, 30 ha, Jaén",
+      "mensajeLabel": "¿Qué esperas conseguir?",
+      "mensajePlaceholder": "Cuéntanos brevemente tu situación actual y qué te ha llevado a interesarte por el programa...",
+      "privacidadPrefix": "He leído y acepto la",
+      "privacidadLink": "política de privacidad",
+      "privacidadSuffix": ". Mis datos se usarán únicamente para gestionar esta solicitud.",
+      "submit": "Enviar solicitud",
+      "sending": "Enviando...",
+      "sent": "Enviado",
+      "successMsg": "¡Recibido! Te contactamos en menos de 48 horas.",
+      "errorPrefix": "Algo fue mal. Por favor, escríbenos directamente a"
+    }
+  },
+  "servicios": {
+    "seo": {
+      "title": "Asesoría Profesional — Suelos Vivos",
+      "description": "Asesoría personalizada en agricultura regenerativa: protocolos de regeneración, planes de reducción de insumos, diseño de fincas, gestión de residuos biológicos e instalación de biofábricas."
+    },
+    "hero": {
+      "eyebrow": "Asesoría profesional",
+      "title": "¿Tienes un proyecto y quieres que te acompañemos?",
+      "subtitle": "Suelos Vivos asesora y ayuda. Desde diseñar un protocolo de regeneración o un plan de reducción de insumos, a diseño integral de fincas, gestión de residuos biológicos o instalación de biofábricas para la autoproducción de insumos. Estamos para ayudarte."
+    },
+    "services": {
+      "items": [
+        {
+          "title": "Protocolo de regeneración del suelo",
+          "desc": "Diagnóstico detallado del estado biológico, físico y químico de tu finca, seguido de una hoja de ruta personalizada para recuperar la vida microbiana y la fertilidad de forma progresiva y sostenible.",
+          "tags": ["Diagnóstico de suelo", "Microbiología", "Hoja de ruta"]
+        },
+        {
+          "title": "Plan de reducción de insumos",
+          "desc": "Análisis de tu estructura de costes actual y diseño de una estrategia progresiva para reducir fertilizantes sintéticos, fitosanitarios y laboreo sin comprometer los rendimientos de la campaña.",
+          "tags": ["Análisis de costes", "Transición gradual", "Autonomía técnica"]
+        },
+        {
+          "title": "Diseño integral de fincas",
+          "desc": "Planificación agroecológica completa de tu explotación: rotaciones de cultivo, implantación de cubiertas vegetales, gestión del agua, setos y corredores ecológicos, y diversificación de la producción.",
+          "tags": ["Agroecología", "Rotaciones", "Diversificación"]
+        },
+        {
+          "title": "Gestión de residuos biológicos",
+          "desc": "Diseño de protocolos para transformar los residuos orgánicos de tu finca —rastrojos, purines, restos de poda, restos vegetales— en enmiendas biológicas de alto valor que devuelven fertilidad al suelo.",
+          "tags": ["Compostaje", "Bioenmiendas", "Economía circular"]
+        },
+        {
+          "title": "Instalación de biofábricas",
+          "desc": "Diseño e instalación in situ de sistemas de autoproducción de bioinsumos: inoculantes microbianos, compost activado y caldos minerales para que tu finca genere sus propios fertilizantes biológicos.",
+          "tags": ["Inoculantes", "Autoproducción", "Bioinsumos"]
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Nuestro proceso",
+      "title": "Así trabajamos contigo",
+      "subtitle": "Cada asesoría parte de escucharte y de entender tu finca antes de proponer nada.",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Primera consulta",
+          "desc": "Conversación inicial para entender tu situación, objetivos y el tipo de proyecto que tienes en mente. Sin compromiso."
+        },
+        {
+          "step": "2",
+          "title": "Visita y diagnóstico",
+          "desc": "Visita a tu finca para evaluar el estado del suelo, los cultivos y las infraestructuras. El diagnóstico es la base de todo."
+        },
+        {
+          "step": "3",
+          "title": "Protocolo personalizado",
+          "desc": "Propuesta concreta: hoja de ruta, cronograma de actuaciones y acompañamiento durante la implementación."
+        }
+      ]
+    },
+    "form": {
+      "eyebrow": "Cuéntanos tu proyecto",
+      "title": "El primer paso es contarnos en qué podemos ayudarte.",
+      "subtitle": "Rellena el formulario con los datos de tu proyecto y nos ponemos en contacto contigo en menos de 48 horas para valorar cómo podemos trabajar juntos.",
+      "locationLabel": "Dónde estamos",
+      "emailLabel": "Email",
+      "quote": "Cada finca es un sistema único. Antes de proponer nada, necesitamos entender el tuyo.",
+      "quoteAuthor": "Equipo Suelos Vivos",
+      "formTitle": "Solicitar asesoría",
+      "nombreLabel": "Nombre *",
+      "nombrePlaceholder": "Tu nombre",
+      "telefonoLabel": "Teléfono",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "emailFormLabel": "Email *",
+      "emailPlaceholder": "tu@email.com",
+      "servicioLabel": "Servicio de interés",
+      "servicioPlaceholder": "— Selecciona un servicio —",
+      "servicioOptions": [
+        "Protocolo de regeneración del suelo",
+        "Plan de reducción de insumos",
+        "Diseño integral de finca",
+        "Gestión de residuos biológicos",
+        "Instalación de biofábrica",
+        "No sé todavía, necesito orientación"
+      ],
+      "fincaLabel": "Tipo de finca y cultivo principal",
+      "fincaPlaceholder": "Ej: Olivar, 50 ha, Jaén",
+      "proyectoLabel": "Cuéntanos tu proyecto",
+      "proyectoPlaceholder": "¿Cuál es tu situación actual? ¿Qué quieres conseguir? ¿Tienes algún reto concreto en mente?",
+      "privacidadPrefix": "He leído y acepto la",
+      "privacidadLink": "política de privacidad",
+      "privacidadSuffix": ". Mis datos se usarán únicamente para gestionar esta solicitud.",
+      "submit": "Enviar solicitud",
+      "sending": "Enviando...",
+      "sent": "Enviado",
+      "successMsg": "¡Recibido! Te contactamos en menos de 48 horas.",
+      "errorPrefix": "Algo fue mal. Por favor, escríbenos directamente a"
     }
   },
   "avisoLegal": {
@@ -84,7 +501,7 @@
       "authorName": "El equipo de Bosque Madre",
       "authorBio": "Más de 15 años de experiencia en agricultura regenerativa en el Mediterráneo. Formamos a productores profesionales que quieren reducir costes y recuperar la fertilidad de su suelo.",
       "ctaTitle": "¿Quieres aprender en el campo, no solo en papel?",
-      "ctaDesc": "El programa Suelos Vivos combina talleres presenciales con 12 meses de acompañamiento real.",
+      "ctaDesc": "El programa Suelos Vivos combina talleres presenciales con 10 meses de acompañamiento real.",
       "ctaBtn": "Reservar plaza"
     }
   }

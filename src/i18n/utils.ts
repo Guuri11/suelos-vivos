@@ -13,7 +13,8 @@ const translations: Record<Lang, Record<string, unknown>> = { es, en, fr };
  * Resolve a dot-notation key against a translation dict.
  * Falls back to ES if the key is missing in the requested language.
  */
-export function t(lang: string | undefined | null, key: string): string {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function t(lang: string | undefined | null, key: string): any {
   const l: Lang = SUPPORTED_LANGS.includes(lang as Lang) ? (lang as Lang) : DEFAULT_LANG;
   const dict = translations[l];
 
@@ -21,14 +22,14 @@ export function t(lang: string | undefined | null, key: string): string {
     return obj && typeof obj === 'object' ? (obj as Record<string, unknown>)[k] : undefined;
   }, dict as unknown);
 
-  if (typeof value === 'string') return value;
+  if (value !== undefined) return value;
 
   // Fallback to ES
   const fallback = key.split('.').reduce((obj: unknown, k: string) => {
     return obj && typeof obj === 'object' ? (obj as Record<string, unknown>)[k] : undefined;
   }, translations.es as unknown);
 
-  return typeof fallback === 'string' ? fallback : key;
+  return fallback !== undefined ? fallback : key;
 }
 
 /**
