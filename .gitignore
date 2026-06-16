@@ -33,3 +33,7 @@ Thumbs.db
 
 # Vercel
 .vercel/
+
+# Client docs (not for versioning)
+Modificaciones web/
+google-drive/
