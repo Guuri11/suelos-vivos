@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
 import { sanityClient, urlFor } from '@/lib/sanity';
 import { getLang, t, localePath } from '@/i18n/utils';
 
@@ -25,6 +27,8 @@ const dateLocale = lang === 'en' ? 'en-GB' : lang === 'fr' ? 'fr-FR' : 'es-ES';
   title={t(lang, 'blog.seo.title')}
   description={t(lang, 'blog.seo.description')}
 >
+  <Header lang={lang} />
+
   <!-- Page header -->
   <section class="page-header">
     <div class="container">
@@ -94,6 +98,8 @@ const dateLocale = lang === 'en' ? 'en-GB' : lang === 'fr' ? 'fr-FR' : 'es-ES';
       )}
     </div>
   </section>
+
+  <Footer lang={lang} />
 </BaseLayout>
 
 <style>

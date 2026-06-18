@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
 import { sanityClient, urlFor } from '@/lib/sanity';
 import { toHTML } from '@portabletext/to-html';
 import { getLang, t, localePath } from '@/i18n/utils';
@@ -53,6 +55,8 @@ const bodyHtml = post.body ? toHTML(post.body, {
   description={pageDescription}
   ogImage={ogImage}
 >
+  <Header lang={lang} />
+
   <article class="article">
     <!-- Article header -->
     <header class="article-header">
@@ -122,6 +126,8 @@ const bodyHtml = post.body ? toHTML(post.body, {
       </div>
     </footer>
   </article>
+
+  <Footer lang={lang} />
 </BaseLayout>
 
 <style>
