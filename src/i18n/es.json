@@ -370,7 +370,7 @@
     "hero": {
       "eyebrow": "Asesoría profesional",
       "title": "¿Tienes un proyecto y quieres que te acompañemos?",
-      "subtitle": "Suelos Vivos asesora y ayuda. Desde diseñar un protocolo de regeneración o un plan de reducción de insumos, a diseño integral de fincas, gestión de residuos biológicos o instalación de biofábricas para la autoproducción de insumos. Estamos para ayudarte."
+      "subtitle": "Suelos Vivos ayuda a agricultores, fincas y proyectos agroecológicos a tomar mejores decisiones sobre su suelo, su fertilidad y su transición regenerativa. Aportamos criterio técnico, visión ecológica y acompañamiento práctico para convertir problemas complejos en una hoja de ruta clara, viable y adaptada a cada realidad."
     },
     "services": {
       "items": [
@@ -404,22 +404,22 @@
     "process": {
       "eyebrow": "Nuestro proceso",
       "title": "Así trabajamos contigo",
-      "subtitle": "Cada asesoría parte de escucharte y de entender tu finca antes de proponer nada.",
+      "subtitle": "Cada asesoría empieza por entender tu realidad antes de proponer soluciones. No aplicamos recetas cerradas: adaptamos el proceso al tipo de finca, al momento del proyecto y al nivel de acompañamiento que necesitas.",
       "steps": [
         {
           "step": "1",
-          "title": "Primera consulta",
-          "desc": "Conversación inicial para entender tu situación, objetivos y el tipo de proyecto que tienes en mente. Sin compromiso."
+          "title": "Primera orientación",
+          "desc": "Conversación inicial para conocer tu situación, tus objetivos y el tipo de ayuda que necesitas. A partir de ahí valoramos si tiene sentido una asesoría puntual, un diagnóstico más profundo o un acompañamiento continuado."
         },
         {
           "step": "2",
-          "title": "Visita y diagnóstico",
-          "desc": "Visita a tu finca para evaluar el estado del suelo, los cultivos y las infraestructuras. El diagnóstico es la base de todo."
+          "title": "Diagnóstico y lectura del sistema",
+          "desc": "Analizamos la información disponible: características de la finca, manejo actual, cultivos, suelo, agua, insumos, fotografías, analíticas o, cuando sea necesario, visita presencial. El objetivo es comprender bien el sistema antes de intervenir."
         },
         {
           "step": "3",
-          "title": "Protocolo personalizado",
-          "desc": "Propuesta concreta: hoja de ruta, cronograma de actuaciones y acompañamiento durante la implementación."
+          "title": "Hoja de ruta personalizada",
+          "desc": "Definimos una propuesta clara y aplicable: prioridades, protocolo de actuación, cronograma y siguientes pasos. Según el caso, podemos acompañarte en la implementación, revisar avances y ajustar el plan sobre la marcha."
         }
       ]
     },

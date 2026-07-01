@@ -370,7 +370,7 @@
     "hero": {
       "eyebrow": "Professional advisory",
       "title": "Do you have a project and want us to support you?",
-      "subtitle": "Suelos Vivos advises and helps. From designing a regeneration protocol or an input reduction plan, to integral farm design, biological waste management or biofactory installation for self-production of inputs. We are here to help."
+      "subtitle": "Suelos Vivos helps farmers, estates and agroecological projects make better decisions about their soil, their fertility and their regenerative transition. We bring technical judgement, ecological vision and practical support to turn complex problems into a clear, viable roadmap adapted to each reality."
     },
     "services": {
       "items": [
@@ -404,22 +404,22 @@
     "process": {
       "eyebrow": "Our process",
       "title": "How we work with you",
-      "subtitle": "Every advisory engagement starts by listening to you and understanding your farm before proposing anything.",
+      "subtitle": "Every advisory process starts by understanding your reality before proposing solutions. We don't apply fixed recipes: we adapt the process to the type of farm, the stage of the project and the level of support you need.",
       "steps": [
         {
           "step": "1",
-          "title": "Initial consultation",
-          "desc": "A conversation to understand your situation, goals and the type of project you have in mind. No commitment."
+          "title": "Initial orientation",
+          "desc": "An initial conversation to understand your situation, your goals and the type of help you need. From there we assess whether a one-off consultation, a deeper diagnosis or ongoing support makes the most sense."
         },
         {
           "step": "2",
-          "title": "Farm visit & diagnosis",
-          "desc": "A visit to your farm to assess the state of the soil, crops and infrastructure. The diagnosis is the foundation of everything."
+          "title": "Diagnosis and system review",
+          "desc": "We analyse the available information: farm characteristics, current management, crops, soil, water, inputs, photographs, lab analyses or, when needed, an on-site visit. The goal is to understand the system well before intervening."
         },
         {
           "step": "3",
-          "title": "Personalised protocol",
-          "desc": "A concrete proposal: roadmap, action schedule and support throughout implementation."
+          "title": "Personalised roadmap",
+          "desc": "We define a clear, actionable proposal: priorities, action protocol, timeline and next steps. Depending on the case, we can support you through implementation, review progress and adjust the plan along the way."
         }
       ]
     },

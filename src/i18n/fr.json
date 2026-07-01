@@ -370,7 +370,7 @@
     "hero": {
       "eyebrow": "Conseil professionnel",
       "title": "Vous avez un projet et souhaitez que nous vous accompagnions ?",
-      "subtitle": "Suelos Vivos conseille et accompagne. De la conception d'un protocole de régénération ou d'un plan de réduction des intrants, à la conception intégrale de fermes, la gestion des déchets biologiques ou l'installation de biofabriques pour l'autoproduction d'intrants. Nous sommes là pour vous aider."
+      "subtitle": "Suelos Vivos aide les agriculteurs, les exploitations et les projets agroécologiques à prendre de meilleures décisions concernant leur sol, leur fertilité et leur transition régénérative. Nous apportons un jugement technique, une vision écologique et un accompagnement pratique pour transformer des problèmes complexes en une feuille de route claire, viable et adaptée à chaque réalité."
     },
     "services": {
       "items": [
@@ -404,22 +404,22 @@
     "process": {
       "eyebrow": "Notre processus",
       "title": "Comment nous travaillons avec vous",
-      "subtitle": "Chaque conseil commence par vous écouter et comprendre votre exploitation avant de proposer quoi que ce soit.",
+      "subtitle": "Chaque conseil commence par comprendre votre réalité avant de proposer des solutions. Nous n'appliquons pas de recettes toutes faites : nous adaptons le processus au type d'exploitation, à l'étape du projet et au niveau d'accompagnement dont vous avez besoin.",
       "steps": [
         {
           "step": "1",
-          "title": "Première consultation",
-          "desc": "Une conversation pour comprendre votre situation, vos objectifs et le type de projet que vous avez en tête. Sans engagement."
+          "title": "Première orientation",
+          "desc": "Une conversation initiale pour connaître votre situation, vos objectifs et le type d'aide dont vous avez besoin. À partir de là, nous évaluons si un conseil ponctuel, un diagnostic plus approfondi ou un accompagnement continu est le plus pertinent."
         },
         {
           "step": "2",
-          "title": "Visite et diagnostic",
-          "desc": "Une visite de votre exploitation pour évaluer l'état du sol, des cultures et des infrastructures. Le diagnostic est la base de tout."
+          "title": "Diagnostic et lecture du système",
+          "desc": "Nous analysons les informations disponibles : caractéristiques de l'exploitation, gestion actuelle, cultures, sol, eau, intrants, photographies, analyses ou, si nécessaire, une visite sur place. L'objectif est de bien comprendre le système avant d'intervenir."
         },
         {
           "step": "3",
-          "title": "Protocole personnalisé",
-          "desc": "Une proposition concrète : feuille de route, calendrier d'interventions et accompagnement pendant la mise en œuvre."
+          "title": "Feuille de route personnalisée",
+          "desc": "Nous définissons une proposition claire et applicable : priorités, protocole d'action, calendrier et prochaines étapes. Selon le cas, nous pouvons vous accompagner dans la mise en œuvre, suivre les progrès et ajuster le plan en cours de route."
         }
       ]
     },
