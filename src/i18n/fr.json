@@ -28,9 +28,10 @@
       "description": "Programme annuel de formation en biofertilité pour les agriculteurs professionnels. Réduisez vos coûts de 30 à 50 %, restaurez la fertilité de vos sols. Seulement 20 places."
     },
     "hero": {
-      "eyebrow": "Une agriculture d'avenir",
-      "title": "Nous régénérons la vie du sol, le véritable moteur de l'agriculture.",
-      "subtitle": "Suelos Vivos est un projet dédié à la diffusion, la sensibilisation et la promotion de pratiques agricoles rentables, autonomes et en harmonie avec la nature.",
+      "eyebrow": "Conseil professionnel",
+      "title": "Vous avez un projet et souhaitez que nous vous accompagnions ?",
+      "subtitleP1": "Suelos Vivos aide les agriculteurs, les fermes et les projets agroécologiques à prendre de meilleures décisions concernant leur sol, sa fertilité et leur transition régénératrice.",
+      "subtitleP2": "Nous apportons un regard technique, une vision écologique et un accompagnement concret pour transformer des problèmes complexes en une feuille de route claire, viable et adaptée à chaque réalité.",
       "ctaPrograma": "Programme de formation",
       "ctaAsesoria": "Conseil professionnel",
       "imgAlt": "Agriculteurs dans les champs au crépuscule",
@@ -54,21 +55,21 @@
       "quoteAuthor": "Carles Pons — Fondateur de Bosque Madre"
     },
     "ecosystem": {
-      "eyebrow": "Notre mission",
-      "title": "Plus que de la formation : un écosystème de changement.",
-      "intro": "Suelos Vivos naît pour être le point de rencontre de la transition agroécologique à travers trois axes :",
+      "eyebrow": "Notre processus",
+      "title": "Voici comment nous travaillons avec vous",
+      "intro": "Chaque accompagnement commence par comprendre votre réalité avant de proposer des solutions. Nous n'appliquons pas de recettes toutes faites : nous adaptons le processus au type d'exploitation, au moment du projet et au niveau d'accompagnement dont vous avez besoin.",
       "items": [
         {
-          "title": "Nœud de confiance et de coopération",
-          "desc": "Une communauté active d'agriculteurs et de projets qui partagent des expériences réelles sur le terrain."
+          "title": "Première orientation",
+          "desc": "Une conversation initiale pour connaître votre situation, vos objectifs et le type d'aide dont vous avez besoin. À partir de là, nous évaluons si un conseil ponctuel, un diagnostic plus approfondi ou un accompagnement continu a du sens."
         },
         {
-          "title": "Plateforme d'apprentissage continu",
-          "desc": "Cours en présentiel, future académie en ligne (Q1 2027) et édition de matériaux techniques et de livres."
+          "title": "Diagnostic et lecture du système",
+          "desc": "Nous analysons les informations disponibles : caractéristiques de l'exploitation, gestion actuelle, cultures, sol, eau, intrants, photographies, analyses ou, si nécessaire, une visite sur place. L'objectif est de bien comprendre le système avant d'intervenir."
         },
         {
-          "title": "Projets en portefeuille",
-          "desc": "Biofabriques communautaires, réseaux de coopération et alliances avec des territoires ruraux en transition agroécologique."
+          "title": "Feuille de route personnalisée",
+          "desc": "Nous définissons une proposition claire et applicable : priorités, protocole d'action, calendrier et prochaines étapes. Selon le cas, nous pouvons vous accompagner dans la mise en œuvre, faire le point sur les avancées et ajuster le plan en cours de route."
         }
       ]
     },
@@ -370,7 +371,8 @@
     "hero": {
       "eyebrow": "Conseil professionnel",
       "title": "Vous avez un projet et souhaitez que nous vous accompagnions ?",
-      "subtitle": "Suelos Vivos conseille et accompagne. De la conception d'un protocole de régénération ou d'un plan de réduction des intrants, à la conception intégrale de fermes, la gestion des déchets biologiques ou l'installation de biofabriques pour l'autoproduction d'intrants. Nous sommes là pour vous aider."
+      "subtitleP1": "Suelos Vivos aide les agriculteurs, les fermes et les projets agroécologiques à prendre de meilleures décisions concernant leur sol, sa fertilité et leur transition régénératrice.",
+      "subtitleP2": "Nous apportons un regard technique, une vision écologique et un accompagnement concret pour transformer des problèmes complexes en une feuille de route claire, viable et adaptée à chaque réalité."
     },
     "services": {
       "items": [

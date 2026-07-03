@@ -28,9 +28,10 @@
       "description": "Programa anual de formación en biofertilidad para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica. Solo 20 plazas."
     },
     "hero": {
-      "eyebrow": "Agricultura con futuro",
-      "title": "Regeneramos la vida del suelo, el verdadero motor de la agricultura.",
-      "subtitle": "Suelos vivos es un proyecto destinado a difundir, sensibilizar y promover prácticas agrícolas rentables, autónomas y en sintonía con la naturaleza.",
+      "eyebrow": "Asesoría profesional",
+      "title": "¿Tienes un proyecto y quieres que te acompañemos?",
+      "subtitleP1": "Suelos Vivos ayuda a agricultores, fincas y proyectos agroecológicos a tomar mejores decisiones sobre su suelo, su fertilidad y su transición regenerativa.",
+      "subtitleP2": "Aportamos criterio técnico, visión ecológica y acompañamiento práctico para convertir problemas complejos en una hoja de ruta clara, viable y adaptada a cada realidad.",
       "ctaPrograma": "Programa formativo",
       "ctaAsesoria": "Asesoría profesional",
       "imgAlt": "Agricultores en el campo al atardecer",
@@ -54,21 +55,21 @@
       "quoteAuthor": "Carles Pons — Fundador de Bosque Madre"
     },
     "ecosystem": {
-      "eyebrow": "Nuestra misión",
-      "title": "Más que formación: un ecosistema de cambio.",
-      "intro": "Suelos Vivos nace para ser el punto de encuentro de la transición agroecológica a través de tres ejes:",
+      "eyebrow": "Nuestro proceso",
+      "title": "Así trabajamos contigo",
+      "intro": "Cada asesoría empieza por entender tu realidad antes de proponer soluciones. No aplicamos recetas cerradas: adaptamos el proceso al tipo de finca, al momento del proyecto y al nivel de acompañamiento que necesitas.",
       "items": [
         {
-          "title": "Nodo de confianza y cooperación",
-          "desc": "Una comunidad activa de agricultores y proyectos que comparten experiencias reales sobre el terreno."
+          "title": "Primera orientación",
+          "desc": "Conversación inicial para conocer tu situación, tus objetivos y el tipo de ayuda que necesitas. A partir de ahí valoramos si tiene sentido una asesoría puntual, un diagnóstico más profundo o un acompañamiento continuado."
         },
         {
-          "title": "Plataforma de aprendizaje continuo",
-          "desc": "Cursos presenciales, futura academia online (Q1 2027) y edición de materiales técnicos y libros."
+          "title": "Diagnóstico y lectura del sistema",
+          "desc": "Analizamos la información disponible: características de la finca, manejo actual, cultivos, suelo, agua, insumos, fotografías, analíticas o, cuando sea necesario, visita presencial. El objetivo es comprender bien el sistema antes de intervenir."
         },
         {
-          "title": "Proyectos en cartera",
-          "desc": "Biofábricas comunitarias, redes de cooperación y alianzas con territorios rurales en proceso de transición agroecológica."
+          "title": "Hoja de ruta personalizada",
+          "desc": "Definimos una propuesta clara y aplicable: prioridades, protocolo de actuación, cronograma y siguientes pasos. Según el caso, podemos acompañarte en la implementación, revisar avances y ajustar el plan sobre la marcha."
         }
       ]
     },
@@ -370,7 +371,8 @@
     "hero": {
       "eyebrow": "Asesoría profesional",
       "title": "¿Tienes un proyecto y quieres que te acompañemos?",
-      "subtitle": "Suelos Vivos asesora y ayuda. Desde diseñar un protocolo de regeneración o un plan de reducción de insumos, a diseño integral de fincas, gestión de residuos biológicos o instalación de biofábricas para la autoproducción de insumos. Estamos para ayudarte."
+      "subtitleP1": "Suelos Vivos ayuda a agricultores, fincas y proyectos agroecológicos a tomar mejores decisiones sobre su suelo, su fertilidad y su transición regenerativa.",
+      "subtitleP2": "Aportamos criterio técnico, visión ecológica y acompañamiento práctico para convertir problemas complejos en una hoja de ruta clara, viable y adaptada a cada realidad."
     },
     "services": {
       "items": [

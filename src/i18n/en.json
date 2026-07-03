@@ -28,9 +28,10 @@
       "description": "Annual biofertility training programme for professional farmers. Cut costs by 30–50%, restore soil fertility and gain technical autonomy. Only 20 places."
     },
     "hero": {
-      "eyebrow": "Agriculture with a future",
-      "title": "We regenerate the life of the soil, the true engine of agriculture.",
-      "subtitle": "Suelos Vivos is a project dedicated to spreading, raising awareness of, and promoting profitable farming practices that are autonomous and in harmony with nature.",
+      "eyebrow": "Professional advisory",
+      "title": "Do you have a project and want us to support you?",
+      "subtitleP1": "Suelos Vivos helps farmers, farms and agroecological projects make better decisions about their soil, its fertility and their regenerative transition.",
+      "subtitleP2": "We bring technical judgement, an ecological outlook and hands-on support to turn complex problems into a roadmap that is clear, workable and tailored to each reality.",
       "ctaPrograma": "Training programme",
       "ctaAsesoria": "Professional advisory",
       "imgAlt": "Farmers in the field at dusk",
@@ -54,21 +55,21 @@
       "quoteAuthor": "Carles Pons — Founder of Bosque Madre"
     },
     "ecosystem": {
-      "eyebrow": "Our mission",
-      "title": "More than education: an ecosystem of change.",
-      "intro": "Suelos Vivos is born to be the meeting point of the agroecological transition through three pillars:",
+      "eyebrow": "Our process",
+      "title": "How we work with you",
+      "intro": "Every advisory process starts by understanding your reality before proposing solutions. We don't apply one-size-fits-all recipes: we adapt the process to the type of farm, the stage of the project and the level of support you need.",
       "items": [
         {
-          "title": "Trust and cooperation hub",
-          "desc": "An active community of farmers and projects sharing real-world experiences on the ground."
+          "title": "First orientation",
+          "desc": "An initial conversation to understand your situation, your goals and the kind of help you need. From there we assess whether a one-off consultation, a deeper diagnosis or ongoing support makes more sense."
         },
         {
-          "title": "Continuous learning platform",
-          "desc": "In-person courses, future online academy (Q1 2027) and publication of technical materials and books."
+          "title": "Diagnosis and system reading",
+          "desc": "We analyse the information available: farm characteristics, current management, crops, soil, water, inputs, photos, lab tests or, when necessary, an on-site visit. The goal is to properly understand the system before intervening."
         },
         {
-          "title": "Pipeline projects",
-          "desc": "Community biofactories, cooperation networks and alliances with rural territories in agroecological transition."
+          "title": "Personalised roadmap",
+          "desc": "We define a clear, actionable proposal: priorities, action protocol, timeline and next steps. Depending on the case, we can support you through implementation, review progress and adjust the plan along the way."
         }
       ]
     },
@@ -370,7 +371,8 @@
     "hero": {
       "eyebrow": "Professional advisory",
       "title": "Do you have a project and want us to support you?",
-      "subtitle": "Suelos Vivos advises and helps. From designing a regeneration protocol or an input reduction plan, to integral farm design, biological waste management or biofactory installation for self-production of inputs. We are here to help."
+      "subtitleP1": "Suelos Vivos helps farmers, farms and agroecological projects make better decisions about their soil, its fertility and their regenerative transition.",
+      "subtitleP2": "We bring technical judgement, an ecological outlook and hands-on support to turn complex problems into a roadmap that is clear, workable and tailored to each reality."
     },
     "services": {
       "items": [
