@@ -14,7 +14,6 @@ export const POST: APIRoute = async ({ request }) => {
   const name    = (fd.get('name')    as string | null)?.trim() ?? '';
   const email   = (fd.get('email')   as string | null)?.trim() ?? '';
   const phone   = (fd.get('phone')   as string | null)?.trim() ?? '';
-  const finca   = (fd.get('finca')   as string | null)?.trim() ?? '';
   const message = (fd.get('message') as string | null)?.trim() ?? '';
 
   if (!name || !email) {
@@ -49,7 +48,7 @@ export const POST: APIRoute = async ({ request }) => {
     const leadBody: Record<string, unknown> = {
       name: `Solicitud Suelos Vivos — ${name}`,
       contactId,
-      desc: [finca && `Tipo de finca: ${finca}`, message].filter(Boolean).join('\n\n'),
+      desc: message,
     };
 
     if (import.meta.env.HOLDED_FUNNEL_ID) leadBody.funnelId = import.meta.env.HOLDED_FUNNEL_ID;

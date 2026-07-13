@@ -76,7 +76,7 @@ test.describe('Navigation', () => {
     await page.fill('input[name="name"]', 'Juan García');
     await page.fill('input[name="email"]', 'juan@ejemplo.com');
     await page.fill('input[name="phone"]', '+34 600 000 000');
-    await page.fill('input[name="finca"]', 'Olivar 20ha Alicante');
+    await page.fill('textarea[name="message"]', 'Olivar 20ha Alicante, buscamos reducir insumos.');
 
     await expect(page.locator('input[name="name"]')).toHaveValue('Juan García');
     await expect(page.locator('input[name="email"]')).toHaveValue('juan@ejemplo.com');
