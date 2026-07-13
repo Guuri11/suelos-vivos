@@ -27,6 +27,7 @@ const lp = (path: string) => localePath(lang, path);
 
       <!-- Nav desktop -->
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-[#1E1A15]">
+        <li><a href={lp('/')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.inicio')}</a></li>
         <li><a href={lp('/el-programa')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.elPrograma')}</a></li>
         <li><a href={lp('/servicios')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.servicios')}</a></li>
         <li><a href={lp('/quienes-somos')} class="hover:text-[#8B1A1A] transition-colors duration-200">{t(lang, 'nav.quienesSomos')}</a></li>
@@ -64,6 +65,7 @@ const lp = (path: string) => localePath(lang, path);
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-[#DDD8CE] bg-[#FAFAF7]">
     <div class="container py-4 flex flex-col gap-4">
+      <a href={lp('/')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.inicio')}</a>
       <a href={lp('/el-programa')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.elPrograma')}</a>
       <a href={lp('/servicios')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.servicios')}</a>
       <a href={lp('/quienes-somos')} class="text-sm font-medium text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">{t(lang, 'nav.quienesSomos')}</a>

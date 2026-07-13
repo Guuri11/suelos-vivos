@@ -1,5 +1,6 @@
 {
   "nav": {
+    "inicio": "Inicio",
     "elPrograma": "El Programa",
     "servicios": "Servicios",
     "quienesSomos": "Quiénes Somos",
@@ -8,7 +9,7 @@
     "reservarPlaza": "Reservar plaza"
   },
   "footer": {
-    "tagline": "Programa anual de formación en agricultura regenerativa para productores profesionales.",
+    "tagline": "Plataforma de aprendizaje, intercambio, sensibilización y asesoría en agricultura orgánica de suelos vivos.",
     "proyectoDe": "Un proyecto de",
     "navegacion": "Navegación",
     "contacto": "Contacto",
@@ -28,16 +29,16 @@
       "description": "Programa anual de formación en biofertilidad para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica. Solo 20 plazas."
     },
     "hero": {
-      "eyebrow": "Asesoría profesional",
-      "title": "¿Tienes un proyecto y quieres que te acompañemos?",
-      "subtitleP1": "Suelos Vivos ayuda a agricultores, fincas y proyectos agroecológicos a tomar mejores decisiones sobre su suelo, su fertilidad y su transición regenerativa.",
+      "eyebrow": "La agricultura del futuro",
+      "title": "Regeneremos",
+      "subtitleP1": "Suelos vivos es un proyecto destinado a difundir, sensibilizar y promover conocimientos y prácticas agrícolas que mejoren la rentabilidad, la resiliencia y la fertilidad, en sintonía con la naturaleza.",
       "subtitleP2": "Aportamos criterio técnico, visión ecológica y acompañamiento práctico para convertir problemas complejos en una hoja de ruta clara, viable y adaptada a cada realidad.",
       "ctaPrograma": "Programa formativo",
       "ctaAsesoria": "Asesoría profesional",
       "imgAlt": "Agricultores en el campo al atardecer",
       "stats": [
         { "value": "3", "label": "Talleres presenciales" },
-        { "value": "10", "label": "Meses de acompañamiento" },
+        { "value": "12", "label": "Meses de acompañamiento" },
         { "value": "20", "label": "Plazas disponibles" }
       ]
     },
@@ -55,28 +56,28 @@
       "quoteAuthor": "Carles Pons — Fundador de Bosque Madre"
     },
     "ecosystem": {
-      "eyebrow": "Nuestro proceso",
-      "title": "Así trabajamos contigo",
-      "intro": "Cada asesoría empieza por entender tu realidad antes de proponer soluciones. No aplicamos recetas cerradas: adaptamos el proceso al tipo de finca, al momento del proyecto y al nivel de acompañamiento que necesitas.",
+      "eyebrow": "Misión",
+      "title": "Ser un punto de encuentro",
+      "intro": "Suelos Vivos nace para ser el punto de encuentro de la transición agroecológica a través de tres ejes:",
       "items": [
         {
-          "title": "Primera orientación",
-          "desc": "Conversación inicial para conocer tu situación, tus objetivos y el tipo de ayuda que necesitas. A partir de ahí valoramos si tiene sentido una asesoría puntual, un diagnóstico más profundo o un acompañamiento continuado."
+          "title": "Comunidad",
+          "desc": "Una comunidad activa de agricultores y proyectos que comparten experiencias reales sobre el terreno para cocrear la agricultura del futuro."
         },
         {
-          "title": "Diagnóstico y lectura del sistema",
-          "desc": "Analizamos la información disponible: características de la finca, manejo actual, cultivos, suelo, agua, insumos, fotografías, analíticas o, cuando sea necesario, visita presencial. El objetivo es comprender bien el sistema antes de intervenir."
+          "title": "Formación",
+          "desc": "Cursos presenciales, futura academia online (Q1 2027) y publicación de materiales técnicos, así como organización de encuentros formativos con expertos internacionales."
         },
         {
-          "title": "Hoja de ruta personalizada",
-          "desc": "Definimos una propuesta clara y aplicable: prioridades, protocolo de actuación, cronograma y siguientes pasos. Según el caso, podemos acompañarte en la implementación, revisar avances y ajustar el plan sobre la marcha."
+          "title": "Proyectos semilla",
+          "desc": "Biofábricas comunitarias, redes de cooperación y alianzas para la comercialización, entre otras iniciativas."
         }
       ]
     },
     "workshops": {
-      "eyebrow": "PROGRAMA FORMATIVO FIBE26",
+      "eyebrow": "PROGRAMA FORMATIVO 2026 / 27",
       "title": "Deja de comprar fertilidad. Aprende a producirla.",
-      "subtitle": "Suelos Vivos imparte formación inmersiva en biofertilidad y agricultura regenerativa para productores profesionales que quieren reducir costes, recuperar el suelo y ganar autonomía técnica.",
+      "subtitle": "Suelos Vivos imparte un programa de formación y acompañamiento técnico en biofertilidad y agricultura orgánica para productores profesionales que quieren reducir costes, recuperar el suelo de forma rápida, y ganar en conocimiento, salud, fertilidad y autonomía.",
       "items": [
         {
           "label": "HORAS PRESENCIALES",
@@ -86,9 +87,9 @@
         },
         {
           "label": "DÍAS DE SERVICIO",
-          "value": "+300",
+          "value": "+350",
           "title": "Periodo de acompañamiento",
-          "desc": "Cuenta con herramientas digitales de seguimiento durante más de 300 días para medir tu progreso en tiempo real y garantizar que no pierdas el rumbo tras cada taller."
+          "desc": "Durante 12 meses contarás con herramientas digitales y encuentros virtuales de seguimiento para resolver dudas, aplicar el programa a tu propio sistema, medir tus avances y mantener el rumbo entre taller y taller."
         },
         {
           "label": "PLAZAS DISPONIBLES",
@@ -100,15 +101,27 @@
       "companionPre": "Más ",
       "companionPost": " meses de acompañamiento mensual online entre talleres · Acceso a grupo privado · Biblioteca de recursos"
     },
+    "onlineWaitlist": {
+      "title": "¿No puedes desplazarte?",
+      "desc": "Estamos preparando una edición online de Suelos Vivos para agricultores y técnicos que prefieren formarse desde su propia finca. Déjanos tu correo y te avisaremos de forma prioritaria antes del lanzamiento.",
+      "emailLabel": "Correo electrónico",
+      "placeholder": "tu@email.com",
+      "cta": "Avisadme",
+      "sending": "Enviando…",
+      "sent": "¡Apuntado! ✓",
+      "successMsg": "¡Gracias! Te avisaremos en cuanto abramos la edición online.",
+      "errorPrefix": "Ha habido un error. Escríbenos directamente a"
+    },
     "audience": {
       "eyebrow": "Para quién es",
       "title": "Para el agricultor que ya sabe que hay algo que no encaja",
       "items": [
-        "Productor profesional con finca en activo (hortícola, frutal, olivar, viña, cereal…)",
-        "Hartos de depender de insumos y quieren reducir costes de forma real",
-        "Con ganas de aprender y aplicar — no solo escuchar teoría",
-        "Dispuestos a invertir tiempo y recursos durante el año del programa",
-        "Buscan apoyo técnico real, no un curso online más"
+        "Productor profesional con fincas en activo o en proceso de conversión",
+        "Quieren aprender a ver su finca como un ecosistema productivo de alimentos sanos",
+        "Cansados de depender del ciclo insostenible de insumos y quieren reducir costes de forma real",
+        "Con ganas de aprender, comprender y aplicar — no solo escuchar teoría o aprender técnicas",
+        "Dispuestos a invertir tiempo y recursos para crear una finca resiliente, ecológica, fértil, con futuro",
+        "Buscan apoyo técnico real, con acompañamiento, no un curso más"
       ],
       "imgAlt": "Taller práctico de biofertilidad",
       "statsLabel1": "Reducción media de costes en",
@@ -122,15 +135,15 @@
       "eyebrow": "Qué consigues",
       "title": "Iniciar una transición realista hacia una fertilidad más natural y sostenible",
       "items": [
-        { "title": "Mejora tu autonomía técnica", "desc": "Adquiere el conocimiento y las herramientas para reducir tu dependencia de soluciones sintéticas." },
+        { "title": "Mejora tu autonomía técnica", "desc": "Adquiere el conocimiento y las herramientas para reducir tu dependencia externa y pilotar la fertilidad de tus tierras, más conocimiento, menos gastos." },
         { "title": "Disfruta de acompañamiento profesional", "desc": "Contrata los servicios que completan tu formación sólo cuando realmente los necesites." },
-        { "title": "Consigue suelos más resilientes", "desc": "Obtén cosechas más estables, plantas más sanas, y mayor resistencia a largo plazo a plagas o sequías." },
+        { "title": "Consigue suelos más resilientes", "desc": "Crea un ecosistema productivo sostenible y saludable. Haz que los alimentos que produces sean medicina." },
         { "title": "Reduce los costes económicos", "desc": "El suelo vivo trabaja para ti utilizando menos fertilizantes, disminuyendo el gasto fitosanitario y moderando la inversión en laboreo." }
       ]
     },
     "about": {
       "eyebrow": "Quiénes somos",
-      "title": "Un proyecto nacido del campo, no del laboratorio",
+      "title": "Un proyecto nacido del amor al campo",
       "p1": "Suelos Vivos es el programa formativo de <strong class=\"text-[#1E1A15]\">Bosque Madre</strong>, un proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo.",
       "p2": "No enseñamos desde la academia. Enseñamos desde la práctica diaria: lo que funciona, lo que falla y lo que transforma de verdad una finca convencional en un sistema regenerativo autónomo.",
       "p3": "Nuestro campo en Tormos (Alicante) es el aula. El laboratorio es el suelo vivo.",
@@ -154,7 +167,7 @@
     "pricing": {
       "eyebrow": "Inversión",
       "title": "Programa completo 2026–2027",
-      "subtitle": "Una inversión que se recupera en la primera campaña con la reducción de insumos.",
+      "subtitle": "Una inversión para quienes saben lo que van a ganar.",
       "payOnce": "Pago único",
       "payMonthly": "Fraccionado",
       "or": "o",
@@ -163,12 +176,13 @@
       "reservaWith": "Reserva con",
       "includes": [
         "3 talleres presenciales (fin de semana completo)",
-        "10 meses de acompañamiento mensual online",
+        "1 encuentro final",
+        "12 meses de acompañamiento mensual online",
+        "4 sesiones privadas",
         "Acceso a grupo privado de participantes",
         "Biblioteca de recursos y protocolos",
         "Análisis de suelo de tu finca incluido",
-        "Materiales e insumos para las prácticas",
-        "Visita a campo de Bosque Madre",
+        "Materiales para las prácticas",
         "Certificado de formación al terminar"
       ],
       "ctaPre": "Reservar plaza — Solo ",
@@ -180,16 +194,16 @@
   "elPrograma": {
     "seo": {
       "title": "El Programa — Suelos Vivos",
-      "description": "Tres talleres presenciales más 10 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
+      "description": "Tres talleres presenciales más 12 meses de acompañamiento en biofertilidad y agricultura regenerativa. Programa 2026–2027 en Tormos, Alicante. Solo 20 plazas."
     },
     "hero": {
       "eyebrow": "El programa",
-      "title": "Tres talleres.<br />Diez meses.<br />Un suelo diferente.",
-      "subtitle": "Suelos Vivos es un programa de formación anual diseñado para agricultores profesionales que quieren entender la biología de su suelo y aplicar técnicas de biofertilidad en su propia finca."
+      "title": "Doce meses.",
+      "subtitle": "Suelos Vivos es un programa de formación y acompañamiento anual diseñado para agricultores profesionales que quieren aprender a entender su finca como un ecosistema vivo y productivo, a través de la activación de la biología de su suelo y a aplicar técnicas de biofertilidad para reducir costes y ganar en calidad."
     },
     "overview": {
       "items": [
-        { "value": "3", "label": "Talleres presenciales", "desc": "Fines de semana completos en Tormos (Alicante). Teoría + práctica en campo real con materiales incluidos." },
+        { "value": "3", "label": "Talleres presenciales", "desc": "Fines de semana completos en Tormos (Alicante). Teoría y práctica en campo con materiales incluidos." },
         { "value": "12", "label": "Meses de acompañamiento", "desc": "Sesiones mensuales online entre talleres. Dudas resueltas, ajuste del plan y seguimiento personalizado." },
         { "value": "20", "label": "Plazas por edición", "desc": "Grupos pequeños para garantizar atención personalizada y aprendizaje entre iguales. Sin lista de espera." }
       ]
@@ -199,7 +213,7 @@
       "items": [
         {
           "number": "01",
-          "date": "Septiembre 2026",
+          "date": "Otoño 2026 (Noviembre)",
           "title": "El suelo vivo: diagnóstico y fundamentos",
           "desc": "El primer taller establece las bases. Aprenderás a entender el suelo como un ecosistema vivo, a identificar sus indicadores de salud y a diagnosticar el estado de tu finca antes de intervenir.",
           "imgAlt": "Taller 1 — El suelo vivo",
@@ -209,45 +223,50 @@
             "Cómo leer un análisis de suelo (y qué no dice)",
             "Indicadores visuales y sensoriales de salud edáfica",
             "Diagnóstico práctico en campo: tu suelo tiene historia",
-            "Introducción a los principios regenerativos aplicados"
+            "Introducción a los principios regenerativos aplicados",
+            "Cubiertas permanentes (I)",
+            "Técnicas de captura y multiplicación de microorganismos locales"
           ]
         },
         {
           "number": "02",
-          "date": "Octubre 2026",
+          "date": "Invierno 2027 (Febrero)",
           "title": "Biofertilidad en práctica",
           "desc": "El segundo taller es el más práctico. Elaboraremos juntos los principales bioinsumos: inoculantes, caldos y compost activado. Todo con materiales accesibles y reproducibles en tu finca.",
           "imgAlt": "Taller 2 — Biofertilidad en práctica",
           "topics": [
             "Inoculantes microbianos: elaboración y aplicación",
             "Compostaje avanzado con activadores biológicos",
-            "Caldos minerales y bioestimulantes naturales",
             "Biofertilización foliar y edáfica: cuándo y cómo",
-            "Técnicas de captura y multiplicación de microorganismos locales",
-            "Protocolos adaptados a diferentes cultivos y climas"
+            "Protocolos adaptados a diferentes cultivos y climas",
+            "Teoría y práctica de los biofertilizantes",
+            "Biochar, harinas de roca, bokashi"
           ]
         },
         {
           "number": "03",
-          "date": "Enero 2027",
+          "date": "Primavera 2027 (Abril)",
           "title": "Autonomía y diseño del plan",
           "desc": "El tercer taller cierra el ciclo. Diseñarás tu propio plan de biofertilidad para los próximos 3 años, evaluarás los resultados del primer año y trazarás la hoja de ruta hacia la autonomía técnica.",
           "imgAlt": "Taller 3 — Plan y autonomía",
           "topics": [
             "Evaluación de resultados: cómo medir la mejora del suelo",
-            "Diseño de rotaciones y cubierta vegetal regenerativa",
-            "Plan de biofertilidad personalizado para tu finca",
+            "Cubiertas permanentes (II)",
+            "Plan de biofertilidad, estudios de caso",
             "Manejo del agua y materia orgánica a largo plazo",
             "Cálculo de costes e impacto económico real",
-            "Hoja de ruta: los próximos 3 años en tu finca"
+            "Hoja de ruta: los próximos 3 años en tu finca",
+            "Teoría y práctica de los biofertilizantes (II)",
+            "Caldos minerales y bioestimulantes naturales"
           ]
         }
-      ]
+      ],
+      "note": "*Nota: el contenido de los talleres es mucho más amplio y se adaptará en la medida de lo posible a las necesidades concretas del grupo."
     },
     "mentoring": {
       "title": "Entre taller y taller: acompañamiento mensual",
       "items": [
-        { "title": "Sesiones online mensuales", "desc": "Una hora cada mes para revisar avances, resolver dudas técnicas y ajustar el plan a lo que está pasando en tu finca." },
+        { "title": "Sesiones online mensuales", "desc": "Encuentros de tres horas cada mes que no haya curso para revisar avances, resolver dudas técnicas y ajustar el plan a lo que está pasando en tu finca." },
         { "title": "Grupo privado de participantes", "desc": "Canal directo entre todos los participantes. Para compartir resultados, experiencias y apoyo mutuo entre agricultores." },
         { "title": "Biblioteca de recursos", "desc": "Protocolos, fichas técnicas, vídeos y bibliografía seleccionada. Todo accesible durante y después del programa." }
       ]
@@ -262,6 +281,33 @@
       "fractionedPrefix": "O fraccionado en",
       "fractionedMid": "pagos de",
       "fractionedSuffix": "€/mes"
+    },
+    "banner": {
+      "online": {
+        "title": "¿No puedes desplazarte?",
+        "desc": "Programa 100% online próximamente.",
+        "emailLabel": "Correo electrónico",
+        "placeholder": "tu@email.com",
+        "cta": "Avisadme",
+        "sending": "Enviando…",
+        "sent": "¡Apuntado! ✓",
+        "successMsg": "¡Gracias! Te avisaremos en cuanto abramos la edición online.",
+        "errorPrefix": "Ha habido un error. Escríbenos directamente a"
+      },
+      "advisory": {
+        "title": "¿No tienes tiempo?",
+        "desc": "Consulta para una asesoría personalizada.",
+        "cta": "Solicitar asesoría"
+      }
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Dudas habituales",
+      "items": [
+        { "q": "¿Dónde se imparten los cursos?", "a": "Los talleres presenciales se imparten en Tormos, Alicante." },
+        { "q": "¿Cuáles serán las fechas?", "a": "Los tres talleres presenciales son en otoño 2026 (noviembre), invierno 2027 (febrero) y primavera 2027 (abril)." },
+        { "q": "¿Incluye alojamiento y comida?", "a": "TODO: TBF" }
+      ]
     }
   },
   "quienesSomos": {
@@ -406,22 +452,22 @@
     "process": {
       "eyebrow": "Nuestro proceso",
       "title": "Así trabajamos contigo",
-      "subtitle": "Cada asesoría parte de escucharte y de entender tu finca antes de proponer nada.",
+      "subtitle": "Cada asesoría empieza por entender tu realidad antes de proponer soluciones. No aplicamos recetas cerradas: adaptamos el proceso al tipo de finca, al momento del proyecto y al nivel de acompañamiento que necesitas.",
       "steps": [
         {
           "step": "1",
-          "title": "Primera consulta",
-          "desc": "Conversación inicial para entender tu situación, objetivos y el tipo de proyecto que tienes en mente. Sin compromiso."
+          "title": "Primera orientación",
+          "desc": "Conversación inicial para conocer tu situación, tus objetivos y el tipo de ayuda que necesitas. A partir de ahí valoramos si tiene sentido una asesoría puntual, un diagnóstico más profundo o un acompañamiento continuado."
         },
         {
           "step": "2",
-          "title": "Visita y diagnóstico",
-          "desc": "Visita a tu finca para evaluar el estado del suelo, los cultivos y las infraestructuras. El diagnóstico es la base de todo."
+          "title": "Diagnóstico y lectura del sistema",
+          "desc": "Analizamos la información disponible: características de la finca, manejo actual, cultivos, suelo, agua, insumos, fotografías, analíticas o, cuando sea necesario, visita presencial. El objetivo es comprender bien el sistema antes de intervenir."
         },
         {
           "step": "3",
-          "title": "Protocolo personalizado",
-          "desc": "Propuesta concreta: hoja de ruta, cronograma de actuaciones y acompañamiento durante la implementación."
+          "title": "Hoja de ruta personalizada",
+          "desc": "Definimos una propuesta clara y aplicable: prioridades, protocolo de actuación, cronograma y siguientes pasos. Según el caso, podemos acompañarte en la implementación, revisar avances y ajustar el plan sobre la marcha."
         }
       ]
     },
@@ -503,7 +549,7 @@
       "authorName": "El equipo de Bosque Madre",
       "authorBio": "Más de 15 años de experiencia en agricultura regenerativa en el Mediterráneo. Formamos a productores profesionales que quieren reducir costes y recuperar la fertilidad de su suelo.",
       "ctaTitle": "¿Quieres aprender en el campo, no solo en papel?",
-      "ctaDesc": "El programa Suelos Vivos combina talleres presenciales con 10 meses de acompañamiento real.",
+      "ctaDesc": "El programa Suelos Vivos combina talleres presenciales con 12 meses de acompañamiento real.",
       "ctaBtn": "Reservar plaza"
     }
   }

@@ -10,6 +10,7 @@ const lang = getLang(Astro.currentLocale);
 type OverviewItem = { value: string; label: string; desc: string };
 type WorkshopItem = { number: string; date: string; title: string; desc: string; imgAlt: string; topics: string[] };
 type MentoringItem = { title: string; desc: string };
+type FaqItem = { q: string; a: string };
 ---
 
 <BaseLayout
@@ -96,6 +97,8 @@ type MentoringItem = { title: string; desc: string };
           </div>
         ))}
 
+        <p class="workshop-note text-sm text-[#6B6355] italic mb-20 -mt-8">{t(lang, 'elPrograma.workshops.note')}</p>
+
         <!-- Entre talleres -->
         <div class="between-section bg-[#F0F2EE] rounded-xl p-10 mb-20">
           <h2 class="font-display text-2xl text-[#1E1A15] mb-6">{t(lang, 'elPrograma.mentoring.title')}</h2>
@@ -166,6 +169,81 @@ type MentoringItem = { title: string; desc: string };
         </div>
       </div>
     </section>
+
+    <!-- BANNER: ONLINE / ASESORÍA -->
+    <section class="py-20 bg-[#FAFAF7]">
+      <div class="container max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="program-banner bg-[#6B8F71]/10 border border-[#6B8F71]/30 rounded-xl p-8 text-center">
+            <h3 class="font-display text-xl text-[#1E1A15] mb-2">{t(lang, 'elPrograma.banner.online.title')}</h3>
+            <p class="text-sm text-[#6B6355] mb-6">{t(lang, 'elPrograma.banner.online.desc')}</p>
+
+            <form
+              action="/api/waitlist"
+              method="POST"
+              id="programa-waitlist-form"
+              class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto"
+            >
+              <label for="programa-waitlist-email" class="sr-only">{t(lang, 'elPrograma.banner.online.emailLabel')}</label>
+              <input
+                type="email"
+                id="programa-waitlist-email"
+                name="email"
+                required
+                autocomplete="email"
+                class="flex-1 px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
+                placeholder={t(lang, 'elPrograma.banner.online.placeholder') as string}
+              />
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+              <button
+                type="submit"
+                id="programa-waitlist-submit"
+                data-label-submit={t(lang, 'elPrograma.banner.online.cta')}
+                data-label-sending={t(lang, 'elPrograma.banner.online.sending')}
+                data-label-sent={t(lang, 'elPrograma.banner.online.sent')}
+                class="px-6 py-3 bg-[#6B8F71] text-white font-semibold rounded-md hover:bg-[#587A5D] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm whitespace-nowrap cursor-pointer"
+              >
+                {t(lang, 'elPrograma.banner.online.cta')}
+              </button>
+            </form>
+
+            <p id="programa-waitlist-success" class="hidden mt-4 text-sm text-[#6B8F71] font-medium">
+              {t(lang, 'elPrograma.banner.online.successMsg')}
+            </p>
+            <p id="programa-waitlist-error" class="hidden mt-4 text-sm text-[#8B1A1A] font-medium">
+              {t(lang, 'elPrograma.banner.online.errorPrefix')} {siteConfig.contact.email}
+            </p>
+          </div>
+
+          <div class="program-banner bg-white border border-[#DDD8CE] rounded-xl p-8 text-center flex flex-col justify-center items-center">
+            <h3 class="font-display text-xl text-[#1E1A15] mb-2">{t(lang, 'elPrograma.banner.advisory.title')}</h3>
+            <p class="text-sm text-[#6B6355] mb-6">{t(lang, 'elPrograma.banner.advisory.desc')}</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center justify-center px-6 py-3 bg-[#1E1A15] text-white font-semibold rounded-md hover:bg-[#3A322A] transition-colors duration-200 text-sm"
+            >
+              {t(lang, 'elPrograma.banner.advisory.cta')}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-[#F0F2EE]">
+      <div class="container max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4 text-center">{t(lang, 'elPrograma.faq.eyebrow')}</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[#1E1A15] mb-12 text-center">{t(lang, 'elPrograma.faq.title')}</h2>
+        <div class="space-y-4">
+          {(t(lang, 'elPrograma.faq.items') as FaqItem[]).map(item => (
+            <div class="faq-item bg-white border border-[#DDD8CE] rounded-lg p-6">
+              <h3 class="font-semibold text-[#1E1A15] mb-2">{item.q}</h3>
+              <p class="text-sm text-[#6B6355] leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer lang={lang} />
@@ -207,5 +285,53 @@ type MentoringItem = { title: string; desc: string };
       { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
         scrollTrigger: { trigger: '.pricing-card', start: 'top 80%', once: true } }
     );
+
+    gsap.from('.program-banner', {
+      y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: '.program-banner', start: 'top 85%', once: true },
+    });
+
+    gsap.from('.faq-item', {
+      y: 30, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.faq-item', start: 'top 88%', once: true },
+    });
   }
+
+  // Waitlist form submission (edición online)
+  const waitlistForm = document.getElementById('programa-waitlist-form') as HTMLFormElement | null;
+  const waitlistSubmit = document.getElementById('programa-waitlist-submit') as HTMLButtonElement | null;
+  const waitlistSuccess = document.getElementById('programa-waitlist-success');
+  const waitlistError = document.getElementById('programa-waitlist-error');
+
+  waitlistForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!waitlistSubmit || !waitlistForm) return;
+
+    const labelSending = waitlistSubmit.dataset.labelSending ?? '...';
+    const labelSent = waitlistSubmit.dataset.labelSent ?? '✓';
+    const labelSubmit = waitlistSubmit.dataset.labelSubmit ?? waitlistSubmit.textContent ?? '';
+
+    waitlistSubmit.disabled = true;
+    waitlistSubmit.textContent = labelSending;
+    waitlistSuccess?.classList.add('hidden');
+    waitlistError?.classList.add('hidden');
+
+    try {
+      const res = await fetch(waitlistForm.action, {
+        method: 'POST',
+        body: new FormData(waitlistForm),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!res.ok) throw new Error('request failed');
+
+      waitlistSubmit.textContent = labelSent;
+      waitlistForm.reset();
+      waitlistSuccess?.classList.remove('hidden');
+    } catch {
+      waitlistSubmit.disabled = false;
+      waitlistSubmit.textContent = labelSubmit;
+      waitlistError?.classList.remove('hidden');
+    }
+  });
 </script>

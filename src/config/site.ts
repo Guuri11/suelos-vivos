@@ -8,11 +8,11 @@ export const siteConfig = {
     email: 'info@suelosvivos.com',
     phone: '',
     address: 'Tormos, Alicante',
-    formspree: 'https://formspree.io/f/XXXXXXXX',
+    formspree: 'https://formspree.io/f/xvzjdgbb',
   },
 
   social: {
-    instagram: 'https://instagram.com/suelosvivos',
+    instagram: 'https://www.instagram.com/suelosvivos_com',
     telegram: 'https://t.me/suelosvivos',
     youtube: '',
   },
@@ -20,7 +20,7 @@ export const siteConfig = {
   program: {
     spots: 20,
     spotsLeft: 20,
-    price: 1900,
+    price: 2299,
     priceMonthly: 200,
     months: 10,
     deposit: 500,
