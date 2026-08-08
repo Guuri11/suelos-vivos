@@ -264,6 +264,37 @@ const serviceIcons = [
           </p>
         </div>
 
+        <div
+          class="workshops-gallery grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 mb-16"
+        >
+          {
+            (
+              t(lang, "home.workshops.gallery") as {
+                image: string;
+                title: string;
+                text: string;
+              }[]
+            ).map((photo) => (
+              <div class="workshop-photo-card group relative aspect-square rounded-lg overflow-hidden">
+                <img
+                  src={photo.image}
+                  alt={photo.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#1E1A15]/90 via-[#1E1A15]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                  <h3 class="text-white font-semibold text-sm mb-1">
+                    {photo.title}
+                  </h3>
+                  <p class="text-white/85 text-xs leading-snug">
+                    {photo.text}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
         <div class="grid md:grid-cols-3 gap-6">
           {
             (
@@ -801,6 +832,23 @@ const serviceIcons = [
         scrollTrigger: {
           trigger: ".workshops-eyebrow",
           start: "top 70%",
+          once: true,
+        },
+      },
+    );
+
+    gsap.fromTo(
+      ".workshop-photo-card",
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".workshops-gallery",
+          start: "top 85%",
           once: true,
         },
       },

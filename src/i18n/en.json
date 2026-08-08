@@ -78,6 +78,48 @@
       "eyebrow": "TRAINING PROGRAMME 2026 / 27",
       "title": "Stop buying fertility. Learn to produce it.",
       "subtitle": "Suelos Vivos delivers a training and technical support programme in biofertility and organic agriculture for professional producers who want to reduce costs, restore their soil quickly, and grow in knowledge, health, fertility and autonomy.",
+      "gallery": [
+        {
+          "image": "/images/talleres/cubierta-vegetal.jpg",
+          "title": "Cover cropping",
+          "text": "Protects the soil from erosion and keeps it moist all year round."
+        },
+        {
+          "image": "/images/talleres/microbiologia.jpg",
+          "title": "Microbiology",
+          "text": "Billions of microorganisms working beneath your feet."
+        },
+        {
+          "image": "/images/talleres/biochar.jpg",
+          "title": "Biochar",
+          "text": "Charcoal that retains water and nutrients in the soil."
+        },
+        {
+          "image": "/images/talleres/biochar-aplicacion.jpg",
+          "title": "Applying biochar",
+          "text": "Worked into the soil to activate its regenerative capacity."
+        },
+        {
+          "image": "/images/talleres/cromatografia.jpg",
+          "title": "Chromatography",
+          "text": "Analyses your soil's biological health on a filter paper."
+        },
+        {
+          "image": "/images/talleres/semillas.jpg",
+          "title": "Seeds",
+          "text": "Selecting and preserving seeds for a self-reliant agriculture."
+        },
+        {
+          "image": "/images/talleres/lombrices.jpg",
+          "title": "Earthworms",
+          "text": "Bio-indicators of a living, well-structured soil."
+        },
+        {
+          "image": "/images/talleres/biofertilizante.jpg",
+          "title": "Biofertilizer",
+          "text": "Liquid extracts that nourish the soil naturally."
+        }
+      ],
       "items": [
         {
           "label": "IN-PERSON HOURS",

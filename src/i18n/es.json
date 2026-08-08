@@ -78,6 +78,48 @@
       "eyebrow": "PROGRAMA FORMATIVO 2026 / 27",
       "title": "Deja de comprar fertilidad. Aprende a producirla.",
       "subtitle": "Suelos Vivos imparte un programa de formación y acompañamiento técnico en biofertilidad y agricultura orgánica para productores profesionales que quieren reducir costes, recuperar el suelo de forma rápida, y ganar en conocimiento, salud, fertilidad y autonomía.",
+      "gallery": [
+        {
+          "image": "/images/talleres/cubierta-vegetal.jpg",
+          "title": "Cubierta vegetal",
+          "text": "Protege el suelo de la erosión y conserva la humedad todo el año."
+        },
+        {
+          "image": "/images/talleres/microbiologia.jpg",
+          "title": "Microbiología",
+          "text": "Miles de millones de microorganismos trabajan bajo tus pies."
+        },
+        {
+          "image": "/images/talleres/biochar.jpg",
+          "title": "Biochar",
+          "text": "Carbón vegetal que retiene agua y nutrientes en el suelo."
+        },
+        {
+          "image": "/images/talleres/biochar-aplicacion.jpg",
+          "title": "Aplicación del biochar",
+          "text": "Se incorpora al suelo para activar su capacidad regenerativa."
+        },
+        {
+          "image": "/images/talleres/cromatografia.jpg",
+          "title": "Cromatografía",
+          "text": "Analiza la salud biológica de tu suelo en un papel de filtro."
+        },
+        {
+          "image": "/images/talleres/semillas.jpg",
+          "title": "Semillas",
+          "text": "Selección y conservación de semillas para una agricultura autónoma."
+        },
+        {
+          "image": "/images/talleres/lombrices.jpg",
+          "title": "Lombrices",
+          "text": "Bioindicadoras de un suelo vivo y bien estructurado."
+        },
+        {
+          "image": "/images/talleres/biofertilizante.jpg",
+          "title": "Biofertilizante",
+          "text": "Extractos líquidos que nutren el suelo de forma natural."
+        }
+      ],
       "items": [
         {
           "label": "HORAS PRESENCIALES",
