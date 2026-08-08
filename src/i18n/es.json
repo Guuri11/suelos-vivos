@@ -30,7 +30,7 @@
     },
     "hero": {
       "eyebrow": "La agricultura del futuro",
-      "title": "Regeneremos",
+      "title": "Regeneremos la vida del suelo, el verdadero motor de la agricultura.",
       "subtitleP1": "Suelos vivos es un proyecto destinado a difundir, sensibilizar y promover conocimientos y prácticas agrícolas que mejoren la rentabilidad, la resiliencia y la fertilidad, en sintonía con la naturaleza.",
       "subtitleP2": "Aportamos criterio técnico, visión ecológica y acompañamiento práctico para convertir problemas complejos en una hoja de ruta clara, viable y adaptada a cada realidad.",
       "ctaPrograma": "Programa formativo",
@@ -492,7 +492,7 @@
         "Diseño integral de finca",
         "Gestión de residuos biológicos",
         "Instalación de biofábrica",
-        "No sé todavía, necesito orientación"
+        "Otros"
       ],
       "fincaLabel": "Tipo de finca y cultivo principal",
       "fincaPlaceholder": "Ej: Olivar, 50 ha, Jaén",

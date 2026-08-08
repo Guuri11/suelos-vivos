@@ -11,14 +11,29 @@ function holdedHeaders() {
 
 export const POST: APIRoute = async ({ request }) => {
   const fd = await request.formData();
-  const name    = (fd.get('name')    as string | null)?.trim() ?? '';
-  const email   = (fd.get('email')   as string | null)?.trim() ?? '';
-  const phone   = (fd.get('phone')   as string | null)?.trim() ?? '';
-  const message = (fd.get('message') as string | null)?.trim() ?? '';
+  const name     = (fd.get('name')     as string | null)?.trim() ?? '';
+  const email    = (fd.get('email')    as string | null)?.trim() ?? '';
+  const phone    = (fd.get('phone')    as string | null)?.trim() ?? '';
+  const message  = (fd.get('message')  as string | null)?.trim() ?? '';
+  const servicio = (fd.get('servicio') as string | null)?.trim() ?? '';
+  const finca    = (fd.get('finca')    as string | null)?.trim() ?? '';
+  const proyecto = (fd.get('proyecto') as string | null)?.trim() ?? '';
+  const honeypot = (fd.get('_gotcha')  as string | null) ?? '';
+
+  if (honeypot) {
+    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  }
 
   if (!name || !email) {
     return new Response(JSON.stringify({ error: 'Faltan campos obligatorios' }), { status: 400 });
   }
+
+  const descParts: string[] = [];
+  if (message)  descParts.push(message);
+  if (servicio) descParts.push(`Servicio de interés: ${servicio}`);
+  if (finca)    descParts.push(`Tipo de finca/cultivo: ${finca}`);
+  if (proyecto) descParts.push(`Proyecto: ${proyecto}`);
+  const desc = descParts.join('\n\n');
 
   try {
     // 1. Crear contacto en Holded
@@ -48,7 +63,7 @@ export const POST: APIRoute = async ({ request }) => {
     const leadBody: Record<string, unknown> = {
       name: `Solicitud Suelos Vivos — ${name}`,
       contactId,
-      desc: message,
+      desc,
     };
 
     if (import.meta.env.HOLDED_FUNNEL_ID) leadBody.funnelId = import.meta.env.HOLDED_FUNNEL_ID;
