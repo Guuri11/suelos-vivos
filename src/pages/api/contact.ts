@@ -1,13 +1,7 @@
 import type { APIRoute } from 'astro';
+import { insertLead, parseFormType } from '@/lib/leads';
 
-const HOLDED_BASE = 'https://api.holded.com/api';
-
-function holdedHeaders() {
-  return {
-    key: import.meta.env.HOLDED_API_KEY,
-    'Content-Type': 'application/json',
-  };
-}
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   const fd = await request.formData();
@@ -18,8 +12,11 @@ export const POST: APIRoute = async ({ request }) => {
   const servicio = (fd.get('servicio') as string | null)?.trim() ?? '';
   const finca    = (fd.get('finca')    as string | null)?.trim() ?? '';
   const proyecto = (fd.get('proyecto') as string | null)?.trim() ?? '';
+  const lang     = (fd.get('lang')     as string | null)?.trim() ?? '';
+  const privacy  = fd.get('privacy') !== null;
   const honeypot = (fd.get('_gotcha')  as string | null) ?? '';
 
+  // Bot: se responde 200 para no darle pistas, pero no se guarda nada.
   if (honeypot) {
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
   }
@@ -28,62 +25,27 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error: 'Faltan campos obligatorios' }), { status: 400 });
   }
 
-  const descParts: string[] = [];
-  if (message)  descParts.push(message);
-  if (servicio) descParts.push(`Servicio de interés: ${servicio}`);
-  if (finca)    descParts.push(`Tipo de finca/cultivo: ${finca}`);
-  if (proyecto) descParts.push(`Proyecto: ${proyecto}`);
-  const desc = descParts.join('\n\n');
+  // Este endpoint sirve al form de contacto y al de asesoría (/servicios).
+  const formType = parseFormType(fd.get('tipo') as string | null, 'contacto');
 
-  try {
-    // 1. Crear contacto en Holded
-    const contactRes = await fetch(`${HOLDED_BASE}/invoicing/v1/contacts`, {
-      method: 'POST',
-      headers: holdedHeaders(),
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        type: 'lead',
-        isperson: true,
-        tags: ['websuelos'],
-      }),
-    });
+  const { error } = await insertLead({
+    formType,
+    lang,
+    name,
+    email,
+    phone,
+    message,
+    servicio,
+    finca,
+    proyecto,
+    privacy,
+    userAgent: request.headers.get('user-agent') ?? undefined,
+  });
 
-    if (!contactRes.ok) {
-      const err = await contactRes.text();
-      console.error('Holded contact error:', err);
-      throw new Error('Error creando contacto en Holded');
-    }
-
-    const contact = await contactRes.json();
-    const contactId: string = contact.id;
-
-    // 2. Crear lead en el CRM
-    const leadBody: Record<string, unknown> = {
-      name: `Solicitud Suelos Vivos — ${name}`,
-      contactId,
-      desc,
-    };
-
-    if (import.meta.env.HOLDED_FUNNEL_ID) leadBody.funnelId = import.meta.env.HOLDED_FUNNEL_ID;
-    if (import.meta.env.HOLDED_STAGE_ID)  leadBody.stageId  = import.meta.env.HOLDED_STAGE_ID;
-
-    const leadRes = await fetch(`${HOLDED_BASE}/crm/v1/leads`, {
-      method: 'POST',
-      headers: holdedHeaders(),
-      body: JSON.stringify(leadBody),
-    });
-
-    if (!leadRes.ok) {
-      const err = await leadRes.text();
-      console.error('Holded lead error:', err);
-      throw new Error('Error creando lead en Holded');
-    }
-
-    return new Response(JSON.stringify({ ok: true }), { status: 200 });
-  } catch (err) {
-    console.error('contact endpoint error:', err);
+  if (error) {
+    console.error('contact endpoint error:', error);
     return new Response(JSON.stringify({ error: 'Error interno' }), { status: 500 });
   }
+
+  return new Response(JSON.stringify({ ok: true }), { status: 200 });
 };

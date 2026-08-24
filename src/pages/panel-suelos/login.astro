@@ -1,0 +1,50 @@
+---
+import PanelLayout from '@/layouts/PanelLayout.astro';
+
+export const prerender = false;
+
+const error = Astro.url.searchParams.get('error') === '1';
+const redirect = Astro.url.searchParams.get('redirect') ?? '';
+---
+
+<PanelLayout title="Acceso" logout={false}>
+  <main class="flex min-h-screen items-center justify-center px-4">
+    <form
+      method="POST"
+      action="/panel-suelos/api/login"
+      class="w-full max-w-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-8"
+    >
+      <h1 class="mb-1 text-xl font-semibold text-[var(--color-primary)]">Panel Suelos Vivos</h1>
+      <p class="mb-6 text-sm text-[var(--color-text-muted)]">
+        Acceso privado. Introduce la contraseña.
+      </p>
+
+      {error && (
+        <p class="mb-4 rounded-md border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-700">
+          Contraseña incorrecta.
+        </p>
+      )}
+
+      <input type="hidden" name="redirect" value={redirect} />
+
+      <label class="mb-2 block text-sm text-[var(--color-text-muted)]" for="password">
+        Contraseña
+      </label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required
+        autofocus
+        class="mb-6 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]"
+      />
+
+      <button
+        type="submit"
+        class="w-full rounded-md bg-[var(--color-primary)] px-4 py-2 font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-primary-dark)]"
+      >
+        Entrar
+      </button>
+    </form>
+  </main>
+</PanelLayout>

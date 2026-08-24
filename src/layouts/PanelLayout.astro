@@ -1,0 +1,43 @@
+---
+import '@/styles/global.css';
+
+// Layout propio del panel: no reutiliza BaseLayout para no arrastrar header,
+// footer, GSAP ni el SEO del sitio público a una zona privada.
+interface Props {
+  title: string;
+  logout?: boolean;
+}
+
+const { title, logout = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <title>{title} — Panel Suelos Vivos</title>
+  </head>
+  <body class="min-h-screen bg-[var(--color-bg-alt)] text-[var(--color-text)] antialiased">
+    {logout && (
+      <header class="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+          <a href="/panel-suelos" class="font-semibold text-[var(--color-primary)]">
+            Panel Suelos Vivos
+          </a>
+          <form method="POST" action="/panel-suelos/api/logout">
+            <button
+              type="submit"
+              class="text-sm text-[var(--color-text-muted)] underline underline-offset-4 hover:text-[var(--color-text)]"
+            >
+              Cerrar sesión
+            </button>
+          </form>
+        </div>
+      </header>
+    )}
+    <slot />
+  </body>
+</html>

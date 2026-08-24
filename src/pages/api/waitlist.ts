@@ -1,17 +1,12 @@
 import type { APIRoute } from 'astro';
+import { insertLead, parseFormType } from '@/lib/leads';
 
-const HOLDED_BASE = 'https://api.holded.com/api';
-
-function holdedHeaders() {
-  return {
-    key: import.meta.env.HOLDED_API_KEY,
-    'Content-Type': 'application/json',
-  };
-}
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   const fd = await request.formData();
   const email = (fd.get('email') as string | null)?.trim() ?? '';
+  const lang  = (fd.get('lang')  as string | null)?.trim() ?? '';
   const honeypot = (fd.get('_gotcha') as string | null) ?? '';
 
   if (honeypot) {
@@ -22,28 +17,20 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error: 'Falta el email' }), { status: 400 });
   }
 
-  try {
-    const contactRes = await fetch(`${HOLDED_BASE}/invoicing/v1/contacts`, {
-      method: 'POST',
-      headers: holdedHeaders(),
-      body: JSON.stringify({
-        name: email,
-        email,
-        type: 'lead',
-        isperson: true,
-        tags: ['waitlist-online-fibe'],
-      }),
-    });
+  // Dos formularios de lista de espera: home y /el-programa.
+  const formType = parseFormType(fd.get('tipo') as string | null, 'waitlist-home');
 
-    if (!contactRes.ok) {
-      const err = await contactRes.text();
-      console.error('Holded contact error:', err);
-      throw new Error('Error creando contacto en Holded');
-    }
+  const { error } = await insertLead({
+    formType,
+    lang,
+    email,
+    userAgent: request.headers.get('user-agent') ?? undefined,
+  });
 
-    return new Response(JSON.stringify({ ok: true }), { status: 200 });
-  } catch (err) {
-    console.error('waitlist endpoint error:', err);
+  if (error) {
+    console.error('waitlist endpoint error:', error);
     return new Response(JSON.stringify({ error: 'Error interno' }), { status: 500 });
   }
+
+  return new Response(JSON.stringify({ ok: true }), { status: 200 });
 };

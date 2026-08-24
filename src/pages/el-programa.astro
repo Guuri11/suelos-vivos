@@ -194,6 +194,8 @@ type FaqItem = { q: string; a: string };
                 class="flex-1 px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
                 placeholder={t(lang, 'elPrograma.banner.online.placeholder') as string}
               />
+              <input type="hidden" name="tipo" value="waitlist-programa" />
+              <input type="hidden" name="lang" value={lang} />
               <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
               <button
                 type="submit"

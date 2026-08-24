@@ -41,7 +41,9 @@ export default defineConfig({
         'https://suelosvivos.com/fr/contacto',
       ],
       filter: (page) =>
-        !page.includes('aviso-legal') && !page.includes('politica-privacidad'),
+        !page.includes('aviso-legal') &&
+        !page.includes('politica-privacidad') &&
+        !page.includes('panel-suelos'),
       i18n: {
         defaultLocale: 'es',
         locales: {
