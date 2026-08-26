@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://suelosvivos.com',
+  site: 'https://www.suelosvivos.com',
   output: 'server',
   adapter: vercel(),
   vite: {
@@ -24,24 +24,24 @@ export default defineConfig({
     react(),
     sitemap({
       customPages: [
-        'https://suelosvivos.com/',
-        'https://suelosvivos.com/el-programa',
-        'https://suelosvivos.com/quienes-somos',
-        'https://suelosvivos.com/blog',
-        'https://suelosvivos.com/preguntas-frecuentes',
-        'https://suelosvivos.com/contacto',
-        'https://suelosvivos.com/en/',
-        'https://suelosvivos.com/en/el-programa',
-        'https://suelosvivos.com/en/quienes-somos',
-        'https://suelosvivos.com/en/blog',
-        'https://suelosvivos.com/en/preguntas-frecuentes',
-        'https://suelosvivos.com/en/contacto',
-        'https://suelosvivos.com/fr/',
-        'https://suelosvivos.com/fr/el-programa',
-        'https://suelosvivos.com/fr/quienes-somos',
-        'https://suelosvivos.com/fr/blog',
-        'https://suelosvivos.com/fr/preguntas-frecuentes',
-        'https://suelosvivos.com/fr/contacto',
+        'https://www.suelosvivos.com/',
+        'https://www.suelosvivos.com/el-programa',
+        'https://www.suelosvivos.com/quienes-somos',
+        'https://www.suelosvivos.com/blog',
+        'https://www.suelosvivos.com/preguntas-frecuentes',
+        'https://www.suelosvivos.com/contacto',
+        'https://www.suelosvivos.com/en/',
+        'https://www.suelosvivos.com/en/el-programa',
+        'https://www.suelosvivos.com/en/quienes-somos',
+        'https://www.suelosvivos.com/en/blog',
+        'https://www.suelosvivos.com/en/preguntas-frecuentes',
+        'https://www.suelosvivos.com/en/contacto',
+        'https://www.suelosvivos.com/fr/',
+        'https://www.suelosvivos.com/fr/el-programa',
+        'https://www.suelosvivos.com/fr/quienes-somos',
+        'https://www.suelosvivos.com/fr/blog',
+        'https://www.suelosvivos.com/fr/preguntas-frecuentes',
+        'https://www.suelosvivos.com/fr/contacto',
       ],
       filter: (page) =>
         !page.includes('aviso-legal') &&

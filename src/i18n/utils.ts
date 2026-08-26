@@ -7,6 +7,13 @@ export type Lang = 'es' | 'en' | 'fr';
 export const SUPPORTED_LANGS: Lang[] = ['es', 'en', 'fr'];
 export const DEFAULT_LANG: Lang = 'es';
 
+/** Native name of each language, for the language switcher. */
+export const LANG_NAMES: Record<Lang, string> = {
+  es: 'Español',
+  en: 'English',
+  fr: 'Français',
+};
+
 const translations: Record<Lang, Record<string, unknown>> = { es, en, fr };
 
 /**

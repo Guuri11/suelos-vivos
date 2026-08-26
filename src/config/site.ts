@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Suelos Vivos',
   tagline: 'La agricultura del futuro',
   description: 'Programa anual de formación en agricultura regenerativa para agricultores profesionales. Reduce costes 30–50%, recupera la fertilidad de tu suelo y gana autonomía técnica.',
-  url: 'https://suelosvivos.com',
+  url: 'https://www.suelosvivos.com',
 
   contact: {
     email: 'info@suelosvivos.com',

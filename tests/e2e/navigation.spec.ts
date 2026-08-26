@@ -1,5 +1,17 @@
 import { test, expect } from '@playwright/test';
 
+/**
+ * En móvil la nav de la cabecera es `hidden md:flex`: sus enlaces existen pero están
+ * ocultos a propósito. Los equivalentes viven en #mobile-menu, tras el hamburger.
+ */
+async function openNavIfMobile(page: import('@playwright/test').Page) {
+  const desktopNav = page.locator('header nav > ul').first();
+  if (!(await desktopNav.isVisible())) {
+    await page.locator('#menu-toggle').click();
+    await expect(page.locator('#mobile-menu')).toBeVisible();
+  }
+}
+
 test.describe('Navigation', () => {
   test('homepage loads with correct title', async ({ page }) => {
     await page.goto('/');
@@ -8,20 +20,21 @@ test.describe('Navigation', () => {
 
   test('hero section is visible', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('h1')).toBeVisible();
-    await expect(page.locator('a[href="/contacto"]').first()).toBeVisible();
+    await expect(page.locator('main h1')).toBeVisible();
+    await expect(page.locator('main .hero-actions a[href="/el-programa"]')).toBeVisible();
+    await expect(page.locator('main .hero-actions a[href="/servicios"]')).toBeVisible();
   });
 
   test('el-programa page loads', async ({ page }) => {
     await page.goto('/el-programa');
     await expect(page).toHaveTitle(/El Programa/);
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('main h1')).toBeVisible();
   });
 
   test('quienes-somos page loads', async ({ page }) => {
     await page.goto('/quienes-somos');
     await expect(page).toHaveTitle(/Quiénes Somos/);
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('main h1')).toBeVisible();
   });
 
   test('contacto page loads with form', async ({ page }) => {
@@ -44,9 +57,27 @@ test.describe('Navigation', () => {
 
   test('header navigation links are present', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('nav a[href="/el-programa"]')).toBeVisible();
-    await expect(page.locator('nav a[href="/quienes-somos"]')).toBeVisible();
-    await expect(page.locator('nav a[href="/contacto"]').first()).toBeVisible();
+    await openNavIfMobile(page);
+    await expect(page.locator('header a[href="/el-programa"]:visible').first()).toBeVisible();
+    await expect(page.locator('header a[href="/quienes-somos"]:visible').first()).toBeVisible();
+    await expect(page.locator('header a[href="/contacto"]:visible').first()).toBeVisible();
+  });
+
+  // /en/ y /fr/ sirvieron 200 durante meses sin un solo enlace que llevara a ellas.
+  // Estos dos tests son la red que impide que vuelva a pasar.
+  test('language switcher links to /en and /fr from the home', async ({ page }) => {
+    await page.goto('/');
+    await openNavIfMobile(page);
+    await expect(page.locator('header a[hreflang="en"]:visible').first()).toHaveAttribute('href', '/en');
+    await expect(page.locator('header a[hreflang="fr"]:visible').first()).toHaveAttribute('href', '/fr');
+  });
+
+  test('language switcher keeps the current page', async ({ page }) => {
+    await page.goto('/el-programa');
+    await openNavIfMobile(page);
+    await page.locator('header a[hreflang="en"]:visible').first().click();
+    await expect(page).toHaveURL(/\/en\/el-programa$/);
+    await expect(page.locator('main h1')).toBeVisible();
   });
 
   test('footer is present with links', async ({ page }) => {

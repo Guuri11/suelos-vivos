@@ -49,37 +49,58 @@ Lectura: `internal-docs/baselines/README.md`
 Es el primer baseline del cliente. **Nada se migra ni se rediseña sin compararlo contra
 él**: `squirrel report --regressionSince d2bcd508`.
 
-## Lo que hay roto y está medido, no arreglado
+Ojo al leerlo: su Internacionalización marca 100/100 y eso significaba «no medido», no
+«bien». El crawler encontró 9 páginas, las 9 en español, y nunca llegó a `/en/` ni `/fr/`
+porque no había enlaces. Con el selector de idioma ya montado, la próxima auditoría verá
+las tres ramas y **esa cifra debería bajar**: sería una medición nueva, no una regresión.
 
-Todo esto es W6. Está aquí para que nadie lo redescubra desde cero.
+## Host canónico: www
 
-### La causa raíz: el host
+`https://www.suelosvivos.com`. El apex responde 308 hacia www, así que la decisión ya
+estaba tomada por la infraestructura; el 26/08/2026 se alineó el código con ella.
 
-`src/config/site.ts` y `astro.config.mjs` declaran `https://suelosvivos.com`, **sin www**.
-El sitio sirve en **www** y responde 308 desde no-www. De ahí salen, en cascada:
+Está declarado en `src/config/site.ts`, y de ahí salen `canonical`, los cuatro `hreflang`
+y el `og:url` (todos en `BaseLayout.astro`), más `site` y las `customPages` del sitemap en
+`astro.config.mjs`. **No se declara el host en ningún otro sitio**: si hace falta cambiarlo,
+se cambia en `site.ts` y en `astro.config.mjs`, y nada más.
 
-- `canonical` apuntando a una URL que redirige, así que no es autorreferencial
-- los cuatro `hreflang` (es, en, fr, x-default) apuntando a URLs que redirigen
-- las 30 URLs del sitemap en no-www: **las 30 son redirecciones**
+## Selector de idioma
 
-Google descarta el conjunto entero de anotaciones hreflang cuando pasa esto. No lo corrige.
+`Header.astro` lo monta en desktop y en el menú móvil, a partir de `SUPPORTED_LANGS` y
+`stripLangPrefix(Astro.url.pathname)`, así que lleva a **la página equivalente**, no a la
+home. Son enlaces `<a href>` reales, con `hreflang` y `lang`.
 
-Es un arreglo de una línea en dos ficheros, pero **hay que decidir antes cuál es el host
-canónico** —www o no-www— y alinear Vercel, el sitemap y el contenido con esa decisión de
-una vez. No se cambia a medias.
+**No se sustituye por un `<select>` con JavaScript ni por redirección según IP o idioma
+del navegador.** Si el rastreador no puede seguir los enlaces, `/en/` y `/fr/` vuelven a
+ser huérfanas, que es exactamente el estado del que se sale.
 
-### Los idiomas son huérfanos
+Dos tests de `tests/e2e/navigation.spec.ts` lo cubren: que enlace a `/en` y `/fr` desde la
+home, y que conserve la página al cambiar de idioma.
 
-`/en/` y `/fr/` sirven 200 con contenido real, pero **no hay un solo enlace a ellos desde
-la home**: no existe selector de idioma navegable. Solo se llega por sitemap.
+## Lo que sigue roto y está medido, no arreglado
 
-Cuando se monte el selector: enlaces reales, nunca JavaScript que redirige, nunca
-redirección automática por IP, y que lleve a la página equivalente y no a la home.
+### Dos formas de URL compitiendo
 
-### Y dos cosas sueltas
+`astro.config.mjs` no declara `trailingSlash`, así que vale `'ignore'`: `/el-programa` y
+`/el-programa/` sirven las dos 200 y **cada una emite un canonical hacia sí misma**, porque
+`canonical` se construye con `Astro.url.pathname`. El sitemap lista las dos formas de cada
+página —19 duplicados de 39 URLs— así que le pide a Google que indexe ambas.
 
-- **No hay `robots.txt`**: devuelve 404, y con él no se declara el sitemap
-- Cada página está **dos veces en el sitemap**, con y sin barra final
+El arreglo es el mismo que ya lleva Orcars: `trailingSlash: 'always'` en `astro.config.mjs`,
+`"trailingSlash": true` en un `vercel.json` (que este proyecto todavía no tiene) y barra
+final en las `customPages`. **Cambia todas las URLs del sitio**, así que no entra sin
+decidirlo aparte.
+→ `internal-docs/adr/` 0001, y `.claude/rules/astro.md`
+
+### No hay robots.txt
+
+`/robots.txt` devuelve 404, y con él no se declara el sitemap.
+
+### El sitemap no lista todo
+
+Faltan `/aviso-legal` y `/politica-privacidad`. Puede ser deliberado —`rules/astro.md`
+admite filtrar avisos legales— pero no está escrito en ninguna parte, así que hoy no se
+puede distinguir de un olvido.
 
 ## Modificaciones
 

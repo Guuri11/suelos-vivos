@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from '@/config/site';
-import { localePath, t, type Lang } from '@/i18n/utils';
+import { localePath, stripLangPrefix, t, LANG_NAMES, SUPPORTED_LANGS, type Lang } from '@/i18n/utils';
 
 interface Props {
   lang: Lang;
@@ -8,6 +8,16 @@ interface Props {
 
 const { lang } = Astro.props;
 const lp = (path: string) => localePath(lang, path);
+
+// Misma página en los otros idiomas. Enlaces reales, no un <select> con JS:
+// si el rastreador no puede seguirlos, /en/ y /fr/ vuelven a ser huérfanas.
+const basePath = stripLangPrefix(Astro.url.pathname);
+const langLinks = SUPPORTED_LANGS.map((l) => ({
+  lang: l,
+  name: LANG_NAMES[l],
+  href: localePath(l, basePath),
+  current: l === lang,
+}));
 ---
 
 <header class="site-header fixed top-0 left-0 right-0 z-50 bg-[#FAFAF7]/95 backdrop-blur-sm border-b border-[#DDD8CE]">
@@ -37,6 +47,29 @@ const lp = (path: string) => localePath(lang, path);
 
       <!-- CTA + hamburger -->
       <div class="flex items-center gap-3">
+        <!-- Selector de idioma (desktop) -->
+        <ul class="hidden md:flex items-center gap-1 text-xs font-medium" aria-label={t(lang, 'nav.idioma')}>
+          {langLinks.map(({ lang: l, name, href, current }) => (
+            <li>
+              <a
+                href={href}
+                hreflang={l}
+                lang={l}
+                aria-current={current ? 'true' : undefined}
+                class:list={[
+                  'block px-1.5 py-1 uppercase tracking-wide transition-colors duration-200',
+                  current ? 'text-[#8B1A1A]' : 'text-[#1E1A15]/45 hover:text-[#8B1A1A]',
+                ]}
+              >
+                <span class="sr-only">{name}</span>
+                <span aria-hidden="true">{l}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <span class="hidden md:block w-px h-4 bg-[#DDD8CE]" aria-hidden="true"></span>
+
         <a
           href={lp('/contacto')}
           class="hidden md:inline-flex items-center px-4 py-2 bg-[#8B1A1A] text-[#FAFAF7] text-sm font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 cursor-pointer"
@@ -74,6 +107,26 @@ const lp = (path: string) => localePath(lang, path);
       <a href={lp('/contacto')} class="inline-flex justify-center items-center px-4 py-2.5 bg-[#8B1A1A] text-[#FAFAF7] text-sm font-semibold rounded-md hover:bg-[#6B1212] transition-colors cursor-pointer">
         {t(lang, 'nav.reservarPlaza')}
       </a>
+
+      <!-- Selector de idioma (móvil) -->
+      <ul class="flex items-center gap-4 pt-4 mt-1 border-t border-[#DDD8CE] text-sm font-medium" aria-label={t(lang, 'nav.idioma')}>
+        {langLinks.map(({ lang: l, name, href, current }) => (
+          <li>
+            <a
+              href={href}
+              hreflang={l}
+              lang={l}
+              aria-current={current ? 'true' : undefined}
+              class:list={[
+                'transition-colors duration-200',
+                current ? 'text-[#8B1A1A]' : 'text-[#1E1A15]/55 hover:text-[#8B1A1A]',
+              ]}
+            >
+              {name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </header>
