@@ -1,0 +1,95 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
+const { price, priceMonthly, installments, deposit, months, spots, startDate, location } =
+  siteConfig.program;
+---
+
+<BaseLayout
+  title={t(lang, 'terminos.seo.title')}
+  description={t(lang, 'terminos.seo.description')}
+>
+  <Header lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="container max-w-3xl">
+      <h1 class="font-display text-4xl text-[#1E1A15] mb-4">Términos y Condiciones</h1>
+      <p class="text-[#6B6355] mb-12">Última actualización: agosto 2026</p>
+
+      <div class="prose-content space-y-8 text-[#6B6355] leading-relaxed">
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">1. Objeto y aceptación</h2>
+          <p>Estas condiciones regulan la contratación del programa formativo <strong class="text-[#1E1A15]">Suelos Vivos</strong> y de los servicios de asesoría ofrecidos por Bosque Madre a través de este sitio web.</p>
+          <p class="mt-3">Al enviar cualquiera de los formularios de esta web marcando la casilla de aceptación, confirmas que has leído y aceptas estas condiciones y la <a href="/politica-privacidad" class="text-[#8B1A1A] underline hover:text-[#6B1212] transition-colors">Política de Privacidad</a>.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">2. Descripción del programa</h2>
+          <p>Suelos Vivos es un programa anual de formación y acompañamiento técnico en biofertilidad y agricultura orgánica dirigido a productores profesionales. Incluye:</p>
+          <ul class="mt-3 space-y-1 list-disc list-inside">
+            <li>Tres talleres presenciales de fin de semana completo en {location}</li>
+            <li>Un encuentro final de cierre</li>
+            <li>{months} meses de acompañamiento con sesiones online mensuales</li>
+            <li>Cuatro sesiones privadas de tutoría</li>
+            <li>Acceso al grupo privado de participantes y a la biblioteca de recursos</li>
+            <li>Análisis de suelo de tu finca y materiales para las prácticas</li>
+            <li>Certificado de formación al finalizar</li>
+          </ul>
+          <p class="mt-3">El programa comienza en {startDate} y las plazas están limitadas a {spots} participantes. El contenido de los talleres es orientativo y podrá adaptarse a las necesidades concretas del grupo.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">3. Precio y forma de pago</h2>
+          <ul class="mt-3 space-y-2 list-disc list-inside">
+            <li><strong class="text-[#1E1A15]">Pago único:</strong> {price}€ (IVA incluido).</li>
+            <li><strong class="text-[#1E1A15]">Pago fraccionado:</strong> {priceMonthly}€ al mes durante {installments} meses, más una reserva de {deposit}€ en el momento de la inscripción.</li>
+          </ul>
+          <p class="mt-3">La reserva de plaza se considera formalizada cuando se recibe el pago correspondiente. Los precios incluyen los impuestos aplicables.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">4. Qué no está incluido</h2>
+          <p>Salvo que se indique expresamente en la información concreta de cada taller o edición, el precio <strong class="text-[#1E1A15]">no incluye</strong> alojamiento, comidas ni transporte hasta el lugar de los talleres.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">5. Cancelaciones y desistimiento</h2>
+          <p>Puedes cancelar tu participación una vez comenzado el programa. Las condiciones concretas de cancelación y devolución dependen de la modalidad de inscripción y de pago elegida, y se comunican antes de formalizar la reserva.</p>
+          <p class="mt-3">Si contratas como consumidor, dispones del derecho de desistimiento de catorce días naturales previsto en la normativa de consumo, salvo que el servicio haya comenzado a prestarse con tu consentimiento expreso dentro de ese plazo.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">6. Inasistencia y cambios de fecha</h2>
+          <p>Si no puedes asistir a un taller presencial, buscaremos la mejor forma de que no pierdas el hilo del programa mediante materiales, grabaciones o seguimiento online, según las condiciones de cada edición. Las sesiones online quedarán grabadas siempre que sea posible.</p>
+          <p class="mt-3">Bosque Madre podrá modificar las fechas o el lugar de los talleres por causas justificadas, comunicándolo con la mayor antelación posible.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">7. Propiedad intelectual</h2>
+          <p>Los materiales, protocolos, grabaciones y contenidos entregados durante el programa son propiedad de Bosque Madre y se ceden para uso personal del participante. No está permitida su reproducción, distribución ni comunicación pública sin autorización previa por escrito.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">8. Servicios de asesoría</h2>
+          <p>Las asesorías se presupuestan de forma individual tras una primera conversación de orientación. El alcance, el plazo y el precio se acuerdan por escrito antes de comenzar el trabajo.</p>
+          <p class="mt-3">Las recomendaciones técnicas se emiten a partir de la información aportada por el cliente y de las condiciones observadas. Los resultados agronómicos dependen del manejo posterior y de factores ajenos a Bosque Madre, por lo que no se garantizan resultados concretos.</p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl text-[#1E1A15] mb-4">9. Legislación aplicable</h2>
+          <p>Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales que correspondan conforme a la normativa aplicable.</p>
+          <p class="mt-3">Para cualquier consulta sobre estas condiciones puedes escribirnos a <a href={`mailto:${siteConfig.contact.email}`} class="text-[#8B1A1A] underline hover:text-[#6B1212] transition-colors">{siteConfig.contact.email}</a>.</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

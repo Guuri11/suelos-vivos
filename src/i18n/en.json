@@ -5,6 +5,7 @@
     "servicios": "Services",
     "quienesSomos": "About Us",
     "blog": "Blog",
+    "faq": "FAQ",
     "contacto": "Contact",
     "reservarPlaza": "Reserve your spot"
   },
@@ -20,8 +21,16 @@
       "quienesSomos": "About Us",
       "reservarPlaza": "Reserve your spot",
       "avisoLegal": "Legal Notice",
-      "politicaPrivacidad": "Privacy Policy"
+      "politicaPrivacidad": "Privacy Policy",
+      "terminos": "Terms and Conditions"
     }
+  },
+  "consent": {
+    "prefix": "I have read and accept the",
+    "privacyLink": "privacy policy",
+    "and": "and the",
+    "termsLink": "terms and conditions",
+    "suffix": ". My data will only be used to handle this request."
   },
   "home": {
     "seo": {
@@ -80,9 +89,9 @@
       "subtitle": "Suelos Vivos delivers a training and technical support programme in biofertility and organic agriculture for professional producers who want to reduce costs, restore their soil quickly, and grow in knowledge, health, fertility and autonomy.",
       "gallery": [
         {
-          "image": "/images/talleres/cubierta-vegetal.jpg",
-          "title": "Cover cropping",
-          "text": "Protects the soil from erosion and keeps it moist all year round."
+          "image": "/images/talleres/bocashi.jpg",
+          "title": "Bokashi",
+          "text": "Fermented compost that activates soil life and feeds the crop."
         },
         {
           "image": "/images/talleres/microbiologia.jpg",
@@ -95,9 +104,9 @@
           "text": "Charcoal that retains water and nutrients in the soil."
         },
         {
-          "image": "/images/talleres/biochar-aplicacion.jpg",
-          "title": "Applying biochar",
-          "text": "Worked into the soil to activate its regenerative capacity."
+          "image": "/images/talleres/cubierta-vegetal.jpg",
+          "title": "Cover cropping",
+          "text": "Protects the soil from erosion and keeps it moist all year round."
         },
         {
           "image": "/images/talleres/cromatografia.jpg",
@@ -345,6 +354,7 @@
     "faq": {
       "eyebrow": "Frequently asked questions",
       "title": "Common questions",
+      "seeAll": "See all 21 frequently asked questions",
       "items": [
         { "q": "Where are the workshops held?", "a": "The in-person workshops are held in Tormos, Alicante." },
         { "q": "What are the dates?", "a": "The three in-person workshops take place in autumn 2026 (November), winter 2027 (February) and spring 2027 (April)." },
@@ -550,6 +560,152 @@
       "errorPrefix": "Something went wrong. Please write to us directly at"
     }
   },
+  "faq": {
+    "seo": {
+      "title": "Frequently asked questions — Suelos Vivos",
+      "description": "Answers to the most common questions about the Suelos Vivos programme: who it is for, how it is organised, pricing, certificate and terms."
+    },
+    "hero": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Everything people usually ask us",
+      "subtitle": "Search for your question or browse the answers by topic. If you cannot find what you need, write to us and we will reply."
+    },
+    "search": {
+      "label": "Search the frequently asked questions",
+      "placeholder": "Search by keyword: certificate, price, online…",
+      "clear": "Clear search",
+      "resultsOne": "1 question found",
+      "resultsMany": "{n} questions found",
+      "noResultsTitle": "We found nothing for “{q}”",
+      "noResultsText": "It may be something we have not covered yet. Send it to us and we will answer you personally."
+    },
+    "groups": [
+      {
+        "title": "Who it is for",
+        "items": [
+          {
+            "q": "Who is Suelos Vivos for?",
+            "a": "Suelos Vivos is designed for farmers, technicians, farms and projects that want to improve soil fertility, reduce their dependence on external inputs and move towards more regenerative, self-reliant management."
+          },
+          {
+            "q": "If I am a beginner, can I take part?",
+            "a": "Yes. The programme combines clear fundamentals, applied practice and ongoing support. You do not need to know everything before starting, but you do need a genuine interest in applying what you learn."
+          },
+          {
+            "q": "Does the programme work for organic, conventional or transitioning farms?",
+            "a": "Yes. The approach can be applied to organic and conventional farms as well as those in transition. The aim is to improve soil life and make more informed decisions, whatever your starting point."
+          },
+          {
+            "q": "Do I need to have a professional farm or crop?",
+            "a": "Not necessarily. The programme is aimed especially at professional farmers and projects, but it can also be useful for anyone interested in regenerating agricultural soils."
+          },
+          {
+            "q": "Will these techniques work in my climate, soil or crop?",
+            "a": "The principles of biofertility and soil regeneration are universal and applicable in many contexts, but they always need adapting to the climate, soil type, crop, available resources and objectives of each farm."
+          }
+        ]
+      },
+      {
+        "title": "How the programme works",
+        "items": [
+          {
+            "q": "What makes Suelos Vivos different from a conventional course?",
+            "a": "This programme is not just a one-off training. It is a programme of learning, support and community, designed to help you apply what you learn in your own system."
+          },
+          {
+            "q": "How is the annual programme organised?",
+            "a": "The programme combines in-person workshops, online follow-up sessions, digital materials, a private community and personalised support to help you build a roadmap adapted to your farm or project."
+          },
+          {
+            "q": "What happens between workshops?",
+            "a": "Between workshops the process continues through online meetings, practical assignments, answering questions and following each participant's progress."
+          },
+          {
+            "q": "How does the Suelos Vivos community work?",
+            "a": "The community is a private space to share progress, questions, experiences and learning with other participants who are on a similar path."
+          },
+          {
+            "q": "Do I need to bring soil analyses, samples or information about my farm?",
+            "a": "We recommend bringing as much information as possible: photographs, soil or water analyses, management data, crops, recurring problems and objectives. The better we understand your context, the more useful the support will be."
+          },
+          {
+            "q": "What is a biofactory?",
+            "a": "A biofactory is a concept for setting up a space to produce bio-inputs, ferments, microbiological preparations and fertility tools that reduce costs and dependence on external products."
+          }
+        ]
+      },
+      {
+        "title": "Results",
+        "items": [
+          {
+            "q": "What kind of results can I expect?",
+            "a": "The aim is for you to understand your soil better, to build and put into practice a plan to improve fertility, cut unnecessary costs and make better-informed decisions. Concrete results will depend on your starting point, your management and how it is actually applied on each farm."
+          },
+          {
+            "q": "What if I see no results by the end of the course?",
+            "a": "Soil regeneration is a gradual process. The programme is designed to give you tools, follow-up and the judgement to interpret what is happening and adjust management when needed. If you follow the programme, results will come — sometimes quickly and directly, sometimes gradually."
+          }
+        ]
+      },
+      {
+        "title": "Attendance and format",
+        "items": [
+          {
+            "q": "What if I cannot attend one of the in-person workshops?",
+            "a": "If you cannot attend a workshop, we will find the best way for you not to lose the thread of the programme through materials, recordings or online follow-up, depending on the specific conditions of that edition. If you are short of time, we offer two alternatives: booking a personalised advisory service or waiting for the fully online programme."
+          },
+          {
+            "q": "When will the online edition of Suelos Vivos be available?",
+            "a": "An online edition is planned for spring 2027, for those who cannot travel or prefer to follow the programme remotely."
+          },
+          {
+            "q": "What if I cannot attend a live online session?",
+            "a": "Whenever possible, sessions will be recorded or materials provided so you can follow the content even if you could not join live."
+          },
+          {
+            "q": "How long will I have access to the materials and the community?",
+            "a": "Access to materials and community depends on the specific conditions of each edition. For this first edition we are offering lifetime access to the online materials and to the soil regeneration community."
+          }
+        ]
+      },
+      {
+        "title": "Enrolment and terms",
+        "items": [
+          {
+            "q": "Do I get a certificate at the end of the programme?",
+            "a": "Yes, a certificate of participation or completion is planned for those who complete the training according to the established conditions."
+          },
+          {
+            "q": "Are accommodation, meals or transport included?",
+            "a": "In principle, accommodation, meals and transport are not included unless stated otherwise in the specific information for each workshop or edition."
+          },
+          {
+            "q": "Can I cancel once the programme has started?",
+            "a": "Yes, it is possible. Cancellation terms depend on the enrolment format, the deposit and the payment method. We recommend reviewing the specific conditions before confirming your place."
+          },
+          {
+            "q": "Is instalment payment or financing available?",
+            "a": "Yes. Instalment payment and other arrangements are planned depending on the edition and the enrolment conditions. Details are provided before the booking is confirmed."
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Did not find your answer?",
+      "desc": "Send us your question and we will reply personally. It usually takes a couple of days.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@email.com",
+      "questionLabel": "Your question",
+      "questionPlaceholder": "Tell us what you need to know…",
+      "submit": "Send question",
+      "sending": "Sending…",
+      "sent": "Sent! ✓",
+      "successMsg": "Thank you. We have received your question and will reply by email.",
+      "errorPrefix": "We could not send your question. Please write to us directly at "
+    }
+  },
   "avisoLegal": {
     "seo": {
       "title": "Legal Notice — Suelos Vivos",
@@ -560,6 +716,12 @@
     "seo": {
       "title": "Privacy Policy — Suelos Vivos",
       "description": "Privacy policy and data protection information for Suelos Vivos — Bosque Madre."
+    }
+  },
+  "terminos": {
+    "seo": {
+      "title": "Terms and Conditions — Suelos Vivos",
+      "description": "Terms of enrolment for the Suelos Vivos training programme and advisory services — Bosque Madre."
     }
   },
   "blog": {

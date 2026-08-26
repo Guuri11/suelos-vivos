@@ -8,7 +8,6 @@ export const siteConfig = {
     email: 'info@suelosvivos.com',
     phone: '',
     address: 'Tormos, Alicante',
-    formspree: 'https://formspree.io/f/xvzjdgbb',
   },
 
   social: {
@@ -22,9 +21,12 @@ export const siteConfig = {
     spotsLeft: 20,
     price: 2299,
     priceMonthly: 200,
-    months: 10,
+    // months = duración del acompañamiento; installments = cuotas del pago
+    // fraccionado. Son números distintos: 12 meses de programa, 10 cuotas.
+    months: 12,
+    installments: 10,
     deposit: 500,
-    startDate: 'Septiembre 2026',
+    startDate: 'Diciembre 2026',
     location: 'Tormos, Alicante',
   },
 

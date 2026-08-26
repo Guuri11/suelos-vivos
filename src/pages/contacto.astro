@@ -3,9 +3,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
 import { getLang, t } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
+
+// Envío sin JavaScript: el endpoint devuelve aquí con el resultado en la query
+// y el mensaje se pinta ya desde el servidor (ver src/lib/form-response.ts).
+const sent = Astro.url.searchParams.get('enviado') === 'contacto';
+const failed = Astro.url.searchParams.get('error') === 'contacto';
 
 const infoItems = [
   {
@@ -26,7 +32,7 @@ const infoItems = [
   {
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
     label: t(lang, 'contacto.info.inversionLabel') as string,
-    value: `${siteConfig.program.price}€ ${t(lang, 'contacto.info.inversionSep')} ${siteConfig.program.priceMonthly}€${t(lang, 'contacto.info.inversionMesSuffix')} ${siteConfig.program.months}`,
+    value: `${siteConfig.program.price}€ ${t(lang, 'contacto.info.inversionSep')} ${siteConfig.program.priceMonthly}€${t(lang, 'contacto.info.inversionMesSuffix')} ${siteConfig.program.installments}`,
   },
 ];
 ---
@@ -133,18 +139,7 @@ const infoItems = [
                 ></textarea>
               </div>
 
-              <div class="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  id="privacy"
-                  name="privacy"
-                  required
-                  class="mt-1 w-4 h-4 accent-[#8B1A1A] cursor-pointer"
-                />
-                <label for="privacy" class="text-xs text-[#6B6355] cursor-pointer leading-relaxed">
-                  {t(lang, 'contacto.form.privacidadPrefix')} <a href="/politica-privacidad" class="underline hover:text-[#1E1A15] transition-colors">{t(lang, 'contacto.form.privacidadLink')}</a>{t(lang, 'contacto.form.privacidadSuffix')}
-                </label>
-              </div>
+              <ConsentCheckbox lang={lang} id="contacto-privacy" />
 
               <input type="hidden" name="tipo" value="contacto" />
               <input type="hidden" name="lang" value={lang} />
@@ -163,10 +158,10 @@ const infoItems = [
                 {t(lang, 'contacto.form.submit')}
               </button>
 
-              <p id="form-success" class="hidden text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md">
+              <p id="form-success" class:list={['text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md', !sent && 'hidden']}>
                 {t(lang, 'contacto.form.successMsg')}
               </p>
-              <p id="form-error" class="hidden text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md">
+              <p id="form-error" class:list={['text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md', !failed && 'hidden']}>
                 {t(lang, 'contacto.form.errorPrefix')} {siteConfig.contact.email}
               </p>
             </form>

@@ -11,14 +11,13 @@ const lang = getLang(Astro.currentLocale);
 <BaseLayout
   title={t(lang, 'politicaPrivacidad.seo.title')}
   description={t(lang, 'politicaPrivacidad.seo.description')}
-  noindex={true}
 >
   <Header lang={lang} />
 
   <main class="pt-32 pb-24">
     <div class="container max-w-3xl">
       <h1 class="font-display text-4xl text-[#1E1A15] mb-4">Política de Privacidad</h1>
-      <p class="text-[#6B6355] mb-12">Última actualización: enero 2026</p>
+      <p class="text-[#6B6355] mb-12">Última actualización: agosto 2026</p>
 
       <div class="prose-content space-y-8 text-[#6B6355] leading-relaxed">
 
@@ -33,14 +32,15 @@ const lang = getLang(Astro.currentLocale);
 
         <section>
           <h2 class="font-display text-2xl text-[#1E1A15] mb-4">2. Datos que recopilamos</h2>
-          <p>A través del formulario de contacto de este sitio web, podemos recopilar los siguientes datos personales:</p>
+          <p>A través de los formularios de este sitio web (contacto, solicitud de asesoría, listas de espera de la edición online y consultas desde las preguntas frecuentes) podemos recopilar los siguientes datos personales:</p>
           <ul class="mt-3 space-y-1 list-disc list-inside">
             <li>Nombre y apellidos</li>
             <li>Dirección de correo electrónico</li>
             <li>Número de teléfono (opcional)</li>
-            <li>Información sobre tu actividad agrícola (opcional)</li>
-            <li>Mensaje libre que nos envíes</li>
+            <li>Información sobre tu actividad agrícola: tipo de finca, cultivo y descripción de tu proyecto (opcional)</li>
+            <li>Mensaje o consulta libre que nos envíes</li>
           </ul>
+          <p class="mt-3">Junto a estos datos registramos la fecha del envío, el formulario de origen, el idioma de navegación y la aceptación de esta política, como prueba de tu consentimiento. En las listas de espera solo se solicita la dirección de correo electrónico.</p>
         </section>
 
         <section>
@@ -66,7 +66,12 @@ const lang = getLang(Astro.currentLocale);
 
         <section>
           <h2 class="font-display text-2xl text-[#1E1A15] mb-4">6. Destinatarios y transferencias</h2>
-          <p>No se cederán datos a terceros salvo obligación legal. Los formularios de contacto de esta web utilizan el servicio Formspree (formspree.io), que actúa como encargado del tratamiento bajo sus propias condiciones de privacidad.</p>
+          <p>No se cederán datos a terceros salvo obligación legal. Para prestar el servicio contamos con los siguientes encargados del tratamiento, que acceden a los datos únicamente para dar soporte a esta web:</p>
+          <ul class="mt-3 space-y-2 list-disc list-inside">
+            <li><strong class="text-[#1E1A15]">Supabase</strong> — base de datos donde se almacenan los envíos de los formularios. Los datos se alojan en servidores situados en la Unión Europea.</li>
+            <li><strong class="text-[#1E1A15]">Vercel</strong> — alojamiento y publicación del sitio web.</li>
+          </ul>
+          <p class="mt-3">No se realizan transferencias internacionales de datos fuera del Espacio Económico Europeo.</p>
         </section>
 
         <section>

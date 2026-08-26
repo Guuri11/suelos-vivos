@@ -5,6 +5,7 @@
     "servicios": "Servicios",
     "quienesSomos": "Quiénes Somos",
     "blog": "Blog",
+    "faq": "Preguntas frecuentes",
     "contacto": "Contacto",
     "reservarPlaza": "Reservar plaza"
   },
@@ -20,8 +21,16 @@
       "quienesSomos": "Quiénes Somos",
       "reservarPlaza": "Reservar plaza",
       "avisoLegal": "Aviso Legal",
-      "politicaPrivacidad": "Política de Privacidad"
+      "politicaPrivacidad": "Política de Privacidad",
+      "terminos": "Términos y Condiciones"
     }
+  },
+  "consent": {
+    "prefix": "He leído y acepto la",
+    "privacyLink": "política de privacidad",
+    "and": "y los",
+    "termsLink": "términos y condiciones",
+    "suffix": ". Mis datos se usarán únicamente para gestionar esta solicitud."
   },
   "home": {
     "seo": {
@@ -80,9 +89,9 @@
       "subtitle": "Suelos Vivos imparte un programa de formación y acompañamiento técnico en biofertilidad y agricultura orgánica para productores profesionales que quieren reducir costes, recuperar el suelo de forma rápida, y ganar en conocimiento, salud, fertilidad y autonomía.",
       "gallery": [
         {
-          "image": "/images/talleres/cubierta-vegetal.jpg",
-          "title": "Cubierta vegetal",
-          "text": "Protege el suelo de la erosión y conserva la humedad todo el año."
+          "image": "/images/talleres/bocashi.jpg",
+          "title": "Bocashi",
+          "text": "Abono fermentado que activa la vida del suelo y alimenta el cultivo."
         },
         {
           "image": "/images/talleres/microbiologia.jpg",
@@ -95,9 +104,9 @@
           "text": "Carbón vegetal que retiene agua y nutrientes en el suelo."
         },
         {
-          "image": "/images/talleres/biochar-aplicacion.jpg",
-          "title": "Aplicación del biochar",
-          "text": "Se incorpora al suelo para activar su capacidad regenerativa."
+          "image": "/images/talleres/cubierta-vegetal.jpg",
+          "title": "Cubierta vegetal",
+          "text": "Protege el suelo de la erosión y conserva la humedad todo el año."
         },
         {
           "image": "/images/talleres/cromatografia.jpg",
@@ -345,6 +354,7 @@
     "faq": {
       "eyebrow": "Preguntas frecuentes",
       "title": "Dudas habituales",
+      "seeAll": "Ver las 21 preguntas frecuentes",
       "items": [
         { "q": "¿Dónde se imparten los cursos?", "a": "Los talleres presenciales se imparten en Tormos, Alicante." },
         { "q": "¿Cuáles serán las fechas?", "a": "Los tres talleres presenciales son en otoño 2026 (noviembre), invierno 2027 (febrero) y primavera 2027 (abril)." },
@@ -550,6 +560,152 @@
       "errorPrefix": "Algo fue mal. Por favor, escríbenos directamente a"
     }
   },
+  "faq": {
+    "seo": {
+      "title": "Preguntas frecuentes — Suelos Vivos",
+      "description": "Resolvemos las dudas más habituales sobre el programa Suelos Vivos: a quién va dirigido, cómo se organiza, precios, certificado y condiciones."
+    },
+    "hero": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Todo lo que sueles preguntarnos",
+      "subtitle": "Busca tu duda o repasa las respuestas por bloques. Si no encuentras lo que necesitas, escríbenos y te respondemos."
+    },
+    "search": {
+      "label": "Buscar en las preguntas frecuentes",
+      "placeholder": "Busca por palabra: certificado, precio, online…",
+      "clear": "Borrar búsqueda",
+      "resultsOne": "1 pregunta encontrada",
+      "resultsMany": "{n} preguntas encontradas",
+      "noResultsTitle": "No hemos encontrado nada para «{q}»",
+      "noResultsText": "Puede que sea una duda que todavía no hemos cubierto. Escríbenosla y te respondemos personalmente."
+    },
+    "groups": [
+      {
+        "title": "Para quién es",
+        "items": [
+          {
+            "q": "¿Para quién es Suelos Vivos?",
+            "a": "Suelos Vivos está pensado para agricultores, técnicos, fincas y proyectos que quieren mejorar la fertilidad del suelo, reducir la dependencia de insumos externos y avanzar hacia un manejo más regenerativo y autónomo."
+          },
+          {
+            "q": "Si soy principiante, ¿puedo participar?",
+            "a": "Sí. El programa combina fundamentos claros, práctica aplicada y acompañamiento. No es necesario saberlo todo antes de empezar, pero sí tener interés real en aplicar lo aprendido."
+          },
+          {
+            "q": "¿El programa sirve para agricultura ecológica, convencional o en transición?",
+            "a": "Sí. El enfoque puede aplicarse a fincas ecológicas, convencionales o en proceso de transición. El objetivo es mejorar la vida del suelo y tomar decisiones más conscientes, independientemente del punto de partida."
+          },
+          {
+            "q": "¿Necesito tener una finca o cultivo profesional?",
+            "a": "No necesariamente. El programa está orientado especialmente a agricultores y proyectos profesionales, pero también puede ser útil para cualquier persona interesada en la regeneración de suelos agrícolas."
+          },
+          {
+            "q": "¿Funcionarán estas técnicas en mi clima, suelo o cultivo?",
+            "a": "Los principios de la biofertilidad y la regeneración del suelo son universales y aplicables en muchos contextos, pero siempre deben adaptarse al clima, tipo de suelo, cultivo, recursos disponibles y objetivos de cada finca."
+          }
+        ]
+      },
+      {
+        "title": "Cómo funciona el programa",
+        "items": [
+          {
+            "q": "¿Qué diferencia a Suelos Vivos de un curso convencional?",
+            "a": "Este programa no es solo una formación puntual. Es un programa de aprendizaje, acompañamiento y comunidad, pensado para ayudarte a aplicar lo aprendido en tu propio sistema."
+          },
+          {
+            "q": "¿Cómo está organizado el programa anual?",
+            "a": "El programa combina talleres presenciales, sesiones online de seguimiento, materiales digitales, comunidad privada y acompañamiento personalizado para ayudarte a desarrollar una hoja de ruta adaptada a tu finca o proyecto."
+          },
+          {
+            "q": "¿Qué ocurre entre taller y taller?",
+            "a": "Entre talleres se continúa el proceso mediante encuentros online, tareas prácticas, resolución de dudas y seguimiento de la evolución de cada participante."
+          },
+          {
+            "q": "¿Cómo funciona la comunidad de Suelos Vivos?",
+            "a": "La comunidad es un espacio privado para compartir avances, dudas, experiencias y aprendizajes con otros participantes que están recorriendo un camino similar."
+          },
+          {
+            "q": "¿Tengo que traer analíticas, muestras o información de mi finca?",
+            "a": "Es recomendable aportar toda la información posible: fotografías, analíticas de suelo o agua, datos de manejo, cultivos, problemas recurrentes y objetivos. Cuanto mejor entendamos tu contexto, más útil será el acompañamiento."
+          },
+          {
+            "q": "¿Qué es una biofábrica?",
+            "a": "Una biofábrica es un concepto bajo el cual podemos establecer un espacio para producir bioinsumos, fermentos, preparados microbiológicos y herramientas de fertilidad que permiten reducir costes y dependencia de productos externos."
+          }
+        ]
+      },
+      {
+        "title": "Resultados",
+        "items": [
+          {
+            "q": "¿Qué tipo de resultados puedo esperar?",
+            "a": "El objetivo es que aprendas a comprender mejor tu suelo, a crear y poner en marcha un plan para mejorar la fertilidad, reducir costes innecesarios y tomar decisiones con más criterio. Los resultados concretos dependerán del punto de partida, el manejo y la aplicación real en cada finca."
+          },
+          {
+            "q": "¿Qué pasa si no veo resultados al finalizar el curso?",
+            "a": "La regeneración del suelo es un proceso progresivo. El programa está diseñado para darte herramientas, seguimiento y criterio para interpretar lo que ocurre y ajustar el manejo cuando sea necesario. Si cumples el programa los resultados se darán, en ocasiones de forma rápida y directa, en ocasiones de forma gradual y progresiva."
+          }
+        ]
+      },
+      {
+        "title": "Asistencia y formato",
+        "items": [
+          {
+            "q": "¿Qué pasa si no puedo asistir a alguno de los talleres presenciales?",
+            "a": "Si no puedes asistir a un taller, buscaremos la mejor forma de que no pierdas el hilo del programa mediante materiales, grabaciones o seguimiento online, según las condiciones concretas de la edición. Si no dispones de tiempo, ofrecemos dos alternativas: contratar una asesoría personalizada o esperar a que el programa 100% online esté disponible."
+          },
+          {
+            "q": "¿Cuándo saldrá la edición online de Suelos Vivos?",
+            "a": "Está prevista una edición online para la primavera de 2027, pensada para quienes no puedan desplazarse o prefieran seguir el programa a distancia."
+          },
+          {
+            "q": "¿Qué pasa si no puedo asistir a una sesión online en directo?",
+            "a": "Siempre que sea posible, las sesiones quedarán grabadas o se facilitarán materiales para que puedas seguir el contenido aunque no hayas podido conectarte en directo."
+          },
+          {
+            "q": "¿Durante cuánto tiempo tendré acceso a los materiales y a la comunidad?",
+            "a": "El acceso a materiales y comunidad dependerá de las condiciones específicas de cada edición. En esta primera edición estamos ofreciendo acceso de por vida a los materiales online y a la comunidad de regeneración de suelos."
+          }
+        ]
+      },
+      {
+        "title": "Inscripción y condiciones",
+        "items": [
+          {
+            "q": "¿Obtengo algún certificado al finalizar el programa?",
+            "a": "Sí, está previsto entregar un certificado de participación o aprovechamiento a quienes completen el recorrido formativo según las condiciones establecidas."
+          },
+          {
+            "q": "¿Están incluidos alojamiento, comidas o transporte?",
+            "a": "En principio, alojamiento, comidas y transporte no están incluidos salvo que se indique lo contrario en la información específica de cada taller o edición."
+          },
+          {
+            "q": "¿Puedo cancelar una vez comenzado el programa?",
+            "a": "Sí, es posible. Las condiciones de cancelación dependerán del formato de inscripción, reserva y modalidad de pago. Recomendamos revisar las condiciones específicas antes de confirmar la plaza."
+          },
+          {
+            "q": "¿Hay posibilidad de pago fraccionado o financiación?",
+            "a": "Sí. Está previsto ofrecer pago fraccionado y otras facilidades según la edición y las condiciones de inscripción. Los detalles se comunican antes de formalizar la reserva."
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "¿No has encontrado tu respuesta?",
+      "desc": "Escríbenos tu duda y te contestamos personalmente. Suele ser cuestión de un par de días.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "questionLabel": "Tu pregunta",
+      "questionPlaceholder": "Cuéntanos qué necesitas saber…",
+      "submit": "Enviar pregunta",
+      "sending": "Enviando…",
+      "sent": "¡Enviada! ✓",
+      "successMsg": "Gracias. Hemos recibido tu pregunta y te responderemos por correo.",
+      "errorPrefix": "No hemos podido enviar tu pregunta. Escríbenos directamente a "
+    }
+  },
   "avisoLegal": {
     "seo": {
       "title": "Aviso Legal — Suelos Vivos",
@@ -560,6 +716,12 @@
     "seo": {
       "title": "Política de Privacidad — Suelos Vivos",
       "description": "Política de privacidad y protección de datos de Suelos Vivos — Bosque Madre."
+    }
+  },
+  "terminos": {
+    "seo": {
+      "title": "Términos y Condiciones — Suelos Vivos",
+      "description": "Condiciones de contratación del programa formativo y de los servicios de asesoría de Suelos Vivos — Bosque Madre."
     }
   },
   "blog": {

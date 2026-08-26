@@ -1,0 +1,37 @@
+---
+import { localePath, t, type Lang } from '@/i18n/utils';
+
+// Casilla de consentimiento compartida por los cinco formularios del sitio.
+// El valor viaja como `privacy` y se guarda en Supabase como prueba del
+// consentimiento (ver política de privacidad, apartado 2).
+interface Props {
+  lang: Lang;
+  /** Debe ser único dentro de la página: hay páginas con más de un formulario. */
+  id: string;
+  /** `center` para los banners de lista de espera, donde el bloque va centrado. */
+  align?: 'start' | 'center';
+}
+
+const { lang, id, align = 'start' } = Astro.props;
+const lp = (path: string) => localePath(lang, path);
+---
+
+<div class:list={['flex items-start gap-3', align === 'center' && 'justify-center text-left']}>
+  <input
+    type="checkbox"
+    id={id}
+    name="privacy"
+    required
+    class="mt-1 w-4 h-4 shrink-0 accent-[#8B1A1A] cursor-pointer"
+  />
+  <label for={id} class="text-xs text-[#6B6355] cursor-pointer leading-relaxed">
+    {t(lang, 'consent.prefix')}{' '}
+    <a href={lp('/politica-privacidad')} class="underline hover:text-[#1E1A15] transition-colors">
+      {t(lang, 'consent.privacyLink')}
+    </a>{' '}
+    {t(lang, 'consent.and')}{' '}
+    <a href={lp('/terminos-y-condiciones')} class="underline hover:text-[#1E1A15] transition-colors">
+      {t(lang, 'consent.termsLink')}
+    </a>{t(lang, 'consent.suffix')}
+  </label>
+</div>

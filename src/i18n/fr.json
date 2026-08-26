@@ -5,6 +5,7 @@
     "servicios": "Services",
     "quienesSomos": "Qui sommes-nous",
     "blog": "Blog",
+    "faq": "Questions fréquentes",
     "contacto": "Contact",
     "reservarPlaza": "Réserver une place"
   },
@@ -20,8 +21,16 @@
       "quienesSomos": "Qui sommes-nous",
       "reservarPlaza": "Réserver une place",
       "avisoLegal": "Mentions légales",
-      "politicaPrivacidad": "Politique de confidentialité"
+      "politicaPrivacidad": "Politique de confidentialité",
+      "terminos": "Conditions Générales"
     }
+  },
+  "consent": {
+    "prefix": "J'ai lu et j'accepte la",
+    "privacyLink": "politique de confidentialité",
+    "and": "et les",
+    "termsLink": "conditions générales",
+    "suffix": ". Mes données seront utilisées uniquement pour traiter cette demande."
   },
   "home": {
     "seo": {
@@ -78,6 +87,48 @@
       "eyebrow": "PROGRAMME DE FORMATION 2026 / 27",
       "title": "Arrêtez d'acheter la fertilité. Apprenez à la produire.",
       "subtitle": "Suelos Vivos propose un programme de formation et d'accompagnement technique en biofertilité et agriculture biologique pour les producteurs professionnels qui souhaitent réduire leurs coûts, restaurer rapidement leurs sols, et gagner en connaissances, santé, fertilité et autonomie.",
+      "gallery": [
+        {
+          "image": "/images/talleres/bocashi.jpg",
+          "title": "Bokashi",
+          "text": "Compost fermenté qui active la vie du sol et nourrit la culture."
+        },
+        {
+          "image": "/images/talleres/microbiologia.jpg",
+          "title": "Microbiologie",
+          "text": "Des milliards de micro-organismes travaillent sous vos pieds."
+        },
+        {
+          "image": "/images/talleres/biochar.jpg",
+          "title": "Biochar",
+          "text": "Charbon végétal qui retient l'eau et les nutriments dans le sol."
+        },
+        {
+          "image": "/images/talleres/cubierta-vegetal.jpg",
+          "title": "Couverture végétale",
+          "text": "Protège le sol de l'érosion et conserve l'humidité toute l'année."
+        },
+        {
+          "image": "/images/talleres/cromatografia.jpg",
+          "title": "Chromatographie",
+          "text": "Analyse la santé biologique de votre sol sur un papier filtre."
+        },
+        {
+          "image": "/images/talleres/semillas.jpg",
+          "title": "Semences",
+          "text": "Sélection et conservation des semences pour une agriculture autonome."
+        },
+        {
+          "image": "/images/talleres/lombrices.jpg",
+          "title": "Vers de terre",
+          "text": "Bio-indicateurs d'un sol vivant et bien structuré."
+        },
+        {
+          "image": "/images/talleres/biofertilizante.jpg",
+          "title": "Biofertilisant",
+          "text": "Extraits liquides qui nourrissent le sol naturellement."
+        }
+      ],
       "items": [
         {
           "label": "HEURES EN PRÉSENTIEL",
@@ -303,6 +354,7 @@
     "faq": {
       "eyebrow": "Questions fréquentes",
       "title": "Questions courantes",
+      "seeAll": "Voir les 21 questions fréquentes",
       "items": [
         { "q": "Où se déroulent les ateliers ?", "a": "Les ateliers en présentiel se déroulent à Tormos, Alicante." },
         { "q": "Quelles seront les dates ?", "a": "Les trois ateliers en présentiel auront lieu en automne 2026 (novembre), hiver 2027 (février) et printemps 2027 (avril)." },
@@ -508,6 +560,152 @@
       "errorPrefix": "Quelque chose s'est mal passé. Veuillez nous écrire directement à"
     }
   },
+  "faq": {
+    "seo": {
+      "title": "Questions fréquentes — Suelos Vivos",
+      "description": "Réponses aux questions les plus courantes sur le programme Suelos Vivos : à qui il s'adresse, son organisation, les tarifs, le certificat et les conditions."
+    },
+    "hero": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Tout ce que l'on nous demande",
+      "subtitle": "Cherchez votre question ou parcourez les réponses par thème. Si vous ne trouvez pas ce dont vous avez besoin, écrivez-nous et nous vous répondrons."
+    },
+    "search": {
+      "label": "Rechercher dans les questions fréquentes",
+      "placeholder": "Cherchez un mot : certificat, prix, en ligne…",
+      "clear": "Effacer la recherche",
+      "resultsOne": "1 question trouvée",
+      "resultsMany": "{n} questions trouvées",
+      "noResultsTitle": "Aucun résultat pour « {q} »",
+      "noResultsText": "C'est peut-être un point que nous n'avons pas encore traité. Envoyez-nous votre question et nous vous répondrons personnellement."
+    },
+    "groups": [
+      {
+        "title": "À qui s'adresse le programme",
+        "items": [
+          {
+            "q": "À qui s'adresse Suelos Vivos ?",
+            "a": "Suelos Vivos s'adresse aux agriculteurs, techniciens, fermes et projets qui souhaitent améliorer la fertilité de leur sol, réduire leur dépendance aux intrants externes et évoluer vers une gestion plus régénératrice et autonome."
+          },
+          {
+            "q": "Si je suis débutant, puis-je participer ?",
+            "a": "Oui. Le programme associe des bases claires, une pratique appliquée et un accompagnement. Il n'est pas nécessaire de tout savoir avant de commencer, mais il faut un intérêt réel pour appliquer ce que l'on apprend."
+          },
+          {
+            "q": "Le programme convient-il à l'agriculture biologique, conventionnelle ou en transition ?",
+            "a": "Oui. L'approche s'applique aux fermes biologiques, conventionnelles ou en cours de transition. L'objectif est d'améliorer la vie du sol et de prendre des décisions plus éclairées, quel que soit le point de départ."
+          },
+          {
+            "q": "Dois-je avoir une ferme ou une culture professionnelle ?",
+            "a": "Pas nécessairement. Le programme s'adresse surtout aux agriculteurs et projets professionnels, mais il peut aussi être utile à toute personne intéressée par la régénération des sols agricoles."
+          },
+          {
+            "q": "Ces techniques fonctionneront-elles dans mon climat, mon sol ou ma culture ?",
+            "a": "Les principes de la biofertilité et de la régénération des sols sont universels et applicables dans de nombreux contextes, mais ils doivent toujours être adaptés au climat, au type de sol, à la culture, aux ressources disponibles et aux objectifs de chaque ferme."
+          }
+        ]
+      },
+      {
+        "title": "Comment fonctionne le programme",
+        "items": [
+          {
+            "q": "Qu'est-ce qui différencie Suelos Vivos d'une formation classique ?",
+            "a": "Ce programme n'est pas une simple formation ponctuelle. C'est un programme d'apprentissage, d'accompagnement et de communauté, conçu pour vous aider à appliquer ce que vous apprenez dans votre propre système."
+          },
+          {
+            "q": "Comment le programme annuel est-il organisé ?",
+            "a": "Le programme associe des ateliers en présentiel, des sessions de suivi en ligne, des supports numériques, une communauté privée et un accompagnement personnalisé pour construire une feuille de route adaptée à votre ferme ou à votre projet."
+          },
+          {
+            "q": "Que se passe-t-il entre deux ateliers ?",
+            "a": "Entre les ateliers, le processus se poursuit par des rencontres en ligne, des travaux pratiques, des réponses aux questions et un suivi de l'évolution de chaque participant."
+          },
+          {
+            "q": "Comment fonctionne la communauté Suelos Vivos ?",
+            "a": "La communauté est un espace privé pour partager avancées, questions, expériences et apprentissages avec d'autres participants qui suivent un chemin similaire."
+          },
+          {
+            "q": "Dois-je apporter des analyses, des échantillons ou des informations sur ma ferme ?",
+            "a": "Nous recommandons d'apporter le maximum d'informations : photographies, analyses de sol ou d'eau, données de gestion, cultures, problèmes récurrents et objectifs. Mieux nous comprenons votre contexte, plus l'accompagnement sera utile."
+          },
+          {
+            "q": "Qu'est-ce qu'une biofabrique ?",
+            "a": "Une biofabrique est un concept permettant d'aménager un espace de production de bio-intrants, de ferments, de préparations microbiologiques et d'outils de fertilité qui réduisent les coûts et la dépendance aux produits externes."
+          }
+        ]
+      },
+      {
+        "title": "Résultats",
+        "items": [
+          {
+            "q": "Quels résultats puis-je attendre ?",
+            "a": "L'objectif est que vous compreniez mieux votre sol, que vous construisiez et mettiez en œuvre un plan pour améliorer la fertilité, réduire les coûts inutiles et décider avec plus de discernement. Les résultats concrets dépendront du point de départ, de la conduite et de l'application réelle sur chaque ferme."
+          },
+          {
+            "q": "Que se passe-t-il si je ne vois pas de résultats à la fin du programme ?",
+            "a": "La régénération du sol est un processus progressif. Le programme est conçu pour vous donner des outils, un suivi et le discernement nécessaire pour interpréter ce qui se passe et ajuster la conduite si besoin. Si vous suivez le programme, les résultats viendront, parfois rapidement, parfois de façon graduelle."
+          }
+        ]
+      },
+      {
+        "title": "Participation et format",
+        "items": [
+          {
+            "q": "Que se passe-t-il si je ne peux pas assister à un atelier en présentiel ?",
+            "a": "Si vous ne pouvez pas assister à un atelier, nous chercherons la meilleure façon de ne pas perdre le fil du programme grâce à des supports, des enregistrements ou un suivi en ligne, selon les conditions de chaque édition. Si vous manquez de temps, nous proposons deux alternatives : souscrire à un conseil personnalisé ou attendre la disponibilité du programme 100 % en ligne."
+          },
+          {
+            "q": "Quand sortira l'édition en ligne de Suelos Vivos ?",
+            "a": "Une édition en ligne est prévue pour le printemps 2027, pensée pour celles et ceux qui ne peuvent pas se déplacer ou préfèrent suivre le programme à distance."
+          },
+          {
+            "q": "Que se passe-t-il si je ne peux pas assister à une session en ligne en direct ?",
+            "a": "Dans la mesure du possible, les sessions seront enregistrées ou des supports seront fournis afin que vous puissiez suivre le contenu même sans avoir pu vous connecter en direct."
+          },
+          {
+            "q": "Pendant combien de temps aurai-je accès aux supports et à la communauté ?",
+            "a": "L'accès aux supports et à la communauté dépend des conditions propres à chaque édition. Pour cette première édition, nous offrons un accès à vie aux supports en ligne et à la communauté de régénération des sols."
+          }
+        ]
+      },
+      {
+        "title": "Inscription et conditions",
+        "items": [
+          {
+            "q": "Est-ce que j'obtiens un certificat à la fin du programme ?",
+            "a": "Oui, la remise d'un certificat de participation ou de réussite est prévue pour celles et ceux qui terminent le parcours de formation selon les conditions établies."
+          },
+          {
+            "q": "L'hébergement, les repas ou le transport sont-ils inclus ?",
+            "a": "En principe, l'hébergement, les repas et le transport ne sont pas inclus, sauf indication contraire dans les informations propres à chaque atelier ou édition."
+          },
+          {
+            "q": "Puis-je annuler une fois le programme commencé ?",
+            "a": "Oui, c'est possible. Les conditions d'annulation dépendent du format d'inscription, de la réservation et du mode de paiement. Nous recommandons de consulter les conditions spécifiques avant de confirmer votre place."
+          },
+          {
+            "q": "Le paiement échelonné ou un financement sont-ils possibles ?",
+            "a": "Oui. Un paiement échelonné et d'autres facilités sont prévus selon l'édition et les conditions d'inscription. Les détails sont communiqués avant de formaliser la réservation."
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Vous n'avez pas trouvé votre réponse ?",
+      "desc": "Envoyez-nous votre question et nous vous répondrons personnellement. Cela prend en général deux ou trois jours.",
+      "nameLabel": "Nom",
+      "namePlaceholder": "Votre nom",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "vous@email.com",
+      "questionLabel": "Votre question",
+      "questionPlaceholder": "Dites-nous ce que vous souhaitez savoir…",
+      "submit": "Envoyer la question",
+      "sending": "Envoi…",
+      "sent": "Envoyée ! ✓",
+      "successMsg": "Merci. Nous avons bien reçu votre question et nous vous répondrons par e-mail.",
+      "errorPrefix": "Nous n'avons pas pu envoyer votre question. Écrivez-nous directement à "
+    }
+  },
   "avisoLegal": {
     "seo": {
       "title": "Mentions légales — Suelos Vivos",
@@ -518,6 +716,12 @@
     "seo": {
       "title": "Politique de confidentialité — Suelos Vivos",
       "description": "Politique de confidentialité et protection des données de Suelos Vivos — Bosque Madre."
+    }
+  },
+  "terminos": {
+    "seo": {
+      "title": "Conditions Générales — Suelos Vivos",
+      "description": "Conditions d'inscription au programme de formation et aux services de conseil de Suelos Vivos — Bosque Madre."
     }
   },
   "blog": {

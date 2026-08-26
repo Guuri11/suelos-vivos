@@ -1,9 +1,10 @@
 import type { APIRoute } from 'astro';
 import { insertLead, parseFormType } from '@/lib/leads';
+import { formResponse } from '@/lib/form-response';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, url }) => {
   const fd = await request.formData();
   const name     = (fd.get('name')     as string | null)?.trim() ?? '';
   const email    = (fd.get('email')    as string | null)?.trim() ?? '';
@@ -16,17 +17,20 @@ export const POST: APIRoute = async ({ request }) => {
   const privacy  = fd.get('privacy') !== null;
   const honeypot = (fd.get('_gotcha')  as string | null) ?? '';
 
-  // Bot: se responde 200 para no darle pistas, pero no se guarda nada.
+  // Este endpoint sirve al form de contacto, al de asesoría (/servicios) y al
+  // de preguntas abiertas de la FAQ.
+  const formType = parseFormType(fd.get('tipo') as string | null, 'contacto');
+
+  // Bot: se responde como si todo fuera bien para no darle pistas, pero no se guarda nada.
   if (honeypot) {
-    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+    return formResponse(request, url, { ok: true, formType });
   }
 
   if (!name || !email) {
-    return new Response(JSON.stringify({ error: 'Faltan campos obligatorios' }), { status: 400 });
+    return formResponse(request, url, {
+      ok: false, status: 400, error: 'Faltan campos obligatorios', formType,
+    });
   }
-
-  // Este endpoint sirve al form de contacto y al de asesoría (/servicios).
-  const formType = parseFormType(fd.get('tipo') as string | null, 'contacto');
 
   const { error } = await insertLead({
     formType,
@@ -44,8 +48,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (error) {
     console.error('contact endpoint error:', error);
-    return new Response(JSON.stringify({ error: 'Error interno' }), { status: 500 });
+    return formResponse(request, url, { ok: false, status: 500, error: 'Error interno', formType });
   }
 
-  return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  return formResponse(request, url, { ok: true, formType });
 };

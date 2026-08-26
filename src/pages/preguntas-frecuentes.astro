@@ -1,0 +1,334 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
+import { siteConfig } from '@/config/site';
+import { getLang, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
+
+// Envío sin JavaScript: el endpoint devuelve aquí con el resultado en la query
+// y el mensaje se pinta ya desde el servidor (ver src/lib/form-response.ts).
+const sent = Astro.url.searchParams.get('enviado') === 'faq';
+const failed = Astro.url.searchParams.get('error') === 'faq';
+
+interface FaqItem { q: string; a: string }
+interface FaqGroup { title: string; items: FaqItem[] }
+
+const groups = t(lang, 'faq.groups') as FaqGroup[];
+const total = groups.reduce((n, g) => n + g.items.length, 0);
+
+// Rich results de Google: las 21 preguntas van al JSON-LD aunque el acordeón
+// esté cerrado, porque el contenido sigue estando en el HTML.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: groups.flatMap((g) =>
+    g.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  ),
+};
+---
+
+<BaseLayout title={t(lang, 'faq.seo.title')} description={t(lang, 'faq.seo.description')}>
+  <Header lang={lang} />
+
+  <main class="pt-32 pb-24">
+    <div class="container max-w-3xl">
+
+      <!-- CABECERA -->
+      <p class="faq-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">
+        {t(lang, 'faq.hero.eyebrow')}
+      </p>
+      <h1 class="faq-title font-display text-4xl md:text-5xl text-[#1E1A15] mb-4">
+        {t(lang, 'faq.hero.title')}
+      </h1>
+      <p class="faq-subtitle text-[#6B6355] leading-relaxed mb-10 max-w-2xl">
+        {t(lang, 'faq.hero.subtitle')}
+      </p>
+
+      <!-- BUSCADOR -->
+      <div class="faq-search relative mb-6">
+        <label for="faq-search" class="sr-only">{t(lang, 'faq.search.label')}</label>
+        <svg
+          class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6B6355]/50"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+        <input
+          type="search"
+          id="faq-search"
+          autocomplete="off"
+          data-total={total}
+          class="w-full pl-12 pr-4 py-3.5 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
+          placeholder={t(lang, 'faq.search.placeholder') as string}
+        />
+      </div>
+
+      <p
+        id="faq-count"
+        class="hidden text-xs text-[#6B6355] mb-6"
+        data-one={t(lang, 'faq.search.resultsOne')}
+        data-many={t(lang, 'faq.search.resultsMany')}
+      >
+      </p>
+
+      <!-- PREGUNTAS -->
+      <div id="faq-list" class="space-y-10">
+        {groups.map((group) => (
+          <section class="faq-group" data-group>
+            <h2 class="font-display text-xl text-[#1E1A15] mb-4">{group.title}</h2>
+            <div class="space-y-3">
+              {group.items.map((item) => (
+                <details
+                  class="faq-item group bg-white border border-[#DDD8CE] rounded-lg overflow-hidden"
+                  data-q={item.q}
+                  data-a={item.a}
+                >
+                  <summary
+                    class="flex items-start justify-between gap-4 cursor-pointer list-none px-5 py-4 font-semibold text-[#1E1A15] text-sm hover:bg-[#F0F2EE]/60 transition-colors"
+                  >
+                    <span>{item.q}</span>
+                    <svg
+                      class="mt-0.5 w-4 h-4 shrink-0 text-[#8B1A1A] transition-transform duration-200 group-open:rotate-45"
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                  </summary>
+                  <p class="px-5 pb-5 text-sm text-[#6B6355] leading-relaxed">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <!-- SIN RESULTADOS -->
+      <div
+        id="faq-empty"
+        class="hidden rounded-lg border border-dashed border-[#DDD8CE] bg-[#F0F2EE]/50 px-6 py-10 text-center"
+        data-title={t(lang, 'faq.search.noResultsTitle')}
+      >
+        <p id="faq-empty-title" class="font-display text-xl text-[#1E1A15] mb-2"></p>
+        <p class="text-sm text-[#6B6355] max-w-md mx-auto">{t(lang, 'faq.search.noResultsText')}</p>
+      </div>
+
+      <!-- PREGUNTA ABIERTA -->
+      <section class="faq-contact mt-16 pt-12 border-t border-[#DDD8CE]">
+        <h2 class="font-display text-2xl text-[#1E1A15] mb-2">{t(lang, 'faq.contact.title')}</h2>
+        <p class="text-sm text-[#6B6355] mb-8">{t(lang, 'faq.contact.desc')}</p>
+
+        <form action="/api/contact" method="POST" id="faq-form" class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="faq-name" class="block text-sm text-[#1E1A15] mb-2">{t(lang, 'faq.contact.nameLabel')} *</label>
+              <input
+                type="text"
+                id="faq-name"
+                name="name"
+                required
+                autocomplete="name"
+                class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
+                placeholder={t(lang, 'faq.contact.namePlaceholder') as string}
+              />
+            </div>
+            <div>
+              <label for="faq-email" class="block text-sm text-[#1E1A15] mb-2">{t(lang, 'faq.contact.emailLabel')} *</label>
+              <input
+                type="email"
+                id="faq-email"
+                name="email"
+                required
+                autocomplete="email"
+                class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
+                placeholder={t(lang, 'faq.contact.emailPlaceholder') as string}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="faq-message" class="block text-sm text-[#1E1A15] mb-2">{t(lang, 'faq.contact.questionLabel')} *</label>
+            <textarea
+              id="faq-message"
+              name="message"
+              rows="4"
+              required
+              class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm resize-y"
+              placeholder={t(lang, 'faq.contact.questionPlaceholder') as string}
+            ></textarea>
+          </div>
+
+          <ConsentCheckbox lang={lang} id="faq-privacy" />
+
+          <input type="hidden" name="tipo" value="faq" />
+          <input type="hidden" name="lang" value={lang} />
+
+          <!-- Honeypot -->
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+          <button
+            type="submit"
+            id="faq-submit"
+            data-label-submit={t(lang, 'faq.contact.submit')}
+            data-label-sending={t(lang, 'faq.contact.sending')}
+            data-label-sent={t(lang, 'faq.contact.sent')}
+            class="px-6 py-3 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm cursor-pointer"
+          >
+            {t(lang, 'faq.contact.submit')}
+          </button>
+
+          <p id="faq-form-success" class:list={['text-sm text-[#6B8F71] font-medium', !sent && 'hidden']}>
+            {t(lang, 'faq.contact.successMsg')}
+          </p>
+          <p id="faq-form-error" class:list={['text-sm text-[#8B1A1A] font-medium', !failed && 'hidden']}>
+            {t(lang, 'faq.contact.errorPrefix')}{siteConfig.contact.email}
+          </p>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>
+
+<style>
+  /* Oculta el triángulo nativo del <details> en Safari y Chrome */
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::marker { content: ''; }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+
+  // ── Buscador ─────────────────────────────────────────────────────────────
+  const input = document.getElementById('faq-search') as HTMLInputElement | null;
+  const list = document.getElementById('faq-list');
+  const count = document.getElementById('faq-count');
+  const empty = document.getElementById('faq-empty');
+  const emptyTitle = document.getElementById('faq-empty-title');
+  const items = Array.from(document.querySelectorAll<HTMLDetailsElement>('.faq-item'));
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
+
+  /** Sin acentos y en minúsculas, para que "organico" encuentre "orgánico". */
+  function normalize(value: string) {
+    return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  }
+
+  const haystacks = new WeakMap<HTMLDetailsElement, string>();
+  for (const item of items) {
+    haystacks.set(item, normalize(`${item.dataset.q ?? ''} ${item.dataset.a ?? ''}`));
+  }
+
+  let autofilled = '';
+
+  function filter(raw: string) {
+    const query = normalize(raw);
+    const terms = query.split(/\s+/).filter(Boolean);
+    let matches = 0;
+
+    for (const item of items) {
+      const hay = haystacks.get(item) ?? '';
+      const hit = terms.every((term) => hay.includes(term));
+      item.classList.toggle('hidden', !hit);
+      // Con búsqueda activa se abre la respuesta; al vaciar, todo vuelve a cerrarse.
+      item.open = hit && terms.length > 0;
+      if (hit) matches++;
+    }
+
+    // Un bloque sin ninguna pregunta visible desaparece con su título
+    for (const group of groups) {
+      const visible = group.querySelectorAll('.faq-item:not(.hidden)').length;
+      group.classList.toggle('hidden', visible === 0);
+    }
+
+    if (terms.length === 0) {
+      count?.classList.add('hidden');
+      empty?.classList.add('hidden');
+      list?.classList.remove('hidden');
+      return;
+    }
+
+    if (count) {
+      const one = count.dataset.one ?? '1';
+      const many = count.dataset.many ?? '{n}';
+      count.textContent = matches === 1 ? one : many.replace('{n}', String(matches));
+      count.classList.toggle('hidden', matches === 0);
+    }
+
+    const nothing = matches === 0;
+    list?.classList.toggle('hidden', nothing);
+    empty?.classList.toggle('hidden', !nothing);
+    if (nothing && emptyTitle && empty) {
+      emptyTitle.textContent = (empty.dataset.title ?? '').replace('{q}', raw.trim());
+      // Si no hay respuesta, la búsqueda pasa ya escrita al formulario. Solo se
+      // sobrescribe mientras el texto siga siendo el que pusimos nosotros: en
+      // cuanto el usuario escribe lo suyo, no se toca.
+      const message = document.getElementById('faq-message') as HTMLTextAreaElement | null;
+      if (message && (!message.value.trim() || message.value === autofilled)) {
+        autofilled = raw.trim();
+        message.value = autofilled;
+      }
+    }
+  }
+
+  input?.addEventListener('input', () => filter(input.value));
+  input?.addEventListener('search', () => filter(input.value));
+
+  // ── Entrada de la página ─────────────────────────────────────────────────
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set(['.faq-eyebrow', '.faq-title', '.faq-subtitle', '.faq-search'], { opacity: 0 });
+    gsap
+      .timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
+      .fromTo('.faq-eyebrow', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+      .fromTo('.faq-title', { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.35')
+      .fromTo('.faq-subtitle', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.5')
+      .fromTo('.faq-search', { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.4');
+  }
+
+  // ── Envío de la pregunta abierta ─────────────────────────────────────────
+  const form = document.getElementById('faq-form') as HTMLFormElement | null;
+  const submit = document.getElementById('faq-submit') as HTMLButtonElement | null;
+  const success = document.getElementById('faq-form-success');
+  const error = document.getElementById('faq-form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submit || !form) return;
+
+    const labelSending = submit.dataset.labelSending ?? '...';
+    const labelSent = submit.dataset.labelSent ?? '✓';
+    const labelSubmit = submit.dataset.labelSubmit ?? submit.textContent ?? '';
+
+    submit.disabled = true;
+    submit.textContent = labelSending;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!res.ok) throw new Error('Server error');
+
+      form.reset();
+      success?.classList.remove('hidden');
+      error?.classList.add('hidden');
+      submit.textContent = labelSent;
+    } catch {
+      error?.classList.remove('hidden');
+      success?.classList.add('hidden');
+      submit.disabled = false;
+      submit.textContent = labelSubmit;
+    }
+  });
+</script>

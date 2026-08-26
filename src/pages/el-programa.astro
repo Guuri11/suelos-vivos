@@ -3,9 +3,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
-import { getLang, t } from '@/i18n/utils';
+import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
+import { getLang, localePath, t } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
+
+// Envío sin JavaScript: el endpoint devuelve aquí con el resultado en la query
+// y el mensaje se pinta ya desde el servidor (ver src/lib/form-response.ts).
+const sent = Astro.url.searchParams.get('enviado') === 'waitlist-programa';
+const failed = Astro.url.searchParams.get('error') === 'waitlist-programa';
 
 type OverviewItem = { value: string; label: string; desc: string };
 type WorkshopItem = { number: string; date: string; title: string; desc: string; imgAlt: string; topics: string[] };
@@ -139,7 +145,7 @@ type FaqItem = { q: string; a: string };
                 <p class="font-display text-5xl text-[#FAFAF7]">{siteConfig.program.priceMonthly}<span class="text-2xl">€</span>
                   <span class="text-xl text-[#FAFAF7]/50">{t(lang, 'home.pricing.perMonth')}</span>
                 </p>
-                <p class="text-[#FAFAF7]/40 text-xs mt-1">{siteConfig.program.months} {t(lang, 'home.pricing.monthsLabel')} · {t(lang, 'home.pricing.reservaWith')} {siteConfig.program.deposit}€</p>
+                <p class="text-[#FAFAF7]/40 text-xs mt-1">{siteConfig.program.installments} {t(lang, 'home.pricing.monthsLabel')} · {t(lang, 'home.pricing.reservaWith')} {siteConfig.program.deposit}€</p>
               </div>
             </div>
 
@@ -182,37 +188,42 @@ type FaqItem = { q: string; a: string };
               action="/api/waitlist"
               method="POST"
               id="programa-waitlist-form"
-              class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto"
+              class="max-w-sm mx-auto space-y-4"
             >
-              <label for="programa-waitlist-email" class="sr-only">{t(lang, 'elPrograma.banner.online.emailLabel')}</label>
-              <input
-                type="email"
-                id="programa-waitlist-email"
-                name="email"
-                required
-                autocomplete="email"
-                class="flex-1 px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
-                placeholder={t(lang, 'elPrograma.banner.online.placeholder') as string}
-              />
+              <div class="flex flex-col sm:flex-row gap-3">
+                <label for="programa-waitlist-email" class="sr-only">{t(lang, 'elPrograma.banner.online.emailLabel')}</label>
+                <input
+                  type="email"
+                  id="programa-waitlist-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  class="flex-1 px-4 py-3 border border-[#DDD8CE] rounded-md bg-white text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#6B8F71]/30 focus:border-[#6B8F71] transition-colors text-sm"
+                  placeholder={t(lang, 'elPrograma.banner.online.placeholder') as string}
+                />
+                <button
+                  type="submit"
+                  id="programa-waitlist-submit"
+                  data-label-submit={t(lang, 'elPrograma.banner.online.cta')}
+                  data-label-sending={t(lang, 'elPrograma.banner.online.sending')}
+                  data-label-sent={t(lang, 'elPrograma.banner.online.sent')}
+                  class="px-6 py-3 bg-[#6B8F71] text-white font-semibold rounded-md hover:bg-[#587A5D] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm whitespace-nowrap cursor-pointer"
+                >
+                  {t(lang, 'elPrograma.banner.online.cta')}
+                </button>
+              </div>
+
+              <ConsentCheckbox lang={lang} id="waitlist-programa-privacy" align="center" />
+
               <input type="hidden" name="tipo" value="waitlist-programa" />
               <input type="hidden" name="lang" value={lang} />
               <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-              <button
-                type="submit"
-                id="programa-waitlist-submit"
-                data-label-submit={t(lang, 'elPrograma.banner.online.cta')}
-                data-label-sending={t(lang, 'elPrograma.banner.online.sending')}
-                data-label-sent={t(lang, 'elPrograma.banner.online.sent')}
-                class="px-6 py-3 bg-[#6B8F71] text-white font-semibold rounded-md hover:bg-[#587A5D] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm whitespace-nowrap cursor-pointer"
-              >
-                {t(lang, 'elPrograma.banner.online.cta')}
-              </button>
             </form>
 
-            <p id="programa-waitlist-success" class="hidden mt-4 text-sm text-[#6B8F71] font-medium">
+            <p id="programa-waitlist-success" class:list={['mt-4 text-sm text-[#6B8F71] font-medium', !sent && 'hidden']}>
               {t(lang, 'elPrograma.banner.online.successMsg')}
             </p>
-            <p id="programa-waitlist-error" class="hidden mt-4 text-sm text-[#8B1A1A] font-medium">
+            <p id="programa-waitlist-error" class:list={['mt-4 text-sm text-[#8B1A1A] font-medium', !failed && 'hidden']}>
               {t(lang, 'elPrograma.banner.online.errorPrefix')} {siteConfig.contact.email}
             </p>
           </div>
@@ -244,6 +255,16 @@ type FaqItem = { q: string; a: string };
             </div>
           ))}
         </div>
+
+        <p class="mt-8 text-center">
+          <a
+            href={localePath(lang, '/preguntas-frecuentes')}
+            class="inline-flex items-center gap-2 text-sm font-semibold text-[#8B1A1A] hover:text-[#6B1212] transition-colors"
+          >
+            {t(lang, 'elPrograma.faq.seeAll')}
+            <span aria-hidden="true">→</span>
+          </a>
+        </p>
       </div>
     </section>
   </main>

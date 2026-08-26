@@ -1,14 +1,18 @@
 import { supabaseServer } from '@/lib/supabase-server';
 
-/** Los cuatro formularios del sitio. El valor viaja en el hidden `tipo` de cada form. */
-export const FORM_TYPES = ['contacto', 'asesoria', 'waitlist-home', 'waitlist-programa'] as const;
+/** Los formularios del sitio. El valor viaja en el hidden `tipo` de cada form. */
+export const FORM_TYPES = ['contacto', 'asesoria', 'faq', 'waitlist-home', 'waitlist-programa'] as const;
 export type FormType = (typeof FORM_TYPES)[number];
 
 export const FORM_TYPE_LABELS: Record<FormType, string> = {
   contacto: 'Contacto',
   asesoria: 'Asesoría',
-  'waitlist-home': 'Lista de espera (home)',
-  'waitlist-programa': 'Lista de espera (programa)',
+  faq: 'Pregunta desde FAQ',
+  // Los dos banners de "¿No puedes desplazarte?" son el mismo flujo: la
+  // Escuela Online. Se mantienen como dos tipos para saber desde qué página
+  // llegó el lead, pero al cliente se le presentan bajo el mismo nombre.
+  'waitlist-home': 'Escuela Online (home)',
+  'waitlist-programa': 'Escuela Online (programa)',
 };
 
 export interface LeadInput {

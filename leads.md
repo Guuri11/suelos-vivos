@@ -1,6 +1,6 @@
 # Leads de los formularios
 
-Los cuatro formularios del sitio guardan cada envío en **Supabase** (tabla `leads`).
+Los cinco formularios del sitio guardan cada envío en **Supabase** (tabla `leads`).
 Se consultan y se exportan desde el panel privado `/panel-suelos`.
 
 Sustituye a la antigua integración con Holded, que ya no está activa.
@@ -15,8 +15,9 @@ en español, inglés o francés.
 |---|---|---|
 | `contacto` | Contacto / reservar plaza | `/contacto` |
 | `asesoria` | Solicitud de asesoría | `/servicios` |
-| `waitlist-home` | Lista de espera edición online | `/` |
-| `waitlist-programa` | Lista de espera edición online | `/el-programa` |
+| `faq` | Pregunta abierta desde las preguntas frecuentes | `/preguntas-frecuentes` |
+| `waitlist-home` | Escuela Online — banner «¿No puedes desplazarte?» | `/` |
+| `waitlist-programa` | Escuela Online — banner «¿No puedes desplazarte?» | `/el-programa` |
 
 ## Panel
 
@@ -57,7 +58,8 @@ no guardan nada, y el panel avisa de que Supabase no está configurado.
   cliente.
 - Los formularios conservan el honeypot `_gotcha`: si viene relleno se responde
   `200` para no dar pistas al bot, pero no se guarda el registro.
-- El campo `privacy` guarda el consentimiento RGPD de los formularios que llevan
-  checkbox obligatorio (contacto y asesoría).
+- El campo `privacy` guarda el consentimiento RGPD. Los cinco formularios llevan
+  la casilla obligatoria del componente `src/components/ConsentCheckbox.astro`,
+  que enlaza a la política de privacidad y a los términos y condiciones.
 - En el CSV, los valores que empiezan por `=`, `+`, `-` o `@` se escapan para que
   Excel no los interprete como fórmulas.

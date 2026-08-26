@@ -3,9 +3,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
+import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
 import { getLang, t } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
+
+// Envío sin JavaScript: el endpoint devuelve aquí con el resultado en la query
+// y el mensaje se pinta ya desde el servidor (ver src/lib/form-response.ts).
+const sent = Astro.url.searchParams.get('enviado') === 'asesoria';
+const failed = Astro.url.searchParams.get('error') === 'asesoria';
 
 const serviceIcons = [
   `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>`,
@@ -229,18 +235,7 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
                 ></textarea>
               </div>
 
-              <div class="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  id="privacy"
-                  name="privacy"
-                  required
-                  class="mt-1 w-4 h-4 accent-[#8B1A1A] cursor-pointer"
-                />
-                <label for="privacy" class="text-xs text-[#6B6355] cursor-pointer leading-relaxed">
-                  {t(lang, 'servicios.form.privacidadPrefix')} <a href="/politica-privacidad" class="underline hover:text-[#1E1A15] transition-colors">{t(lang, 'servicios.form.privacidadLink')}</a>{t(lang, 'servicios.form.privacidadSuffix')}
-                </label>
-              </div>
+              <ConsentCheckbox lang={lang} id="asesoria-privacy" />
 
               <input type="hidden" name="lang" value={lang} />
 
@@ -258,10 +253,10 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
                 {t(lang, 'servicios.form.submit')}
               </button>
 
-              <p id="advisory-success" class="hidden text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md">
+              <p id="advisory-success" class:list={['text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md', !sent && 'hidden']}>
                 {t(lang, 'servicios.form.successMsg')}
               </p>
-              <p id="advisory-error" class="hidden text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md">
+              <p id="advisory-error" class:list={['text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md', !failed && 'hidden']}>
                 {t(lang, 'servicios.form.errorPrefix')} {siteConfig.contact.email}
               </p>
             </form>

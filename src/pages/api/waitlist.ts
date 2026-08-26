@@ -1,36 +1,39 @@
 import type { APIRoute } from 'astro';
 import { insertLead, parseFormType } from '@/lib/leads';
+import { formResponse } from '@/lib/form-response';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, url }) => {
   const fd = await request.formData();
   const email = (fd.get('email') as string | null)?.trim() ?? '';
   const lang  = (fd.get('lang')  as string | null)?.trim() ?? '';
+  const privacy = fd.get('privacy') !== null;
   const honeypot = (fd.get('_gotcha') as string | null) ?? '';
-
-  if (honeypot) {
-    return new Response(JSON.stringify({ ok: true }), { status: 200 });
-  }
-
-  if (!email) {
-    return new Response(JSON.stringify({ error: 'Falta el email' }), { status: 400 });
-  }
 
   // Dos formularios de lista de espera: home y /el-programa.
   const formType = parseFormType(fd.get('tipo') as string | null, 'waitlist-home');
+
+  if (honeypot) {
+    return formResponse(request, url, { ok: true, formType });
+  }
+
+  if (!email) {
+    return formResponse(request, url, { ok: false, status: 400, error: 'Falta el email', formType });
+  }
 
   const { error } = await insertLead({
     formType,
     lang,
     email,
+    privacy,
     userAgent: request.headers.get('user-agent') ?? undefined,
   });
 
   if (error) {
     console.error('waitlist endpoint error:', error);
-    return new Response(JSON.stringify({ error: 'Error interno' }), { status: 500 });
+    return formResponse(request, url, { ok: false, status: 500, error: 'Error interno', formType });
   }
 
-  return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  return formResponse(request, url, { ok: true, formType });
 };
