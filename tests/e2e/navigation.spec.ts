@@ -101,6 +101,25 @@ test.describe('Navigation', () => {
     await expect(mobileMenu).toBeHidden();
   });
 
+  // La ficha del formador y el CTA doble entraron con el copy de septiembre de 2026.
+  // El nombre no se traduce, asi que sirve de sonda en los tres idiomas.
+  test('quienes-somos shows the trainer profile', async ({ page }) => {
+    await page.goto('/quienes-somos');
+    await expect(page.locator('main .trainer-section')).toContainText('Carles Pons');
+    await expect(page.locator('main .trainer-section li')).toHaveCount(8);
+  });
+
+  // Los dos botones del cierre llevan al programa y a la asesoria, y en /en/ y /fr/
+  // tienen que quedarse dentro de su idioma en vez de tirar a la rama espanola.
+  for (const prefix of ['', '/en', '/fr']) {
+    test(`quienes-somos CTA targets stay in ${prefix || '/es'}`, async ({ page }) => {
+      await page.goto(`${prefix}/quienes-somos`);
+      await expect(page.locator('main .trainer-section')).toContainText('Carles Pons');
+      await expect(page.locator(`main .page-cta a[href="${prefix}/el-programa"]`)).toBeVisible();
+      await expect(page.locator(`main .page-cta a[href="${prefix}/servicios"]`)).toBeVisible();
+    });
+  }
+
   test('contact form fields are interactive', async ({ page }) => {
     await page.goto('/contacto');
 

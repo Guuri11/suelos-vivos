@@ -200,7 +200,7 @@
       "p2": "Nous n'enseignons pas depuis l'académie. Nous enseignons depuis la pratique quotidienne : ce qui fonctionne, ce qui échoue et ce qui transforme vraiment une exploitation conventionnelle en un système régénératif autonome.",
       "p3": "Notre ferme à Tormos (Alicante) est la salle de classe. Le laboratoire, c'est le sol vivant.",
       "link": "Rencontrer l'équipe",
-      "imgAlt": "Carles Casanova — Fondateur de Bosque Madre"
+      "imgAlt": "L'équipe de Suelos Vivos dans la ferme de Tormos, Alicante"
     },
     "services": {
       "eyebrow": "SERVICE DE CONSEIL PROFESSIONNEL",
@@ -366,44 +366,70 @@
   "quienesSomos": {
     "seo": {
       "title": "Qui sommes-nous — Suelos Vivos",
-      "description": "Suelos Vivos est le programme de formation de Bosque Madre, un projet d'agriculture régénératrice avec plus de 15 ans d'expérience réelle en Méditerranée."
+      "description": "Suelos Vivos est le projet de formation de Bosque Madre : plus de 15 ans d'agriculture régénératrice en Méditerranée, avec Carles Pons comme formateur principal."
     },
     "hero": {
       "eyebrow": "Qui sommes-nous",
       "title": "Nés du terrain.<br />Pas du bureau.",
-      "subtitle": "Bosque Madre est un projet d'agriculture régénératrice avec plus de 15 ans de pratique réelle en Méditerranée. Suelos Vivos est notre façon de transmettre ce que nous avons appris."
+      "subtitle": "Nous sommes un groupe de personnes animées par une mission : régénérer les écosystèmes agricoles et donner à tous accès à une alimentation saine et de qualité, tout en protégeant ce que l'agriculture et la société ont de plus important — le sol fertile."
+    },
+    "intro": {
+      "paragraphs": [
+        "<strong>Suelos Vivos</strong> est né d'années d'étude, de pratique et d'observation directe sur le terrain. De visites d'exploitations, d'accompagnement de processus de régénération et du constat que de nombreux systèmes productifs perdent en fertilité tout en augmentant leur dépendance aux intrants extérieurs.",
+        "Ce projet transforme cette expérience en formation, en conseil et en communauté pour les agriculteurs qui veulent retrouver la vie de leur sol, l'autonomie dans leurs décisions et leur propre jugement dans la gestion de la fertilité.",
+        "Nous ne sommes pas une entreprise d'agronomes prête à distribuer des recettes, mais à impulser un mouvement d'agriculture biologique fondé sur l'autonomisation des agriculteurs, maîtres de la fertilité de leurs cultures."
+      ],
+      "imgAlt": "L'équipe de Suelos Vivos dans la ferme de Tormos, Alicante"
     },
     "story": {
       "title": "Plus de 15 ans à transformer les sols en Méditerranée",
       "paragraphs": [
-        "<strong>Bosque Madre</strong> est né d'une question simple : est-il possible de produire des aliments de qualité, de réduire les coûts et d'améliorer le sol en même temps ?",
-        "La réponse, après des années d'expérimentation sur notre ferme de Tormos (Alicante), est oui. Mais cela nécessite de changer la façon de comprendre le sol : non comme un support inerte auquel on ajoute des nutriments, mais comme un écosystème vivant qui, lorsqu'il fonctionne bien, fertilise, protège et soutient la culture.",
-        "Cela fait plus de 15 ans que nous pratiquons, documentons et enseignons ces techniques. Ce qui a commencé comme une quête personnelle est devenu une référence du mouvement régénératif en Espagne et dans le sud de l'Europe.",
-        "Suelos Vivos est la distillation de tout cet apprentissage : un programme conçu pour que les agriculteurs professionnels puissent suivre le même chemin avec un vrai accompagnement."
+        "<strong>Suelos Vivos</strong> est né d'une question simple : est-il possible de produire une alimentation de qualité, de réduire les coûts et d'améliorer le sol en même temps ?",
+        "La réponse, après des années d'expérimentation, est oui. Mais cela demande de changer d'approche : ne plus voir le sol comme un support inerte auquel on ajoute des nutriments, mais comme un écosystème vivant qu'il faut comprendre et qui, lorsqu'il fonctionne bien, fertilise, protège et soutient la culture.",
+        "Nous pratiquons, documentons et enseignons ces techniques depuis plus de 15 ans.",
+        "Suelos Vivos est la distillation de tout cet apprentissage : un programme conçu pour que des agriculteurs professionnels puissent faire le même chemin, avec un accompagnement et des résultats réels."
       ]
     },
     "values": {
       "title": "Ce qui nous guide",
       "items": [
         {
-          "title": "La pratique avant la théorie",
-          "desc": "Tout ce que nous enseignons, nous l'avons fait de nos propres mains. Nous ne faisons pas de conférences sur ce qui est dans les livres ; nous partageons ce qui fonctionne sur le terrain."
+          "title": "La pratique réelle",
+          "desc": "Nous n'enseignons pas une méthode abstraite : nous travaillons à partir d'une expérience directe du sol, des cultures, de l'eau, de la matière organique et des bio-intrants."
         },
         {
-          "title": "L'autonomie comme objectif",
-          "desc": "L'objectif n'est pas que vous dépendiez de nous. C'est que vous terminiez le programme avec les outils, les connaissances et la confiance pour continuer seul."
+          "title": "La lecture du système",
+          "desc": "Avant d'intervenir, nous cherchons à comprendre le contexte : climat, sol, conduite, ressources, limites et objectifs de production."
         },
         {
-          "title": "Le sol comme maître",
-          "desc": "Observer, écouter et lire le sol avant d'intervenir. La nature résout des problèmes depuis des millions d'années ; notre rôle est de la comprendre."
+          "title": "L'autonomie de l'agriculteur",
+          "desc": "L'objectif n'est pas de créer une dépendance, mais que chaque participant apprenne à mieux décider de la fertilité de son propre système."
         }
       ]
+    },
+    "trainer": {
+      "eyebrow": "Formateur principal",
+      "name": "Carles Pons",
+      "role": "Fondateur de Bosque Madre et de Suelos Vivos",
+      "bio": "Pendant deux décennies, il a travaillé sur la régénération des sols, la biofertilité et la conception agroécologique, en combinant la pratique de terrain, la formation et la vulgarisation. Il est intervenu comme formateur ou au sein d'équipes de formation dans plus de 20 pays, a donné des dizaines de cours pour des organismes agricoles, des coopératives et des municipalités, et s'est formé auprès de références internationales. Son travail comprend aussi l'édition et la traduction de livres, la production de documentaires et la création de réseaux liés à l'agriculture régénératrice.",
+      "areasTitle": "Domaines de travail",
+      "areas": [
+        "Fertilité organique et bio-intrants",
+        "Biologie du sol et des plantes",
+        "Régénération des sols méditerranéens",
+        "Microbiologie et fermentation",
+        "Conception intégrale de fermes et de systèmes agroécologiques",
+        "Gestion de la matière organique, des couverts et de la biodiversité fonctionnelle",
+        "Formation et accompagnement des agriculteurs",
+        "Design en permaculture"
+      ],
+      "imgAlt": "Carles Pons, formateur principal de Suelos Vivos"
     },
     "location": {
       "eyebrow": "Le lieu",
       "title": "Tormos, Alicante. La salle de classe, c'est le champ.",
-      "desc1": "La ferme de Bosque Madre à Tormos, dans l'intérieur d'Alicante, est l'endroit où se déroulent les ateliers en présentiel. Un environnement méditerranéen réel : climat sec, sols calcaires et cultures telles que l'olivier, le caroubier, les agrumes et le potager.",
-      "desc2": "Ce n'est pas un espace expérimental créé pour le programme. C'est une exploitation agricole en activité, où chaque technique est appliquée avec des conséquences réelles. Cela rend l'apprentissage différent.",
+      "desc1": "La ferme que Bosque Madre développe depuis 2026 à Tormos, dans l'intérieur d'Alicante, est l'endroit où se déroulent les ateliers en présentiel. Un environnement méditerranéen : climat sec, sols calcaires et cultures telles que l'olivier, le caroubier, les agrumes, les avocatiers et le potager.",
+      "desc2": "C'est un espace expérimental créé pour développer les techniques enseignées dans le programme : chacune y est mise en œuvre, évaluée et révisée, ce qui nourrit en continu le processus d'expérimentation et d'apprentissage.",
       "place": "Tormos, Alicante, Espagne"
     },
     "bosqueMadre": {
@@ -413,11 +439,10 @@
       "linkText": "Visiter Bosque Madre"
     },
     "cta": {
-      "title": "Vous vous reconnaissez dans ce que nous faisons ?",
-      "startPrefix": "Le programme commence",
-      "spotsPrefix": "Limité à",
-      "spotsPostfix": "agriculteurs.",
-      "btn": "Réserver ma place"
+      "title": "Vous voulez apprendre avec nous ?",
+      "subtitle": "Découvrez le programme annuel de Suelos Vivos ou demandez un conseil pour votre ferme.",
+      "btnPrograma": "Voir le programme",
+      "btnAsesoria": "Demander un conseil"
     }
   },
   "contacto": {

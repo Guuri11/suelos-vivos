@@ -200,7 +200,7 @@
       "p2": "We don't teach from academia. We teach from daily practice: what works, what fails and what truly transforms a conventional farm into an autonomous regenerative system.",
       "p3": "Our farm in Tormos (Alicante) is the classroom. The laboratory is the living soil.",
       "link": "Meet the team",
-      "imgAlt": "Carles Casanova — Founder of Bosque Madre"
+      "imgAlt": "The Suelos Vivos team at the farm in Tormos, Alicante"
     },
     "services": {
       "eyebrow": "PROFESSIONAL ADVISORY SERVICE",
@@ -366,44 +366,70 @@
   "quienesSomos": {
     "seo": {
       "title": "About Us — Suelos Vivos",
-      "description": "Suelos Vivos is the training programme of Bosque Madre, a regenerative agriculture project with over 15 years of real experience in the Mediterranean."
+      "description": "Suelos Vivos is the training project of Bosque Madre: over 15 years of regenerative agriculture in the Mediterranean, with Carles Pons as lead trainer."
     },
     "hero": {
       "eyebrow": "About us",
       "title": "Born from the field.<br />Not the office.",
-      "subtitle": "Bosque Madre is a regenerative agriculture project with over 15 years of real practice in the Mediterranean. Suelos Vivos is our way of sharing what we have learned."
+      "subtitle": "We are a group of people driven by one mission: to regenerate agricultural ecosystems and give everyone access to healthy, quality food, while protecting the most important thing agriculture and society have — fertile soil."
+    },
+    "intro": {
+      "paragraphs": [
+        "<strong>Suelos Vivos</strong> comes from years of study, practice and direct observation in the field. From visiting holdings, supporting regeneration processes and seeing how many productive systems lose fertility while growing more dependent on external inputs.",
+        "This project turns that experience into training, advisory work and community for farmers who want to recover life in their soil, autonomy in their decisions and their own judgement in managing fertility.",
+        "We are not a company of agronomists here to hand out recipes, but to drive a movement of organic agriculture built on empowering farmers as masters of the fertility of their own crops."
+      ],
+      "imgAlt": "The Suelos Vivos team at the farm in Tormos, Alicante"
     },
     "story": {
       "title": "Over 15 years transforming soils in the Mediterranean",
       "paragraphs": [
-        "<strong>Bosque Madre</strong> was born from a simple question: is it possible to produce quality food, reduce costs and improve the soil at the same time?",
-        "The answer, after years of experimentation on our farm in Tormos (Alicante), is yes. But it requires changing the way we understand soil: not as an inert support to which nutrients are added, but as a living ecosystem that, when it works well, fertilises, protects and sustains the crop.",
-        "We have been practising, documenting and teaching these techniques for over 15 years. What started as a personal search became a reference point for the regenerative movement in Spain and southern Europe.",
-        "Suelos Vivos is the distillation of all that learning: a programme designed so that professional farmers can follow the same path with real support."
+        "<strong>Suelos Vivos</strong> was born from a simple question: is it possible to produce quality food, cut costs and improve the soil at the same time?",
+        "The answer, after years of experimentation, is yes. But it takes a change of approach: seeing the soil not as an inert support to which nutrients are added, but as a living ecosystem that has to be understood and that, when it works well, fertilises, protects and sustains the crop.",
+        "We have spent more than 15 years practising, documenting and teaching these techniques.",
+        "Suelos Vivos is the distillation of all that learning: a programme designed so that professional farmers can walk the same path, with guidance and real results."
       ]
     },
     "values": {
       "title": "What guides us",
       "items": [
         {
-          "title": "Practice over theory",
-          "desc": "Everything we teach we have done with our own hands. We don't lecture about what's in books; we share what works in the field."
+          "title": "Real practice",
+          "desc": "We don't teach an abstract method: we work from direct experience with soil, crops, water, organic matter and bio-inputs."
         },
         {
-          "title": "Autonomy as the goal",
-          "desc": "The goal is not for you to depend on us. It's for you to finish the programme with the tools, knowledge and confidence to continue on your own."
+          "title": "Reading the system",
+          "desc": "Before intervening, we set out to understand the context: climate, soil, management, resources, limitations and production goals."
         },
         {
-          "title": "The soil as teacher",
-          "desc": "Observe, listen and read the soil before intervening. Nature has been solving problems for millions of years; our job is to understand it."
+          "title": "The farmer's autonomy",
+          "desc": "The aim is not to create dependency, but for each participant to learn to make better decisions about the fertility of their own system."
         }
       ]
+    },
+    "trainer": {
+      "eyebrow": "Lead trainer",
+      "name": "Carles Pons",
+      "role": "Founder of Bosque Madre and Suelos Vivos",
+      "bio": "For two decades he has worked in soil regeneration, biofertility and agroecological design, combining field practice, teaching and outreach. He has worked as a trainer or as part of training teams in more than 20 countries, has taught dozens of courses for agricultural bodies, cooperatives and local councils, and has trained alongside international authorities in the field. His work also includes editing and translating books, producing documentaries and building networks around regenerative agriculture.",
+      "areasTitle": "Areas of work",
+      "areas": [
+        "Organic fertility and bio-inputs",
+        "Soil and plant biology",
+        "Regeneration of Mediterranean soils",
+        "Microbiology and fermentation",
+        "Whole-farm and agroecological system design",
+        "Managing organic matter, cover crops and functional biodiversity",
+        "Training and supporting farmers",
+        "Permaculture design"
+      ],
+      "imgAlt": "Carles Pons, lead trainer at Suelos Vivos"
     },
     "location": {
       "eyebrow": "The place",
       "title": "Tormos, Alicante. The classroom is the field.",
-      "desc1": "The Bosque Madre farm in Tormos, in the interior of Alicante, is where the in-person workshops take place. A real Mediterranean environment: dry climate, calcareous soils and crops such as olive, carob, citrus and market garden.",
-      "desc2": "This is not an experimental space created for the programme. It is an active agricultural holding where every technique is applied with real consequences. That makes the learning different.",
+      "desc1": "The farm that Bosque Madre has been developing since 2026 in Tormos, in the interior of Alicante, is where the in-person workshops take place. A Mediterranean setting: dry climate, calcareous soils and crops such as olive, carob, citrus, avocado and market garden.",
+      "desc2": "It is an experimental space created to develop the techniques taught in the programme: each one is implemented, evaluated and revised, and that continually feeds the process of experimentation and learning.",
       "place": "Tormos, Alicante, Spain"
     },
     "bosqueMadre": {
@@ -413,11 +439,10 @@
       "linkText": "Visit Bosque Madre"
     },
     "cta": {
-      "title": "Do you identify with what we do?",
-      "startPrefix": "The programme starts",
-      "spotsPrefix": "Limited to",
-      "spotsPostfix": "farmers.",
-      "btn": "Reserve your place"
+      "title": "Do you want to learn with us?",
+      "subtitle": "Explore the Suelos Vivos annual programme, or request advice for your own farm.",
+      "btnPrograma": "See the programme",
+      "btnAsesoria": "Request advice"
     }
   },
   "contacto": {

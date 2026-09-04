@@ -200,7 +200,7 @@
       "p2": "No enseñamos desde la academia. Enseñamos desde la práctica diaria: lo que funciona, lo que falla y lo que transforma de verdad una finca convencional en un sistema regenerativo autónomo.",
       "p3": "Nuestro campo en Tormos (Alicante) es el aula. El laboratorio es el suelo vivo.",
       "link": "Conoce el equipo",
-      "imgAlt": "Carles Casanova — Fundador de Bosque Madre"
+      "imgAlt": "El equipo de Suelos Vivos en la finca de Tormos, Alicante"
     },
     "services": {
       "eyebrow": "SERVICIO DE ASESORÍA PROFESIONAL",
@@ -366,44 +366,70 @@
   "quienesSomos": {
     "seo": {
       "title": "Quiénes Somos — Suelos Vivos",
-      "description": "Suelos Vivos es el programa formativo de Bosque Madre, proyecto de agricultura regenerativa con más de 15 años de experiencia real en el Mediterráneo."
+      "description": "Suelos Vivos es el proyecto formativo de Bosque Madre: más de 15 años de agricultura regenerativa en el Mediterráneo, con Carles Pons como formador principal."
     },
     "hero": {
       "eyebrow": "Quiénes somos",
       "title": "Nacimos del campo.<br />No del despacho.",
-      "subtitle": "Bosque Madre es un proyecto de agricultura regenerativa con más de 15 años de práctica real en el Mediterráneo. Suelos Vivos es nuestra manera de transmitir lo que hemos aprendido."
+      "subtitle": "Somos un grupo de gente apasionada por su misión de regenerar los ecosistemas agrícolas dando acceso universal a alimentos saludables y de calidad, al tiempo que se protege lo más importante que tiene la agricultura y la sociedad: el suelo fértil."
+    },
+    "intro": {
+      "paragraphs": [
+        "<strong>Suelos Vivos</strong> nace de años de estudio, práctica y observación directa en el campo. De visitar explotaciones, acompañar procesos de regeneración y comprobar cómo muchos sistemas productivos pierden fertilidad mientras aumentan su dependencia de insumos externos.",
+        "Este proyecto transforma esa experiencia en formación, asesoría y comunidad para agricultores que quieren recuperar vida en el suelo, autonomía en sus decisiones y criterio propio en el manejo de la fertilidad.",
+        "No somos una empresa de agrónomos dispuesta a dar recetas, sino a impulsar un movimiento de agricultura orgánica basado en el empoderamiento de los agricultores como maestros de la fertilidad de sus cultivos."
+      ],
+      "imgAlt": "El equipo de Suelos Vivos en la finca de Tormos, Alicante"
     },
     "story": {
       "title": "Más de 15 años transformando suelos en el Mediterráneo",
       "paragraphs": [
-        "<strong>Bosque Madre</strong> nació de una pregunta simple: ¿es posible producir alimentos de calidad, reducir costes y mejorar el suelo al mismo tiempo?",
-        "La respuesta, después de años de experimentación en nuestra finca de Tormos (Alicante), es sí. Pero requiere cambiar la manera de entender el suelo: no como un soporte inerte al que añadir nutrientes, sino como un ecosistema vivo que, cuando funciona bien, fertiliza, protege y sostiene el cultivo.",
-        "Llevamos más de 15 años practicando, documentando y enseñando estas técnicas. Lo que empezó como una búsqueda personal se convirtió en un referente del movimiento regenerativo en España y el sur de Europa.",
-        "Suelos Vivos es el destilado de todo ese aprendizaje: un programa diseñado para que agricultores profesionales puedan hacer el mismo camino con acompañamiento real."
+        "<strong>Suelos Vivos</strong> nació de una pregunta simple: ¿es posible producir alimentos de calidad, reducir costes y mejorar el suelo al mismo tiempo?",
+        "La respuesta, después de años de experimentación, es sí. Pero esto requiere cambiar el enfoque: no ver al suelo como un soporte inerte al que añadir nutrientes, sino como un ecosistema vivo que hay que comprender y que, cuando funciona bien, fertiliza, protege y sostiene el cultivo.",
+        "Llevamos más de 15 años practicando, documentando y enseñando estas técnicas.",
+        "Suelos Vivos es el destilado de todo ese aprendizaje: un programa diseñado para que agricultores profesionales puedan hacer el mismo camino con acompañamiento y resultados reales."
       ]
     },
     "values": {
       "title": "Lo que nos guía",
       "items": [
         {
-          "title": "Práctica sobre teoría",
-          "desc": "Todo lo que enseñamos lo hemos hecho con nuestras manos. No damos conferencias sobre lo que está en los libros; compartimos lo que funciona en el campo."
+          "title": "Práctica real",
+          "desc": "No enseñamos un método abstracto: trabajamos desde experiencia directa en suelo, cultivos, agua, materia orgánica y bioinsumos."
         },
         {
-          "title": "Autonomía como meta",
-          "desc": "El objetivo no es que dependas de nosotros. Es que termines el programa con las herramientas, el conocimiento y la confianza para seguir solo."
+          "title": "Lectura del sistema",
+          "desc": "Antes de intervenir, buscamos comprender el contexto: clima, suelo, manejo, recursos, limitaciones y objetivos productivos."
         },
         {
-          "title": "El suelo como maestro",
-          "desc": "Observar, escuchar y leer el suelo antes de intervenir. La naturaleza lleva millones de años resolviendo problemas; nuestra labor es entenderla."
+          "title": "Autonomía del agricultor",
+          "desc": "El objetivo no es crear dependencia, sino que cada participante aprenda a tomar mejores decisiones sobre la fertilidad de su propio sistema."
         }
       ]
+    },
+    "trainer": {
+      "eyebrow": "Formador principal",
+      "name": "Carles Pons",
+      "role": "Fundador de Bosque Madre y Suelos Vivos",
+      "bio": "Durante dos décadas ha trabajado en regeneración de suelos, biofertilidad y diseño agroecológico, combinando práctica de campo, formación y divulgación. Ha participado como formador o como parte de equipos de formación en más de 20 países, ha impartido decenas de cursos para organismos agrarios, cooperativas y municipios, y se ha formado junto a referentes internacionales. Su trabajo también incluye la edición y traducción de libros, la producción de documentales y la creación de redes vinculadas a la agricultura regenerativa.",
+      "areasTitle": "Áreas de trabajo",
+      "areas": [
+        "Fertilidad orgánica y bioinsumos",
+        "Biología del suelo y las plantas",
+        "Regeneración de suelos mediterráneos",
+        "Microbiología y fermentación",
+        "Diseño integral de fincas y sistemas agroecológicos",
+        "Manejo de materia orgánica, cubiertas y biodiversidad funcional",
+        "Formación y acompañamiento a agricultores",
+        "Diseño permacultural"
+      ],
+      "imgAlt": "Carles Pons, formador principal de Suelos Vivos"
     },
     "location": {
       "eyebrow": "El lugar",
       "title": "Tormos, Alicante. El aula es el campo.",
-      "desc1": "La finca de Bosque Madre en Tormos, en el interior de Alicante, es donde se desarrollan los talleres presenciales. Un entorno mediterráneo real: clima seco, suelos calcáreos y cultivos como el olivo, el algarrobo, los cítricos y la huerta.",
-      "desc2": "No es un espacio experimental creado para el programa. Es una explotación agrícola en activo, donde cada técnica se aplica con consecuencias reales. Eso hace que el aprendizaje sea diferente.",
+      "desc1": "La finca que Bosque Madre desarrolla desde 2026 en Tormos, en el interior de Alicante, es donde se imparten los talleres presenciales. Un entorno mediterráneo: clima seco, suelos calcáreos y cultivos como el olivo, el algarrobo, los cítricos, los aguacates y la huerta.",
+      "desc2": "Es un espacio experimental creado para desarrollar las técnicas que se enseñan en el programa: cada una se implementa, se evalúa y se revisa, y eso alimenta de forma continua el proceso de experimentación y aprendizaje.",
       "place": "Tormos, Alicante, España"
     },
     "bosqueMadre": {
@@ -413,11 +439,10 @@
       "linkText": "Visitar Bosque Madre"
     },
     "cta": {
-      "title": "¿Te identificas con lo que hacemos?",
-      "startPrefix": "El programa empieza en",
-      "spotsPrefix": "Plazas limitadas a",
-      "spotsPostfix": "agricultores.",
-      "btn": "Reservar plaza"
+      "title": "¿Quieres aprender con nosotros?",
+      "subtitle": "Explora el programa anual de Suelos Vivos o solicita una asesoría para tu finca.",
+      "btnPrograma": "Ver el programa",
+      "btnAsesoria": "Solicitar asesoría"
     }
   },
   "contacto": {
