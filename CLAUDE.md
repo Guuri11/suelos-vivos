@@ -31,9 +31,12 @@ Sin encargos pendientes a 26/08/2026 (P-1 de `internal-docs/plan/ESTADO.md`).
 ## Cómo está montado
 
 - **Astro** con `output: 'server'` y adaptador de Vercel
-- **Tres idiomas por duplicación de páginas**: `src/pages/`, `src/pages/en/` y
-  `src/pages/fr/` son árboles paralelos, no un sistema de traducción. Tocar una página
-  significa tocarla tres veces, y es fácil que se desincronicen
+- **Tres idiomas, pero no por duplicación.** Lo dijo este fichero durante meses y es
+  falso: **las 22 páginas de `src/pages/en/` y `src/pages/fr/` son reexportaciones de
+  cuatro líneas** (`import Page from '../x.astro'`) y todo el texto sale de
+  `src/i18n/{es,en,fr}.json`. Tocar una página **no** significa tocarla tres veces: se
+  toca el `.astro` una vez y se traduce la clave en tres JSON. Comprobado el 04/09/2026
+  con `grep -L "^import Page from" src/pages/{en,fr}/*.astro`, que no devuelve ninguna
 - **Sanity** como CMS del blog
 - **Supabase** para leads (`supabase/schema.sql`)
 - **Panel privado** en `/panel-suelos`
@@ -92,6 +95,20 @@ final en las `customPages`. **Cambia todas las URLs del sitio**, así que no ent
 decidirlo aparte.
 → `internal-docs/adr/` 0001, y `.claude/rules/astro.md`
 
+**Cuánto cuesta, ya medido** (auditoría `b52dfa3f`, 26/08 tras desplegar W6, 56 páginas):
+esto no es orden cosmético. De los avisos nuevos que salieron al hacerse visibles `/en/` y
+`/fr/`, **40 los causa esta ambigüedad y nada más**:
+
+- **18 × `hreflang-self`** — las páginas afectadas son todas la forma **con** barra
+  (`/el-programa/`, `/en/`, `/en/blog/`…). El HTML que sirven declara los `hreflang` hacia
+  la forma **sin** barra, así que para esa URL no hay autorreferencia. El clúster de
+  idiomas está bien escrito; lo rompe que la URL tenga dos formas.
+- **22 × `duplicate-title`** — «el programa — suelos vivos» en 2 páginas, «blog — suelos
+  vivos» en 6. No son títulos repetidos: es la misma página contada dos veces.
+
+Los `hreflang` en sí son correctos y el host ya es el bueno. Lo único que queda entre esto
+y un clúster de tres idiomas sin un solo aviso es elegir una forma de URL.
+
 ### No hay robots.txt
 
 `/robots.txt` devuelve 404, y con él no se declara el sitemap.
@@ -102,7 +119,14 @@ Faltan `/aviso-legal` y `/politica-privacidad`. Puede ser deliberado —`rules/a
 admite filtrar avisos legales— pero no está escrito en ninguna parte, así que hoy no se
 puede distinguir de un olvido.
 
+Con `/en/` y `/fr/` ya visibles son **9 páginas** fuera del sitemap: las legales en los tres
+idiomas y **`/blog/prunus-avium-cerezo-silvestre-o-cerezo-de-los-pajaros`, también en los
+tres**. Ese último no encaja con la explicación de «filtramos las legales»: es un post de
+blog, y en el baseline anterior ya salía además como página huérfana. Las legales pueden
+ser una decisión; esa no lo parece.
+
 ## Modificaciones
 
-El histórico está en `Modificaciones web/Modificacionesweb.html`, en formato antiguo.
-Migrarlo a `CAMBIOS.md` es parte de W6.
+El histórico antiguo está en `Modificaciones web/Modificacionesweb.html`. Migrarlo es
+parte de W6 y sigue sin hacerse. Lo nuevo se anota en `CAMBIOS.md`, que existe desde el
+lote del 04/09/2026.
