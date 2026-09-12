@@ -28,6 +28,21 @@ const trainerPhoto: string | null = null;
         <p class="page-subtitle text-[#6B6355] text-xl leading-relaxed">
           {t(lang, 'quienesSomos.hero.subtitle')}
         </p>
+
+        <!-- El documento del cliente pide el logo justo aqui, entre la mision y el
+             relato. Va alineado a la izquierda porque el hero lo esta, y al doble de
+             altura que el del header para que se lea como firma del parrafo y no como
+             una repeticion de la navegacion. Decorativo: la marca ya esta en el h1 y en
+             el texto, asi que alt vacio y no se duplica en el lector de pantalla. -->
+        <img
+          src={siteConfig.logo.src}
+          alt=""
+          width={siteConfig.logo.width}
+          height={siteConfig.logo.height}
+          class="page-logo mt-10 h-12 md:h-14 w-auto"
+          loading="eager"
+          decoding="async"
+        />
       </div>
     </section>
 
@@ -210,12 +225,13 @@ const trainerPhoto: string | null = null;
   gsap.registerPlugin(ScrollTrigger);
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
+    gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle', '.page-logo'], { opacity: 0 });
 
     gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
       .fromTo('.page-eyebrow', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
       .fromTo('.page-title',   { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.4')
-      .fromTo('.page-subtitle',{ y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.5');
+      .fromTo('.page-subtitle',{ y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.5')
+      .fromTo('.page-logo',    { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.35');
 
     gsap.from('.story-title, .story-text', {
       y: 32, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',

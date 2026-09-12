@@ -182,7 +182,7 @@ type FaqItem = { q: string; a: string };
         <div class="grid md:grid-cols-2 gap-6">
           <div class="program-banner bg-[#6B8F71]/10 border border-[#6B8F71]/30 rounded-xl p-8 text-center">
             <h3 class="font-display text-xl text-[#1E1A15] mb-2">{t(lang, 'elPrograma.banner.online.title')}</h3>
-            <p class="text-sm text-[#6B6355] mb-6">{t(lang, 'elPrograma.banner.online.desc')}</p>
+            <p class="text-sm text-[#6B6355] mb-6" set:html={t(lang, 'elPrograma.banner.online.desc')} />
 
             <form
               action="/api/waitlist"

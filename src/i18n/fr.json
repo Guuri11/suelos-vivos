@@ -39,9 +39,10 @@
       "description": "Programme annuel de formation en biofertilité pour les agriculteurs professionnels. Réduisez vos coûts de 30 à 50 %, restaurez la fertilité de vos sols. Seulement 20 places."
     },
     "hero": {
-      "eyebrow": "Conseil professionnel",
-      "title": "Vous avez un projet et souhaitez que nous vous accompagnions ?",
-      "subtitleP1": "Suelos Vivos aide les agriculteurs, les fermes et les projets agroécologiques à prendre de meilleures décisions concernant leur sol, sa fertilité et leur transition régénératrice.",
+      "eyebrow": "L'agriculture de demain",
+      "title": "Régénérons la vie du sol.",
+      "titleSub": "Le véritable moteur de l'agriculture.",
+      "subtitleP1": "Suelos Vivos est un projet destiné à diffuser, sensibiliser et promouvoir des connaissances et des pratiques agricoles qui améliorent la rentabilité, la résilience et la fertilité, en harmonie avec la nature.",
       "subtitleP2": "Nous apportons un regard technique, une vision écologique et un accompagnement concret pour transformer des problèmes complexes en une feuille de route claire, viable et adaptée à chaque réalité.",
       "ctaPrograma": "Programme de formation",
       "ctaAsesoria": "Conseil professionnel",
@@ -155,7 +156,7 @@
     },
     "onlineWaitlist": {
       "title": "Vous ne pouvez pas vous déplacer ?",
-      "desc": "Nous préparons une édition en ligne de Suelos Vivos pour les agriculteurs et techniciens qui préfèrent se former depuis leur propre exploitation. Laissez-nous votre email et nous vous préviendrons en priorité avant le lancement.",
+      "desc": "Nous préparons une prochaine <strong class=\"font-semibold text-[#8B1A1A]\">édition 100 % en ligne de Suelos Vivos</strong> pour les agriculteurs et techniciens qui préfèrent se former depuis leur propre exploitation. Laissez-nous votre email et nous vous préviendrons en priorité avant le lancement.",
       "emailLabel": "Adresse email",
       "placeholder": "vous@email.com",
       "cta": "Me prévenir",
@@ -212,7 +213,8 @@
         { "title": "Plan de réduction des intrants", "desc": "Stratégie progressive pour réduire les engrais et les pesticides sans compromettre la production." },
         { "title": "Conception intégrale de fermes", "desc": "Planification agroécologique complète : rotations, couverts végétaux, gestion de l'eau et diversification." },
         { "title": "Gestion des déchets biologiques", "desc": "Transformez les chaumes, le lisier et les résidus végétaux en ressources biologiques à haute valeur pour votre sol." },
-        { "title": "Installation de biofabriques", "desc": "Conception et installation de systèmes d'autoproduction de biointrants (inoculants, compost, bouillons) sur votre exploitation." }
+        { "title": "Installation de biofabriques", "desc": "Conception et installation de systèmes d'autoproduction de biointrants (inoculants, compost, bouillons) sur votre exploitation." },
+        { "title": "Formation personnalisée", "desc": "Formation sur mesure en biofertilité pour votre équipe ou votre coopérative, adaptée à votre culture et dispensée sur le terrain." }
       ],
       "cta": "Conseil professionnel"
     },
@@ -337,7 +339,7 @@
     "banner": {
       "online": {
         "title": "Vous ne pouvez pas vous déplacer ?",
-        "desc": "Programme 100% en ligne bientôt disponible.",
+        "desc": "Nous préparons une prochaine <strong class=\"font-semibold text-[#8B1A1A]\">édition 100 % en ligne de Suelos Vivos</strong>. Laissez-nous votre email et nous vous préviendrons avant le lancement.",
         "emailLabel": "Adresse e-mail",
         "placeholder": "vous@email.com",
         "cta": "Me prévenir",
@@ -522,6 +524,11 @@
           "title": "Installation de biofabriques",
           "desc": "Conception et installation in situ de systèmes d'autoproduction de biointrants : inoculants microbiens, compost activé et bouillons minéraux pour que votre ferme génère ses propres fertilisants biologiques.",
           "tags": ["Inoculants", "Autoproduction", "Biointrants"]
+        },
+        {
+          "title": "Formation personnalisée",
+          "desc": "Formation sur mesure pour votre équipe, votre coopérative ou votre exploitation : les contenus de biofertilité du programme annuel, adaptés à votre culture et à vos pratiques réelles et dispensés sur le terrain. Un accompagnement individualisé, à votre rythme et selon votre calendrier.",
+          "tags": ["Sur mesure", "Équipes et coopératives", "Pratique au champ"]
         }
       ]
     },
@@ -570,6 +577,7 @@
         "Conception intégrale de ferme",
         "Gestion des déchets biologiques",
         "Installation de biofabrique",
+        "Formation personnalisée",
         "Autre"
       ],
       "fincaLabel": "Type d'exploitation et culture principale",

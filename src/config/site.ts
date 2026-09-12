@@ -32,8 +32,12 @@ export const siteConfig = {
 
   logo: {
     src: '/images/logo.png',
+    // El fichero es 512x165 (ratio 3,10). Aqui decia 160x44 (ratio 3,64), y como en
+    // el header se pinta con `h-9 w-auto` el navegador reservaba el hueco con el ratio
+    // declarado y lo corregia al cargar la imagen: un salto horizontal de ~19px en la
+    // cabecera de todas las paginas. 137x44 mantiene el tamano nominal con el ratio real.
     alt: 'Suelos Vivos — Agricultura Regenerativa',
-    width: 160,
+    width: 137,
     height: 44,
   },
 

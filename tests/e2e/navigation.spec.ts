@@ -109,6 +109,17 @@ test.describe('Navigation', () => {
     await expect(page.locator('main .trainer-section li')).toHaveCount(8);
   });
 
+  // El logo dentro del hero lo pide el documento de copy del cliente, entre la mision y
+  // el relato. Es decorativo a proposito (alt vacio, la marca ya esta en el h1), asi que
+  // la sonda es la clase y no el texto alternativo.
+  test('quienes-somos shows the brand mark inside the hero', async ({ page }) => {
+    await page.goto('/quienes-somos');
+    const logo = page.locator('main .page-logo');
+    await expect(logo).toBeVisible();
+    await expect(logo).toHaveAttribute('alt', '');
+    await expect(logo).toHaveAttribute('src', '/images/logo.png');
+  });
+
   // Los dos botones del cierre llevan al programa y a la asesoria, y en /en/ y /fr/
   // tienen que quedarse dentro de su idioma en vez de tirar a la rama espanola.
   for (const prefix of ['', '/en', '/fr']) {

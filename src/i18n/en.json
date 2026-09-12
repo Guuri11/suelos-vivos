@@ -39,9 +39,10 @@
       "description": "Annual biofertility training programme for professional farmers. Cut costs by 30–50%, restore soil fertility and gain technical autonomy. Only 20 places."
     },
     "hero": {
-      "eyebrow": "Professional advisory",
-      "title": "Do you have a project and want us to support you?",
-      "subtitleP1": "Suelos Vivos helps farmers, farms and agroecological projects make better decisions about their soil, its fertility and their regenerative transition.",
+      "eyebrow": "The agriculture of the future",
+      "title": "Let's bring soil back to life.",
+      "titleSub": "The true engine of agriculture.",
+      "subtitleP1": "Suelos Vivos is a project set up to share, raise awareness of and promote agricultural knowledge and practices that improve profitability, resilience and fertility, in tune with nature.",
       "subtitleP2": "We bring technical judgement, an ecological outlook and hands-on support to turn complex problems into a roadmap that is clear, workable and tailored to each reality.",
       "ctaPrograma": "Training programme",
       "ctaAsesoria": "Professional advisory",
@@ -155,7 +156,7 @@
     },
     "onlineWaitlist": {
       "title": "Can't travel to attend?",
-      "desc": "We're preparing an online edition of Suelos Vivos for farmers and technicians who prefer to train from their own farm. Leave us your email and we'll give you priority notice before launch.",
+      "desc": "We're preparing an upcoming <strong class=\"font-semibold text-[#8B1A1A]\">100% online edition of Suelos Vivos</strong> for farmers and technicians who prefer to train from their own farm. Leave us your email and we'll give you priority notice before launch.",
       "emailLabel": "Email address",
       "placeholder": "you@email.com",
       "cta": "Notify me",
@@ -212,7 +213,8 @@
         { "title": "Input reduction plan", "desc": "Progressive strategy to reduce fertilisers and pesticides without compromising production." },
         { "title": "Integral farm design", "desc": "Complete agroecological planning: rotations, cover crops, water management and diversification." },
         { "title": "Biological waste management", "desc": "Transform stubble, slurry and plant residues into high-value biological resources for your soil." },
-        { "title": "Biofactory installation", "desc": "Design and installation of bioinput self-production systems (inoculants, compost, broths) on your farm." }
+        { "title": "Biofactory installation", "desc": "Design and installation of bioinput self-production systems (inoculants, compost, broths) on your farm." },
+        { "title": "Tailored training", "desc": "Made-to-measure biofertility training for your team or cooperative, adapted to your crop and taught in the field." }
       ],
       "cta": "Professional advisory"
     },
@@ -337,7 +339,7 @@
     "banner": {
       "online": {
         "title": "Can't travel?",
-        "desc": "100% online programme coming soon.",
+        "desc": "We're preparing an upcoming <strong class=\"font-semibold text-[#8B1A1A]\">100% online edition of Suelos Vivos</strong>. Leave us your email and we'll let you know before launch.",
         "emailLabel": "Email address",
         "placeholder": "you@email.com",
         "cta": "Notify me",
@@ -522,6 +524,11 @@
           "title": "Biofactory installation",
           "desc": "On-site design and installation of self-production systems for bioinputs: microbial inoculants, activated compost and mineral broths so your farm generates its own biological fertilisers.",
           "tags": ["Inoculants", "Self-production", "Bioinputs"]
+        },
+        {
+          "title": "Tailored training",
+          "desc": "Made-to-measure training for your team, your cooperative or your estate: the biofertility content of the annual programme, adapted to your crop and your actual management and taught in the field. Individual attention, at your pace and on your calendar.",
+          "tags": ["Made to measure", "Teams and cooperatives", "Hands-on in the field"]
         }
       ]
     },
@@ -570,6 +577,7 @@
         "Integral farm design",
         "Biological waste management",
         "Biofactory installation",
+        "Tailored training",
         "Other"
       ],
       "fincaLabel": "Type of farm and main crop",

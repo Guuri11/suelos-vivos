@@ -40,7 +40,8 @@
     },
     "hero": {
       "eyebrow": "La agricultura del futuro",
-      "title": "Regeneremos la vida del suelo, el verdadero motor de la agricultura.",
+      "title": "Regeneremos la vida del suelo.",
+      "titleSub": "El verdadero motor de la agricultura.",
       "subtitleP1": "Suelos vivos es un proyecto destinado a difundir, sensibilizar y promover conocimientos y prácticas agrícolas que mejoren la rentabilidad, la resiliencia y la fertilidad, en sintonía con la naturaleza.",
       "subtitleP2": "Aportamos criterio técnico, visión ecológica y acompañamiento práctico para convertir problemas complejos en una hoja de ruta clara, viable y adaptada a cada realidad.",
       "ctaPrograma": "Programa formativo",
@@ -155,7 +156,7 @@
     },
     "onlineWaitlist": {
       "title": "¿No puedes desplazarte?",
-      "desc": "Estamos preparando una edición online de Suelos Vivos para agricultores y técnicos que prefieren formarse desde su propia finca. Déjanos tu correo y te avisaremos de forma prioritaria antes del lanzamiento.",
+      "desc": "Estamos preparando una próxima <strong class=\"font-semibold text-[#8B1A1A]\">edición 100% online de Suelos Vivos</strong> para agricultores y técnicos que prefieren formarse desde su propia finca. Déjanos tu correo y te avisaremos de forma prioritaria antes del lanzamiento.",
       "emailLabel": "Correo electrónico",
       "placeholder": "tu@email.com",
       "cta": "Avisadme",
@@ -212,7 +213,8 @@
         { "title": "Plan de reducción de insumos", "desc": "Estrategia progresiva para reducir fertilizantes y fitosanitarios sin comprometer la producción." },
         { "title": "Diseño integral de fincas", "desc": "Planificación agroecológica completa: rotaciones, cubiertas vegetales, gestión del agua y diversificación." },
         { "title": "Gestión de residuos biológicos", "desc": "Transforma rastrojos, purines y restos vegetales en recursos biológicos de alto valor para tu suelo." },
-        { "title": "Instalación de biofábricas", "desc": "Diseño e instalación de sistemas de autoproducción de bioinsumos (inoculantes, compost, caldos) en tu finca." }
+        { "title": "Instalación de biofábricas", "desc": "Diseño e instalación de sistemas de autoproducción de bioinsumos (inoculantes, compost, caldos) en tu finca." },
+        { "title": "Formación personalizada", "desc": "Formación a medida en biofertilidad para tu equipo o tu cooperativa, adaptada a tu cultivo y sobre el terreno." }
       ],
       "cta": "Asesoría profesional"
     },
@@ -337,7 +339,7 @@
     "banner": {
       "online": {
         "title": "¿No puedes desplazarte?",
-        "desc": "Programa 100% online próximamente.",
+        "desc": "Preparamos una próxima <strong class=\"font-semibold text-[#8B1A1A]\">edición 100% online de Suelos Vivos</strong>. Déjanos tu correo y te avisamos antes del lanzamiento.",
         "emailLabel": "Correo electrónico",
         "placeholder": "tu@email.com",
         "cta": "Avisadme",
@@ -522,6 +524,11 @@
           "title": "Instalación de biofábricas",
           "desc": "Diseño e instalación in situ de sistemas de autoproducción de bioinsumos: inoculantes microbianos, compost activado y caldos minerales para que tu finca genere sus propios fertilizantes biológicos.",
           "tags": ["Inoculantes", "Autoproducción", "Bioinsumos"]
+        },
+        {
+          "title": "Formación personalizada",
+          "desc": "Formación a medida para tu equipo, tu cooperativa o tu explotación: los contenidos de biofertilidad del programa anual, adaptados a tu cultivo y a tu manejo real e impartidos sobre el terreno. Atención individualizada, a tu ritmo y en tu calendario.",
+          "tags": ["A medida", "Equipos y cooperativas", "Práctica en campo"]
         }
       ]
     },
@@ -570,6 +577,7 @@
         "Diseño integral de finca",
         "Gestión de residuos biológicos",
         "Instalación de biofábrica",
+        "Formación personalizada",
         "Otros"
       ],
       "fincaLabel": "Tipo de finca y cultivo principal",
