@@ -12,7 +12,7 @@ export const siteConfig = {
 
   social: {
     instagram: 'https://www.instagram.com/suelosvivos_com',
-    telegram: 'https://t.me/suelosvivos',
+    telegram: 'https://t.me/bosquemadre',
     youtube: '',
   },
 

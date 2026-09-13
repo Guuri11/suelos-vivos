@@ -4,6 +4,36 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-09-13 — Favicon propio
+
+- [x] C-25 · visual · El sitio deja de usar el logotipo horizontal como icono de
+      pestaña. El cliente mandó su emblema suelto (`png flavicon.png`, 515x515) y
+      pasa a ser `public/favicon.png`. Cambiado en los dos layouts, el público y el
+      del panel
+
+### Decisiones tomadas sin el cliente
+
+- **El fichero venía en blanco puro sobre transparencia**: todos sus píxeles opacos
+  son `#FFFFFF`. Así montado desaparece en la pestaña clara de Chrome, que es la que
+  ve la mayoría. Se ha compuesto sobre una teja redondeada del granate de marca
+  (`--color-primary`, `#8B1A1A`), que es el color del propio logotipo. **El dibujo
+  del cliente no se ha recoloreado**: solo se le ha puesto fondo. Se ha comprobado
+  que es legible a 16 y a 32 px sobre pestaña clara y oscura.
+- Se añade también `public/apple-touch-icon.png` (180x180, a sangre y opaco, porque
+  iOS aplica su propia máscara). Sin él, al añadir la web a la pantalla de inicio,
+  iOS usaba una captura de la página.
+- `/images/logo.png` **no se toca**: sigue siendo el logotipo del header y lo que
+  declara `site.ts`. Lo que cambia es solo qué fichero hace de icono.
+
+### Verificación
+
+- Playwright: **106/106 en verde**. Con esta pasada queda hecha la suite completa que
+  el lote del 13/09 dejó pendiente.
+- `pnpm build` limpio. `/favicon.png` y `/apple-touch-icon.png` devuelven 200 y
+  llegan a `.vercel/output/static/`. No envía formularios: no escribe en Supabase.
+- Falta el repaso sobre el preview de Vercel, que no puede hacerse todavía: el
+  despliegue sigue bloqueado por la migración `2026-09-12-reserva-plaza.sql`.
+
 ## 2026-09-13 — El retrato de Carles Pons
 
 - [x] C-24 · contenido · `/quienes-somos`, ficha del formador: el cliente mandó por fin

@@ -8,7 +8,7 @@
   500 € de reserva). Arranque en diciembre de 2026, en Tormos (Alicante)
 - **Web**: https://www.suelosvivos.com
 - **Contacto**: info@suelosvivos.com
-- **Redes**: Instagram `@suelosvivos_com`, Telegram `t.me/suelosvivos`
+- **Redes**: Instagram `@suelosvivos_com`, Telegram `t.me/bosquemadre` (canal de Bosque Madre: es el que está activo)
 - **Vinculado a**: Bosque Madre (bosquemadre.com)
 
 Los datos vivos están en `src/config/site.ts`, que es la única fuente de verdad. Lo de
