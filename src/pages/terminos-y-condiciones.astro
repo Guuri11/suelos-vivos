@@ -6,8 +6,7 @@ import { siteConfig } from '@/config/site';
 import { getLang, t } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
-const { price, priceMonthly, installments, deposit, months, spots, startDate, location } =
-  siteConfig.program;
+const { price, months, spots, startDate, location } = siteConfig.program;
 ---
 
 <BaseLayout
@@ -46,10 +45,7 @@ const { price, priceMonthly, installments, deposit, months, spots, startDate, lo
 
         <section>
           <h2 class="font-display text-2xl text-[#1E1A15] mb-4">3. Precio y forma de pago</h2>
-          <ul class="mt-3 space-y-2 list-disc list-inside">
-            <li><strong class="text-[#1E1A15]">Pago único:</strong> {price}€ (IVA incluido).</li>
-            <li><strong class="text-[#1E1A15]">Pago fraccionado:</strong> {priceMonthly}€ al mes durante {installments} meses, más una reserva de {deposit}€ en el momento de la inscripción.</li>
-          </ul>
+          <p class="mt-3"><strong class="text-[#1E1A15]">Pago único:</strong> {price}€ (IVA incluido).</p>
           <p class="mt-3">La reserva de plaza se considera formalizada cuando se recibe el pago correspondiente. Los precios incluyen los impuestos aplicables.</p>
         </section>
 

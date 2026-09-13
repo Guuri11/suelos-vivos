@@ -4,6 +4,60 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-09-13 — Los grupos de la FAQ, en granate
+
+- [x] C-22 · diseño · Los cinco títulos de categoría de `/preguntas-frecuentes`
+      («Para quién es», «Cómo funciona el programa», «Resultados», «Asistencia y
+      formato», «Inscripción y condiciones») pasan de tinta a **granate primario**
+      (`#8B1A1A`, el `--color-primary` de `global.css`)
+
+Es un solo `h2` en el marcado: los títulos salen de `faq.groups[].title`, así que
+el cambio vale para los tres idiomas sin tocar traducciones.
+
+### Verificación
+
+- `pnpm build` limpio.
+
+## 2026-09-13 — Fuera el pago fraccionado
+
+- [x] C-19 · contenido · La tarjeta de precio de `/el-programa` pierde la columna
+      del fraccionado (200 €/mes × 10 y «Reserva con 500 €») y el «o» que la
+      separaba. Queda solo el pago único de 2.299 €
+- [x] C-20 · contenido · `/terminos-y-condiciones`, apartado «3. Precio y forma de
+      pago»: desaparece el punto «Pago fraccionado». La lista de dos se queda en un
+      párrafo, porque una lista de un solo elemento no es una lista
+- [x] C-21 · contenido · `/reserva-plaza`, ficha «Inversión»: de «2.299 € o 200 €/mes
+      × 10» a «2.299 €»
+
+### Decisiones tomadas sin el cliente
+
+- La etiqueta «Pago único» se queda en las dos páginas: sigue siendo cierta y, si
+  el fraccionado vuelve, la tarjeta de `/el-programa` está montada para dos columnas.
+- **Las claves de i18n del fraccionado no se borran** (`home.pricing.payMonthly`,
+  `or`, `perMonth`, `monthsLabel`, `reservaWith`, en los tres idiomas). Ahora no
+  las llama nadie, pero borrarlas convierte un cambio reversible en uno que hay
+  que traducir otra vez. Igual que `elPrograma.cta.fractioned*`, que ya estaban
+  muertas antes de este lote.
+  Lo mismo con `reserva.info.inversionSep` e `inversionMesSuffix`, que se quedan
+  huérfanas en `/reserva-plaza`.
+
+### Lo único que sigue anunciándolo
+
+**`/preguntas-frecuentes`**: «¿Hay posibilidad de pago fraccionado o financiación?»
+→ «Sí. Está previsto ofrecer pago fraccionado…». No estaba en el encargo y no se ha
+tocado, pero ahora es la única página del sitio que lo ofrece.
+
+`priceMonthly`, `installments` y `deposit` siguen en `site.ts` sin ningún llamante:
+se quedan por lo mismo que las claves de i18n. Si el fraccionado no vuelve, salen
+juntos en una limpieza.
+
+### Verificación
+
+- `pnpm build` limpio.
+- Ningún test afirma nada sobre la tarjeta de precio.
+
+No se ha desplegado.
+
 ## 2026-09-13 — Encabezado de «Quiénes somos»
 
 Encargo del cliente sobre el hero de `/quienes-somos`: cambiar el par

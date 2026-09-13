@@ -135,19 +135,9 @@ type FaqItem = { q: string; a: string };
           </p>
 
           <div class="pricing-card bg-[#FAFAF7]/5 border border-[#FAFAF7]/10 rounded-xl p-8 md:p-12 mb-8">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-10">
-              <div class="text-center">
-                <p class="text-[#FAFAF7]/50 text-sm mb-1">{t(lang, 'home.pricing.payOnce')}</p>
-                <p class="font-display text-5xl text-[#FAFAF7]">{siteConfig.program.price}<span class="text-2xl">€</span></p>
-              </div>
-              <div class="hidden md:block text-[#FAFAF7]/20 text-2xl">{t(lang, 'home.pricing.or')}</div>
-              <div class="text-center">
-                <p class="text-[#FAFAF7]/50 text-sm mb-1">{t(lang, 'home.pricing.payMonthly')}</p>
-                <p class="font-display text-5xl text-[#FAFAF7]">{siteConfig.program.priceMonthly}<span class="text-2xl">€</span>
-                  <span class="text-xl text-[#FAFAF7]/50">{t(lang, 'home.pricing.perMonth')}</span>
-                </p>
-                <p class="text-[#FAFAF7]/40 text-xs mt-1">{siteConfig.program.installments} {t(lang, 'home.pricing.monthsLabel')} · {t(lang, 'home.pricing.reservaWith')} {siteConfig.program.deposit}€</p>
-              </div>
+            <div class="text-center mb-10">
+              <p class="text-[#FAFAF7]/50 text-sm mb-1">{t(lang, 'home.pricing.payOnce')}</p>
+              <p class="font-display text-5xl text-[#FAFAF7]">{siteConfig.program.price}<span class="text-2xl">€</span></p>
             </div>
 
             <ul class="grid md:grid-cols-2 gap-3 text-sm text-[#FAFAF7]/70 mb-10 text-left">
