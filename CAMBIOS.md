@@ -4,6 +4,26 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-09-13 — El retrato de Carles Pons
+
+- [x] C-24 · contenido · `/quienes-somos`, ficha del formador: el cliente mandó por fin
+      el retrato. `trainerPhoto` deja de ser `null` y la ficha vuelve a dos columnas,
+      que es exactamente para lo que estaba preparada desde el 03/09/2026. Los tres
+      idiomas lo heredan: `/en/` y `/fr/` reexportan la misma página, y el `alt` ya
+      estaba traducido en los tres JSON
+
+### Decisiones tomadas sin el cliente
+
+- El original viene en 2:3 (1066x1600) y el hueco de la ficha es 4:5. Se recortó
+  arrastrando el encuadre hacia arriba, no al centro, para dejar aire sobre la cabeza:
+  el recorte centrado que habría hecho `object-cover` se la comía por poco. Guardado a
+  800x1000, 130 KB, en `public/images/carles-pons.jpg`.
+
+### Verificación
+
+- `tests/e2e/navigation.spec.ts` «quienes-somos shows the trainer profile» en verde.
+  Build completa sin avisos nuevos. No envía formularios: no escribe en Supabase.
+
 ## 2026-09-13 — El «TODO: TBF» que estaba en producción
 
 - [x] C-23 · contenido · `/el-programa`, extracto de preguntas frecuentes: la tercera

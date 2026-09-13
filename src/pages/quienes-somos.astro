@@ -7,10 +7,11 @@ import { getLang, t, localePath } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
 
-// Retrato de Carles Pons: el cliente aún no lo ha enviado (03/09/2026). Mientras esté a
-// null la ficha se pinta a una columna, para no dejar un hueco gris en producción. Cuando
-// llegue la foto basta con poner aquí su ruta y la ficha vuelve a dos columnas.
-const trainerPhoto: string | null = null;
+// Retrato de Carles Pons: llegó el 13/09/2026 y la ficha vuelve a dos columnas. El
+// original venía en 2:3 y el hueco es 4:5, así que se recortó y se redujo a 800x1000
+// para que `object-cover` no le coma la cabeza. Si algún día se retira la foto, basta
+// con volver a poner null: la ficha se pinta sola a una columna.
+const trainerPhoto: string | null = '/images/carles-pons.jpg';
 ---
 
 <BaseLayout
