@@ -361,7 +361,7 @@
       "items": [
         { "q": "Où se déroulent les ateliers ?", "a": "Les ateliers en présentiel se déroulent à Tormos, Alicante." },
         { "q": "Quelles seront les dates ?", "a": "Les trois ateliers en présentiel auront lieu en automne 2026 (novembre), hiver 2027 (février) et printemps 2027 (avril)." },
-        { "q": "Cela inclut-il l'hébergement et les repas ?", "a": "TODO : TBF" }
+        { "q": "Cela inclut-il l'hébergement et les repas ?", "a": "Non. Le prix du programme ne comprend ni l'hébergement, ni les repas, ni le transport, sauf indication contraire dans les informations propres à chaque atelier." }
       ]
     }
   },

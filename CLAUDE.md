@@ -26,8 +26,9 @@ Los procedimientos viven en skills: `/mantenimiento`, `/sprint-seo`, `/rediseno`
 
 **En producción.** Carril activo: **C — mantenimiento**.
 
-Lote de formularios del 12–13/09/2026 construido, **sin desplegar** y con la suite
-pendiente de pasar entera.
+Lote de formularios del 12–13/09/2026 construido y **sin desplegar**. La suite pasa
+entera: 106 en verde (chromium y Mobile Chrome) el 13/09/2026. Ningún test envía
+formularios, así que correrla no mete leads en el panel del cliente.
 
 **La migración va antes del deploy, no después.** `insertLead()` manda las cinco
 columnas nuevas en todos los inserts, así que este código sobre el esquema viejo

@@ -361,7 +361,7 @@
       "items": [
         { "q": "¿Dónde se imparten los cursos?", "a": "Los talleres presenciales se imparten en Tormos, Alicante." },
         { "q": "¿Cuáles serán las fechas?", "a": "Los tres talleres presenciales son en otoño 2026 (noviembre), invierno 2027 (febrero) y primavera 2027 (abril)." },
-        { "q": "¿Incluye alojamiento y comida?", "a": "TODO: TBF" }
+        { "q": "¿Incluye alojamiento y comida?", "a": "No. El precio del programa no incluye alojamiento, comidas ni transporte, salvo que se indique lo contrario en la información concreta de cada taller." }
       ]
     }
   },

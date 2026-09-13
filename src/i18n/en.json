@@ -361,7 +361,7 @@
       "items": [
         { "q": "Where are the workshops held?", "a": "The in-person workshops are held in Tormos, Alicante." },
         { "q": "What are the dates?", "a": "The three in-person workshops take place in autumn 2026 (November), winter 2027 (February) and spring 2027 (April)." },
-        { "q": "Does it include accommodation and meals?", "a": "TODO: TBF" }
+        { "q": "Does it include accommodation and meals?", "a": "No. The programme price does not include accommodation, meals or transport, unless stated otherwise in the specific information for each workshop." }
       ]
     }
   },

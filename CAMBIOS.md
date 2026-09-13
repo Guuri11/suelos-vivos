@@ -4,6 +4,41 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-09-13 — El «TODO: TBF» que estaba en producción
+
+- [x] C-23 · contenido · `/el-programa`, extracto de preguntas frecuentes: la tercera
+      («¿Incluye alojamiento y comida?») respondía literalmente **`TODO: TBF`**, y lo
+      hacía en los tres idiomas. Ahora responde que no están incluidos, en la línea de
+      la respuesta larga de `/preguntas-frecuentes`
+
+Las 21 preguntas de `/preguntas-frecuentes` ya coincidían con el texto que mandó el
+cliente, agrupadas en cinco bloques. El repaso solo encontró este hueco.
+
+### Decisiones tomadas sin el cliente
+
+- Donde su texto dice «contratar una **consultoría**», la web sigue diciendo
+  «**asesoría** personalizada» (respuesta 14). Es el nombre del servicio en
+  `/servicios` y en el menú; cambiar la palabra solo en la FAQ rompería la pista que
+  lleva de la pregunta a la página que la resuelve.
+- Su respuesta 21 se contradice a sí misma («Podrá contemplarse… Si está previsto…»).
+  Queda en la forma afirmativa, que es la que repite dos veces.
+
+### Lo que hay que preguntarle
+
+**El pago fraccionado vuelve o no vuelve.** Hoy mismo, en el lote C-19/C-20/C-21, se
+quitó de la tarjeta de `/el-programa`, de `/terminos-y-condiciones` y de la ficha de
+`/reserva-plaza`. La respuesta 21 de este texto dice que sí se ofrece. Ahora mismo es
+la **única** mención al fraccionado que queda en toda la web, y contradice a las tres
+páginas que acaban de perderlo. No se toca hasta que él diga cuál de las dos vale.
+
+### Verificación
+
+- `tests/e2e/preguntas-frecuentes.spec.ts` (nuevo): 28 en verde en chromium y
+  Mobile Chrome. Cubre las 21 preguntas y sus cinco grupos en los tres idiomas, que
+  el JSON-LD de `FAQPage` las lleve todas y sin respuestas vacías, el buscador con
+  y sin resultados, y que no quede ningún marcador de relleno en `/preguntas-frecuentes`
+  ni en `/el-programa`. Ninguno envía formularios: no escriben en Supabase.
+
 ## 2026-09-13 — Los grupos de la FAQ, en granate
 
 - [x] C-22 · diseño · Los cinco títulos de categoría de `/preguntas-frecuentes`
