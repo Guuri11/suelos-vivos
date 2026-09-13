@@ -449,22 +449,20 @@
   },
   "contacto": {
     "seo": {
-      "title": "Reserve your spot — Suelos Vivos",
-      "description": "Reserve your place in the Suelos Vivos 2026 programme. Only 20 places. Starting September 2026 in Tormos, Alicante."
+      "title": "Contact — Suelos Vivos",
+      "description": "Write to us and we'll reply within 48 hours. Regenerative agriculture training in Tormos, Alicante."
     },
     "hero": {
-      "eyebrow": "Reserve your spot",
-      "title": "The first step is the form.",
-      "subtitle": "Fill in the form and we'll get in touch within 48 hours to explain the enrolment process and answer your questions."
+      "eyebrow": "Contact",
+      "title": "Ask us whatever you need to know.",
+      "subtitle": "Tell us your question and we'll reply within 48 hours. If what you want is a place on the programme, the reservation form is the place to go."
+    },
+    "reserva": {
+      "prompt": "Want a place on the programme?",
+      "text": "Reserving a spot has its own form, with everything enrolment needs.",
+      "link": "Reserve your spot"
     },
     "info": {
-      "inicioLabel": "Start date",
-      "lugarLabel": "Location",
-      "plazasLabel": "Available spots",
-      "plazasSuffix": "farmers",
-      "inversionLabel": "Investment",
-      "inversionSep": "or",
-      "inversionMesSuffix": "/month ×",
       "directContact": "Prefer to write to us directly?"
     },
     "form": {
@@ -473,7 +471,7 @@
       "nombrePlaceholder": "Your full name",
       "emailLabel": "Email *",
       "emailPlaceholder": "you@email.com",
-      "telefonoLabel": "Phone",
+      "telefonoLabel": "Phone *",
       "telefonoPlaceholder": "+34 600 000 000",
       "mensajeLabel": "Tell us about your situation",
       "mensajePlaceholder": "Tell us briefly about your farm and what you hope to achieve with the programme...",
@@ -484,6 +482,69 @@
       "sending": "Sending...",
       "sent": "Sent",
       "successMsg": "Received! We'll contact you within 48 hours.",
+      "errorPrefix": "Something went wrong. Please write to us directly at"
+    }
+  },
+  "reserva": {
+    "seo": {
+      "title": "Reserve your spot — Suelos Vivos",
+      "description": "Reserve your place on the Suelos Vivos annual programme. Only 20 places. Starting December 2026 in Tormos, Alicante."
+    },
+    "hero": {
+      "eyebrow": "Reserve your spot",
+      "title": "There are twenty places. This is what holds yours.",
+      "subtitle": "Fill in the request and we'll get in touch within 48 hours to confirm your place, walk you through enrolment and agree the payment arrangement with you."
+    },
+    "info": {
+      "inicioLabel": "Start date",
+      "lugarLabel": "Location",
+      "plazasLabel": "Available spots",
+      "plazasSuffix": "farmers",
+      "inversionLabel": "Investment",
+      "inversionSep": "or",
+      "inversionMesSuffix": "/month ×",
+      "dudasPrompt": "Questions before you reserve?",
+      "dudasLink": "Write to us, no commitment",
+      "directContact": "Or straight to"
+    },
+    "form": {
+      "title": "Reservation request",
+      "personalesTitle": "Personal and contact details",
+      "nombreLabel": "Full name *",
+      "nombrePlaceholder": "Your full name",
+      "emailLabel": "Email *",
+      "emailHelp": "This is where we send your confirmation and updates.",
+      "emailPlaceholder": "you@email.com",
+      "telefonoLabel": "Phone *",
+      "telefonoHelp": "So we can call you if something needs sorting quickly.",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "dniLabel": "Identity document *",
+      "dniHelp": "National ID, NIE or passport. Required for the contract and to issue the official certificate of attendance.",
+      "dniPlaceholder": "12345678A",
+      "fincaTitle": "Your farm and your project",
+      "fincaLabel": "Type of farm and main crop",
+      "fincaPlaceholder": "E.g. Olive grove, 50 ha, Jaén",
+      "proyectoLabel": "Tell us about your project and what you expect",
+      "proyectoPlaceholder": "What's your situation today? What do you hope to get out of the programme?",
+      "pagoTitle": "Payment and invoicing",
+      "pagoIntro": "Nothing is charged through the website. Tell us how you'd rather pay and we'll settle it with you when we confirm your place.",
+      "metodoPagoLabel": "Preferred payment method",
+      "metodoPagoPlaceholder": "— Select an option —",
+      "metodoPagoTarjeta": "Credit card",
+      "metodoPagoPaypal": "PayPal",
+      "metodoPagoTransferencia": "Bank transfer",
+      "facturaLegend": "Invoicing details",
+      "facturaHelp": "Only if you need the receipt made out to a company or a sole trader.",
+      "facturaNombreLabel": "Name or company name",
+      "facturaNombrePlaceholder": "Registered name",
+      "facturaDireccionLabel": "Registered address",
+      "facturaDireccionPlaceholder": "Street, number, postcode and town",
+      "facturaNifLabel": "Tax ID (NIF / CIF / VAT)",
+      "facturaNifPlaceholder": "B12345678",
+      "submit": "Send reservation request",
+      "sending": "Sending...",
+      "sent": "Sent",
+      "successMsg": "Received! We'll contact you within 48 hours to confirm your place.",
       "errorPrefix": "Something went wrong. Please write to us directly at"
     }
   },
@@ -565,10 +626,13 @@
       "formTitle": "Request advisory",
       "nombreLabel": "Name *",
       "nombrePlaceholder": "Your name",
-      "telefonoLabel": "Phone",
+      "telefonoLabel": "Phone *",
       "telefonoPlaceholder": "+34 600 000 000",
       "emailFormLabel": "Email *",
       "emailPlaceholder": "you@email.com",
+      "dniLabel": "Identity document *",
+      "dniHelp": "National ID, NIE or passport. We need it to issue the official certificate.",
+      "dniPlaceholder": "12345678A",
       "servicioLabel": "Service of interest",
       "servicioPlaceholder": "— Select a service —",
       "servicioOptions": [

@@ -449,22 +449,20 @@
   },
   "contacto": {
     "seo": {
-      "title": "Réserver une place — Suelos Vivos",
-      "description": "Réservez votre place dans le programme Suelos Vivos 2026. Seulement 20 places. Début en septembre 2026 à Tormos, Alicante."
+      "title": "Contact — Suelos Vivos",
+      "description": "Écrivez-nous, nous répondons sous 48 heures. Formation en agriculture régénérative à Tormos, Alicante."
     },
     "hero": {
-      "eyebrow": "Réserver ma place",
-      "title": "La première étape, c'est le formulaire.",
-      "subtitle": "Remplissez le formulaire et nous vous contacterons dans les 48 heures pour vous expliquer le processus d'inscription et répondre à vos questions."
+      "eyebrow": "Contact",
+      "title": "Posez-nous la question que vous avez.",
+      "subtitle": "Dites-nous ce que vous voulez savoir et nous répondons sous 48 heures. Si vous souhaitez rejoindre le programme, c'est le formulaire de réservation qu'il vous faut."
+    },
+    "reserva": {
+      "prompt": "Vous voulez rejoindre le programme ?",
+      "text": "La réservation d'une place a son propre formulaire, avec tout ce qu'exige l'inscription.",
+      "link": "Réserver une place"
     },
     "info": {
-      "inicioLabel": "Début",
-      "lugarLabel": "Lieu",
-      "plazasLabel": "Places disponibles",
-      "plazasSuffix": "agriculteurs",
-      "inversionLabel": "Investissement",
-      "inversionSep": "ou",
-      "inversionMesSuffix": "/mois ×",
       "directContact": "Vous préférez nous écrire directement ?"
     },
     "form": {
@@ -473,7 +471,7 @@
       "nombrePlaceholder": "Votre nom complet",
       "emailLabel": "Email *",
       "emailPlaceholder": "vous@email.com",
-      "telefonoLabel": "Téléphone",
+      "telefonoLabel": "Téléphone *",
       "telefonoPlaceholder": "+34 600 000 000",
       "mensajeLabel": "Parlez-nous de votre situation",
       "mensajePlaceholder": "Décrivez brièvement votre exploitation et ce que vous espérez obtenir du programme...",
@@ -484,6 +482,69 @@
       "sending": "Envoi en cours...",
       "sent": "Envoyé",
       "successMsg": "Reçu ! Nous vous contacterons dans les 48 heures.",
+      "errorPrefix": "Une erreur s'est produite. Veuillez nous écrire directement à"
+    }
+  },
+  "reserva": {
+    "seo": {
+      "title": "Réserver une place — Suelos Vivos",
+      "description": "Réservez votre place dans le programme annuel de Suelos Vivos. Seulement 20 places. Début en décembre 2026 à Tormos, Alicante."
+    },
+    "hero": {
+      "eyebrow": "Réserver ma place",
+      "title": "Il y a vingt places. Voici celle qui garde la vôtre.",
+      "subtitle": "Remplissez la demande et nous vous contacterons dans les 48 heures pour confirmer votre place, vous expliquer l'inscription et convenir avec vous du mode de paiement."
+    },
+    "info": {
+      "inicioLabel": "Début",
+      "lugarLabel": "Lieu",
+      "plazasLabel": "Places disponibles",
+      "plazasSuffix": "agriculteurs",
+      "inversionLabel": "Investissement",
+      "inversionSep": "ou",
+      "inversionMesSuffix": "/mois ×",
+      "dudasPrompt": "Des questions avant de réserver ?",
+      "dudasLink": "Écrivez-nous, sans engagement",
+      "directContact": "Ou directement à"
+    },
+    "form": {
+      "title": "Demande de réservation",
+      "personalesTitle": "Coordonnées personnelles",
+      "nombreLabel": "Nom et prénom *",
+      "nombrePlaceholder": "Votre nom complet",
+      "emailLabel": "Adresse e-mail *",
+      "emailHelp": "C'est là que nous envoyons la confirmation et les informations.",
+      "emailPlaceholder": "vous@email.com",
+      "telefonoLabel": "Téléphone *",
+      "telefonoHelp": "Pour vous appeler si quelque chose doit être réglé rapidement.",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "dniLabel": "Pièce d'identité *",
+      "dniHelp": "Carte d'identité, NIE ou passeport. Nécessaire pour le contrat et pour délivrer l'attestation officielle de présence.",
+      "dniPlaceholder": "12345678A",
+      "fincaTitle": "Votre exploitation et votre projet",
+      "fincaLabel": "Type d'exploitation et culture principale",
+      "fincaPlaceholder": "Ex. : oliveraie, 50 ha, Jaén",
+      "proyectoLabel": "Parlez-nous de votre projet et de vos attentes",
+      "proyectoPlaceholder": "Quelle est votre situation actuelle ? Qu'attendez-vous du programme ?",
+      "pagoTitle": "Paiement et facturation",
+      "pagoIntro": "Rien n'est encaissé depuis le site. Dites-nous comment vous préférez payer et nous le réglons avec vous à la confirmation de la place.",
+      "metodoPagoLabel": "Mode de paiement souhaité",
+      "metodoPagoPlaceholder": "— Sélectionnez une option —",
+      "metodoPagoTarjeta": "Carte de crédit",
+      "metodoPagoPaypal": "PayPal",
+      "metodoPagoTransferencia": "Virement bancaire",
+      "facturaLegend": "Données de facturation",
+      "facturaHelp": "Uniquement si vous avez besoin d'un reçu au nom d'une société ou d'un indépendant.",
+      "facturaNombreLabel": "Nom ou raison sociale",
+      "facturaNombrePlaceholder": "Nom fiscal",
+      "facturaDireccionLabel": "Adresse fiscale",
+      "facturaDireccionPlaceholder": "Rue, numéro, code postal et commune",
+      "facturaNifLabel": "NIF / CIF / TVA",
+      "facturaNifPlaceholder": "B12345678",
+      "submit": "Envoyer la demande de réservation",
+      "sending": "Envoi en cours...",
+      "sent": "Envoyé",
+      "successMsg": "Bien reçu ! Nous vous contacterons dans les 48 heures pour confirmer votre place.",
       "errorPrefix": "Une erreur s'est produite. Veuillez nous écrire directement à"
     }
   },
@@ -565,10 +626,13 @@
       "formTitle": "Demander un conseil",
       "nombreLabel": "Prénom et nom *",
       "nombrePlaceholder": "Votre prénom",
-      "telefonoLabel": "Téléphone",
+      "telefonoLabel": "Téléphone *",
       "telefonoPlaceholder": "+34 600 000 000",
       "emailFormLabel": "E-mail *",
       "emailPlaceholder": "vous@email.com",
+      "dniLabel": "Pièce d'identité *",
+      "dniHelp": "Carte d'identité, NIE ou passeport. Nécessaire pour délivrer l'attestation officielle.",
+      "dniPlaceholder": "12345678A",
       "servicioLabel": "Service souhaité",
       "servicioPlaceholder": "— Sélectionnez un service —",
       "servicioOptions": [

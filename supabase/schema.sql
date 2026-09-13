@@ -5,22 +5,31 @@
 -- (anon key). Solo el backend, usando la service_role key, puede insertar y
 -- leer (la service_role key salta RLS por diseño).
 --
--- Una sola tabla para los cuatro formularios del sitio, segmentados por
+-- Una sola tabla para todos los formularios del sitio, segmentados por
 -- form_type. Las columnas que un formulario no usa quedan a null: así el panel
 -- y la exportación a CSV son una única consulta con un filtro opcional.
+--
+-- Este fichero es la instalación desde cero. Sobre una base ya viva no sirve
+-- (el `if not exists` no haría nada): los cambios posteriores van en
+-- supabase/migrations/, y se aplican en orden.
 
 create table if not exists leads (
   id          bigint generated always as identity primary key,
   created_at  timestamptz not null default now(),
-  form_type   text not null,   -- contacto | asesoria | waitlist-home | waitlist-programa
+  form_type   text not null,   -- contacto | reserva | asesoria | faq | waitlist-home | waitlist-programa
   lang        text,            -- es | en | fr
   name        text,
   email       text not null,
   phone       text,
   message     text,
   servicio    text,            -- solo formulario de asesoría
-  finca       text,            -- solo formulario de asesoría
-  proyecto    text,            -- solo formulario de asesoría
+  finca       text,            -- asesoría y reserva de plaza
+  proyecto    text,            -- asesoría y reserva de plaza
+  dni         text,            -- reserva y asesoría: DNI, NIE o pasaporte
+  metodo_pago text,            -- solo reserva de plaza: preferencia declarada, no cobro
+  factura_nombre    text,      -- solo reserva de plaza
+  factura_direccion text,      -- solo reserva de plaza
+  factura_nif       text,      -- solo reserva de plaza
   privacy     boolean not null default false,
   user_agent  text
 );

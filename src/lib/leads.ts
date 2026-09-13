@@ -1,10 +1,11 @@
 import { supabaseServer } from '@/lib/supabase-server';
 
 /** Los formularios del sitio. El valor viaja en el hidden `tipo` de cada form. */
-export const FORM_TYPES = ['contacto', 'asesoria', 'faq', 'waitlist-home', 'waitlist-programa'] as const;
+export const FORM_TYPES = ['reserva', 'contacto', 'asesoria', 'faq', 'waitlist-home', 'waitlist-programa'] as const;
 export type FormType = (typeof FORM_TYPES)[number];
 
 export const FORM_TYPE_LABELS: Record<FormType, string> = {
+  reserva: 'Reserva de plaza',
   contacto: 'Contacto',
   asesoria: 'Asesoría',
   faq: 'Pregunta desde FAQ',
@@ -14,6 +15,27 @@ export const FORM_TYPE_LABELS: Record<FormType, string> = {
   'waitlist-home': 'Escuela Online (home)',
   'waitlist-programa': 'Escuela Online (programa)',
 };
+
+/**
+ * Método de pago que declara el visitante en la reserva de plaza. **No se cobra
+ * nada en la web**: es una preferencia, y el cobro se cierra fuera (decisión del
+ * 12/09/2026). El `value` que viaja en el form es el slug, no la etiqueta, para
+ * que el panel y el CSV se lean igual venga el lead de /es, /en o /fr.
+ */
+export const PAYMENT_METHODS = ['tarjeta', 'paypal', 'transferencia'] as const;
+export type PaymentMethod = (typeof PAYMENT_METHODS)[number];
+
+export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, string> = {
+  tarjeta: 'Tarjeta de crédito',
+  paypal: 'PayPal',
+  transferencia: 'Transferencia bancaria',
+};
+
+/** Etiqueta legible de un método de pago; devuelve '' si no es uno de los nuestros. */
+export function paymentMethodLabel(value: string | null | undefined): string {
+  if (!value) return '';
+  return PAYMENT_METHOD_LABELS[value as PaymentMethod] ?? value;
+}
 
 export interface LeadInput {
   formType: FormType;
@@ -25,6 +47,11 @@ export interface LeadInput {
   servicio?: string;
   finca?: string;
   proyecto?: string;
+  dni?: string;
+  metodoPago?: string;
+  facturaNombre?: string;
+  facturaDireccion?: string;
+  facturaNif?: string;
   privacy?: boolean;
   userAgent?: string;
 }
@@ -41,6 +68,11 @@ export interface LeadRow {
   servicio: string | null;
   finca: string | null;
   proyecto: string | null;
+  dni: string | null;
+  metodo_pago: string | null;
+  factura_nombre: string | null;
+  factura_direccion: string | null;
+  factura_nif: string | null;
   privacy: boolean;
   user_agent: string | null;
 }
@@ -68,6 +100,11 @@ export async function insertLead(input: LeadInput): Promise<{ error: string | nu
     servicio: input.servicio?.slice(0, 80) || null,
     finca: input.finca?.slice(0, 300) || null,
     proyecto: input.proyecto?.slice(0, 5000) || null,
+    dni: input.dni?.slice(0, 40) || null,
+    metodo_pago: input.metodoPago?.slice(0, 40) || null,
+    factura_nombre: input.facturaNombre?.slice(0, 160) || null,
+    factura_direccion: input.facturaDireccion?.slice(0, 300) || null,
+    factura_nif: input.facturaNif?.slice(0, 40) || null,
     privacy: input.privacy ?? false,
     user_agent: input.userAgent?.slice(0, 400) || null,
   });

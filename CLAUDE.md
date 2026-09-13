@@ -26,7 +26,17 @@ Los procedimientos viven en skills: `/mantenimiento`, `/sprint-seo`, `/rediseno`
 
 **En producción.** Carril activo: **C — mantenimiento**.
 
-Sin encargos pendientes a 26/08/2026 (P-1 de `internal-docs/plan/ESTADO.md`).
+Lote de formularios del 12–13/09/2026 construido, **sin desplegar** y con la suite
+pendiente de pasar entera.
+
+**La migración va antes del deploy, no después.** `insertLead()` manda las cinco
+columnas nuevas en todos los inserts, así que este código sobre el esquema viejo
+**rompe los seis formularios**. Aplicar
+`supabase/migrations/2026-09-12-reserva-plaza.sql` primero. Detalle en `CAMBIOS.md`.
+
+**Los tests no pueden escribir en la base del cliente.** `.env` lleva las
+credenciales de producción y Playwright levanta el dev server con ese fichero:
+un test que envíe un formulario mete un lead en el panel del cliente.
 
 ## Cómo está montado
 
@@ -38,7 +48,8 @@ Sin encargos pendientes a 26/08/2026 (P-1 de `internal-docs/plan/ESTADO.md`).
   toca el `.astro` una vez y se traduce la clave en tres JSON. Comprobado el 04/09/2026
   con `grep -L "^import Page from" src/pages/{en,fr}/*.astro`, que no devuelve ninguna
 - **Sanity** como CMS del blog
-- **Supabase** para leads (`supabase/schema.sql`)
+- **Supabase** para leads. `supabase/schema.sql` es la instalación desde cero;
+  sobre la base viva mandan los ficheros de `supabase/migrations/`
 - **Panel privado** en `/panel-suelos`
 - **React** como isla, solo donde hace falta interactividad
 

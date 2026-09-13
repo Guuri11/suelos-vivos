@@ -1,5 +1,12 @@
 import type { APIRoute } from 'astro';
-import { FORM_TYPES, FORM_TYPE_LABELS, listLeads, type FormType, type LeadRow } from '@/lib/leads';
+import {
+  FORM_TYPES,
+  FORM_TYPE_LABELS,
+  listLeads,
+  paymentMethodLabel,
+  type FormType,
+  type LeadRow,
+} from '@/lib/leads';
 
 export const prerender = false;
 
@@ -13,6 +20,11 @@ const HEADERS = [
   'Servicio',
   'Finca',
   'Proyecto',
+  'Documento de identidad',
+  'Método de pago',
+  'Factura: nombre',
+  'Factura: dirección fiscal',
+  'Factura: NIF/CIF',
   'Idioma',
   'Acepta privacidad',
 ];
@@ -54,6 +66,11 @@ function toRow(row: LeadRow): string {
     row.servicio,
     row.finca,
     row.proyecto,
+    row.dni,
+    paymentMethodLabel(row.metodo_pago),
+    row.factura_nombre,
+    row.factura_direccion,
+    row.factura_nif,
     row.lang,
     row.privacy ? 'Sí' : 'No',
   ]

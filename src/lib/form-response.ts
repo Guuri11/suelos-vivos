@@ -6,6 +6,7 @@ import { FORM_TYPES, type FormType } from '@/lib/leads';
  * párrafos de resultado que ya tiene cada formulario.
  */
 const FORM_ANCHORS: Record<FormType, { ok: string; error: string }> = {
+  reserva: { ok: 'reserva-success', error: 'reserva-error' },
   contacto: { ok: 'form-success', error: 'form-error' },
   asesoria: { ok: 'advisory-success', error: 'advisory-error' },
   faq: { ok: 'faq-form-success', error: 'faq-form-error' },

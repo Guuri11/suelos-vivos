@@ -142,3 +142,99 @@ lo que hay y se sustituye cuando lleguen.
   autorreferencial correctos.
 - **Pendiente**: repaso visual en navegador sobre el preview de Vercel, y
   `squirrel audit --regressionSince`. No se ha desplegado.
+
+## 12/09/2026 — Los formularios, según el documento del cliente
+
+El cliente mandó un documento con cinco formularios, sus campos y desde dónde se
+accede a cada uno. Cuatro de los cinco ya existían y coincidían campo por campo:
+el documento está escrito mirando la web. Lo único nuevo era la **reserva de
+plaza**, que hasta hoy no tenía formulario propio.
+
+**Decisión del cliente: desde la web no se cobra nada.** El documento ponía
+«(STRIPE)» en el bloque de pago pero luego pedía «tarjeta, PayPal o
+transferencia», que es un desplegable y no una pasarela. Se recoge la preferencia
+y el cobro se cierra fuera. No hay Stripe en el proyecto.
+
+- [x] R-01 · contenido · `/reserva-plaza` nueva: datos personales, documento de
+      identidad, finca y cultivo, proyecto y expectativas, método de pago
+      preferido y datos de facturación
+- [x] R-02 · contenido · `/contacto` deja de ser la página de reserva. Se titulaba
+      «Reservar plaza — Suelos Vivos» y su eyebrow lo decía. Ahora es contacto a
+      secas, conserva su formulario corto y deriva a la reserva con una tarjeta
+- [x] R-03 · datos · Columnas nuevas en `leads`: `dni`, `metodo_pago`,
+      `factura_nombre`, `factura_direccion`, `factura_nif`. Tipo `reserva` nuevo
+- [x] R-04 · datos · Panel y CSV muestran los campos nuevos. El método de pago se
+      guarda como slug y se traduce al pintarlo, para que el CSV se lea igual
+      venga el lead de `/es`, `/en` o `/fr`
+- [x] R-05 · bug · Los CTA «Reservar plaza» de `/el-programa` llevaban el `href`
+      **escrito a mano**, sin `localePath()`: desde `/en/` y `/fr/` sacaban al
+      visitante a la página en español
+- [x] R-06 · bug · El botón «Solicitar asesoría» de `/el-programa` iba a
+      `/contacto`, y ese formulario está en `/servicios`
+- [x] R-07 · bug · El `seo.description` de los tres idiomas decía que el programa
+      empieza en «septiembre 2026». Empieza en **diciembre** (`site.ts:29`)
+- [x] R-08 · contenido · El footer enlazaba a la reserva pero no a contacto ni a
+      servicios. Ahora da acceso a los tres formularios largos, que es lo que
+      pedía el documento
+- [x] R-09 · contenido · Traducción de todo lo anterior a inglés y francés
+
+### 13/09/2026 — Respuesta del cliente sobre el DNI
+
+**«El DNI hace falta; el contrato y el certificado se encarga Suelos Vivos por su
+cuenta.»** Se planteó la objeción —en `/servicios` todavía no hay contrato ni
+certificado que emitir, así que pedir el documento de identidad para responder a
+una consulta es minimización de datos— y el cliente la resolvió: lo gestionan
+ellos fuera de la web. Se implementa como pedía su documento.
+
+- [x] R-10 · contenido · Documento de identidad, obligatorio, en `/servicios`
+- [x] R-11 · contenido · Teléfono obligatorio en `/contacto` y en `/servicios`.
+      Su documento lo marcaba con asterisco en los dos y estaba opcional: en la
+      primera lectura se dijo que `/contacto` no tenía delta y era falso
+- [x] R-12 · seguridad · `CAMPOS_OBLIGATORIOS` en el endpoint. El `required` del
+      HTML solo lo aplica el navegador; un POST fabricado entraba con el DNI
+      vacío y el lead parecía completo
+- [x] R-13 · legal · La política de privacidad enumera los datos que se recogen y
+      no mencionaba ni el documento de identidad ni los datos de facturación.
+      Añadidos, con su finalidad y base legal, y dicho explícitamente que la web
+      no procesa pagos ni recoge datos de tarjeta
+- [x] R-14 · traducción de R-10 y R-11 a inglés y francés
+
+### Lo que sigue avisado al cliente
+
+- **El documento de identidad queda detrás de la contraseña única del panel.**
+  Para nombres y emails da; para un DNI es flojo. Avisado, no bloqueante.
+- **«TIENE QUE HABER 3 DIFERENTES» contradice su propia lista de cinco.** Se ha
+  interpretado que cuenta los tres largos y no cuenta la pregunta de la FAQ ni el
+  email de la Escuela Online. No se ha borrado ningún formulario.
+
+### La suite no puede escribir en la base del cliente
+
+`.env` lleva las credenciales de la Supabase de producción y Playwright levanta
+el dev server con ese fichero: **cualquier test que envíe un formulario escribe
+un lead en el panel del cliente**. Había dos que lo hacían y se han quitado. El
+que comprueba que el endpoint rechaza una reserva sin DNI se queda, porque falla
+la validación antes de llegar a la base.
+
+No entró ningún lead falso: todos aquellos POST devolvieron 403 o 500, nunca 200.
+Nos salvó justamente que el esquema esté desalineado.
+
+### Verificación
+
+- `pnpm build` limpio con todos los cambios de los dos días.
+- Playwright: **74/74 en verde** tras el lote del 12/09. La tanda del 13/09
+  cambió la suite (tests del DNI en `/servicios` y de la validación del
+  endpoint, menos los dos que escribían en la base) y **está pendiente de
+  pasarla entera**.
+- Un test de `navigation.spec.ts` afirmaba que `/contacto` se titula «Reservar
+  plaza». Se ha actualizado: era justo lo que este lote cambia.
+
+### Antes de desplegar, en este orden
+
+1. **Aplicar `supabase/migrations/2026-09-12-reserva-plaza.sql`.** Va primero, no
+   después: `insertLead()` manda las cinco columnas nuevas en **todos** los
+   inserts, así que desplegar el código sobre el esquema viejo **rompe los seis
+   formularios**, no solo el de reserva, y el visitante ve el mensaje de error.
+2. Repaso visual sobre el preview de Vercel.
+3. `squirrel audit --regressionSince d2bcd508`.
+
+No se ha desplegado.

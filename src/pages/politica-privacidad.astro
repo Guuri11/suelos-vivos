@@ -32,11 +32,14 @@ const lang = getLang(Astro.currentLocale);
 
         <section>
           <h2 class="font-display text-2xl text-[#1E1A15] mb-4">2. Datos que recopilamos</h2>
-          <p>A través de los formularios de este sitio web (contacto, solicitud de asesoría, listas de espera de la edición online y consultas desde las preguntas frecuentes) podemos recopilar los siguientes datos personales:</p>
+          <p>A través de los formularios de este sitio web (reserva de plaza, contacto, solicitud de asesoría, listas de espera de la edición online y consultas desde las preguntas frecuentes) podemos recopilar los siguientes datos personales:</p>
           <ul class="mt-3 space-y-1 list-disc list-inside">
             <li>Nombre y apellidos</li>
             <li>Dirección de correo electrónico</li>
-            <li>Número de teléfono (opcional)</li>
+            <li>Número de teléfono</li>
+            <li>Número de documento de identidad (DNI, NIE o pasaporte), únicamente en la reserva de plaza y en la solicitud de asesoría, para formalizar el contrato y emitir el certificado oficial de asistencia</li>
+            <li>Datos de facturación (nombre o razón social, dirección fiscal y NIF/CIF), únicamente en la reserva de plaza y solo si solicitas recibo</li>
+            <li>Método de pago que prefieres. <strong class="text-[#1E1A15]">Esta web no procesa pagos ni recoge datos de tarjeta</strong>: el cobro se gestiona fuera del sitio</li>
             <li>Información sobre tu actividad agrícola: tipo de finca, cultivo y descripción de tu proyecto (opcional)</li>
             <li>Mensaje o consulta libre que nos envíes</li>
           </ul>
@@ -48,7 +51,7 @@ const lang = getLang(Astro.currentLocale);
           <p>Tus datos se tratarán con las siguientes finalidades:</p>
           <ul class="mt-3 space-y-2 list-disc list-inside">
             <li><strong class="text-[#1E1A15]">Gestión de consultas:</strong> responder a las solicitudes de información sobre el programa. Base legal: interés legítimo y consentimiento del interesado.</li>
-            <li><strong class="text-[#1E1A15]">Gestión de inscripciones:</strong> tramitar la reserva de plaza y la relación contractual derivada. Base legal: ejecución de un contrato.</li>
+            <li><strong class="text-[#1E1A15]">Gestión de inscripciones:</strong> tramitar la reserva de plaza y la relación contractual derivada, incluida la emisión del certificado oficial de asistencia y de la factura cuando la solicites. El documento de identidad y los datos de facturación se tratan solo para estas finalidades. Base legal: ejecución de un contrato y cumplimiento de obligaciones legales en materia fiscal.</li>
             <li><strong class="text-[#1E1A15]">Comunicaciones del programa:</strong> enviar información relevante sobre el programa para el que te has inscrito. Base legal: ejecución de un contrato.</li>
           </ul>
         </section>

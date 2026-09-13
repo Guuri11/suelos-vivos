@@ -7,6 +7,7 @@ import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
 import { getLang, localePath, t } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
+const lp = (path: string) => localePath(lang, path);
 
 // Envío sin JavaScript: el endpoint devuelve aquí con el resultado en la query
 // y el mensaje se pinta ya desde el servidor (ver src/lib/form-response.ts).
@@ -161,7 +162,7 @@ type FaqItem = { q: string; a: string };
             </ul>
 
             <a
-              href="/contacto"
+              href={lp('/reserva-plaza')}
               class="inline-flex items-center px-10 py-4 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 text-base"
             >
               {t(lang, 'home.pricing.ctaPre')}{siteConfig.program.spots}{t(lang, 'home.pricing.ctaPost')}
@@ -232,7 +233,7 @@ type FaqItem = { q: string; a: string };
             <h3 class="font-display text-xl text-[#1E1A15] mb-2">{t(lang, 'elPrograma.banner.advisory.title')}</h3>
             <p class="text-sm text-[#6B6355] mb-6">{t(lang, 'elPrograma.banner.advisory.desc')}</p>
             <a
-              href="/contacto"
+              href={lp('/servicios')}
               class="inline-flex items-center justify-center px-6 py-3 bg-[#1E1A15] text-white font-semibold rounded-md hover:bg-[#3A322A] transition-colors duration-200 text-sm"
             >
               {t(lang, 'elPrograma.banner.advisory.cta')}

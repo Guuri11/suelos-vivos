@@ -449,22 +449,20 @@
   },
   "contacto": {
     "seo": {
-      "title": "Reservar plaza — Suelos Vivos",
-      "description": "Reserva tu plaza en el programa Suelos Vivos 2026. Solo 20 plazas. Inicio septiembre 2026 en Tormos, Alicante."
+      "title": "Contacto — Suelos Vivos",
+      "description": "Escríbenos y te respondemos en menos de 48 horas. Formación en agricultura regenerativa en Tormos, Alicante."
     },
     "hero": {
-      "eyebrow": "Reservar plaza",
-      "title": "El primer paso es el formulario.",
-      "subtitle": "Rellena el formulario y nos ponemos en contacto contigo en menos de 48 horas para explicarte el proceso de inscripción y resolver tus dudas."
+      "eyebrow": "Contacto",
+      "title": "Pregunta lo que necesites saber.",
+      "subtitle": "Cuéntanos tu duda y te respondemos en menos de 48 horas. Si lo que quieres es entrar en el programa, el sitio es el formulario de reserva."
+    },
+    "reserva": {
+      "prompt": "¿Quieres entrar en el programa?",
+      "text": "La reserva de plaza tiene su propio formulario, con todo lo que hace falta para la inscripción.",
+      "link": "Reservar plaza"
     },
     "info": {
-      "inicioLabel": "Inicio",
-      "lugarLabel": "Lugar",
-      "plazasLabel": "Plazas disponibles",
-      "plazasSuffix": "agricultores",
-      "inversionLabel": "Inversión",
-      "inversionSep": "o",
-      "inversionMesSuffix": "/mes ×",
       "directContact": "¿Prefieres escribirnos directamente?"
     },
     "form": {
@@ -473,7 +471,7 @@
       "nombrePlaceholder": "Tu nombre completo",
       "emailLabel": "Email *",
       "emailPlaceholder": "tu@email.com",
-      "telefonoLabel": "Teléfono",
+      "telefonoLabel": "Teléfono *",
       "telefonoPlaceholder": "+34 600 000 000",
       "mensajeLabel": "Cuéntanos tu situación",
       "mensajePlaceholder": "Cuéntanos brevemente sobre tu finca y qué esperas conseguir con el programa...",
@@ -484,6 +482,69 @@
       "sending": "Enviando...",
       "sent": "Enviado",
       "successMsg": "¡Recibido! Te contactamos en menos de 48 horas.",
+      "errorPrefix": "Algo fue mal. Por favor, escríbenos directamente a"
+    }
+  },
+  "reserva": {
+    "seo": {
+      "title": "Reservar plaza — Suelos Vivos",
+      "description": "Reserva tu plaza en el programa anual de Suelos Vivos. Solo 20 plazas. Inicio en diciembre de 2026 en Tormos, Alicante."
+    },
+    "hero": {
+      "eyebrow": "Reservar plaza",
+      "title": "Son veinte plazas. Esta es la que guarda la tuya.",
+      "subtitle": "Rellena la solicitud y nos ponemos en contacto contigo en menos de 48 horas para confirmarte la plaza, explicarte el proceso de inscripción y cerrar contigo la forma de pago."
+    },
+    "info": {
+      "inicioLabel": "Inicio",
+      "lugarLabel": "Lugar",
+      "plazasLabel": "Plazas disponibles",
+      "plazasSuffix": "agricultores",
+      "inversionLabel": "Inversión",
+      "inversionSep": "o",
+      "inversionMesSuffix": "/mes ×",
+      "dudasPrompt": "¿Tienes dudas antes de reservar?",
+      "dudasLink": "Escríbenos sin compromiso",
+      "directContact": "O directamente a"
+    },
+    "form": {
+      "title": "Solicitud de reserva",
+      "personalesTitle": "Datos personales y de contacto",
+      "nombreLabel": "Nombre y apellidos *",
+      "nombrePlaceholder": "Tu nombre completo",
+      "emailLabel": "Correo electrónico *",
+      "emailHelp": "Aquí te enviamos la confirmación y los avisos.",
+      "emailPlaceholder": "tu@email.com",
+      "telefonoLabel": "Teléfono *",
+      "telefonoHelp": "Para poder llamarte si hace falta resolver algo rápido.",
+      "telefonoPlaceholder": "+34 600 000 000",
+      "dniLabel": "Documento de identidad *",
+      "dniHelp": "DNI, NIE o pasaporte. Hace falta para el contrato y para emitir el certificado oficial de asistencia.",
+      "dniPlaceholder": "12345678A",
+      "fincaTitle": "Tu finca y tu proyecto",
+      "fincaLabel": "Tipo de finca y cultivo principal",
+      "fincaPlaceholder": "Ej: Olivar, 50 ha, Jaén",
+      "proyectoLabel": "Cuéntanos tu proyecto y tus expectativas",
+      "proyectoPlaceholder": "¿Cuál es tu situación actual? ¿Qué esperas conseguir con el programa?",
+      "pagoTitle": "Pago y facturación",
+      "pagoIntro": "Desde la web no se cobra nada. Dinos cómo prefieres pagar y lo cerramos contigo al confirmar la plaza.",
+      "metodoPagoLabel": "Método de pago preferido",
+      "metodoPagoPlaceholder": "— Selecciona una opción —",
+      "metodoPagoTarjeta": "Tarjeta de crédito",
+      "metodoPagoPaypal": "PayPal",
+      "metodoPagoTransferencia": "Transferencia bancaria",
+      "facturaLegend": "Datos de facturación",
+      "facturaHelp": "Solo si necesitas el recibo a nombre de una empresa o de un autónomo.",
+      "facturaNombreLabel": "Nombre o razón social",
+      "facturaNombrePlaceholder": "Nombre fiscal",
+      "facturaDireccionLabel": "Dirección fiscal",
+      "facturaDireccionPlaceholder": "Calle, número, código postal y población",
+      "facturaNifLabel": "NIF / CIF",
+      "facturaNifPlaceholder": "B12345678",
+      "submit": "Enviar solicitud de reserva",
+      "sending": "Enviando...",
+      "sent": "Enviado",
+      "successMsg": "¡Recibido! Te contactamos en menos de 48 horas para confirmar la plaza.",
       "errorPrefix": "Algo fue mal. Por favor, escríbenos directamente a"
     }
   },
@@ -565,10 +626,13 @@
       "formTitle": "Solicitar asesoría",
       "nombreLabel": "Nombre *",
       "nombrePlaceholder": "Tu nombre",
-      "telefonoLabel": "Teléfono",
+      "telefonoLabel": "Teléfono *",
       "telefonoPlaceholder": "+34 600 000 000",
       "emailFormLabel": "Email *",
       "emailPlaceholder": "tu@email.com",
+      "dniLabel": "Documento de identidad *",
+      "dniHelp": "DNI, NIE o pasaporte. Lo necesitamos para emitir el certificado oficial.",
+      "dniPlaceholder": "12345678A",
       "servicioLabel": "Servicio de interés",
       "servicioPlaceholder": "— Selecciona un servicio —",
       "servicioOptions": [

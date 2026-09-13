@@ -6,6 +6,7 @@ import {
   countByType,
   isConfigured,
   listLeads,
+  paymentMethodLabel,
   type FormType,
 } from '@/lib/leads';
 
@@ -52,6 +53,9 @@ function detalle(row: (typeof allRows)[number]) {
     row.servicio && `Servicio: ${row.servicio}`,
     row.finca && `Finca: ${row.finca}`,
     row.proyecto && `Proyecto: ${row.proyecto}`,
+    row.dni && `Documento: ${row.dni}`,
+    row.metodo_pago && `Pago: ${paymentMethodLabel(row.metodo_pago)}`,
+    row.factura_nif && `Factura: ${[row.factura_nombre, row.factura_direccion, row.factura_nif].filter(Boolean).join(', ')}`,
   ]
     .filter(Boolean)
     .join(' · ');

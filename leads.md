@@ -1,6 +1,6 @@
 # Leads de los formularios
 
-Los cinco formularios del sitio guardan cada envío en **Supabase** (tabla `leads`).
+Los seis formularios del sitio guardan cada envío en **Supabase** (tabla `leads`).
 Se consultan y se exportan desde el panel privado `/panel-suelos`.
 
 Sustituye a la antigua integración con Holded, que ya no está activa.
@@ -13,11 +13,38 @@ en español, inglés o francés.
 
 | `tipo` | Formulario | Página |
 |---|---|---|
-| `contacto` | Contacto / reservar plaza | `/contacto` |
+| `reserva` | Reserva de plaza | `/reserva-plaza` |
+| `contacto` | Contacto | `/contacto` |
 | `asesoria` | Solicitud de asesoría | `/servicios` |
 | `faq` | Pregunta abierta desde las preguntas frecuentes | `/preguntas-frecuentes` |
 | `waitlist-home` | Escuela Online — banner «¿No puedes desplazarte?» | `/` |
 | `waitlist-programa` | Escuela Online — banner «¿No puedes desplazarte?» | `/el-programa` |
+
+## Los obligatorios los valida el servidor
+
+`CAMPOS_OBLIGATORIOS` en `src/pages/api/contact.ts` dice qué campos exige cada
+formulario. El `required` del HTML solo lo aplica el navegador: un POST sin
+JavaScript, o fabricado, entra igual. Con el documento de identidad como campo
+obligatorio eso deja de ser cosmético — un lead con `dni` a null es un lead que
+el cliente cree completo y no lo está.
+
+## Reserva de plaza: no se cobra aquí
+
+El formulario de `/reserva-plaza` recoge el documento de identidad, el método de
+pago **preferido** y los datos de facturación. El de `/servicios` recoge también
+el documento de identidad: lo confirmó el cliente el 13/09/2026, y el contrato y
+el certificado oficial los emite Suelos Vivos por su cuenta, fuera de la web. **Desde la web no se cobra nada**
+(decisión del cliente, 12/09/2026): `metodo_pago` es una declaración de
+preferencia, el cobro se cierra fuera y no hay ninguna pasarela conectada. En la
+tabla no hay —ni debe haber— un solo dato de tarjeta.
+
+`metodo_pago` guarda el slug (`tarjeta`, `paypal`, `transferencia`), no la
+etiqueta traducida: así el panel y el CSV se leen igual venga el lead de `/es`,
+`/en` o `/fr`. La traducción a texto la hace `paymentMethodLabel()` en
+`src/lib/leads.ts`.
+
+Si algún día se cobra de verdad, esto no se amplía: una reserva pagada tiene
+estado (pendiente, pagada, fallida) y un lead no, así que va en su propia tabla.
 
 ## Panel
 
@@ -58,7 +85,11 @@ no guardan nada, y el panel avisa de que Supabase no está configurado.
   cliente.
 - Los formularios conservan el honeypot `_gotcha`: si viene relleno se responde
   `200` para no dar pistas al bot, pero no se guarda el registro.
-- El campo `privacy` guarda el consentimiento RGPD. Los cinco formularios llevan
+- **El documento de identidad vive detrás de una contraseña compartida.** El
+  panel entra con una sola clave y sesión de siete días. Para nombres y emails
+  da; para DNI/NIE/pasaporte es flojo, y está avisado al cliente. Si alguna vez
+  se endurece el acceso al panel, este es el motivo.
+- El campo `privacy` guarda el consentimiento RGPD. Los seis formularios llevan
   la casilla obligatoria del componente `src/components/ConsentCheckbox.astro`,
   que enlaza a la política de privacidad y a los términos y condiciones.
 - En el CSV, los valores que empiezan por `=`, `+`, `-` o `@` se escapan para que

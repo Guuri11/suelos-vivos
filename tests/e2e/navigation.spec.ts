@@ -37,9 +37,11 @@ test.describe('Navigation', () => {
     await expect(page.locator('main h1')).toBeVisible();
   });
 
+  // Se titulaba «Reservar plaza» hasta que el lote del 12/09/2026 separó la
+  // reserva en /reserva-plaza. Lo cubre tests/e2e/reserva-plaza.spec.ts.
   test('contacto page loads with form', async ({ page }) => {
     await page.goto('/contacto');
-    await expect(page).toHaveTitle(/Reservar plaza/);
+    await expect(page).toHaveTitle(/Contacto/);
     await expect(page.locator('form')).toBeVisible();
     await expect(page.locator('input[name="name"]')).toBeVisible();
     await expect(page.locator('input[name="email"]')).toBeVisible();

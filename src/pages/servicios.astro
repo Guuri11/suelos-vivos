@@ -180,6 +180,7 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
                     type="tel"
                     id="phone"
                     name="phone"
+                    required
                     autocomplete="tel"
                     class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
                     placeholder={t(lang, 'servicios.form.telefonoPlaceholder')}
@@ -198,6 +199,21 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
                   class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
                   placeholder={t(lang, 'servicios.form.emailPlaceholder')}
                 />
+              </div>
+
+              <div>
+                <label for="dni" class="block text-sm font-medium text-[#1E1A15] mb-1.5">{t(lang, 'servicios.form.dniLabel')}</label>
+                <input
+                  type="text"
+                  id="dni"
+                  name="dni"
+                  required
+                  autocomplete="off"
+                  aria-describedby="asesoria-dni-help"
+                  class="w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm"
+                  placeholder={t(lang, 'servicios.form.dniPlaceholder')}
+                />
+                <p id="asesoria-dni-help" class="text-xs text-[#6B6355] mt-1.5 leading-relaxed">{t(lang, 'servicios.form.dniHelp')}</p>
               </div>
 
               <div>

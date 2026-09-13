@@ -1,0 +1,287 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { siteConfig } from '@/config/site';
+import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
+import { getLang, localePath, t } from '@/i18n/utils';
+
+const lang = getLang(Astro.currentLocale);
+const lp = (path: string) => localePath(lang, path);
+
+// Envío sin JavaScript: el endpoint devuelve aquí con el resultado en la query
+// y el mensaje se pinta ya desde el servidor (ver src/lib/form-response.ts).
+const sent = Astro.url.searchParams.get('enviado') === 'reserva';
+const failed = Astro.url.searchParams.get('error') === 'reserva';
+
+// Clases repetidas de los campos: son las mismas que usa /contacto.
+const field =
+  'w-full px-4 py-3 border border-[#DDD8CE] rounded-md bg-[#FAFAF7] text-[#1E1A15] placeholder-[#6B6355]/50 focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/30 focus:border-[#8B1A1A] transition-colors text-sm';
+const labelCls = 'block text-sm font-medium text-[#1E1A15] mb-1.5';
+const helpCls = 'text-xs text-[#6B6355] mt-1.5 leading-relaxed';
+const legendCls =
+  'text-xs font-semibold uppercase tracking-[0.14em] text-[#6B8F71] pb-2 mb-5 border-b border-[#DDD8CE] w-full';
+
+const infoItems = [
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>`,
+    label: t(lang, 'reserva.info.inicioLabel') as string,
+    value: siteConfig.program.startDate,
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+    label: t(lang, 'reserva.info.lugarLabel') as string,
+    value: siteConfig.program.location,
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`,
+    label: t(lang, 'reserva.info.plazasLabel') as string,
+    value: `${siteConfig.program.spots} ${t(lang, 'reserva.info.plazasSuffix')}`,
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+    label: t(lang, 'reserva.info.inversionLabel') as string,
+    value: `${siteConfig.program.price}€ ${t(lang, 'reserva.info.inversionSep')} ${siteConfig.program.priceMonthly}€${t(lang, 'reserva.info.inversionMesSuffix')} ${siteConfig.program.installments}`,
+  },
+];
+
+const metodosPago = [
+  { value: 'tarjeta', label: t(lang, 'reserva.form.metodoPagoTarjeta') as string },
+  { value: 'paypal', label: t(lang, 'reserva.form.metodoPagoPaypal') as string },
+  { value: 'transferencia', label: t(lang, 'reserva.form.metodoPagoTransferencia') as string },
+];
+---
+
+<BaseLayout
+  title={t(lang, 'reserva.seo.title')}
+  description={t(lang, 'reserva.seo.description')}
+>
+  <Header lang={lang} />
+
+  <main>
+    <section class="pt-32 pb-24 bg-[#FAFAF7]">
+      <div class="container max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+
+          <!-- Info lateral -->
+          <div class="md:sticky md:top-28">
+            <p class="page-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#6B8F71] mb-4">{t(lang, 'reserva.hero.eyebrow')}</p>
+            <h1 class="page-title font-display text-4xl md:text-5xl text-[#1E1A15] leading-[1.05] mb-6">
+              {t(lang, 'reserva.hero.title')}
+            </h1>
+            <p class="page-subtitle text-[#6B6355] text-lg leading-relaxed mb-10">
+              {t(lang, 'reserva.hero.subtitle')}
+            </p>
+
+            <div class="space-y-6 mb-10">
+              {infoItems.map(item => (
+                <div class="flex gap-4 items-start">
+                  <div class="w-9 h-9 rounded-md bg-[#F0F2EE] flex items-center justify-center shrink-0 text-[#8B1A1A]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} />
+                  </div>
+                  <div>
+                    <p class="text-xs text-[#6B6355] uppercase tracking-wide">{item.label}</p>
+                    <p class="text-[#1E1A15] font-medium">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="pt-8 border-t border-[#DDD8CE]">
+              <p class="text-sm text-[#6B6355] mb-2">{t(lang, 'reserva.info.dudasPrompt')}</p>
+              <a href={lp('/contacto')} class="text-[#8B1A1A] hover:text-[#6B1212] font-medium transition-colors">
+                {t(lang, 'reserva.info.dudasLink')} →
+              </a>
+              <p class="text-sm text-[#6B6355] mt-3">
+                {t(lang, 'reserva.info.directContact')}{' '}
+                <a href={`mailto:${siteConfig.contact.email}`} class="text-[#8B1A1A] hover:text-[#6B1212] font-medium transition-colors">
+                  {siteConfig.contact.email}
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="reserva-form bg-white border border-[#DDD8CE] rounded-xl p-8 shadow-sm">
+            <h2 class="font-display text-2xl text-[#1E1A15] mb-6">{t(lang, 'reserva.form.title')}</h2>
+
+            <form action="/api/contact" method="POST" id="reserva-form" class="space-y-8">
+
+              <!-- 1. Datos personales y de contacto -->
+              <fieldset class="space-y-5">
+                <legend class={legendCls}>{t(lang, 'reserva.form.personalesTitle')}</legend>
+
+                <div>
+                  <label for="reserva-name" class={labelCls}>{t(lang, 'reserva.form.nombreLabel')}</label>
+                  <input type="text" id="reserva-name" name="name" required autocomplete="name" class={field}
+                    placeholder={t(lang, 'reserva.form.nombrePlaceholder') as string} />
+                </div>
+
+                <div>
+                  <label for="reserva-email" class={labelCls}>{t(lang, 'reserva.form.emailLabel')}</label>
+                  <input type="email" id="reserva-email" name="email" required autocomplete="email"
+                    aria-describedby="reserva-email-help" class={field}
+                    placeholder={t(lang, 'reserva.form.emailPlaceholder') as string} />
+                  <p id="reserva-email-help" class={helpCls}>{t(lang, 'reserva.form.emailHelp')}</p>
+                </div>
+
+                <div>
+                  <label for="reserva-phone" class={labelCls}>{t(lang, 'reserva.form.telefonoLabel')}</label>
+                  <input type="tel" id="reserva-phone" name="phone" required autocomplete="tel"
+                    aria-describedby="reserva-phone-help" class={field}
+                    placeholder={t(lang, 'reserva.form.telefonoPlaceholder') as string} />
+                  <p id="reserva-phone-help" class={helpCls}>{t(lang, 'reserva.form.telefonoHelp')}</p>
+                </div>
+
+                <div>
+                  <label for="reserva-dni" class={labelCls}>{t(lang, 'reserva.form.dniLabel')}</label>
+                  <input type="text" id="reserva-dni" name="dni" required autocomplete="off"
+                    aria-describedby="reserva-dni-help" class={field}
+                    placeholder={t(lang, 'reserva.form.dniPlaceholder') as string} />
+                  <p id="reserva-dni-help" class={helpCls}>{t(lang, 'reserva.form.dniHelp')}</p>
+                </div>
+              </fieldset>
+
+              <!-- 2. Finca y proyecto -->
+              <fieldset class="space-y-5">
+                <legend class={legendCls}>{t(lang, 'reserva.form.fincaTitle')}</legend>
+
+                <div>
+                  <label for="reserva-finca" class={labelCls}>{t(lang, 'reserva.form.fincaLabel')}</label>
+                  <input type="text" id="reserva-finca" name="finca" class={field}
+                    placeholder={t(lang, 'reserva.form.fincaPlaceholder') as string} />
+                </div>
+
+                <div>
+                  <label for="reserva-proyecto" class={labelCls}>{t(lang, 'reserva.form.proyectoLabel')}</label>
+                  <textarea id="reserva-proyecto" name="proyecto" rows="5" class={`${field} resize-none`}
+                    placeholder={t(lang, 'reserva.form.proyectoPlaceholder') as string}></textarea>
+                </div>
+              </fieldset>
+
+              <!-- 3. Pago y facturación. No se cobra nada aquí: ver leads.md. -->
+              <fieldset class="space-y-5">
+                <legend class={legendCls}>{t(lang, 'reserva.form.pagoTitle')}</legend>
+
+                <p class="text-sm text-[#6B6355] leading-relaxed -mt-1">{t(lang, 'reserva.form.pagoIntro')}</p>
+
+                <div>
+                  <label for="reserva-metodo-pago" class={labelCls}>{t(lang, 'reserva.form.metodoPagoLabel')}</label>
+                  <select id="reserva-metodo-pago" name="metodo_pago" class={field}>
+                    <option value="">{t(lang, 'reserva.form.metodoPagoPlaceholder')}</option>
+                    {metodosPago.map(m => <option value={m.value}>{m.label}</option>)}
+                  </select>
+                </div>
+
+                <div class="pt-2">
+                  <p class="text-sm font-medium text-[#1E1A15]">{t(lang, 'reserva.form.facturaLegend')}</p>
+                  <p class={helpCls}>{t(lang, 'reserva.form.facturaHelp')}</p>
+                </div>
+
+                <div>
+                  <label for="reserva-factura-nombre" class={labelCls}>{t(lang, 'reserva.form.facturaNombreLabel')}</label>
+                  <input type="text" id="reserva-factura-nombre" name="factura_nombre" autocomplete="organization" class={field}
+                    placeholder={t(lang, 'reserva.form.facturaNombrePlaceholder') as string} />
+                </div>
+
+                <div>
+                  <label for="reserva-factura-direccion" class={labelCls}>{t(lang, 'reserva.form.facturaDireccionLabel')}</label>
+                  <input type="text" id="reserva-factura-direccion" name="factura_direccion" autocomplete="street-address" class={field}
+                    placeholder={t(lang, 'reserva.form.facturaDireccionPlaceholder') as string} />
+                </div>
+
+                <div>
+                  <label for="reserva-factura-nif" class={labelCls}>{t(lang, 'reserva.form.facturaNifLabel')}</label>
+                  <input type="text" id="reserva-factura-nif" name="factura_nif" autocomplete="off" class={field}
+                    placeholder={t(lang, 'reserva.form.facturaNifPlaceholder') as string} />
+                </div>
+              </fieldset>
+
+              <div class="space-y-5">
+                <ConsentCheckbox lang={lang} id="reserva-privacy" />
+
+                <input type="hidden" name="tipo" value="reserva" />
+                <input type="hidden" name="lang" value={lang} />
+
+                <!-- Honeypot -->
+                <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+                <button
+                  type="submit"
+                  id="reserva-submit"
+                  data-label-submit={t(lang, 'reserva.form.submit')}
+                  data-label-sending={t(lang, 'reserva.form.sending')}
+                  data-label-sent={t(lang, 'reserva.form.sent')}
+                  class="w-full px-6 py-3.5 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] disabled:opacity-60 disabled:cursor-not-allowed transition-colors duration-200 text-sm cursor-pointer"
+                >
+                  {t(lang, 'reserva.form.submit')}
+                </button>
+
+                <p id="reserva-success" class:list={['text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md', !sent && 'hidden']}>
+                  {t(lang, 'reserva.form.successMsg')}
+                </p>
+                <p id="reserva-error" class:list={['text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md', !failed && 'hidden']}>
+                  {t(lang, 'reserva.form.errorPrefix')} {siteConfig.contact.email}
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
+    gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.1 })
+      .fromTo('.page-eyebrow', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
+      .fromTo('.page-title',   { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.4')
+      .fromTo('.page-subtitle',{ y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.5')
+      .fromTo('.reserva-form', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.6');
+  }
+
+  const form = document.getElementById('reserva-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('reserva-submit') as HTMLButtonElement | null;
+  const successMsg = document.getElementById('reserva-success');
+  const errorMsg = document.getElementById('reserva-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !form) return;
+
+    const labelSending = submitBtn.dataset.labelSending ?? '...';
+    const labelSent = submitBtn.dataset.labelSent ?? '✓';
+    const labelSubmit = submitBtn.dataset.labelSubmit ?? submitBtn.textContent ?? '';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = labelSending;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.reset();
+        successMsg?.classList.remove('hidden');
+        errorMsg?.classList.add('hidden');
+        submitBtn.textContent = labelSent;
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      errorMsg?.classList.remove('hidden');
+      successMsg?.classList.add('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = labelSubmit;
+    }
+  });
+</script>
