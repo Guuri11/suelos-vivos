@@ -4,6 +4,32 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-09-13 — Encabezado de «Quiénes somos»
+
+Encargo del cliente sobre el hero de `/quienes-somos`: cambiar el par
+antetítulo/titular.
+
+- [x] C-17 · contenido · El antetítulo pasa de «Quiénes somos» a **«Sobre nosotros»**
+      y el titular, de «Nacimos del campo. / No del despacho.» a **«Quiénes somos»**
+- [x] C-18 · contenido · Lo mismo en inglés y francés
+
+### Decisiones tomadas sin el cliente
+
+- **En inglés el titular es «Who we are», no «About us».** El antetítulo ya es
+  «About us» y repetirlo dos líneas seguidas se lee como un error de copia. En
+  francés pasa igual: antetítulo «À propos», titular «Qui sommes-nous».
+- El maquetado no se toca: el antetítulo sigue siendo el mismo `<p class="page-eyebrow">`
+  con su entrada en la línea de tiempo de GSAP. Solo cambia el texto, que vive
+  en `src/i18n/{es,en,fr}.json`.
+
+### Verificación
+
+- `pnpm build` limpio.
+- Ningún test de la suite afirma nada sobre este titular, así que no había nada
+  que actualizar.
+
+No se ha desplegado: sigue por delante la migración del lote de formularios.
+
 ## 2026-09-12 — Lote 3: sexto servicio
 
 Encargo del cliente sobre `/servicios`: «añadir un 6 elemento — Formación Personalizada».
