@@ -4,6 +4,102 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-09-26 — Cobrar desde la web
+
+Encargo del cliente por WhatsApp. El 16/09 mandó un enlace de pago de Stripe sin decir
+dónde ponerlo; la propuesta se le mandó el 18/09 y la aprobó el 24/09, junto con dos
+peticiones nuevas.
+
+- [x] C-26 · evolutivo · El mensaje de «solicitud recibida» de `/reserva-plaza` ofrece
+      pagar la plaza. El enlace vive en `site.ts` (`program.paymentLink`), como el resto
+      de datos del cliente
+- [x] C-27 · contenido · Los dos textos que prometían lo contrario: el subtítulo del hero
+      («cerrar contigo la forma de pago») y `reserva.form.pagoIntro` («desde la web no se
+      cobra nada»)
+- [ ] C-28 · contenido · **No entra.** Se llegó a cambiar la pregunta 21 de la FAQ («Sí.
+      Está previsto ofrecer pago fraccionado…») por «escríbenos y lo estudiamos contigo»,
+      y se revirtió al texto de producción. El cambio se anunció a Dani el 18/09 con un
+      «si no es así, dímelo» y **él no contestó a ese párrafo**: su «propuesta aprobada»
+      iba pegada al del botón de pago. Silencio no es aprobación, y menos para cambiar lo
+      que el cliente ofrece comercialmente
+- [x] C-29 · contenido · `/terminos-y-condiciones`, apartado 3: el pago con tarjeta por
+      la pasarela de Stripe queda escrito. `/politica-privacidad` nombra a Stripe como
+      proveedor de pago
+- [x] C-30 · contenido · Fuera el documento de identidad del formulario de asesoría de
+      `/servicios`: el campo, su validación en el endpoint y la frase de la política de
+      privacidad que lo declaraba
+- [x] C-31 · contenido · Los inscritos en el programa anual tendrán acceso a la edición
+      online cuando se lance. Va en la lista de «qué incluye» de `/el-programa` y en los
+      dos banners de lista de espera (home y programa)
+
+### Por qué el botón va ahí y no en la tarjeta de precio
+
+Fue la pregunta del cliente y la respuesta está en dos sitios del propio código. El
+formulario pide **DNI** —lo necesita para el contrato y el certificado oficial— y los
+datos de facturación; el enlace de Stripe no pide ninguna de las dos cosas. Un botón de
+pagar antes del formulario deja un cobro sin los datos que lo acompañan.
+
+Y son **20 plazas**: un payment link cobra tantas veces como se pulse. Limitarlo a 20
+pagos es un interruptor del panel de Stripe y **lo tiene que hacer el cliente**. Está
+pedido el 18/09 y **sin confirmar**.
+
+### Decisiones tomadas sin el cliente
+
+- **El enlace abre en pestaña nueva** (`target="_blank" rel="noopener"`). El visitante
+  acaba de enviar la solicitud: si el pago se lleva la pestaña y luego se arrepiente, se
+  pierde el mensaje de confirmación y no sabe si la solicitud llegó.
+- **El bloque de éxito pasa de `<p>` a `<div>`**, porque ahora tiene tres hijos. El
+  script sigue funcionando sin tocarlo: solo quita la clase `hidden` por `id`, y el `id`
+  no cambia. El camino sin JavaScript (`?enviado=reserva`) tampoco.
+- **El precio del botón sale de `site.ts`**, no escrito a mano, y con el mismo formato
+  que la ficha de «Inversión» de esa misma página (`2299€`).
+- **`metodo_pago` se queda con sus tres opciones.** Ahora que hay pago con tarjeta en el
+  sitio, el desplegable podría sobrar, pero sigue sirviendo para quien elige
+  transferencia o PayPal, que se cierran por teléfono como hasta hoy.
+- **«Acceso a la edición online cuando se lance» entra en la lista de lo que incluye el
+  precio.** El cliente dijo «tendrán acceso» sin decir si va incluido; puesto en esa
+  lista se lee como incluido. **Si no lo está, esa línea tiene que salir de ahí**: es la
+  única de las seis que promete algo que no se ha confirmado.
+- **La política de privacidad nombra a Stripe.** No estaba en el encargo, pero la página
+  enumera qué datos se tratan y quién los recibe, y ahora hay un proveedor de pago que
+  antes no existía. La frase «esta web no procesa pagos ni recoge datos de tarjeta»
+  sigue siendo cierta y se queda.
+- **Las claves de i18n del DNI de asesoría no se borran** (`servicios.form.dniLabel`,
+  `dniPlaceholder`, `dniHelp`, en los tres idiomas), por lo mismo que las del
+  fraccionado en el lote del 13/09: borrarlas convierte un cambio reversible en uno que
+  hay que traducir otra vez.
+
+### Lo que hay que preguntarle
+
+- **El fraccionado, de una vez.** `/preguntas-frecuentes` sigue siendo **la única página
+  del sitio que lo ofrece** («Sí. Está previsto ofrecer pago fraccionado…») y contradice
+  a `/el-programa`, a `/terminos-y-condiciones` y a `/reserva-plaza`, que lo perdieron el
+  13/09/2026. Lleva abierto desde entonces. Ahora además choca con un botón de pago que
+  cobra los 2.299 € de una vez.
+- **El límite de 20 pagos en Stripe sigue sin confirmar.** Es lo único del lote que no
+  depende de nosotros.
+- **«Edición 2027».** El producto de Stripe se llama así y el cliente confirmó el 24/09
+  que el nombre está bien, pero **la web no lo usa en ninguna parte**: `site.ts` dice
+  «Diciembre 2026» y la tarjeta de precio, «Programa completo 2026–2027». No se ha
+  tocado nada: renombrar la edición es un encargo aparte.
+
+### Verificación
+
+- Playwright: **116/116 en verde** en chromium y Mobile Chrome. Son 10 más que el
+  13/09: el botón de pago en los tres idiomas, que sin enviar la solicitud no hay botón
+  visible, y que el endpoint ya no exige DNI en la asesoría.
+- El botón se comprueba sobre `?enviado=reserva`, que es el camino sin JavaScript: **no
+  se envía ningún formulario**, así que la suite sigue sin escribir en Supabase.
+- `pnpm build` limpio.
+- **Ojo con el puerto**: la suite se corrió contra un `astro dev` de otro proyecto que
+  llevaba desde el 21/09 ocupando el 4321, y daba 404 en todo. `reuseExistingServer` no
+  comprueba qué hay al otro lado. Si la suite falla entera, mirar eso antes que el código.
+- **Pendiente**: el repaso en el preview de Vercel. Sigue sin poder hacerse, por lo
+  mismo que el 13/09: el despliegue está bloqueado por
+  `supabase/migrations/2026-09-12-reserva-plaza.sql`.
+
+No se ha desplegado.
+
 ## 2026-09-13 — Favicon propio
 
 - [x] C-25 · visual · El sitio deja de usar el logotipo horizontal como icono de

@@ -28,6 +28,12 @@ export const siteConfig = {
     deposit: 500,
     startDate: 'Diciembre 2026',
     location: 'Tormos, Alicante',
+    // Enlace de pago de Stripe que mandó el cliente el 16/09/2026. Cobra el
+    // importe completo de una vez; el producto está dado de alta en su cuenta
+    // como «Programa Suelos Vivos 2027». Se ofrece al enviar la solicitud de
+    // /reserva-plaza, nunca antes: el formulario recoge el DNI y la
+    // facturación, que el pago por sí solo no trae.
+    paymentLink: 'https://buy.stripe.com/28EbJ10uJ1u2bD98G9dIA01',
   },
 
   logo: {

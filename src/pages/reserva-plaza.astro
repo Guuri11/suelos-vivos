@@ -217,9 +217,22 @@ const metodosPago = [
                   {t(lang, 'reserva.form.submit')}
                 </button>
 
-                <p id="reserva-success" class:list={['text-sm text-[#6B8F71] text-center font-medium p-3 bg-[#6B8F71]/10 rounded-md', !sent && 'hidden']}>
-                  {t(lang, 'reserva.form.successMsg')}
-                </p>
+                <div id="reserva-success" class:list={['text-center p-5 bg-[#6B8F71]/10 rounded-md space-y-3', !sent && 'hidden']}>
+                  <p class="text-sm text-[#6B8F71] font-medium">
+                    {t(lang, 'reserva.form.successMsg')}
+                  </p>
+                  <p class="text-sm text-[#6B6355] leading-relaxed">
+                    {t(lang, 'reserva.form.pagoPrompt')}
+                  </p>
+                  <a
+                    href={siteConfig.program.paymentLink}
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center justify-center px-8 py-3.5 bg-[#8B1A1A] text-[#FAFAF7] font-semibold rounded-md hover:bg-[#6B1212] transition-colors duration-200 text-sm"
+                  >
+                    {t(lang, 'reserva.form.pagoCta')} {siteConfig.program.price}€
+                  </a>
+                </div>
                 <p id="reserva-error" class:list={['text-sm text-[#8B1A1A] text-center font-medium p-3 bg-[#8B1A1A]/10 rounded-md', !failed && 'hidden']}>
                   {t(lang, 'reserva.form.errorPrefix')} {siteConfig.contact.email}
                 </p>

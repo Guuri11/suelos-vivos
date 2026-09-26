@@ -74,12 +74,27 @@ test.describe('Documento de identidad', () => {
     Origin: 'http://localhost:4321',
   };
 
-  // El cliente lo confirmó el 13/09/2026: hace falta en los dos formularios
-  // largos. El contrato y el certificado los emite Suelos Vivos por su cuenta.
-  test('la solicitud de asesoría lo pide, y obligatorio', async ({ page }) => {
+  // El 13/09/2026 el cliente lo pidió en los dos formularios largos; el
+  // 24/09/2026 lo retiró de la asesoría. El motivo de pedirlo —contrato y
+  // certificado oficial— solo aplica al programa anual, y la asesoría no emite
+  // ninguno de los dos. Queda solo en la reserva de plaza.
+  test('la solicitud de asesoría ya no lo pide', async ({ page }) => {
     await page.goto('/servicios');
-    await expect(page.locator('#advisory-form [name="dni"]')).toHaveAttribute('required', '');
+    await expect(page.locator('#advisory-form [name="dni"]')).toHaveCount(0);
     await expect(page.locator('#advisory-form [name="phone"]')).toHaveAttribute('required', '');
+  });
+
+  // Quitarlo del HTML no basta: si sigue en la lista del endpoint, la asesoría
+  // deja de poder enviarse y nadie se entera hasta que el cliente pregunta por
+  // qué no le llegan leads. Se comprueba sobre un POST incompleto, que se
+  // rechaza antes de tocar Supabase.
+  test('el endpoint ya no exige DNI en la asesoría', async ({ request }) => {
+    const res = await request.post('/api/contact', {
+      form: { tipo: 'asesoria', email: 'juan@ejemplo.com' },
+      headers: POST,
+    });
+    expect(res.status()).toBe(400);
+    expect(await res.text()).not.toContain('dni');
   });
 
   // El `required` del HTML no lo aplica nadie en un POST fabricado: si el
@@ -99,13 +114,39 @@ test.describe('Documento de identidad', () => {
   // porque nunca llega a la base; la aceptación, no, y no vale el precio.
 });
 
+test.describe('Pago de la plaza', () => {
+  // El bloque de éxito lo pinta el servidor cuando vuelve `?enviado=reserva`,
+  // que es justo el camino sin JavaScript. Se puede comprobar sin enviar el
+  // formulario, así que la suite no mete un lead en el panel del cliente.
+  const LANGS = ['', '/en', '/fr'];
+
+  for (const prefix of LANGS) {
+    test(`el mensaje de éxito ofrece pagar en ${prefix || '/es'}`, async ({ page }) => {
+      await page.goto(`${prefix}/reserva-plaza?enviado=reserva`);
+      const exito = page.locator('#reserva-success');
+      await expect(exito).toBeVisible();
+      const boton = exito.locator('a[href^="https://buy.stripe.com/"]');
+      await expect(boton).toBeVisible();
+      await expect(boton).toHaveAttribute('rel', /noopener/);
+    });
+  }
+
+  // Sin enviar nada, la página no puede ofrecer pagar: el botón vive dentro del
+  // bloque de éxito y ese bloque nace oculto.
+  test('sin enviar la solicitud no hay botón de pago visible', async ({ page }) => {
+    await page.goto('/reserva-plaza');
+    await expect(page.locator('#reserva-success')).toBeHidden();
+    await expect(page.locator('a[href^="https://buy.stripe.com/"]:visible')).toHaveCount(0);
+  });
+});
+
 test.describe('Contacto ya no es la página de reserva', () => {
   test('se titula Contacto y conserva su formulario corto', async ({ page }) => {
     await page.goto('/contacto');
     await expect(page).toHaveTitle(/Contacto/);
     await expect(page).not.toHaveTitle(/Reservar plaza/);
     await expect(page.locator('#contact-form input[name="tipo"]')).toHaveValue('contacto');
-    // El DNI es de los dos formularios largos; el de contacto sigue corto.
+    // Desde el 24/09/2026 el DNI es solo de la reserva; el de contacto sigue corto.
     await expect(page.locator('#contact-form [name="dni"]')).toHaveCount(0);
     await expect(page.locator('#contact-form [name="phone"]')).toHaveAttribute('required', '');
   });

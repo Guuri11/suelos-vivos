@@ -4,8 +4,12 @@
 
 - **Empresa**: Suelos Vivos
 - **Sector**: Formación en agricultura regenerativa para agricultores profesionales
-- **Producto**: programa anual de 12 meses, 20 plazas, 2.299 € (o 10 cuotas de 200 € con
-  500 € de reserva). Arranque en diciembre de 2026, en Tormos (Alicante)
+- **Producto**: programa anual de 12 meses, 20 plazas, **2.299 € de pago único**.
+  Arranque en diciembre de 2026, en Tormos (Alicante). El fraccionado que figuraba aquí
+  (10 cuotas de 200 € con 500 € de reserva) salió de `/el-programa`, de términos y de
+  `/reserva-plaza` el 13/09/2026, pero **`/preguntas-frecuentes` lo sigue ofreciendo** y
+  el cliente no ha dicho cuál de las dos versiones vale. `priceMonthly`, `installments` y
+  `deposit` siguen en `site.ts` sin ningún llamante
 - **Web**: https://www.suelosvivos.com
 - **Contacto**: info@suelosvivos.com
 - **Redes**: Instagram `@suelosvivos_com`, Telegram `t.me/bosquemadre` (canal de Bosque Madre: es el que está activo)
@@ -26,9 +30,17 @@ Los procedimientos viven en skills: `/mantenimiento`, `/sprint-seo`, `/rediseno`
 
 **En producción.** Carril activo: **C — mantenimiento**.
 
-Lote de formularios del 12–13/09/2026 construido y **sin desplegar**. La suite pasa
-entera: 106 en verde (chromium y Mobile Chrome) el 13/09/2026. Ningún test envía
-formularios, así que correrla no mete leads en el panel del cliente.
+Dos lotes construidos y **sin desplegar**: el de formularios del 12–13/09/2026 y el de
+cobro por web del 26/09/2026, que se apila encima. La suite pasa entera: **116 en verde**
+(chromium y Mobile Chrome) el 26/09/2026. Ningún test envía formularios, así que correrla
+no mete leads en el panel del cliente.
+
+**Desde el 26/09 la web ofrece pagar.** Al enviar la solicitud de `/reserva-plaza`
+aparece el enlace de pago de Stripe que mandó el cliente, que cobra los 2.299 € de una
+vez. Nunca antes del formulario: es ahí donde se recogen el DNI y la facturación, que el
+pago por sí solo no trae. El enlace está en `site.ts` (`program.paymentLink`).
+**Limitarlo a 20 pagos es cosa del cliente y sigue sin confirmar**: un payment link cobra
+tantas veces como se pulse y las plazas son 20.
 
 **La migración va antes del deploy, no después.** `insertLead()` manda las cinco
 columnas nuevas en todos los inserts, así que este código sobre el esquema viejo

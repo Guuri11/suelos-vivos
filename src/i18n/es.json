@@ -156,7 +156,7 @@
     },
     "onlineWaitlist": {
       "title": "¿No puedes desplazarte?",
-      "desc": "Estamos preparando una próxima <strong class=\"font-semibold text-[#8B1A1A]\">edición 100% online de Suelos Vivos</strong> para agricultores y técnicos que prefieren formarse desde su propia finca. Déjanos tu correo y te avisaremos de forma prioritaria antes del lanzamiento.",
+      "desc": "Estamos preparando una próxima <strong class=\"font-semibold text-[#8B1A1A]\">edición 100% online de Suelos Vivos</strong> para agricultores y técnicos que prefieren formarse desde su propia finca. Si te inscribes en el programa anual, tendrás acceso a ella cuando se lance. Déjanos tu correo y te avisaremos de forma prioritaria.",
       "emailLabel": "Correo electrónico",
       "placeholder": "tu@email.com",
       "cta": "Avisadme",
@@ -237,7 +237,8 @@
         "Biblioteca de recursos y protocolos",
         "Análisis de suelo de tu finca incluido",
         "Materiales para las prácticas",
-        "Certificado de formación al terminar"
+        "Certificado de formación al terminar",
+        "Acceso a la edición online cuando se lance"
       ],
       "ctaPre": "Reservar plaza — Solo ",
       "ctaPost": " plazas",
@@ -339,7 +340,7 @@
     "banner": {
       "online": {
         "title": "¿No puedes desplazarte?",
-        "desc": "Preparamos una próxima <strong class=\"font-semibold text-[#8B1A1A]\">edición 100% online de Suelos Vivos</strong>. Déjanos tu correo y te avisamos antes del lanzamiento.",
+        "desc": "Preparamos una próxima <strong class=\"font-semibold text-[#8B1A1A]\">edición 100% online de Suelos Vivos</strong>. Los inscritos en el programa anual tendrán acceso a ella cuando se lance. Déjanos tu correo y te avisamos antes.",
         "emailLabel": "Correo electrónico",
         "placeholder": "tu@email.com",
         "cta": "Avisadme",
@@ -493,7 +494,7 @@
     "hero": {
       "eyebrow": "Reservar plaza",
       "title": "Son veinte plazas. Esta es la que guarda la tuya.",
-      "subtitle": "Rellena la solicitud y nos ponemos en contacto contigo en menos de 48 horas para confirmarte la plaza, explicarte el proceso de inscripción y cerrar contigo la forma de pago."
+      "subtitle": "Rellena la solicitud y nos ponemos en contacto contigo en menos de 48 horas para confirmarte la plaza y explicarte el proceso de inscripción. Si ya lo tienes decidido, al enviarla podrás pagar tu plaza en el momento."
     },
     "info": {
       "inicioLabel": "Inicio",
@@ -527,7 +528,7 @@
       "proyectoLabel": "Cuéntanos tu proyecto y tus expectativas",
       "proyectoPlaceholder": "¿Cuál es tu situación actual? ¿Qué esperas conseguir con el programa?",
       "pagoTitle": "Pago y facturación",
-      "pagoIntro": "Desde la web no se cobra nada. Dinos cómo prefieres pagar y lo cerramos contigo al confirmar la plaza.",
+      "pagoIntro": "Dinos cómo prefieres pagar y lo cerramos contigo al confirmar la plaza. Si eliges tarjeta, al enviar la solicitud podrás pagarla en el momento.",
       "metodoPagoLabel": "Método de pago preferido",
       "metodoPagoPlaceholder": "— Selecciona una opción —",
       "metodoPagoTarjeta": "Tarjeta de crédito",
@@ -545,6 +546,8 @@
       "sending": "Enviando...",
       "sent": "Enviado",
       "successMsg": "¡Recibido! Te contactamos en menos de 48 horas para confirmar la plaza.",
+      "pagoPrompt": "Si ya lo tienes decidido, puedes dejar tu plaza pagada ahora. Si prefieres hablar antes, no hagas nada: te llamamos igual.",
+      "pagoCta": "Pagar mi plaza —",
       "errorPrefix": "Algo fue mal. Por favor, escríbenos directamente a"
     }
   },

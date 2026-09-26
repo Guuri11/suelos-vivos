@@ -6,9 +6,9 @@ export const prerender = false;
 
 /**
  * Campos obligatorios por formulario. El `required` del HTML solo lo aplica el
- * navegador: un POST sin JavaScript, o fabricado, entra igual. Con el documento
- * de identidad como campo obligatorio esto deja de ser cosmético — un lead con
- * `dni` a null es un lead que el cliente cree completo y no lo está.
+ * navegador: un POST sin JavaScript, o fabricado, entra igual. En la reserva de
+ * plaza esto deja de ser cosmético — un lead con `dni` a null es un lead que el
+ * cliente cree completo y no lo está.
  *
  * Este endpoint no sirve las listas de espera: esas van por /api/waitlist y solo
  * piden el email.
@@ -16,7 +16,11 @@ export const prerender = false;
 const CAMPOS_OBLIGATORIOS: Record<FormType, string[]> = {
   reserva: ['name', 'email', 'phone', 'dni'],
   contacto: ['name', 'email', 'phone'],
-  asesoria: ['name', 'email', 'phone', 'dni'],
+  // El DNI salió de la asesoría el 24/09/2026 a petición del cliente: solo lo
+  // necesita para el contrato y el certificado del programa anual, y la
+  // asesoría no emite ninguno de los dos. El campo sigue existiendo en la
+  // tabla porque la reserva lo usa.
+  asesoria: ['name', 'email', 'phone'],
   faq: ['name', 'email', 'message'],
   'waitlist-home': ['email'],
   'waitlist-programa': ['email'],

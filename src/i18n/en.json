@@ -156,7 +156,7 @@
     },
     "onlineWaitlist": {
       "title": "Can't travel to attend?",
-      "desc": "We're preparing an upcoming <strong class=\"font-semibold text-[#8B1A1A]\">100% online edition of Suelos Vivos</strong> for farmers and technicians who prefer to train from their own farm. Leave us your email and we'll give you priority notice before launch.",
+      "desc": "We're preparing an upcoming <strong class=\"font-semibold text-[#8B1A1A]\">100% online edition of Suelos Vivos</strong> for farmers and technicians who prefer to train from their own farm. If you enrol on the annual programme, you'll get access to it when it launches. Leave us your email and we'll give you priority notice.",
       "emailLabel": "Email address",
       "placeholder": "you@email.com",
       "cta": "Notify me",
@@ -237,7 +237,8 @@
         "Resource and protocol library",
         "Soil analysis of your farm included",
         "Materials for the practical sessions",
-        "Training certificate upon completion"
+        "Training certificate upon completion",
+        "Access to the online edition when it launches"
       ],
       "ctaPre": "Reserve your spot — Only ",
       "ctaPost": " spots",
@@ -339,7 +340,7 @@
     "banner": {
       "online": {
         "title": "Can't travel?",
-        "desc": "We're preparing an upcoming <strong class=\"font-semibold text-[#8B1A1A]\">100% online edition of Suelos Vivos</strong>. Leave us your email and we'll let you know before launch.",
+        "desc": "We're preparing an upcoming <strong class=\"font-semibold text-[#8B1A1A]\">100% online edition of Suelos Vivos</strong>. Those enrolled on the annual programme will get access to it when it launches. Leave us your email and we'll let you know beforehand.",
         "emailLabel": "Email address",
         "placeholder": "you@email.com",
         "cta": "Notify me",
@@ -493,7 +494,7 @@
     "hero": {
       "eyebrow": "Reserve your spot",
       "title": "There are twenty places. This is what holds yours.",
-      "subtitle": "Fill in the request and we'll get in touch within 48 hours to confirm your place, walk you through enrolment and agree the payment arrangement with you."
+      "subtitle": "Fill in the request and we'll get in touch within 48 hours to confirm your place and walk you through enrolment. If you've already made up your mind, you can pay for your place as soon as you send it."
     },
     "info": {
       "inicioLabel": "Start date",
@@ -527,7 +528,7 @@
       "proyectoLabel": "Tell us about your project and what you expect",
       "proyectoPlaceholder": "What's your situation today? What do you hope to get out of the programme?",
       "pagoTitle": "Payment and invoicing",
-      "pagoIntro": "Nothing is charged through the website. Tell us how you'd rather pay and we'll settle it with you when we confirm your place.",
+      "pagoIntro": "Tell us how you'd rather pay and we'll settle it with you when we confirm your place. If you choose card, you'll be able to pay right after sending the request.",
       "metodoPagoLabel": "Preferred payment method",
       "metodoPagoPlaceholder": "— Select an option —",
       "metodoPagoTarjeta": "Credit card",
@@ -545,6 +546,8 @@
       "sending": "Sending...",
       "sent": "Sent",
       "successMsg": "Received! We'll contact you within 48 hours to confirm your place.",
+      "pagoPrompt": "If you've already made up your mind, you can pay for your place now. If you'd rather talk first, do nothing — we'll call you just the same.",
+      "pagoCta": "Pay for my place —",
       "errorPrefix": "Something went wrong. Please write to us directly at"
     }
   },

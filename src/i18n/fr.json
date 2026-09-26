@@ -156,7 +156,7 @@
     },
     "onlineWaitlist": {
       "title": "Vous ne pouvez pas vous déplacer ?",
-      "desc": "Nous préparons une prochaine <strong class=\"font-semibold text-[#8B1A1A]\">édition 100 % en ligne de Suelos Vivos</strong> pour les agriculteurs et techniciens qui préfèrent se former depuis leur propre exploitation. Laissez-nous votre email et nous vous préviendrons en priorité avant le lancement.",
+      "desc": "Nous préparons une prochaine <strong class=\"font-semibold text-[#8B1A1A]\">édition 100 % en ligne de Suelos Vivos</strong> pour les agriculteurs et techniciens qui préfèrent se former depuis leur propre exploitation. Si vous vous inscrivez au programme annuel, vous y aurez accès dès son lancement. Laissez-nous votre email et nous vous préviendrons en priorité.",
       "emailLabel": "Adresse email",
       "placeholder": "vous@email.com",
       "cta": "Me prévenir",
@@ -237,7 +237,8 @@
         "Bibliothèque de ressources et de protocoles",
         "Analyse de sol de votre exploitation incluse",
         "Matériaux pour les travaux pratiques",
-        "Certificat de formation à l'issue du programme"
+        "Certificat de formation à l'issue du programme",
+        "Accès à l'édition en ligne dès son lancement"
       ],
       "ctaPre": "Réserver une place — Seulement ",
       "ctaPost": " places",
@@ -339,7 +340,7 @@
     "banner": {
       "online": {
         "title": "Vous ne pouvez pas vous déplacer ?",
-        "desc": "Nous préparons une prochaine <strong class=\"font-semibold text-[#8B1A1A]\">édition 100 % en ligne de Suelos Vivos</strong>. Laissez-nous votre email et nous vous préviendrons avant le lancement.",
+        "desc": "Nous préparons une prochaine <strong class=\"font-semibold text-[#8B1A1A]\">édition 100 % en ligne de Suelos Vivos</strong>. Les inscrits au programme annuel y auront accès dès son lancement. Laissez-nous votre email et nous vous préviendrons avant.",
         "emailLabel": "Adresse e-mail",
         "placeholder": "vous@email.com",
         "cta": "Me prévenir",
@@ -493,7 +494,7 @@
     "hero": {
       "eyebrow": "Réserver ma place",
       "title": "Il y a vingt places. Voici celle qui garde la vôtre.",
-      "subtitle": "Remplissez la demande et nous vous contacterons dans les 48 heures pour confirmer votre place, vous expliquer l'inscription et convenir avec vous du mode de paiement."
+      "subtitle": "Remplissez la demande et nous vous contacterons dans les 48 heures pour confirmer votre place et vous expliquer l'inscription. Si votre décision est prise, vous pourrez régler votre place dès l'envoi."
     },
     "info": {
       "inicioLabel": "Début",
@@ -527,7 +528,7 @@
       "proyectoLabel": "Parlez-nous de votre projet et de vos attentes",
       "proyectoPlaceholder": "Quelle est votre situation actuelle ? Qu'attendez-vous du programme ?",
       "pagoTitle": "Paiement et facturation",
-      "pagoIntro": "Rien n'est encaissé depuis le site. Dites-nous comment vous préférez payer et nous le réglons avec vous à la confirmation de la place.",
+      "pagoIntro": "Dites-nous comment vous préférez payer et nous le réglons avec vous à la confirmation de la place. Si vous choisissez la carte, vous pourrez régler dès l'envoi de la demande.",
       "metodoPagoLabel": "Mode de paiement souhaité",
       "metodoPagoPlaceholder": "— Sélectionnez une option —",
       "metodoPagoTarjeta": "Carte de crédit",
@@ -545,6 +546,8 @@
       "sending": "Envoi en cours...",
       "sent": "Envoyé",
       "successMsg": "Bien reçu ! Nous vous contacterons dans les 48 heures pour confirmer votre place.",
+      "pagoPrompt": "Si votre décision est prise, vous pouvez régler votre place maintenant. Si vous préférez en parler d'abord, ne faites rien : nous vous appellerons tout de même.",
+      "pagoCta": "Régler ma place —",
       "errorPrefix": "Une erreur s'est produite. Veuillez nous écrire directement à"
     }
   },
