@@ -22,12 +22,11 @@ export const FORM_TYPE_LABELS: Record<FormType, string> = {
  * 12/09/2026). El `value` que viaja en el form es el slug, no la etiqueta, para
  * que el panel y el CSV se lean igual venga el lead de /es, /en o /fr.
  */
-export const PAYMENT_METHODS = ['tarjeta', 'paypal', 'transferencia'] as const;
+export const PAYMENT_METHODS = ['tarjeta', 'transferencia'] as const;
 export type PaymentMethod = (typeof PAYMENT_METHODS)[number];
 
 export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, string> = {
   tarjeta: 'Tarjeta de crédito',
-  paypal: 'PayPal',
   transferencia: 'Transferencia bancaria',
 };
 
@@ -142,4 +141,25 @@ export function countByType(rows: LeadRow[]) {
   const counts = {} as Record<string, number>;
   for (const row of rows) counts[row.form_type] = (counts[row.form_type] ?? 0) + 1;
   return counts;
+}
+
+/**
+ * Borra leads por id. Lo pidió el cliente el 06/10/2026: los que ya han pasado a
+ * su CRM le sobran en el panel. Es borrado de verdad, sin papelera; además así no
+ * quedan dos copias del DNI y de los datos de facturación.
+ */
+export async function deleteLeads(ids: number[]): Promise<{ deleted: number; error: string | null }> {
+  if (!supabaseServer || ids.length === 0) return { deleted: 0, error: null };
+
+  const { error, count } = await supabaseServer
+    .from('leads')
+    .delete({ count: 'exact' })
+    .in('id', ids);
+
+  if (error) {
+    console.error('[panel] borrar leads:', error.message);
+    return { deleted: 0, error: error.message };
+  }
+
+  return { deleted: count ?? 0, error: null };
 }

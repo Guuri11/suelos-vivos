@@ -532,7 +532,6 @@
       "metodoPagoLabel": "Preferred payment method",
       "metodoPagoPlaceholder": "— Select an option —",
       "metodoPagoTarjeta": "Credit card",
-      "metodoPagoPaypal": "PayPal",
       "metodoPagoTransferencia": "Bank transfer",
       "facturaLegend": "Invoicing details",
       "facturaHelp": "Only if you need the receipt made out to a company or a sole trader.",

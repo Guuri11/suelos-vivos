@@ -532,7 +532,6 @@
       "metodoPagoLabel": "Método de pago preferido",
       "metodoPagoPlaceholder": "— Selecciona una opción —",
       "metodoPagoTarjeta": "Tarjeta de crédito",
-      "metodoPagoPaypal": "PayPal",
       "metodoPagoTransferencia": "Transferencia bancaria",
       "facturaLegend": "Datos de facturación",
       "facturaHelp": "Solo si necesitas el recibo a nombre de una empresa o de un autónomo.",

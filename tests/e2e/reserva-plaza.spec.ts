@@ -48,7 +48,7 @@ test.describe('Reserva de plaza', () => {
     const values = await page.locator('#reserva-form select[name="metodo_pago"] option').evaluateAll(
       (opts) => opts.map((o) => (o as HTMLOptionElement).value)
     );
-    expect(values).toEqual(['', 'tarjeta', 'paypal', 'transferencia']);
+    expect(values).toEqual(['', 'tarjeta', 'transferencia']);
   });
 
   test('los campos se rellenan', async ({ page }) => {

@@ -35,6 +35,11 @@ cobro por web del 26/09/2026, que se apila encima. La suite pasa entera: **116 e
 (chromium y Mobile Chrome) el 26/09/2026. Ningún test envía formularios, así que correrla
 no mete leads en el panel del cliente.
 
+**Supabase es plan gratuito y se pausa tras 7 días sin actividad.** Pasó el 06/10/2026
+y se cayeron los seis formularios; el cliente avisó antes que nosotros. Desde entonces un
+cron diario de Vercel llama a `/api/keepalive` (`vercel.json`). **Sin `CRON_SECRET` en
+Vercel ese endpoint responde 401 al propio cron** y la protección no existe.
+
 **Desde el 26/09 la web ofrece pagar.** Al enviar la solicitud de `/reserva-plaza`
 aparece el enlace de pago de Stripe que mandó el cliente, que cobra los 2.299 € de una
 vez. Nunca antes del formulario: es ahí donde se recogen el DNI y la facturación, que el

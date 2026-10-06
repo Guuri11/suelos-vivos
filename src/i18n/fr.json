@@ -532,7 +532,6 @@
       "metodoPagoLabel": "Mode de paiement souhaité",
       "metodoPagoPlaceholder": "— Sélectionnez une option —",
       "metodoPagoTarjeta": "Carte de crédit",
-      "metodoPagoPaypal": "PayPal",
       "metodoPagoTransferencia": "Virement bancaire",
       "facturaLegend": "Données de facturation",
       "facturaHelp": "Uniquement si vous avez besoin d'un reçu au nom d'une société ou d'un indépendant.",

@@ -4,6 +4,46 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-10-06 — Formularios caídos, fuera PayPal y borrar leads
+
+Dani por WhatsApp el 06/10: «esto no funciona», que no tienen PayPal y que el panel no
+les deja borrar los leads que ya han pasado a su CRM.
+
+- [x] C-32 · bug · **Los formularios fallaban porque Supabase había pausado el
+      proyecto** tras 7 días sin actividad (plan gratuito). Restaurado a mano desde el
+      dashboard el 06/10; estado *Healthy*, y la tabla `leads` tiene las 18 columnas, así
+      que la migración del 12/09 está aplicada
+- [x] C-33 · bug · Para que no vuelva a pasar: `/api/keepalive` hace una consulta mínima
+      (`count`, sin traer filas) y `vercel.json` la programa a diario a las 07:00 UTC.
+      **Necesita `CRON_SECRET` en las variables de Vercel**: sin ella el endpoint responde
+      401 a todo, también al cron, y el proyecto se volvería a pausar
+- [x] C-34 · contenido · Fuera PayPal del método de pago de `/reserva-plaza` (los tres
+      idiomas), sin dejar ninguna referencia: no había ningún lead que lo
+      hubiera elegido (revisado en la tabla de Supabase el 06/10)
+- [x] C-35 · evolutivo · Borrar leads desde el panel: casilla por fila, «seleccionar
+      todo», botón «Borrar seleccionados» con confirmación. Borrado real, sin papelera.
+      Estimado en 1–1,5 h
+
+### Decisiones tomadas sin el cliente
+
+- **Borrar, no marcar.** Se planteó marcar como «pasado al CRM» y archivar; se eligió
+  borrar porque es lo que pide y porque no deja una segunda copia del DNI y de los datos
+  de facturación una vez están en su CRM. Marcar exigía además una migración.
+
+### Lo que no es cambio de web
+
+- Upgrade a Supabase Pro (25 $/mes) quita la pausa sin cron. No se ha propuesto: el cron
+  lo resuelve gratis.
+
+### Verificación
+
+- `pnpm build` limpio. Playwright **122/122 en verde** (chromium y Mobile Chrome), con
+  tres tests nuevos en `panel.spec.ts` que no llegan a la base: borrar sin sesión manda
+  al login, el keepalive sin secreto da 401 y `vercel.json` lo programa.
+- **No se ha enviado un formulario de verdad** contra producción: metería un lead real en
+  su panel. Pendiente de hacerlo sobre el preview y borrarlo después con el botón nuevo,
+  que de paso queda probado.
+
 ## 2026-09-26 — Cobrar desde la web
 
 Encargo del cliente por WhatsApp. El 16/09 mandó un enlace de pago de Stripe sin decir
