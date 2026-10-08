@@ -49,6 +49,7 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('aviso-legal') &&
         !page.includes('politica-privacidad') &&
+        !page.includes('politica-cookies') &&
         !page.includes('panel-suelos'),
       i18n: {
         defaultLocale: 'es',

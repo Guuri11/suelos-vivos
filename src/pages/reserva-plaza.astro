@@ -248,6 +248,7 @@ const metodosPago = [
 
 <script>
   import { gsap } from 'gsap';
+  import { trackLead } from '@/lib/consent';
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
@@ -283,6 +284,7 @@ const metodosPago = [
 
       if (res.ok) {
         form.reset();
+        trackLead('reserva-plaza');
         successMsg?.classList.remove('hidden');
         errorMsg?.classList.add('hidden');
         submitBtn.textContent = labelSent;

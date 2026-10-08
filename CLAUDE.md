@@ -52,6 +52,12 @@ columnas nuevas en todos los inserts, así que este código sobre el esquema vie
 **rompe los seis formularios**. Aplicar
 `supabase/migrations/2026-09-12-reserva-plaza.sql` primero. Detalle en `CAMBIOS.md`.
 
+**Desde el 08/10 hay píxel de Meta, pero solo con consentimiento.** Lo carga
+`src/lib/consent.ts` cuando el visitante acepta en `CookieConsent.astro`; el id está
+en `site.ts`. **No se pega el snippet de Meta en el `<head>`** aunque lo pidan así: se
+cargaría sin permiso. Cualquier script de medición o publicidad nuevo entra por el
+mismo sitio, y se añade a la tabla de `/politica-cookies`.
+
 **Los tests no pueden escribir en la base del cliente.** `.env` lleva las
 credenciales de producción y Playwright levanta el dev server con ese fichero:
 un test que envíe un formulario mete un lead en el panel del cliente.

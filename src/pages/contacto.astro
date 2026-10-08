@@ -153,6 +153,7 @@ const failed = Astro.url.searchParams.get('error') === 'contacto';
 
 <script>
   import { gsap } from 'gsap';
+  import { trackLead } from '@/lib/consent';
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     gsap.set(['.page-eyebrow', '.page-title', '.page-subtitle'], { opacity: 0 });
@@ -189,6 +190,7 @@ const failed = Astro.url.searchParams.get('error') === 'contacto';
 
       if (res.ok) {
         form.reset();
+        trackLead('contacto');
         successMsg?.classList.remove('hidden');
         errorMsg?.classList.add('hidden');
         submitBtn.textContent = labelSent;

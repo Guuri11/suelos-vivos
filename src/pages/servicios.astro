@@ -273,6 +273,7 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
 
 <script>
   import { gsap } from 'gsap';
+  import { trackLead } from '@/lib/consent';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
   gsap.registerPlugin(ScrollTrigger);
@@ -343,6 +344,7 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
 
       if (res.ok) {
         form.reset();
+        trackLead('asesoria');
         successMsg?.classList.remove('hidden');
         errorMsg?.classList.add('hidden');
         submitBtn.textContent = labelSent;

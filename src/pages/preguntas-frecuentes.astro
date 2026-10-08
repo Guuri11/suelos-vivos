@@ -208,6 +208,7 @@ const faqSchema = {
 
 <script>
   import { gsap } from 'gsap';
+  import { trackLead } from '@/lib/consent';
 
   // ── Buscador ─────────────────────────────────────────────────────────────
   const input = document.getElementById('faq-search') as HTMLInputElement | null;
@@ -321,6 +322,7 @@ const faqSchema = {
       if (!res.ok) throw new Error('Server error');
 
       form.reset();
+      trackLead('preguntas-frecuentes');
       success?.classList.remove('hidden');
       error?.classList.add('hidden');
       submit.textContent = labelSent;

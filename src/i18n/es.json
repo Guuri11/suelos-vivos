@@ -23,7 +23,18 @@
       "reservarPlaza": "Reservar plaza",
       "avisoLegal": "Aviso Legal",
       "politicaPrivacidad": "Política de Privacidad",
-      "terminos": "Términos y Condiciones"
+      "terminos": "Términos y Condiciones",
+      "politicaCookies": "Política de Cookies",
+      "configurarCookies": "Configurar cookies"
+    }
+  },
+  "cookies": {
+    "banner": {
+      "label": "Aviso de cookies",
+      "text": "Usamos cookies propias técnicas y, si lo aceptas, las de Meta (Facebook e Instagram) para medir qué visitas y solicitudes llegan desde nuestros anuncios. Puedes cambiar de opinión cuando quieras desde el pie de página.",
+      "more": "Más información",
+      "reject": "Rechazar",
+      "accept": "Aceptar"
     }
   },
   "consent": {
@@ -817,6 +828,72 @@
       "title": "Política de Privacidad — Suelos Vivos",
       "description": "Política de privacidad y protección de datos de Suelos Vivos — Bosque Madre."
     }
+  },
+  "politicaCookies": {
+    "seo": {
+      "title": "Política de Cookies — Suelos Vivos",
+      "description": "Qué cookies usa la web de Suelos Vivos, para qué y cómo aceptarlas, rechazarlas o retirar el consentimiento."
+    },
+    "title": "Política de Cookies",
+    "updated": "Última actualización: octubre 2026",
+    "what": {
+      "h": "1. Qué son las cookies",
+      "p": "Las cookies son pequeños ficheros que una web guarda en tu navegador para recordar información entre visitas. Algunas son imprescindibles para que la web funcione; otras sirven para medir o para publicidad, y esas solo se instalan si las aceptas."
+    },
+    "list": {
+      "h": "2. Cookies que usa esta web",
+      "intro": "Esta es la lista completa:",
+      "cols": {
+        "name": "Nombre",
+        "owner": "Titular",
+        "purpose": "Finalidad",
+        "duration": "Duración"
+      },
+      "rows": [
+        [
+          "sv-cookie-consent",
+          "Suelos Vivos",
+          "Técnica. Recuerda si has aceptado o rechazado las cookies, para no volver a preguntarte en cada página. Se guarda en el almacenamiento local del navegador.",
+          "12 meses"
+        ],
+        [
+          "suelos_panel_session",
+          "Suelos Vivos",
+          "Técnica. Mantiene iniciada la sesión del área privada del equipo. Solo se instala a quien entra en esa área; los visitantes no la reciben.",
+          "7 días"
+        ],
+        [
+          "_fbp",
+          "Meta",
+          "Publicidad. Identifica tu navegador para medir las visitas que llegan desde anuncios en Facebook e Instagram y mostrar anuncios a quien ya ha visitado la web. Solo si aceptas.",
+          "90 días"
+        ],
+        [
+          "_fbc",
+          "Meta",
+          "Publicidad. Guarda el identificador del anuncio cuando llegas desde uno. Solo si aceptas.",
+          "90 días"
+        ]
+      ],
+      "note": "Si aceptas y tienes la sesión iniciada en Facebook o Instagram en el mismo navegador, Meta puede además asociar la visita a tu cuenta mediante sus propias cookies."
+    },
+    "meta": {
+      "h": "3. Meta y transferencias internacionales",
+      "p": "Las cookies de publicidad las gestiona Meta Platforms Ireland Ltd. Cuando las aceptas, el píxel de Meta comunica a Meta las páginas que visitas en esta web y, si envías un formulario, que lo has enviado, pero no el contenido de lo que escribes. Meta Platforms, Inc. puede tratar estos datos en Estados Unidos, al amparo del Marco de Privacidad de Datos UE-EE. UU. Más información en",
+      "link": "la política de privacidad de Meta"
+    },
+    "manage": {
+      "h": "4. Cómo aceptar, rechazar o retirar el consentimiento",
+      "p1": "La primera vez que entras te preguntamos con un aviso, que tiene dos botones igual de visibles: aceptar o rechazar. Mientras no aceptes, no se carga ninguna cookie de Meta.",
+      "p2": "Puedes cambiar tu elección en cualquier momento:",
+      "button": "Configurar cookies",
+      "p3": "También puedes borrar o bloquear las cookies desde la configuración de tu navegador. Si bloqueas las técnicas, puede que tengamos que volver a preguntarte en cada visita."
+    },
+    "updates": {
+      "h": "5. Cambios en esta política",
+      "p": "Si añadimos o quitamos cookies, actualizaremos esta página y te volveremos a preguntar si el cambio afecta a tu consentimiento. Para cualquier duda sobre tus datos, consulta la"
+    },
+    "privacyLink": "política de privacidad"
   },
   "terminos": {
     "seo": {

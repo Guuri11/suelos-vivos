@@ -1,0 +1,93 @@
+---
+import { siteConfig } from '@/config/site';
+import { localePath, t, type Lang } from '@/i18n/utils';
+
+// Aviso de cookies. La única cookie que no es técnica es la del píxel de Meta,
+// así que hay una sola categoría y basta con aceptar o rechazar: los dos botones
+// tienen el mismo peso visual, como pide la guía de cookies de la AEPD (2023).
+//
+// El píxel no está en el HTML: lo inyecta el script de abajo solo con el
+// consentimiento guardado. Por eso no lleva el <noscript> del snippet de Meta,
+// que mandaría la visita sin haber podido preguntar.
+//
+// Cualquier elemento con `data-cookie-settings` reabre el aviso (el pie lo usa
+// para que retirar el consentimiento sea tan fácil como darlo).
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<section
+  id="cookie-consent"
+  aria-label={t(lang, 'cookies.banner.label')}
+  data-pixel-id={siteConfig.tracking.metaPixelId}
+  hidden
+  class="fixed inset-x-0 bottom-0 z-50 p-4 md:p-6 pointer-events-none"
+>
+  <div class="pointer-events-auto mx-auto max-w-3xl bg-[#FAFAF7] border border-[#DDD8CE] rounded-lg shadow-[0_8px_24px_0_rgb(0_0_0/0.12)] p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+    <p class="text-sm text-[#6B6355] leading-relaxed">
+      {t(lang, 'cookies.banner.text')}{' '}
+      <a href={localePath(lang, '/politica-cookies')} class="underline text-[#1E1A15] hover:text-[#8B1A1A] transition-colors">
+        {t(lang, 'cookies.banner.more')}
+      </a>
+    </p>
+    <div class="flex gap-3 shrink-0">
+      <button
+        type="button"
+        data-consent="denied"
+        class="flex-1 md:flex-none min-h-11 px-5 rounded-md border border-[#1E1A15] text-sm font-semibold text-[#1E1A15] hover:bg-[#1E1A15] hover:text-[#FAFAF7] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B1A1A]"
+      >
+        {t(lang, 'cookies.banner.reject')}
+      </button>
+      <button
+        type="button"
+        data-consent="granted"
+        class="flex-1 md:flex-none min-h-11 px-5 rounded-md border border-[#1E1A15] text-sm font-semibold text-[#1E1A15] hover:bg-[#1E1A15] hover:text-[#FAFAF7] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B1A1A]"
+      >
+        {t(lang, 'cookies.banner.accept')}
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { loadMetaPixel, readConsent, saveConsent, clearMetaCookies } from '@/lib/consent';
+
+  const banner = document.getElementById('cookie-consent');
+  const pixelId = banner?.dataset.pixelId;
+
+  if (banner && pixelId) {
+    const consent = readConsent();
+
+    if (consent === 'granted') loadMetaPixel(pixelId);
+    if (!consent) banner.hidden = false;
+
+    banner.querySelectorAll<HTMLButtonElement>('[data-consent]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const previous = readConsent();
+        const choice = button.dataset.consent === 'granted' ? 'granted' : 'denied';
+        saveConsent(choice);
+        banner.hidden = true;
+
+        if (choice === 'granted') {
+          loadMetaPixel(pixelId);
+        } else if (previous === 'granted') {
+          // El píxel ya está cargado en esta página y no se puede descargar:
+          // se borran sus cookies y se recarga para que deje de funcionar ya.
+          clearMetaCookies();
+          location.reload();
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-cookie-settings]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        banner.hidden = false;
+        banner.querySelector<HTMLButtonElement>('[data-consent]')?.focus();
+      });
+    });
+  }
+</script>

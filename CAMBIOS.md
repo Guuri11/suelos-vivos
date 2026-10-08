@@ -4,6 +4,60 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-10-08 — Píxel de Meta, con aviso de cookies
+
+Dani por WhatsApp el 08/10: que se meta el código del píxel de Meta (id
+`1547305324098425`) «entre head y head».
+
+Pegarlo tal cual habría cargado una cookie publicitaria (`_fbp`) sin consentimiento,
+contra la LSSI art. 22.2, y contra la propia política de privacidad, que decía «no
+utilizamos cookies de seguimiento ni publicidad de terceros». Se le explicó y se hizo
+completo.
+
+- [x] C-36 · evolutivo · Aviso de cookies propio (`CookieConsent.astro`, desde
+      `BaseLayout`), en los tres idiomas. Aceptar y rechazar con el mismo estilo, sin
+      muro ni casillas premarcadas. La elección se guarda 12 meses en `localStorage`
+      (`sv-cookie-consent`). Estimado en 2–3 h
+- [x] C-37 · evolutivo · El píxel se inyecta desde `src/lib/consent.ts` **solo** con
+      consentimiento; el id vive en `site.ts` (`tracking.metaPixelId`). Sin el
+      `<noscript>` del snippet: dispararía la visita sin haber podido preguntar
+- [x] C-38 · evolutivo · Evento `Lead` al enviar con éxito cualquiera de los seis
+      formularios (`trackLead()`), con `content_name` para distinguirlos. Solo sale si
+      el píxel está cargado; nunca lleva el contenido del formulario
+- [x] C-39 · contenido · Página nueva `/politica-cookies` (es/en/fr, traducida: es a la
+      que enlaza el aviso). Fuera del sitemap, como las demás legales
+- [x] C-40 · contenido · Política de privacidad: finalidad de medición publicitaria con
+      base en el consentimiento (ap. 3), Meta como destinatario y la transferencia a
+      EE. UU. por el Data Privacy Framework (ap. 6), y el apartado 7 remite a la
+      política de cookies. Sigue solo en español, como antes
+- [x] C-41 · contenido · En el pie, «Política de Cookies» y «Configurar cookies», que
+      reabre el aviso. Retirar el consentimiento borra `_fbp`/`_fbc` y recarga
+
+### Decisiones tomadas sin el cliente
+
+- **`autoConfig` desactivado.** El píxel no recoge por su cuenta textos de botones ni
+  metadatos de página. La web pide DNI y facturación; preferimos que Meta reciba
+  solo lo que se le manda a propósito (`PageView` y `Lead`).
+- **Banner propio, no una CMP de terceros** (Cookiebot, etc.): hay una sola categoría
+  no técnica, y una CMP sería otro script externo y otra cuota.
+
+### Pendiente del cliente
+
+- **En el Administrador de eventos de Meta, desactivar la «coincidencia avanzada
+  automática».** Si está activa, el píxel intenta leer email y teléfono de los campos
+  de los formularios. Se configura en su cuenta, no en la web.
+
+### Verificación
+
+- `pnpm build` limpio. Playwright **136/136 en verde** (chromium y Mobile Chrome), con
+  `cookie-consent.spec.ts` nuevo: sin elegir no sale ninguna petición a Meta, rechazar
+  se recuerda, aceptar carga `fbevents.js` y persiste, los dos botones tienen la misma
+  clase, retirar desde el pie borra `_fbp`, y el aviso y la política en los tres
+  idiomas. Las peticiones a Meta se interceptan: el test no le manda nada.
+- Capturas en escritorio y móvil sobre dev: el aviso no tapa la cabecera ni el CTA.
+
+No se ha desplegado.
+
 ## 2026-10-06 — Formularios caídos, fuera PayPal y borrar leads
 
 Dani por WhatsApp el 06/10: «esto no funciona», que no tienen PayPal y que el panel no

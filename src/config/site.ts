@@ -47,6 +47,13 @@ export const siteConfig = {
     height: 44,
   },
 
+  // Píxel de Meta que mandó Dani el 08/10/2026. Solo se carga si el visitante
+  // acepta en el aviso de cookies (CookieConsent.astro): sin consentimiento no
+  // sale ni una petición a Meta (LSSI art. 22.2).
+  tracking: {
+    metaPixelId: '1547305324098425',
+  },
+
   bosqueMadre: {
     url: 'https://bosquemadre.com',
     name: 'Bosque Madre',

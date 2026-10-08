@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 import { siteConfig } from '@/config/site';
+import CookieConsent from '@/components/CookieConsent.astro';
 import { getLang, hreflangLinks, stripLangPrefix } from '@/i18n/utils';
 
 interface Props {
@@ -93,5 +94,6 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_GB' : 'es_ES';
   </head>
   <body>
     <slot />
+    <CookieConsent lang={lang} />
   </body>
 </html>

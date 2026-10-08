@@ -23,7 +23,18 @@
       "reservarPlaza": "Reserve your spot",
       "avisoLegal": "Legal Notice",
       "politicaPrivacidad": "Privacy Policy",
-      "terminos": "Terms and Conditions"
+      "terminos": "Terms and Conditions",
+      "politicaCookies": "Cookie Policy",
+      "configurarCookies": "Cookie settings"
+    }
+  },
+  "cookies": {
+    "banner": {
+      "label": "Cookie notice",
+      "text": "We use our own technical cookies and, if you accept, Meta cookies (Facebook and Instagram) to measure which visits and enquiries come from our ads. You can change your mind at any time from the footer.",
+      "more": "Learn more",
+      "reject": "Reject",
+      "accept": "Accept"
     }
   },
   "consent": {
@@ -817,6 +828,72 @@
       "title": "Privacy Policy — Suelos Vivos",
       "description": "Privacy policy and data protection information for Suelos Vivos — Bosque Madre."
     }
+  },
+  "politicaCookies": {
+    "seo": {
+      "title": "Cookie Policy — Suelos Vivos",
+      "description": "Which cookies the Suelos Vivos website uses, what for, and how to accept, reject or withdraw consent."
+    },
+    "title": "Cookie Policy",
+    "updated": "Last updated: October 2026",
+    "what": {
+      "h": "1. What cookies are",
+      "p": "Cookies are small files that a website stores in your browser to remember information between visits. Some are essential for the site to work; others are used for measurement or advertising, and those are only set if you accept them."
+    },
+    "list": {
+      "h": "2. Cookies used on this website",
+      "intro": "This is the complete list:",
+      "cols": {
+        "name": "Name",
+        "owner": "Owner",
+        "purpose": "Purpose",
+        "duration": "Duration"
+      },
+      "rows": [
+        [
+          "sv-cookie-consent",
+          "Suelos Vivos",
+          "Technical. Remembers whether you accepted or rejected cookies, so we don't ask again on every page. Stored in the browser's local storage.",
+          "12 months"
+        ],
+        [
+          "suelos_panel_session",
+          "Suelos Vivos",
+          "Technical. Keeps the team's private area session signed in. Only set for people who sign in to that area; visitors never receive it.",
+          "7 days"
+        ],
+        [
+          "_fbp",
+          "Meta",
+          "Advertising. Identifies your browser to measure visits coming from ads on Facebook and Instagram and to show ads to people who have already visited the site. Only if you accept.",
+          "90 days"
+        ],
+        [
+          "_fbc",
+          "Meta",
+          "Advertising. Stores the ad identifier when you arrive from an ad. Only if you accept.",
+          "90 days"
+        ]
+      ],
+      "note": "If you accept and are signed in to Facebook or Instagram in the same browser, Meta may also link the visit to your account through its own cookies."
+    },
+    "meta": {
+      "h": "3. Meta and international transfers",
+      "p": "Advertising cookies are managed by Meta Platforms Ireland Ltd. When you accept them, the Meta pixel tells Meta which pages you visit on this site and, if you submit a form, that you submitted it, but not what you write in it. Meta Platforms, Inc. may process this data in the United States under the EU-U.S. Data Privacy Framework. More information in",
+      "link": "Meta's privacy policy"
+    },
+    "manage": {
+      "h": "4. How to accept, reject or withdraw consent",
+      "p1": "The first time you visit, a notice asks you with two equally visible buttons: accept or reject. Until you accept, no Meta cookie is loaded.",
+      "p2": "You can change your choice at any time:",
+      "button": "Cookie settings",
+      "p3": "You can also delete or block cookies in your browser settings. If you block the technical ones, we may have to ask you again on every visit."
+    },
+    "updates": {
+      "h": "5. Changes to this policy",
+      "p": "If we add or remove cookies, we will update this page and ask you again if the change affects your consent. For any questions about your data, see our"
+    },
+    "privacyLink": "privacy policy"
   },
   "terminos": {
     "seo": {

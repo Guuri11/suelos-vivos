@@ -23,7 +23,18 @@
       "reservarPlaza": "Réserver une place",
       "avisoLegal": "Mentions légales",
       "politicaPrivacidad": "Politique de confidentialité",
-      "terminos": "Conditions Générales"
+      "terminos": "Conditions Générales",
+      "politicaCookies": "Politique de cookies",
+      "configurarCookies": "Paramètres des cookies"
+    }
+  },
+  "cookies": {
+    "banner": {
+      "label": "Avis sur les cookies",
+      "text": "Nous utilisons nos propres cookies techniques et, si vous l'acceptez, ceux de Meta (Facebook et Instagram) pour mesurer quelles visites et demandes proviennent de nos publicités. Vous pouvez changer d'avis à tout moment depuis le pied de page.",
+      "more": "En savoir plus",
+      "reject": "Refuser",
+      "accept": "Accepter"
     }
   },
   "consent": {
@@ -817,6 +828,72 @@
       "title": "Politique de confidentialité — Suelos Vivos",
       "description": "Politique de confidentialité et protection des données de Suelos Vivos — Bosque Madre."
     }
+  },
+  "politicaCookies": {
+    "seo": {
+      "title": "Politique de cookies — Suelos Vivos",
+      "description": "Quels cookies utilise le site de Suelos Vivos, dans quel but et comment les accepter, les refuser ou retirer votre consentement."
+    },
+    "title": "Politique de cookies",
+    "updated": "Dernière mise à jour : octobre 2026",
+    "what": {
+      "h": "1. Que sont les cookies",
+      "p": "Les cookies sont de petits fichiers qu'un site enregistre dans votre navigateur pour mémoriser des informations d'une visite à l'autre. Certains sont indispensables au fonctionnement du site ; d'autres servent à la mesure ou à la publicité, et ceux-là ne sont déposés que si vous les acceptez."
+    },
+    "list": {
+      "h": "2. Cookies utilisés sur ce site",
+      "intro": "Voici la liste complète :",
+      "cols": {
+        "name": "Nom",
+        "owner": "Responsable",
+        "purpose": "Finalité",
+        "duration": "Durée"
+      },
+      "rows": [
+        [
+          "sv-cookie-consent",
+          "Suelos Vivos",
+          "Technique. Mémorise si vous avez accepté ou refusé les cookies, pour ne pas vous redemander sur chaque page. Enregistré dans le stockage local du navigateur.",
+          "12 mois"
+        ],
+        [
+          "suelos_panel_session",
+          "Suelos Vivos",
+          "Technique. Maintient la session de l'espace privé de l'équipe. Déposé uniquement pour les personnes qui se connectent à cet espace ; les visiteurs ne le reçoivent jamais.",
+          "7 jours"
+        ],
+        [
+          "_fbp",
+          "Meta",
+          "Publicité. Identifie votre navigateur pour mesurer les visites provenant des publicités sur Facebook et Instagram et montrer des publicités aux personnes ayant déjà visité le site. Uniquement si vous acceptez.",
+          "90 jours"
+        ],
+        [
+          "_fbc",
+          "Meta",
+          "Publicité. Enregistre l'identifiant de la publicité lorsque vous arrivez depuis l'une d'elles. Uniquement si vous acceptez.",
+          "90 jours"
+        ]
+      ],
+      "note": "Si vous acceptez et êtes connecté à Facebook ou Instagram dans le même navigateur, Meta peut aussi associer la visite à votre compte grâce à ses propres cookies."
+    },
+    "meta": {
+      "h": "3. Meta et transferts internationaux",
+      "p": "Les cookies publicitaires sont gérés par Meta Platforms Ireland Ltd. Si vous les acceptez, le pixel Meta indique à Meta les pages que vous visitez sur ce site et, si vous envoyez un formulaire, que vous l'avez envoyé, mais pas ce que vous y écrivez. Meta Platforms, Inc. peut traiter ces données aux États-Unis dans le cadre du Data Privacy Framework UE-États-Unis. Plus d'informations dans",
+      "link": "la politique de confidentialité de Meta"
+    },
+    "manage": {
+      "h": "4. Comment accepter, refuser ou retirer votre consentement",
+      "p1": "Lors de votre première visite, un avis vous pose la question avec deux boutons tout aussi visibles : accepter ou refuser. Tant que vous n'acceptez pas, aucun cookie de Meta n'est chargé.",
+      "p2": "Vous pouvez modifier votre choix à tout moment :",
+      "button": "Paramètres des cookies",
+      "p3": "Vous pouvez aussi supprimer ou bloquer les cookies depuis les paramètres de votre navigateur. Si vous bloquez les cookies techniques, nous devrons peut-être vous redemander à chaque visite."
+    },
+    "updates": {
+      "h": "5. Modifications de cette politique",
+      "p": "Si nous ajoutons ou supprimons des cookies, nous mettrons cette page à jour et vous redemanderons votre accord si le changement concerne votre consentement. Pour toute question sur vos données, consultez notre"
+    },
+    "privacyLink": "politique de confidentialité"
   },
   "terminos": {
     "seo": {

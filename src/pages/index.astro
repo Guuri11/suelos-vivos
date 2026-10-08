@@ -702,6 +702,7 @@ const serviceIcons = [
 
 <script>
   import { gsap } from "gsap";
+  import { trackLead } from "@/lib/consent";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   gsap.registerPlugin(ScrollTrigger);
@@ -1041,6 +1042,7 @@ const serviceIcons = [
 
       waitlistSubmit.textContent = labelSent;
       waitlistForm.reset();
+      trackLead("home-lista-espera-online");
       waitlistSuccess?.classList.remove("hidden");
     } catch {
       waitlistSubmit.disabled = false;

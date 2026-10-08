@@ -265,6 +265,7 @@ type FaqItem = { q: string; a: string };
 
 <script>
   import { gsap } from 'gsap';
+  import { trackLead } from '@/lib/consent';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
   gsap.registerPlugin(ScrollTrigger);
@@ -341,6 +342,7 @@ type FaqItem = { q: string; a: string };
 
       waitlistSubmit.textContent = labelSent;
       waitlistForm.reset();
+      trackLead('programa-lista-espera-online');
       waitlistSuccess?.classList.remove('hidden');
     } catch {
       waitlistSubmit.disabled = false;
