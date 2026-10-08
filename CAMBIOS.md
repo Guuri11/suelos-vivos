@@ -55,8 +55,9 @@ completo.
   clase, retirar desde el pie borra `_fbp`, y el aviso y la política en los tres
   idiomas. Las peticiones a Meta se interceptan: el test no le manda nada.
 - Capturas en escritorio y móvil sobre dev: el aviso no tapa la cabecera ni el CTA.
-
-No se ha desplegado.
+- **Desplegado el 08/10/2026** (`7f2b016`, push a main). Comprobado en producción con
+  las peticiones a Meta bloqueadas: aviso visible, cero peticiones a Meta antes de
+  aceptar, `fbevents.js` justo después, consola sin errores.
 
 ## 2026-10-06 — Formularios caídos, fuera PayPal y borrar leads
 
