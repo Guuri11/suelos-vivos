@@ -29,7 +29,9 @@ enero 2027».
 
 ### Verificación
 
-- `pnpm build` limpio. Playwright **136/136 en verde**. Sin desplegar.
+- `pnpm build` limpio. Playwright **136/136 en verde**.
+- **Desplegado el 13/10/2026** (`4175af2`, push a main). Comprobado en producción:
+  `/el-programa` y `/reserva-plaza` dicen «Enero 2027» y el JSON-LD, `2027-01`.
 
 ## 2026-10-08 — Píxel de Meta, con aviso de cookies
 
