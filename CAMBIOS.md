@@ -44,6 +44,9 @@ paraba porque el nombre lo conocen.
 ### Verificación
 
 - `pnpm build` limpio. Playwright **162/162 en verde**.
+- **Desplegado el 13/10/2026** (`faa886d`). En producción los formularios de las
+  páginas comprobadas, en los tres idiomas, llevan la firma: el secreto está en Vercel.
+  **Falta un envío real** hecho por una persona: escribiría un lead en el panel.
 
 ## 2026-10-13 — El programa empieza en enero de 2027
 
