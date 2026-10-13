@@ -4,6 +4,33 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-10-13 — El programa empieza en enero de 2027
+
+Por WhatsApp, Dani: «cambiar la fecha del curso a enero» y «en lo del programa poner
+enero 2027».
+
+- [x] C-39 · contenido · Inicio del programa: «Diciembre 2026» → «Enero 2027» en
+      `site.ts`. De ahí lo leen la tarjeta de precio de `/el-programa`, términos y
+      el campo de `/reserva-plaza`
+- [x] C-40 · contenido · Taller 1: «Otoño 2026 (Noviembre)» → «Invierno 2027 (Enero)»,
+      con la respuesta de la FAQ que repite las fechas y el `seo.description` de
+      `/reserva-plaza`, en los tres idiomas. Ya chocaba antes: un programa que
+      arrancaba en diciembre con un primer taller en noviembre
+- [x] C-41 · bug · El JSON-LD de `BaseLayout` decía `startDate: 2026-09`; ahora `2027-01`
+
+### Decisiones tomadas sin el cliente
+
+- **Taller 2 sigue en febrero.** Queda a un mes del primero. No se ha movido porque
+  no lo ha pedido; hay que confirmárselo.
+
+### Pendiente del cliente
+
+- El mismo JSON-LD anuncia `price: 1900`; la web cobra 2.299 €. No se ha tocado.
+
+### Verificación
+
+- `pnpm build` limpio. Playwright **136/136 en verde**. Sin desplegar.
+
 ## 2026-10-08 — Píxel de Meta, con aviso de cookies
 
 Dani por WhatsApp el 08/10: que se meta el código del píxel de Meta (id

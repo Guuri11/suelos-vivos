@@ -26,7 +26,7 @@ export const siteConfig = {
     months: 12,
     installments: 10,
     deposit: 500,
-    startDate: 'Diciembre 2026',
+    startDate: 'Enero 2027',
     location: 'Tormos, Alicante',
     // Enlace de pago de Stripe que mandó el cliente el 16/09/2026. Cobra el
     // importe completo de una vez; el producto está dado de alta en su cuenta

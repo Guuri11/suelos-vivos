@@ -5,7 +5,7 @@
 - **Empresa**: Suelos Vivos
 - **Sector**: Formación en agricultura regenerativa para agricultores profesionales
 - **Producto**: programa anual de 12 meses, 20 plazas, **2.299 € de pago único**.
-  Arranque en diciembre de 2026, en Tormos (Alicante). El fraccionado que figuraba aquí
+  Arranque en enero de 2027 (antes diciembre; lo cambió el cliente el 13/10/2026), en Tormos (Alicante). El fraccionado que figuraba aquí
   (10 cuotas de 200 € con 500 € de reserva) salió de `/el-programa`, de términos y de
   `/reserva-plaza` el 13/09/2026, pero **`/preguntas-frecuentes` lo sigue ofreciendo** y
   el cliente no ha dicho cuál de las dos versiones vale. `priceMonthly`, `installments` y

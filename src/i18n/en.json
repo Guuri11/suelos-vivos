@@ -279,7 +279,7 @@
       "items": [
         {
           "number": "01",
-          "date": "Autumn 2026 (November)",
+          "date": "Winter 2027 (January)",
           "title": "Living soil: diagnosis and foundations",
           "desc": "The first workshop lays the groundwork. You will learn to understand the soil as a living ecosystem, identify its health indicators and diagnose the state of your farm before intervening.",
           "imgAlt": "Workshop 1 — Living soil",
@@ -372,7 +372,7 @@
       "seeAll": "See all 21 frequently asked questions",
       "items": [
         { "q": "Where are the workshops held?", "a": "The in-person workshops are held in Tormos, Alicante." },
-        { "q": "What are the dates?", "a": "The three in-person workshops take place in autumn 2026 (November), winter 2027 (February) and spring 2027 (April)." },
+        { "q": "What are the dates?", "a": "The three in-person workshops take place in winter 2027 (January and February) and spring 2027 (April)." },
         { "q": "Does it include accommodation and meals?", "a": "No. The programme price does not include accommodation, meals or transport, unless stated otherwise in the specific information for each workshop." }
       ]
     }
@@ -500,7 +500,7 @@
   "reserva": {
     "seo": {
       "title": "Reserve your spot — Suelos Vivos",
-      "description": "Reserve your place on the Suelos Vivos annual programme. Only 20 places. Starting December 2026 in Tormos, Alicante."
+      "description": "Reserve your place on the Suelos Vivos annual programme. Only 20 places. Starting January 2027 in Tormos, Alicante."
     },
     "hero": {
       "eyebrow": "Reserve your spot",

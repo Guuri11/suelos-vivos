@@ -279,7 +279,7 @@
       "items": [
         {
           "number": "01",
-          "date": "Otoño 2026 (Noviembre)",
+          "date": "Invierno 2027 (Enero)",
           "title": "El suelo vivo: diagnóstico y fundamentos",
           "desc": "El primer taller establece las bases. Aprenderás a entender el suelo como un ecosistema vivo, a identificar sus indicadores de salud y a diagnosticar el estado de tu finca antes de intervenir.",
           "imgAlt": "Taller 1 — El suelo vivo",
@@ -372,7 +372,7 @@
       "seeAll": "Ver las 21 preguntas frecuentes",
       "items": [
         { "q": "¿Dónde se imparten los cursos?", "a": "Los talleres presenciales se imparten en Tormos, Alicante." },
-        { "q": "¿Cuáles serán las fechas?", "a": "Los tres talleres presenciales son en otoño 2026 (noviembre), invierno 2027 (febrero) y primavera 2027 (abril)." },
+        { "q": "¿Cuáles serán las fechas?", "a": "Los tres talleres presenciales son en invierno 2027 (enero y febrero) y primavera 2027 (abril)." },
         { "q": "¿Incluye alojamiento y comida?", "a": "No. El precio del programa no incluye alojamiento, comidas ni transporte, salvo que se indique lo contrario en la información concreta de cada taller." }
       ]
     }
@@ -500,7 +500,7 @@
   "reserva": {
     "seo": {
       "title": "Reservar plaza — Suelos Vivos",
-      "description": "Reserva tu plaza en el programa anual de Suelos Vivos. Solo 20 plazas. Inicio en diciembre de 2026 en Tormos, Alicante."
+      "description": "Reserva tu plaza en el programa anual de Suelos Vivos. Solo 20 plazas. Inicio en enero de 2027 en Tormos, Alicante."
     },
     "hero": {
       "eyebrow": "Reservar plaza",

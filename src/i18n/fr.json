@@ -279,7 +279,7 @@
       "items": [
         {
           "number": "01",
-          "date": "Automne 2026 (Novembre)",
+          "date": "Hiver 2027 (Janvier)",
           "title": "Le sol vivant : diagnostic et fondements",
           "desc": "Le premier atelier pose les bases. Vous apprendrez à comprendre le sol comme un écosystème vivant, à identifier ses indicateurs de santé et à diagnostiquer l'état de votre exploitation avant d'intervenir.",
           "imgAlt": "Atelier 1 — Le sol vivant",
@@ -372,7 +372,7 @@
       "seeAll": "Voir les 21 questions fréquentes",
       "items": [
         { "q": "Où se déroulent les ateliers ?", "a": "Les ateliers en présentiel se déroulent à Tormos, Alicante." },
-        { "q": "Quelles seront les dates ?", "a": "Les trois ateliers en présentiel auront lieu en automne 2026 (novembre), hiver 2027 (février) et printemps 2027 (avril)." },
+        { "q": "Quelles seront les dates ?", "a": "Les trois ateliers en présentiel auront lieu en hiver 2027 (janvier et février) et au printemps 2027 (avril)." },
         { "q": "Cela inclut-il l'hébergement et les repas ?", "a": "Non. Le prix du programme ne comprend ni l'hébergement, ni les repas, ni le transport, sauf indication contraire dans les informations propres à chaque atelier." }
       ]
     }
@@ -500,7 +500,7 @@
   "reserva": {
     "seo": {
       "title": "Réserver une place — Suelos Vivos",
-      "description": "Réservez votre place dans le programme annuel de Suelos Vivos. Seulement 20 places. Début en décembre 2026 à Tormos, Alicante."
+      "description": "Réservez votre place dans le programme annuel de Suelos Vivos. Seulement 20 places. Début en janvier 2027 à Tormos, Alicante."
     },
     "hero": {
       "eyebrow": "Réserver ma place",
