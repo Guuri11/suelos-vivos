@@ -4,6 +4,7 @@ import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { siteConfig } from '@/config/site';
 import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
+import FormGuard from '@/components/FormGuard.astro';
 import { getLang, t } from '@/i18n/utils';
 
 const lang = getLang(Astro.currentLocale);
@@ -242,7 +243,7 @@ const servicioValues = ['protocolo-regeneracion', 'reduccion-insumos', 'diseno-f
               <input type="hidden" name="lang" value={lang} />
 
               <!-- Honeypot -->
-              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+              <FormGuard />
 
               <button
                 type="submit"

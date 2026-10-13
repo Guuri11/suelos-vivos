@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import ConsentCheckbox from '@/components/ConsentCheckbox.astro';
+import FormGuard from '@/components/FormGuard.astro';
 import { siteConfig } from '@/config/site';
 import { getLang, t } from '@/i18n/utils';
 
@@ -170,7 +171,7 @@ const faqSchema = {
           <input type="hidden" name="lang" value={lang} />
 
           <!-- Honeypot -->
-          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+          <FormGuard />
 
           <button
             type="submit"

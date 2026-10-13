@@ -4,6 +4,47 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-10-13 — Filtro de bots en los formularios
+
+Dani preguntó de dónde venían los leads raros. De los 15 últimos, 13 son bots: la
+misma dirección en la lista de espera y en contacto con un segundo de diferencia,
+teléfonos `+1(202)555-01xx`, mensajes genéricos en inglés y navegadores de 2024
+(Chrome 122/124, Firefox 123) a las tres de la mañana. Otro es una redactora
+ofreciendo sus servicios. Solo uno parece real: `davizrc@yahoo.es`, desde el navegador
+de la app de Facebook, seguramente del anuncio. No vienen de ninguna campaña: son
+bots que recorren webs y rellenan cualquier formulario. El honeypot `_gotcha` no los
+paraba porque el nombre lo conocen.
+
+- [x] C-42 · bug · Cada formulario lleva la hora en que se sirvió la página, firmada
+      (`lib/antispam.ts`, `FormGuard.astro`). Sin firma o con menos de 3 s, el
+      endpoint responde «enviado» y no guarda nada. Se firma en el servidor para
+      que funcione sin JavaScript. Los descartes salen en los logs de Vercel como
+      `descartado por antispam`
+- [x] C-43 · bug · La casilla de privacidad se comprueba también en el servidor. La
+      lista de espera ni siquiera la miraba
+- [x] C-44 · tests · `antispam.spec.ts`: la firma, que los seis formularios la
+      llevan y los rechazos por privacidad. El camino feliz sigue sin test, por la
+      misma razón de siempre: escribiría en la Supabase de producción
+- [x] C-45 · tests · La barra de desarrollo de Astro tapaba el aviso de cookies en
+      móvil y tres tests fallaban según el orden. Se apaga con `E2E=1`, que pone
+      `playwright.config.ts`
+
+### Decisiones tomadas sin el cliente
+
+- **Filtro propio, sin captcha.** Se le propuso y lo aprobó: nada de terceros y nada
+  que tocar en la política de privacidad. Si siguen entrando, el siguiente paso es
+  ALTCHA (tampoco depende de terceros).
+- **La firma no caduca.** Una pestaña abierta desde ayer es de una persona, y perderle
+  el envío sin avisar es peor que dejar pasar a un bot paciente.
+
+### Pendiente
+
+- Los 13 leads de bots siguen en el panel. No se han borrado.
+
+### Verificación
+
+- `pnpm build` limpio. Playwright **162/162 en verde**.
+
 ## 2026-10-13 — El programa empieza en enero de 2027
 
 Por WhatsApp, Dani: «cambiar la fecha del curso a enero» y «en lo del programa poner

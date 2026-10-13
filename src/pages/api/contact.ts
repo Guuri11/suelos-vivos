@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { insertLead, parseFormType, type FormType } from '@/lib/leads';
 import { formResponse } from '@/lib/form-response';
+import { checkFormToken } from '@/lib/antispam';
 
 export const prerender = false;
 
@@ -63,6 +64,21 @@ export const POST: APIRoute = async ({ request, url }) => {
     return formResponse(request, url, {
       ok: false, status: 400, error: `Faltan campos obligatorios: ${faltan.join(', ')}`, formType,
     });
+  }
+
+  // La casilla es `required` en el HTML, pero eso solo lo aplica el navegador.
+  if (!privacy) {
+    return formResponse(request, url, {
+      ok: false, status: 400, error: 'Falta aceptar la política de privacidad', formType,
+    });
+  }
+
+  // Va el último: los rechazos de arriba no escriben en la base, este sí
+  // dejaría pasar. Al bot se le responde como al honeypot.
+  const verdict = checkFormToken(fd.get('_ts') as string | null, import.meta.env.SESSION_SECRET);
+  if (verdict !== 'ok') {
+    console.warn(`contact: descartado por antispam (${verdict}, ${formType})`);
+    return formResponse(request, url, { ok: true, formType });
   }
 
   const { error } = await insertLead({

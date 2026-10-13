@@ -10,6 +10,9 @@ export default defineConfig({
   site: 'https://www.suelosvivos.com',
   output: 'server',
   adapter: vercel(),
+  // La barra de desarrollo tapa el aviso de cookies en móvil y los tests de
+  // Playwright fallaban según el orden en que corrieran (13/10/2026).
+  devToolbar: { enabled: process.env.E2E !== '1' },
   vite: {
     plugins: [tailwindcss()],
   },

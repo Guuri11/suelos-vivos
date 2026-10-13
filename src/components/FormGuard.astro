@@ -1,0 +1,11 @@
+---
+import { issueFormToken } from '@/lib/antispam';
+
+// Los dos campos ocultos antispam de todos los formularios públicos: el
+// honeypot y la hora firmada a la que se sirvió la página. Los comprueban
+// /api/contact y /api/waitlist; el porqué, en `lib/antispam.ts`.
+const token = issueFormToken(import.meta.env.SESSION_SECRET);
+---
+
+<input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+<input type="hidden" name="_ts" value={token} />
