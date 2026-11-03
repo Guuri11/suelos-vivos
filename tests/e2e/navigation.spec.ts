@@ -122,6 +122,17 @@ test.describe('Navigation', () => {
     await expect(logo).toHaveAttribute('src', '/images/logo.png');
   });
 
+  // Hasta el 03/11/2026 apuntaban a bosquemadre.com, que no responde: lo avisó el
+  // cliente. Los dos enlaces salen de siteConfig.bosqueMadre.url.
+  test('Bosque Madre links go to the .org domain', async ({ page }) => {
+    await page.goto('/quienes-somos');
+    const links = page.locator('a[href*="bosquemadre."]');
+    await expect(links).toHaveCount(2);
+    for (const href of await links.evaluateAll((els) => els.map((a) => a.getAttribute('href')))) {
+      expect(href).toBe('https://bosquemadre.org');
+    }
+  });
+
   // Los dos botones del cierre llevan al programa y a la asesoria, y en /en/ y /fr/
   // tienen que quedarse dentro de su idioma en vez de tirar a la rama espanola.
   for (const prefix of ['', '/en', '/fr']) {

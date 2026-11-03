@@ -55,7 +55,7 @@ export const siteConfig = {
   },
 
   bosqueMadre: {
-    url: 'https://bosquemadre.com',
+    url: 'https://bosquemadre.org',
     name: 'Bosque Madre',
   },
 } as const;

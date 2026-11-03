@@ -4,6 +4,41 @@ Log de modificaciones ↔ horas imputadas. El histórico anterior a este fichero
 `Modificaciones web/Modificacionesweb.html`, en el formato antiguo; migrarlo es parte
 de W6 y no se ha hecho todavía.
 
+## 2026-11-03 — 2027 en el título y Bosque Madre en .org
+
+Dani, en catalán: el botón «Visita Bosque Madre» del final de `/quienes-somos` debe ir
+a la web `.org` y no a la `.com`, «encara que no está feta». Y se pide que «Programa de
+Agricultura Regenerativa 2026» diga 2027.
+
+- [x] C-46 · contenido · `home.seo.title` (el `<title>` de la home, que es lo que
+      sale en Google): «… Regenerativa 2026» → «2027», en los tres idiomas
+- [x] C-47 · bug · `siteConfig.bosqueMadre.url`: `https://bosquemadre.com` →
+      `https://bosquemadre.org`. **La `.com` no responde**: el botón de `/quienes-somos`
+      y el enlace «Un proyecto de Bosque Madre» del footer, que sale del mismo sitio,
+      llevaban a una página que no carga. Se enlaza al apex porque `www.bosquemadre.org`
+      redirige ahí. Test nuevo en `navigation.spec.ts`
+- [x] C-48 · tests · **La suite ya no puede tocar Supabase.** `playwright.config.ts`
+      arranca el dev server con `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY` vacías
+      (Vite deja que el proceso pise al `.env` aunque sea con vacío) y con
+      `reuseExistingServer: false`, porque un `pnpm dev` abierto sí lleva la base de
+      producción y Playwright se habría enganchado a él. Testigo en `panel.spec.ts`:
+      el keepalive tiene que responder «Supabase sin configurar». Hasta hoy lo único
+      que lo impedía era la costumbre de no enviar formularios válidos
+
+### Pendiente del cliente
+
+- **Quedan otros tres «2026» de la edición**, y no se han tocado porque no se pidieron.
+  Desde el C-39 el programa va de enero a diciembre de 2027:
+  - antetítulo de los talleres de la home: «PROGRAMA FORMATIVO 2026 / 27»
+  - tarjeta de precio de `/el-programa`: «Programa completo 2026–2027»
+  - `seo.description` de `/el-programa`: «Programa 2026–2027 en Tormos»
+- «La finca que Bosque Madre desarrolla **desde 2026** en Tormos» (`/quienes-somos`).
+  Es copy del cliente del 04/09 y se dejó tal cual, pero a estas alturas suena a errata.
+
+### Verificación
+
+- `pnpm build` limpio. Playwright **166/166 en verde**, sin base conectada.
+
 ## 2026-10-13 — Filtro de bots en los formularios
 
 Dani preguntó de dónde venían los leads raros. De los 15 últimos, 13 son bots: la

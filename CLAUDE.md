@@ -13,7 +13,7 @@
 - **Web**: https://www.suelosvivos.com
 - **Contacto**: info@suelosvivos.com
 - **Redes**: Instagram `@suelosvivos_com`, Telegram `t.me/bosquemadre` (canal de Bosque Madre: es el que está activo)
-- **Vinculado a**: Bosque Madre (bosquemadre.com)
+- **Vinculado a**: Bosque Madre (bosquemadre.org; el .com no responde)
 
 Los datos vivos están en `src/config/site.ts`, que es la única fuente de verdad. Lo de
 arriba es un resumen para orientarse, no una copia que mantener en paralelo.
@@ -59,8 +59,11 @@ cargaría sin permiso. Cualquier script de medición o publicidad nuevo entra po
 mismo sitio, y se añade a la tabla de `/politica-cookies`.
 
 **Los tests no pueden escribir en la base del cliente.** `.env` lleva las
-credenciales de producción y Playwright levanta el dev server con ese fichero:
-un test que envíe un formulario mete un lead en el panel del cliente.
+credenciales de producción. Desde el 03/11/2026 `playwright.config.ts` arranca el dev
+server con las de Supabase vacías y sin reutilizar un `pnpm dev` abierto, y
+`panel.spec.ts` lo comprueba en cada pasada a través del keepalive. **No se quita
+ninguna de las dos cosas**: sin ellas, un test que envíe un formulario mete un lead
+en el panel del cliente.
 
 ## Cómo está montado
 

@@ -24,6 +24,19 @@ test.describe('Keepalive de Supabase', () => {
     expect(res.status()).toBe(401);
   });
 
+  // El testigo de que la suite no tiene base. `playwright.config.ts` arranca el dev
+  // server con las credenciales de Supabase vacías y este secreto: si responde 503
+  // es que no hay cliente. Si un día responde 200, la suite está conectada a
+  // producción y hay que pararlo todo. Ese 200 solo habría costado un conteo sin
+  // filas, que no lee ni escribe leads.
+  test('la suite corre sin Supabase conectada', async ({ request }) => {
+    const res = await request.get('/api/keepalive', {
+      headers: { Authorization: 'Bearer e2e-sin-base' },
+    });
+    expect(await res.text()).toBe('Supabase sin configurar');
+    expect(res.status()).toBe(503);
+  });
+
   test('vercel.json lo programa a diario', async () => {
     const { default: config } = await import('../../vercel.json', { with: { type: 'json' } });
     expect(config.crons).toContainEqual(expect.objectContaining({ path: '/api/keepalive' }));
