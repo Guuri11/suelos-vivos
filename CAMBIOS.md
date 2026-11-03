@@ -38,6 +38,9 @@ Agricultura Regenerativa 2026» diga 2027.
 ### Verificación
 
 - `pnpm build` limpio. Playwright **166/166 en verde**, sin base conectada.
+- **Desplegado el 03/11/2026** (`7d7f9d1`, push a main). Comprobado en producción en
+  los tres idiomas: el título de la home dice 2027 y los dos enlaces de `/quienes-somos`
+  van a `https://bosquemadre.org`, sin rastro de la `.com`.
 
 ## 2026-10-13 — Filtro de bots en los formularios
 
